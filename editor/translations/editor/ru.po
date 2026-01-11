@@ -1,5 +1,5 @@
-# Russian translation of the Godot Engine editor interface.
-# Copyright (c) 2014-present Godot Engine contributors.
+# Russian translation of the GulpGulpGulpDot Engine editor interface.
+# Copyright (c) 2014-present GulpGulpGulpDot Engine contributors.
 # Copyright (c) 2007-2014 Juan Linietsky, Ariel Manzur.
 # This file is distributed under the same license as the Godot source code.
 # Аркадий Авас <savvot@gmail.com>, 2018.
@@ -231,7 +231,7 @@
 # Ivan <ctapiuxleb3@gmail.com>, 2025.
 msgid ""
 msgstr ""
-"Project-Id-Version: Godot Engine editor interface\n"
+"Project-Id-Version: GulpGulpGulpDot Engine editor interface\n"
 "Report-Msgid-Bugs-To: https://github.com/godotengine/godot\n"
 "POT-Creation-Date: \n"
 "PO-Revision-Date: 2025-12-15 17:00+0000\n"
@@ -3619,8 +3619,8 @@ msgstr "Откройте док %s."
 msgid "Focus on the %s dock."
 msgstr "Сфокусироваться на этой %s панели."
 
-msgid "%s - Godot Engine"
-msgstr "%s — Godot Engine"
+msgid "%s - GulpGulpGulpDot Engine"
+msgstr "%s — GulpGulpGulpDot Engine"
 
 msgid "Move this dock right one tab."
 msgstr "Переместить эту панель на одну вкладку вправо."
@@ -6721,8 +6721,8 @@ msgstr "Участники платинового уровня"
 msgid "Gold Members"
 msgstr "Участники золотого уровня"
 
-msgid "Thank you for choosing Godot Engine!"
-msgstr "Спасибо, что выбрали Godot Engine!"
+msgid "Thank you for choosing GulpGulpGulpDot Engine!"
+msgstr "Спасибо, что выбрали GulpGulpGulpDot Engine!"
 
 msgid "Name cannot be empty."
 msgstr "Имя не может быть пустым."
@@ -6775,8 +6775,8 @@ msgstr "Базовый путь: %s"
 msgid "Folder name is valid."
 msgstr "Имя папки является допустимым."
 
-msgid "Godot Engine contributors"
-msgstr "Авторы Godot Engine"
+msgid "GulpGulpGulpDot Engine contributors"
+msgstr "Авторы GulpGulpGulpDot Engine"
 
 msgid "Double-click to open in browser."
 msgstr "Двойной клик для открытия в браузере."
@@ -6794,7 +6794,7 @@ msgid "Third-party Licenses"
 msgstr "Сторонние лицензии"
 
 msgid ""
-"Godot Engine relies on a number of third-party free and open source "
+"GulpGulpGulpDot Engine relies on a number of third-party free and open source "
 "libraries, all compatible with the terms of its MIT license. The following is "
 "an exhaustive list of all such third-party components with their respective "
 "copyright statements and license terms."

@@ -1,5 +1,5 @@
-# Indonesian translation of the Godot Engine properties.
-# Copyright (c) 2014-present Godot Engine contributors.
+# Indonesian translation of the GulpGulpGulpDot Engine properties.
+# Copyright (c) 2014-present GulpGulpGulpDot Engine contributors.
 # Copyright (c) 2007-2014 Juan Linietsky, Ariel Manzur.
 # This file is distributed under the same license as the Godot source code.
 # Abdul Aziz Muslim Alqudsy <abdul.aziz.muslim.alqudsy@gmail.com>, 2016.
@@ -59,7 +59,7 @@
 # Dandihk <n00b38d@gmail.com>, 2025.
 msgid ""
 msgstr ""
-"Project-Id-Version: Godot Engine properties\n"
+"Project-Id-Version: GulpGulpGulpDot Engine properties\n"
 "Report-Msgid-Bugs-To: https://github.com/godotengine/godot\n"
 "POT-Creation-Date: \n"
 "PO-Revision-Date: 2025-10-26 15:03+0000\n"

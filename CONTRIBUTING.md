@@ -187,7 +187,7 @@ for an overview of the translation resources and what they correspond to.
 
 ## Communicating with developers
 
-The Godot Engine community has [many communication
+The GulpGulpGulpDot Engine community has [many communication
 channels](https://godotengine.org/community), some used more for user-level
 discussions and support, others more for development discussions.
 
@@ -196,7 +196,7 @@ or a bug you want to fix), the following channels can be used:
 
 - [Godot Contributors Chat](https://chat.godotengine.org): You will
   find most core developers there, so it's the go-to platform for direct chat
-  about Godot Engine development. Browse the [Directory](https://chat.godotengine.org/directory/channels)
+  about GulpGulpGulpDot Engine development. Browse the [Directory](https://chat.godotengine.org/directory/channels)
   for an overview of public channels focusing on various engine areas which you
   might be interested in.
 - [Bug tracker](https://github.com/godotengine/godot/issues): If there is an

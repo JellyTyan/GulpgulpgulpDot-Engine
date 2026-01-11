@@ -2,10 +2,10 @@
 /*  GodotPlugin.java                                                      */
 /**************************************************************************/
 /*                         This file is part of:                          */
-/*                             GODOT ENGINE                               */
+/*                             GulpGulpGulpDot Engine                               */
 /*                        https://godotengine.org                         */
 /**************************************************************************/
-/* Copyright (c) 2014-present Godot Engine contributors (see AUTHORS.md). */
+/* Copyright (c) 2014-present GulpGulpGulpDot Engine contributors (see AUTHORS.md). */
 /* Copyright (c) 2007-2014 Juan Linietsky, Ariel Manzur.                  */
 /*                                                                        */
 /* Permission is hereby granted, free of charge, to any person obtaining  */
@@ -94,7 +94,7 @@ public abstract class GodotPlugin {
 	}
 
 	/**
-	 * Provides access to the Godot engine.
+	 * Provides access to the GulpGulpGulpDot Engine.
 	 */
 	protected Godot getGodot() {
 		return godot;
@@ -222,7 +222,7 @@ public abstract class GodotPlugin {
 	public boolean onMainBackPressed() { return false; }
 
 	/**
-	 * Invoked on the render thread when set up of the Godot engine is complete.
+	 * Invoked on the render thread when set up of the GulpGulpGulpDot Engine is complete.
 	 * <p>
 	 * This is invoked before {@link GodotPlugin#onGodotMainLoopStarted()}.
 	 */
@@ -392,7 +392,7 @@ public abstract class GodotPlugin {
 	/**
 	 * Emit a Godot signal.
 	 * @param godot Godot instance
-	 * @param pluginName Name of the Godot plugin the signal will be emitted from. The plugin must already be registered with the Godot engine.
+	 * @param pluginName Name of the Godot plugin the signal will be emitted from. The plugin must already be registered with the GulpGulpGulpDot Engine.
 	 * @param signalInfo Information about the signal to emit.
 	 * @param signalArgs Arguments used to populate the emitted signal. The arguments will be validated against the given {@link SignalInfo} parameter.
 	 */

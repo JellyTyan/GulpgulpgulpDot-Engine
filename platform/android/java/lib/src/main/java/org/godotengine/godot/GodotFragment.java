@@ -2,10 +2,10 @@
 /*  GodotFragment.java                                                    */
 /**************************************************************************/
 /*                         This file is part of:                          */
-/*                             GODOT ENGINE                               */
+/*                             GulpGulpGulpDot Engine                               */
 /*                        https://godotengine.org                         */
 /**************************************************************************/
-/* Copyright (c) 2014-present Godot Engine contributors (see AUTHORS.md). */
+/* Copyright (c) 2014-present GulpGulpGulpDot Engine contributors (see AUTHORS.md). */
 /* Copyright (c) 2007-2014 Juan Linietsky, Ariel Manzur.                  */
 /*                                                                        */
 /* Permission is hereby granted, free of charge, to any person obtaining  */
@@ -179,7 +179,7 @@ public class GodotFragment extends Fragment implements IDownloaderClient, GodotH
 	private void performEngineInitialization() {
 		try {
 			if (!godot.initEngine(this, getCommandLine(), getHostPlugins(godot))) {
-				throw new IllegalStateException("Unable to initialize Godot engine");
+				throw new IllegalStateException("Unable to initialize GulpGulpGulpDot Engine");
 			}
 
 			godotContainerLayout = godot.onInitRenderView(this);
@@ -458,7 +458,7 @@ public class GodotFragment extends Fragment implements IDownloaderClient, GodotH
 
 	@Override
 	@CallSuper
-	public Set<GodotPlugin> getHostPlugins(Godot engine) {
+	public Set<GodotPlugin> getHostPlugins(GulpGulpGulpDot Engine) {
 		if (parentHost != null) {
 			return parentHost.getHostPlugins(engine);
 		}

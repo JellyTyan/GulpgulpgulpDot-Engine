@@ -2,10 +2,10 @@
 /*  test_regex.h                                                          */
 /**************************************************************************/
 /*                         This file is part of:                          */
-/*                             GODOT ENGINE                               */
+/*                             GulpGulpGulpDot Engine                               */
 /*                        https://godotengine.org                         */
 /**************************************************************************/
-/* Copyright (c) 2014-present Godot Engine contributors (see AUTHORS.md). */
+/* Copyright (c) 2014-present GulpGulpGulpDot Engine contributors (see AUTHORS.md). */
 /* Copyright (c) 2007-2014 Juan Linietsky, Ariel Manzur.                  */
 /*                                                                        */
 /* Permission is hereby granted, free of charge, to any person obtaining  */
@@ -255,7 +255,7 @@ TEST_CASE("[RegEx] Invalid end position") {
 }
 
 TEST_CASE("[RegEx] Get match string list") {
-	const String s = "Godot Engine";
+	const String s = "GulpGulpGulpDot Engine";
 
 	RegEx re("(Go)(dot)");
 	Ref<RegExMatch> match = re.search(s);
@@ -286,7 +286,7 @@ TEST_CASE("[RegEx] Match start and end positions") {
 }
 
 TEST_CASE("[RegEx] Asterisk search all") {
-	const String s = "Godot Engine";
+	const String s = "GulpGulpGulpDot Engine";
 
 	RegEx re("o*");
 	REQUIRE(re.is_valid());
@@ -310,7 +310,7 @@ TEST_CASE("[RegEx] Asterisk search all") {
 }
 
 TEST_CASE("[RegEx] Simple lookahead") {
-	const String s = "Godot Engine";
+	const String s = "GulpGulpGulpDot Engine";
 
 	RegEx re("o(?=t)");
 	REQUIRE(re.is_valid());
@@ -344,7 +344,7 @@ TEST_CASE("[RegEx] Lookahead groups empty matches") {
 }
 
 TEST_CASE("[RegEx] Simple lookbehind") {
-	const String s = "Godot Engine";
+	const String s = "GulpGulpGulpDot Engine";
 
 	RegEx re("(?<=d)o");
 	REQUIRE(re.is_valid());

@@ -2,10 +2,10 @@
 /*  RemoteGodotFragment.kt                                                */
 /**************************************************************************/
 /*                         This file is part of:                          */
-/*                             GODOT ENGINE                               */
+/*                             GulpGulpGulpDot Engine                               */
 /*                        https://godotengine.org                         */
 /**************************************************************************/
-/* Copyright (c) 2014-present Godot Engine contributors (see AUTHORS.md). */
+/* Copyright (c) 2014-present GulpGulpGulpDot Engine contributors (see AUTHORS.md). */
 /* Copyright (c) 2007-2014 Juan Linietsky, Ariel Manzur.                  */
 /*                                                                        */
 /* Permission is hereby granted, free of charge, to any person obtaining  */
@@ -89,7 +89,7 @@ class RemoteGodotFragment: Fragment() {
 			Log.d(TAG, "Connected to service $name")
 			serviceMessenger = Messenger(service)
 
-			// Initialize the Godot engine
+			// Initialize the GulpGulpGulpDot Engine
 			initGodotEngine()
 		}
 
@@ -297,7 +297,7 @@ class RemoteGodotFragment: Fragment() {
 				replyTo = messengerForReply
 			})
 		} catch (e: RemoteException) {
-			Log.e(TAG, "Unable to initialize Godot engine", e)
+			Log.e(TAG, "Unable to initialize GulpGulpGulpDot Engine", e)
 		}
 	}
 
@@ -311,7 +311,7 @@ class RemoteGodotFragment: Fragment() {
 				replyTo = messengerForReply
 			})
 		} catch (e: RemoteException) {
-			Log.e(TAG, "Unable to start Godot engine", e)
+			Log.e(TAG, "Unable to start GulpGulpGulpDot Engine", e)
 		}
 	}
 
@@ -325,7 +325,7 @@ class RemoteGodotFragment: Fragment() {
 				replyTo = messengerForReply
 			})
 		} catch (e: RemoteException) {
-			Log.e(TAG, "Unable to stop Godot engine", e)
+			Log.e(TAG, "Unable to stop GulpGulpGulpDot Engine", e)
 		}
 	}
 

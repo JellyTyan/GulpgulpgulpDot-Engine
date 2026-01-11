@@ -2,10 +2,10 @@
 /*  credits_roll.cpp                                                      */
 /**************************************************************************/
 /*                         This file is part of:                          */
-/*                             GODOT ENGINE                               */
+/*                             GulpGulpGulpDot Engine                               */
 /*                        https://godotengine.org                         */
 /**************************************************************************/
-/* Copyright (c) 2014-present Godot Engine contributors (see AUTHORS.md). */
+/* Copyright (c) 2014-present GulpGulpGulpDot Engine contributors (see AUTHORS.md). */
 /* Copyright (c) 2007-2014 Juan Linietsky, Ariel Manzur.                  */
 /*                                                                        */
 /* Permission is hereby granted, free of charge, to any person obtaining  */
@@ -226,7 +226,7 @@ void CreditsRoll::roll_credits() {
 		_create_label(String::utf8(GODOT_LICENSE_TEXT));
 
 		_create_nothing(400 * EDSCALE);
-		_create_label(TTRC("Thank you for choosing Godot Engine!"), LabelSize::BIG_HEADER);
+		_create_label(TTRC("Thank you for choosing GulpGulpGulpDot Engine!"), LabelSize::BIG_HEADER);
 	}
 	// Needs to be set here, so it stays centered even if the window is resized.
 	content->set_anchors_and_offsets_preset(Control::PRESET_VCENTER_WIDE);

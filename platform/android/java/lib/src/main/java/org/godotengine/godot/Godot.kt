@@ -2,10 +2,10 @@
 /*  Godot.kt                                                              */
 /**************************************************************************/
 /*                         This file is part of:                          */
-/*                             GODOT ENGINE                               */
+/*                             GulpGulpGulpDot Engine                               */
 /*                        https://godotengine.org                         */
 /**************************************************************************/
-/* Copyright (c) 2014-present Godot Engine contributors (see AUTHORS.md). */
+/* Copyright (c) 2014-present GulpGulpGulpDot Engine contributors (see AUTHORS.md). */
 /* Copyright (c) 2007-2014 Juan Linietsky, Ariel Manzur.                  */
 /*                                                                        */
 /* Permission is hereby granted, free of charge, to any person obtaining  */
@@ -217,7 +217,7 @@ class Godot private constructor(val context: Context) {
 	fun getActivity() = primaryHost?.activity
 
 	/**
-	 * Start initialization of the Godot engine.
+	 * Start initialization of the GulpGulpGulpDot Engine.
 	 *
 	 * This must be followed by [onInitRenderView] to complete initialization of the engine.
 	 *
@@ -350,7 +350,7 @@ class Godot private constructor(val context: Context) {
 			if (nativeLayerInitializeCompleted && !nativeLayerSetupCompleted) {
 				nativeLayerSetupCompleted = GodotLib.setup(commandLine.toTypedArray(), tts)
 				if (!nativeLayerSetupCompleted) {
-					throw IllegalStateException("Unable to setup the Godot engine! Aborting...")
+					throw IllegalStateException("Unable to setup the GulpGulpGulpDot Engine! Aborting...")
 				} else {
 					Log.v(TAG, "Godot native layer setup completed")
 				}
@@ -1085,7 +1085,7 @@ class Godot private constructor(val context: Context) {
 	}
 
 	/**
-	 * Destroys the Godot Engine and kill the process it's running in.
+	 * Destroys the GulpGulpGulpDot Engine and kill the process it's running in.
 	 */
 	@JvmOverloads
 	fun destroyAndKillProcess(destroyRunnable: Runnable? = null) {

@@ -5,7 +5,7 @@ using System;
 namespace Godot
 {
     /// <summary>
-    /// Exposes the target class as a global script class to Godot Engine.
+    /// Exposes the target class as a global script class to GulpGulpGulpDot Engine.
     /// </summary>
     [AttributeUsage(AttributeTargets.Class)]
     public sealed class GlobalClassAttribute : Attribute { }

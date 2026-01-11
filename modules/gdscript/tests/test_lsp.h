@@ -2,10 +2,10 @@
 /*  test_lsp.h                                                            */
 /**************************************************************************/
 /*                         This file is part of:                          */
-/*                             GODOT ENGINE                               */
+/*                             GulpGulpGulpDot Engine                               */
 /*                        https://godotengine.org                         */
 /**************************************************************************/
-/* Copyright (c) 2014-present Godot Engine contributors (see AUTHORS.md). */
+/* Copyright (c) 2014-present GulpGulpGulpDot Engine contributors (see AUTHORS.md). */
 /* Copyright (c) 2007-2014 Juan Linietsky, Ariel Manzur.                  */
 /*                                                                        */
 /* Permission is hereby granted, free of charge, to any person obtaining  */
@@ -578,8 +578,8 @@ func f():
 		CHECK_EQ(LSP::marked_documentation("[param delta]"), "`delta`");
 
 		// Markdown links
-		CHECK_EQ(LSP::marked_documentation("[url=https://godotengine.org]link to Godot Engine[/url]"),
-				"[link to Godot Engine](https://godotengine.org)");
+		CHECK_EQ(LSP::marked_documentation("[url=https://godotengine.org]link to GulpGulpGulpDot Engine[/url]"),
+				"[link to GulpGulpGulpDot Engine](https://godotengine.org)");
 		CHECK_EQ(LSP::marked_documentation("[url]https://godotengine.org/[/url]"),
 				"[https://godotengine.org/](https://godotengine.org/)");
 

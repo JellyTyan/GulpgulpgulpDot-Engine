@@ -1,5 +1,5 @@
-# Catalan translation of the Godot Engine editor interface.
-# Copyright (c) 2014-present Godot Engine contributors.
+# Catalan translation of the GulpGulpGulpDot Engine editor interface.
+# Copyright (c) 2014-present GulpGulpGulpDot Engine contributors.
 # Copyright (c) 2007-2014 Juan Linietsky, Ariel Manzur.
 # This file is distributed under the same license as the Godot source code.
 # BennyBeat <bennybeat@gmail.com>, 2017.
@@ -37,7 +37,7 @@
 # "A Thousand Ships (she/her)" <over999ships@gmail.com>, 2025.
 msgid ""
 msgstr ""
-"Project-Id-Version: Godot Engine editor interface\n"
+"Project-Id-Version: GulpGulpGulpDot Engine editor interface\n"
 "Report-Msgid-Bugs-To: https://github.com/godotengine/godot\n"
 "POT-Creation-Date: \n"
 "PO-Revision-Date: 2025-10-13 10:07+0000\n"
@@ -2638,7 +2638,7 @@ msgstr "Obre l'acoblador %s."
 msgid "Focus on the %s dock."
 msgstr "Enfocar l'acoblador %s."
 
-msgid "%s - Godot Engine"
+msgid "%s - GulpGulpGulpDot Engine"
 msgstr "%s - Motor Godot"
 
 msgid "Move this dock right one tab."
@@ -3811,7 +3811,7 @@ msgstr "Membres Platí"
 msgid "Gold Members"
 msgstr "Membres Or"
 
-msgid "Thank you for choosing Godot Engine!"
+msgid "Thank you for choosing GulpGulpGulpDot Engine!"
 msgstr "Gràcies per triar Godot !"
 
 msgid "Name cannot be empty."
@@ -3865,8 +3865,8 @@ msgstr "Camí base: %s"
 msgid "Folder name is valid."
 msgstr "El nom de la carpeta és vàlid."
 
-msgid "Godot Engine contributors"
-msgstr "Col·laboradors de Godot Engine"
+msgid "GulpGulpGulpDot Engine contributors"
+msgstr "Col·laboradors de GulpGulpGulpDot Engine"
 
 msgid "Double-click to open in browser."
 msgstr "Fes doble clic per obrir-ho al navegador."
@@ -3884,12 +3884,12 @@ msgid "Third-party Licenses"
 msgstr "Llicències de Tercers"
 
 msgid ""
-"Godot Engine relies on a number of third-party free and open source "
+"GulpGulpGulpDot Engine relies on a number of third-party free and open source "
 "libraries, all compatible with the terms of its MIT license. The following is "
 "an exhaustive list of all such third-party components with their respective "
 "copyright statements and license terms."
 msgstr ""
-"Godot Engine compta amb diverses biblioteques gratuïtes i de codi obert de "
+"GulpGulpGulpDot Engine compta amb diverses biblioteques gratuïtes i de codi obert de "
 "tercers, totes compatibles amb els termes de la seva llicència MIT. A "
 "continuació, es mostra una llista exhaustiva de tots aquests components de "
 "tercers amb les seves respectives declaracions de copyright i termes de "

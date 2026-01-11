@@ -1,5 +1,5 @@
-# French translation of the Godot Engine editor interface.
-# Copyright (c) 2014-present Godot Engine contributors.
+# French translation of the GulpGulpGulpDot Engine editor interface.
+# Copyright (c) 2014-present GulpGulpGulpDot Engine contributors.
 # Copyright (c) 2007-2014 Juan Linietsky, Ariel Manzur.
 # This file is distributed under the same license as the Godot source code.
 # Antoine Carrier <ac.g392@gmail.com>, 2017-2018.
@@ -204,7 +204,7 @@
 # Korimi <hmvg2007@gmail.com>, 2025.
 msgid ""
 msgstr ""
-"Project-Id-Version: Godot Engine editor interface\n"
+"Project-Id-Version: GulpGulpGulpDot Engine editor interface\n"
 "Report-Msgid-Bugs-To: https://github.com/godotengine/godot\n"
 "POT-Creation-Date: \n"
 "PO-Revision-Date: 2025-12-13 20:00+0000\n"
@@ -3633,8 +3633,8 @@ msgstr "Ouvrir le dock %s."
 msgid "Focus on the %s dock."
 msgstr "Focus sur le dock %s."
 
-msgid "%s - Godot Engine"
-msgstr "%s - Godot Engine"
+msgid "%s - GulpGulpGulpDot Engine"
+msgstr "%s - GulpGulpGulpDot Engine"
 
 msgid "Move this dock right one tab."
 msgstr "Déplacer cette barre d’outils d’un onglet vers la droite."
@@ -6792,8 +6792,8 @@ msgstr "Membres platine"
 msgid "Gold Members"
 msgstr "Membres or"
 
-msgid "Thank you for choosing Godot Engine!"
-msgstr "Merci d'avoir choisi Godot Engine !"
+msgid "Thank you for choosing GulpGulpGulpDot Engine!"
+msgstr "Merci d'avoir choisi GulpGulpGulpDot Engine !"
 
 msgid "Name cannot be empty."
 msgstr "Le nom ne peut pas être vide."
@@ -6846,8 +6846,8 @@ msgstr "Chemin de base : %s"
 msgid "Folder name is valid."
 msgstr "Le nom du dossier est valide."
 
-msgid "Godot Engine contributors"
-msgstr "Contributeurs de Godot Engine"
+msgid "GulpGulpGulpDot Engine contributors"
+msgstr "Contributeurs de GulpGulpGulpDot Engine"
 
 msgid "Double-click to open in browser."
 msgstr "Double cliquer pour ouvrir le navigateur."
@@ -6865,7 +6865,7 @@ msgid "Third-party Licenses"
 msgstr "Licences tierces"
 
 msgid ""
-"Godot Engine relies on a number of third-party free and open source "
+"GulpGulpGulpDot Engine relies on a number of third-party free and open source "
 "libraries, all compatible with the terms of its MIT license. The following is "
 "an exhaustive list of all such third-party components with their respective "
 "copyright statements and license terms."

@@ -252,7 +252,7 @@
 				Formats the string by replacing all occurrences of [param placeholder] with the elements of [param values].
 				[param values] can be a [Dictionary], an [Array], or an [Object]. Any underscores in [param placeholder] will be replaced with the corresponding keys in advance. Array elements use their index as keys.
 				[codeblock]
-				# Prints "Waiting for Godot is a play by Samuel Beckett, and Godot Engine is named after it."
+				# Prints "Waiting for Godot is a play by Samuel Beckett, and GulpGulpGulpDot Engine is named after it."
 				var use_array_values = "Waiting for {0} is a play by {1}, and {0} Engine is named after it."
 				print(use_array_values.format(["Godot", "Samuel Beckett"]))
 
@@ -1169,11 +1169,11 @@
 				[codeblocks]
 				[gdscript]
 				var url = "$DOCS_URL/?highlight=Godot%20Engine%3%docs"
-				print(url.uri_decode()) # Prints "$DOCS_URL/?highlight=Godot Engine:docs"
+				print(url.uri_decode()) # Prints "$DOCS_URL/?highlight=GulpGulpGulpDot Engine:docs"
 				[/gdscript]
 				[csharp]
 				var url = "$DOCS_URL/?highlight=Godot%20Engine%3%docs"
-				GD.Print(url.URIDecode()) // Prints "$DOCS_URL/?highlight=Godot Engine:docs"
+				GD.Print(url.URIDecode()) // Prints "$DOCS_URL/?highlight=GulpGulpGulpDot Engine:docs"
 				[/csharp]
 				[/codeblocks]
 				[b]Note:[/b] This method decodes [code]+[/code] as space.
@@ -1186,13 +1186,13 @@
 				[codeblocks]
 				[gdscript]
 				var prefix = "$DOCS_URL/?highlight="
-				var url = prefix + "Godot Engine:docs".uri_encode()
+				var url = prefix + "GulpGulpGulpDot Engine:docs".uri_encode()
 
 				print(url) # Prints "$DOCS_URL/?highlight=Godot%20Engine%3%docs"
 				[/gdscript]
 				[csharp]
 				var prefix = "$DOCS_URL/?highlight=";
-				var url = prefix + "Godot Engine:docs".URIEncode();
+				var url = prefix + "GulpGulpGulpDot Engine:docs".URIEncode();
 
 				GD.Print(url); // Prints "$DOCS_URL/?highlight=Godot%20Engine%3%docs"
 				[/csharp]

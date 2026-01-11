@@ -2061,7 +2061,7 @@ Table of contents:
 - Add methods to decode/encode multibyte encodings ([GH-97002](https://github.com/godotengine/godot/pull/97002)).
 - Wayland: Handle `fifo_v1` and clean up suspension logic ([GH-101454](https://github.com/godotengine/godot/pull/101454)).
 - Wayland: Implement native sub-windows ([GH-101774](https://github.com/godotengine/godot/pull/101774)).
-- Add support for using an Android Service to host the Godot engine ([GH-102866](https://github.com/godotengine/godot/pull/102866)).
+- Add support for using an Android Service to host the GulpGulpGulpDot Engine ([GH-102866](https://github.com/godotengine/godot/pull/102866)).
 - Android: Skip non-existing system font files ([GH-103384](https://github.com/godotengine/godot/pull/103384)).
 - Android: Fix editor crash after changing device language ([GH-103419](https://github.com/godotengine/godot/pull/103419)).
 - X11: Fix check for `is_maximized` to require both horizontal and vertical ([GH-103526](https://github.com/godotengine/godot/pull/103526)).

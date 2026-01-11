@@ -1,5 +1,5 @@
-# Hungarian translation of the Godot Engine editor interface.
-# Copyright (c) 2014-present Godot Engine contributors.
+# Hungarian translation of the GulpGulpGulpDot Engine editor interface.
+# Copyright (c) 2014-present GulpGulpGulpDot Engine contributors.
 # Copyright (c) 2007-2014 Juan Linietsky, Ariel Manzur.
 # This file is distributed under the same license as the Godot source code.
 # Árpád Horváth <horvatha4@googlemail.com>, 2018.
@@ -47,7 +47,7 @@
 # "A Thousand Ships (she/her)" <over999ships@gmail.com>, 2025.
 msgid ""
 msgstr ""
-"Project-Id-Version: Godot Engine editor interface\n"
+"Project-Id-Version: GulpGulpGulpDot Engine editor interface\n"
 "Report-Msgid-Bugs-To: https://github.com/godotengine/godot\n"
 "POT-Creation-Date: \n"
 "PO-Revision-Date: 2025-12-08 20:00+0000\n"
@@ -2590,8 +2590,8 @@ msgstr "Arany Szponzorok"
 msgid "Silver Sponsors"
 msgstr "Ezüst adományozók"
 
-msgid "Godot Engine contributors"
-msgstr "Godot Engine közreműködők"
+msgid "GulpGulpGulpDot Engine contributors"
+msgstr "GulpGulpGulpDot Engine közreműködők"
 
 msgid "Thanks from the Godot community!"
 msgstr "Köszönet a Godot közösségétől!"
@@ -2606,12 +2606,12 @@ msgid "Third-party Licenses"
 msgstr "Harmadik féltől származó licencek"
 
 msgid ""
-"Godot Engine relies on a number of third-party free and open source "
+"GulpGulpGulpDot Engine relies on a number of third-party free and open source "
 "libraries, all compatible with the terms of its MIT license. The following is "
 "an exhaustive list of all such third-party components with their respective "
 "copyright statements and license terms."
 msgstr ""
-"A Godot Engine több harmadik fél ingyenes és nyílt forráskódú könyvtáraira "
+"A GulpGulpGulpDot Engine több harmadik fél ingyenes és nyílt forráskódú könyvtáraira "
 "támaszkodik, amelyek mindegyike kompatibilis az MIT licenc feltételeivel. Az "
 "alábbiakban felsoroljuk az összes ilyen harmadik fél összetevőjét, a "
 "vonatkozó szerzői jogi nyilatkozatokkal és licencfeltételekkel együtt."

@@ -2,10 +2,10 @@
 /*  GodotService.kt                                                       */
 /**************************************************************************/
 /*                         This file is part of:                          */
-/*                             GODOT ENGINE                               */
+/*                             GulpGulpGulpDot Engine                               */
 /*                        https://godotengine.org                         */
 /**************************************************************************/
-/* Copyright (c) 2014-present Godot Engine contributors (see AUTHORS.md). */
+/* Copyright (c) 2014-present GulpGulpGulpDot Engine contributors (see AUTHORS.md). */
 /* Copyright (c) 2007-2014 Juan Linietsky, Ariel Manzur.                  */
 /*                                                                        */
 /* Permission is hereby granted, free of charge, to any person obtaining  */
@@ -54,7 +54,7 @@ import org.godotengine.godot.R
 import java.lang.ref.WeakReference
 
 /**
- * Specialized [Service] implementation able to host a Godot engine instance.
+ * Specialized [Service] implementation able to host a GulpGulpGulpDot Engine instance.
  *
  * When used remotely (from another process), this component lacks access to an [android.app.Activity]
  * instance, and as such it does not have full access to the set of Godot UI capabilities.
@@ -207,7 +207,7 @@ open class GodotService : Service() {
 
 						var currentViewHost = viewHost
 						if (currentViewHost != null) {
-							Log.i(TAG, "Attached Godot engine to SurfaceControlViewHost")
+							Log.i(TAG, "Attached GulpGulpGulpDot Engine to SurfaceControlViewHost")
 							service.listener?.onEngineStatusUpdate(
 								EngineStatus.SCVH_CREATED,
 								bundleOf(KEY_SURFACE_PACKAGE to currentViewHost.surfacePackage)
@@ -240,7 +240,7 @@ open class GodotService : Service() {
 						currentViewHost = SurfaceControlViewHost(service, display, hostToken).apply {
 							setView(godotContainerLayout, width, height)
 
-							Log.i(TAG, "Attached Godot engine to SurfaceControlViewHost")
+							Log.i(TAG, "Attached GulpGulpGulpDot Engine to SurfaceControlViewHost")
 							service.listener?.onEngineStatusUpdate(
 								EngineStatus.SCVH_CREATED,
 								bundleOf(KEY_SURFACE_PACKAGE to surfacePackage)
@@ -322,7 +322,7 @@ open class GodotService : Service() {
 		try {
 			// Initialize the Godot instance
 			if (!godot.initEngine(godotHost, godotHost.commandLine, godotHost.getHostPlugins(godot))) {
-				throw IllegalStateException("Unable to initialize Godot engine layer")
+				throw IllegalStateException("Unable to initialize GulpGulpGulpDot Engine layer")
 			}
 
 			if (godot.onInitRenderView(godotHost) == null) {
@@ -369,7 +369,7 @@ open class GodotService : Service() {
 			}
 
 			if (!performEngineInitialization()) {
-				Log.e(TAG, "Unable to initialize Godot engine")
+				Log.e(TAG, "Unable to initialize GulpGulpGulpDot Engine")
 				return null
 			} else {
 				Log.i(TAG, "Engine initialization complete!")
@@ -379,7 +379,7 @@ open class GodotService : Service() {
 		if (godotContainerLayout == null) {
 			listener?.onEngineError(EngineError.INIT_FAILED)
 		} else {
-			Log.i(TAG, "Initialized Godot engine")
+			Log.i(TAG, "Initialized GulpGulpGulpDot Engine")
 			listener?.onEngineStatusUpdate(EngineStatus.INITIALIZED)
 		}
 
@@ -388,11 +388,11 @@ open class GodotService : Service() {
 
 	private fun startEngine() {
 		if (!godot.isInitialized()) {
-			Log.e(TAG, "Attempting to start uninitialized Godot engine instance")
+			Log.e(TAG, "Attempting to start uninitialized GulpGulpGulpDot Engine instance")
 			return
 		}
 
-		Log.d(TAG, "Starting Godot engine")
+		Log.d(TAG, "Starting GulpGulpGulpDot Engine")
 		godot.onStart(godotHost)
 		godot.onResume(godotHost)
 
@@ -401,11 +401,11 @@ open class GodotService : Service() {
 
 	private fun stopEngine() {
 		if (!godot.isInitialized()) {
-			Log.e(TAG, "Attempting to stop uninitialized Godot engine instance")
+			Log.e(TAG, "Attempting to stop uninitialized GulpGulpGulpDot Engine instance")
 			return
 		}
 
-		Log.d(TAG, "Stopping Godot engine")
+		Log.d(TAG, "Stopping GulpGulpGulpDot Engine")
 		godot.onPause(godotHost)
 		godot.onStop(godotHost)
 

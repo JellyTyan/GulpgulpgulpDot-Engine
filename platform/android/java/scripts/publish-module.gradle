@@ -19,7 +19,7 @@ afterEvaluate {
                 // Mostly self-explanatory metadata
                 pom {
                     name = DEBUG_PUBLISH_ARTIFACT_ID
-                    description = 'Godot Engine Android Library - (Debug) Template Build'
+                    description = 'GulpGulpGulpDot Engine Android Library - (Debug) Template Build'
                     url = 'https://godotengine.org/'
                     licenses {
                         license {
@@ -45,7 +45,7 @@ afterEvaluate {
                         }
                         developer {
                             id = 'godotengine'
-                            name = 'Godot Engine contributors'
+                            name = 'GulpGulpGulpDot Engine contributors'
                             email = 'contact@godotengine.org'
                         }
                     }
@@ -71,7 +71,7 @@ afterEvaluate {
                 // Mostly self-explanatory metadata
                 pom {
                     name = PUBLISH_ARTIFACT_ID
-                    description = 'Godot Engine Android Library - Template Build'
+                    description = 'GulpGulpGulpDot Engine Android Library - Template Build'
                     url = 'https://godotengine.org/'
                     licenses {
                         license {
@@ -97,7 +97,7 @@ afterEvaluate {
                         }
                         developer {
                             id = 'godotengine'
-                            name = 'Godot Engine contributors'
+                            name = 'GulpGulpGulpDot Engine contributors'
                             email = 'contact@godotengine.org'
                         }
                     }
@@ -123,7 +123,7 @@ afterEvaluate {
                 // Mostly self-explanatory metadata
                 pom {
                     name = TOOLS_PUBLISH_ARTIFACT_ID
-                    description = 'Godot Engine Tools Android Library - Editor Build'
+                    description = 'GulpGulpGulpDot Engine Tools Android Library - Editor Build'
                     url = 'https://godotengine.org/'
                     licenses {
                         license {
@@ -149,7 +149,7 @@ afterEvaluate {
                         }
                         developer {
                             id = 'godotengine'
-                            name = 'Godot Engine contributors'
+                            name = 'GulpGulpGulpDot Engine contributors'
                             email = 'contact@godotengine.org'
                         }
                     }

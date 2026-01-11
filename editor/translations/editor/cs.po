@@ -1,5 +1,5 @@
-# Czech translation of the Godot Engine editor interface.
-# Copyright (c) 2014-present Godot Engine contributors.
+# Czech translation of the GulpGulpGulpDot Engine editor interface.
+# Copyright (c) 2014-present GulpGulpGulpDot Engine contributors.
 # Copyright (c) 2007-2014 Juan Linietsky, Ariel Manzur.
 # This file is distributed under the same license as the Godot source code.
 # Fadex <vitekpaulik@gmail.com>, 2017.
@@ -60,7 +60,7 @@
 # "A Thousand Ships (she/her)" <over999ships@gmail.com>, 2025.
 msgid ""
 msgstr ""
-"Project-Id-Version: Godot Engine editor interface\n"
+"Project-Id-Version: GulpGulpGulpDot Engine editor interface\n"
 "Report-Msgid-Bugs-To: https://github.com/godotengine/godot\n"
 "POT-Creation-Date: \n"
 "PO-Revision-Date: 2025-10-13 10:07+0000\n"
@@ -3297,8 +3297,8 @@ msgstr "Otevřít dok %s."
 msgid "Focus on the %s dock."
 msgstr "Zaměřit dok %s."
 
-msgid "%s - Godot Engine"
-msgstr "%s - Godot Engine"
+msgid "%s - GulpGulpGulpDot Engine"
+msgstr "%s - GulpGulpGulpDot Engine"
 
 msgid "Move this dock right one tab."
 msgstr "Posunout dok o jednu záložku doprava."
@@ -6185,8 +6185,8 @@ msgstr "Platinoví členové"
 msgid "Gold Members"
 msgstr "Zlatí členové"
 
-msgid "Thank you for choosing Godot Engine!"
-msgstr "Děkujeme, že jste si vybrali Godot Engine!"
+msgid "Thank you for choosing GulpGulpGulpDot Engine!"
+msgstr "Děkujeme, že jste si vybrali GulpGulpGulpDot Engine!"
 
 msgid "Name cannot be empty."
 msgstr "Název nesmí být prázdný."
@@ -6237,7 +6237,7 @@ msgstr "Základní cesta: %s"
 msgid "Folder name is valid."
 msgstr "Název složky je platný."
 
-msgid "Godot Engine contributors"
+msgid "GulpGulpGulpDot Engine contributors"
 msgstr "Přispěvatelé do enginu Godot"
 
 msgid "Double-click to open in browser."
@@ -6256,7 +6256,7 @@ msgid "Third-party Licenses"
 msgstr "Licence třetích stran"
 
 msgid ""
-"Godot Engine relies on a number of third-party free and open source "
+"GulpGulpGulpDot Engine relies on a number of third-party free and open source "
 "libraries, all compatible with the terms of its MIT license. The following is "
 "an exhaustive list of all such third-party components with their respective "
 "copyright statements and license terms."

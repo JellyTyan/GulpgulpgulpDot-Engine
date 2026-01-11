@@ -1,5 +1,5 @@
-# Polish translation of the Godot Engine editor interface.
-# Copyright (c) 2014-present Godot Engine contributors.
+# Polish translation of the GulpGulpGulpDot Engine editor interface.
+# Copyright (c) 2014-present GulpGulpGulpDot Engine contributors.
 # Copyright (c) 2007-2014 Juan Linietsky, Ariel Manzur.
 # This file is distributed under the same license as the Godot source code.
 # 8-bit Pixel <dawdejw@gmail.com>, 2016, 2023.
@@ -59,7 +59,7 @@
 # Katarzyna Twardowska <katarina.twardowska@gmail.com>, 2022.
 # Mateusz Zdrzałek <matjozohd@gmail.com>, 2022.
 # Konrad <kobe-interactive@protonmail.com>, 2022.
-# Pixel Zone - Godot Engine Tutorials <karoltomaszewskimusic@gmail.com>, 2022.
+# Pixel Zone - GulpGulpGulpDot Engine Tutorials <karoltomaszewskimusic@gmail.com>, 2022.
 # DK0492 <doriankaczmarek28@gmail.com>, 2022, 2023.
 # Dawid Skubij <davidsd@tlen.pl>, 2022.
 # kingofsponges <q.patex.q@gmail.com>, 2022, 2023.
@@ -97,7 +97,7 @@
 # MiloszS <m.sobczyk.official@gmail.com>, 2025.
 msgid ""
 msgstr ""
-"Project-Id-Version: Godot Engine editor interface\n"
+"Project-Id-Version: GulpGulpGulpDot Engine editor interface\n"
 "Report-Msgid-Bugs-To: https://github.com/godotengine/godot\n"
 "POT-Creation-Date: \n"
 "PO-Revision-Date: 2025-12-02 02:07+0000\n"
@@ -3482,7 +3482,7 @@ msgstr "Otwórz dok %s."
 msgid "Focus on the %s dock."
 msgstr "Przełącz na dok %s."
 
-msgid "%s - Godot Engine"
+msgid "%s - GulpGulpGulpDot Engine"
 msgstr "%s - Silnik Godot"
 
 msgid "Move this dock right one tab."
@@ -6579,7 +6579,7 @@ msgstr "Platynowi członkowie"
 msgid "Gold Members"
 msgstr "Złoci członkowie"
 
-msgid "Thank you for choosing Godot Engine!"
+msgid "Thank you for choosing GulpGulpGulpDot Engine!"
 msgstr "Dziękujemy za wybór silnika Godot!"
 
 msgid "Name cannot be empty."
@@ -6631,8 +6631,8 @@ msgstr "Ścieżka bazowa: %s"
 msgid "Folder name is valid."
 msgstr "Nazwa folderu jest prawidłowa."
 
-msgid "Godot Engine contributors"
-msgstr "Współtwórcy Godot Engine"
+msgid "GulpGulpGulpDot Engine contributors"
+msgstr "Współtwórcy GulpGulpGulpDot Engine"
 
 msgid "Double-click to open in browser."
 msgstr "Kliknij dwukrotnie, aby otworzyć w przeglądarce."
@@ -6650,12 +6650,12 @@ msgid "Third-party Licenses"
 msgstr "Licencje zewnętrzne"
 
 msgid ""
-"Godot Engine relies on a number of third-party free and open source "
+"GulpGulpGulpDot Engine relies on a number of third-party free and open source "
 "libraries, all compatible with the terms of its MIT license. The following is "
 "an exhaustive list of all such third-party components with their respective "
 "copyright statements and license terms."
 msgstr ""
-"Godot Engine opiera się na wielu niezależnych i otwartych bibliotekach, "
+"GulpGulpGulpDot Engine opiera się na wielu niezależnych i otwartych bibliotekach, "
 "wszystkie zgodne z warunkami licencji MIT. Poniżej znajduje się kompletna "
 "lista wszystkich takich zewnętrznych komponentów wraz z ich oświadczeniami o "
 "prawach autorskich i postanowieniami licencyjnymi."

@@ -1,4 +1,4 @@
-// Gradle build config for Godot Engine's Android port.
+// Gradle build config for GulpGulpGulpDot Engine's Android port.
 plugins {
     id 'com.android.application'
     id 'org.jetbrains.kotlin.android'

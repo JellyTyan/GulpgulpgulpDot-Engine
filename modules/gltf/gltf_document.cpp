@@ -2,10 +2,10 @@
 /*  gltf_document.cpp                                                     */
 /**************************************************************************/
 /*                         This file is part of:                          */
-/*                             GODOT ENGINE                               */
+/*                             GulpGulpGulpDot Engine                               */
 /*                        https://godotengine.org                         */
 /**************************************************************************/
-/* Copyright (c) 2014-present Godot Engine contributors (see AUTHORS.md). */
+/* Copyright (c) 2014-present GulpGulpGulpDot Engine contributors (see AUTHORS.md). */
 /* Copyright (c) 2007-2014 Juan Linietsky, Ariel Manzur.                  */
 /*                                                                        */
 /* Permission is hereby granted, free of charge, to any person obtaining  */
@@ -4158,7 +4158,7 @@ void GLTFDocument::_convert_scene_node(Ref<GLTFState> p_state, Node *p_current, 
 	} else if (Object::cast_to<Skeleton3D>(p_current)) {
 		Skeleton3D *skel = Object::cast_to<Skeleton3D>(p_current);
 		_convert_skeleton_to_gltf(skel, p_state, p_gltf_parent, p_gltf_root, gltf_node);
-		// We ignore the Godot Engine node that is the skeleton.
+		// We ignore the GulpGulpGulpDot Engine node that is the skeleton.
 		return;
 	} else if (Object::cast_to<MultiMeshInstance3D>(p_current)) {
 		MultiMeshInstance3D *multi = Object::cast_to<MultiMeshInstance3D>(p_current);

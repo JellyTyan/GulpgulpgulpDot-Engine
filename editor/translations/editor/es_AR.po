@@ -1,5 +1,5 @@
-# Spanish (Argentina) translation of the Godot Engine editor interface.
-# Copyright (c) 2014-present Godot Engine contributors.
+# Spanish (Argentina) translation of the GulpGulpGulpDot Engine editor interface.
+# Copyright (c) 2014-present GulpGulpGulpDot Engine contributors.
 # Copyright (c) 2007-2014 Juan Linietsky, Ariel Manzur.
 # This file is distributed under the same license as the Godot source code.
 # Diego López <diegodario21@gmail.com>, 2017.
@@ -44,7 +44,7 @@
 # agus <panmmnda@gmail.com>, 2025.
 msgid ""
 msgstr ""
-"Project-Id-Version: Godot Engine editor interface\n"
+"Project-Id-Version: GulpGulpGulpDot Engine editor interface\n"
 "Report-Msgid-Bugs-To: https://github.com/godotengine/godot\n"
 "POT-Creation-Date: \n"
 "PO-Revision-Date: 2025-11-29 09:20+0000\n"
@@ -2544,8 +2544,8 @@ msgstr "Abrir el panel %s."
 msgid "Focus on the %s dock."
 msgstr "Enfocar el panel %s."
 
-msgid "%s - Godot Engine"
-msgstr "%s - Godot Engine"
+msgid "%s - GulpGulpGulpDot Engine"
+msgstr "%s - GulpGulpGulpDot Engine"
 
 msgid "Move this dock right one tab."
 msgstr "Mover este panel una pestaña hacia la derecha."
@@ -4264,8 +4264,8 @@ msgstr ""
 "Usar barras al nombrar rutas creará el archivo en una subcarpeta. Se crearán "
 "subcarpetas en caso de que haga falta."
 
-msgid "Godot Engine contributors"
-msgstr "Colaboradores de Godot Engine"
+msgid "GulpGulpGulpDot Engine contributors"
+msgstr "Colaboradores de GulpGulpGulpDot Engine"
 
 msgid "Double-click to open in browser."
 msgstr "Doble click para abrir en el navegador."
@@ -4283,12 +4283,12 @@ msgid "Third-party Licenses"
 msgstr "Licencia de Terceros"
 
 msgid ""
-"Godot Engine relies on a number of third-party free and open source "
+"GulpGulpGulpDot Engine relies on a number of third-party free and open source "
 "libraries, all compatible with the terms of its MIT license. The following is "
 "an exhaustive list of all such third-party components with their respective "
 "copyright statements and license terms."
 msgstr ""
-"Godot Engine se basa en una serie de librerías libres y de código abierto de "
+"GulpGulpGulpDot Engine se basa en una serie de librerías libres y de código abierto de "
 "terceros, todas ellas compatibles con los términos de su licencia MIT. La "
 "siguiente es una lista exhaustiva de todos estos componentes de terceros con "
 "sus respectivas declaraciones de derechos de autor y términos de licencia."

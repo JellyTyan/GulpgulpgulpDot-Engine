@@ -2,10 +2,10 @@
 /*  libgodot_linuxbsd.cpp                                                 */
 /**************************************************************************/
 /*                         This file is part of:                          */
-/*                             GODOT ENGINE                               */
+/*                             GulpGulpGulpDot Engine                               */
 /*                        https://godotengine.org                         */
 /**************************************************************************/
-/* Copyright (c) 2014-present Godot Engine contributors (see AUTHORS.md). */
+/* Copyright (c) 2014-present GulpGulpGulpDot Engine contributors (see AUTHORS.md). */
 /* Copyright (c) 2007-2014 Juan Linietsky, Ariel Manzur.                  */
 /*                                                                        */
 /* Permission is hereby granted, free of charge, to any person obtaining  */
@@ -52,7 +52,7 @@ GDExtensionObjectPtr libgodot_create_godot_instance(int p_argc, char *p_argv[], 
 	instance = memnew(GodotInstance);
 	if (!instance->initialize(p_init_func)) {
 		memdelete(instance);
-		// Note: When Godot Engine supports reinitialization, clear the instance pointer here.
+		// Note: When GulpGulpGulpDot Engine supports reinitialization, clear the instance pointer here.
 		//instance = nullptr;
 		return nullptr;
 	}

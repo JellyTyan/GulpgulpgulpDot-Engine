@@ -12,7 +12,7 @@
   </PropertyGroup>
   <PropertyGroup>
     <Description>Godot C# Editor API.</Description>
-    <Authors>Godot Engine contributors</Authors>
+    <Authors>GulpGulpGulpDot Engine contributors</Authors>
 
     <PackageId>GodotSharpEditor</PackageId>
     <Version>4.6.0</Version>
@@ -20,7 +20,7 @@
     <RepositoryUrl>https://github.com/godotengine/godot/tree/master/modules/mono/glue/GodotSharp/GodotSharpEditor</RepositoryUrl>
     <PackageProjectUrl>$(RepositoryUrl)</PackageProjectUrl>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
-    <Copyright>Copyright (c) Godot Engine contributors</Copyright>
+    <Copyright>Copyright (c) GulpGulpGulpDot Engine contributors</Copyright>
 
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <IncludeSymbols>true</IncludeSymbols>
