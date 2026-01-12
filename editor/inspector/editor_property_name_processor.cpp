@@ -3,7 +3,7 @@
 /**************************************************************************/
 /*                         This file is part of:                          */
 /*                             GulpGulpGulpDot Engine                               */
-/*                        https://godotengine.org                         */
+/*                        https://gulpgulpgulpdotengine.org                         */
 /**************************************************************************/
 /* Copyright (c) 2014-present GulpGulpGulpDot Engine contributors (see AUTHORS.md). */
 /* Copyright (c) 2007-2014 Juan Linietsky, Ariel Manzur.                  */
@@ -141,7 +141,7 @@ EditorPropertyNameProcessor::EditorPropertyNameProcessor() {
 
 	// The following initialization is parsed by the l10n extraction script with a regex.
 	// The map name and value definition format should be kept synced with the regex.
-	// https://github.com/godotengine/godot-editor-l10n/blob/main/scripts/common.py
+	// https://github.com/gulpgulpgulpdotengine/gulpgulpgulpdot-editor-l10n/blob/main/scripts/common.py
 	capitalize_string_remaps["2d"] = "2D";
 	capitalize_string_remaps["3d"] = "3D";
 	capitalize_string_remaps["4d"] = "4D";
@@ -331,7 +331,7 @@ EditorPropertyNameProcessor::EditorPropertyNameProcessor() {
 	capitalize_string_remaps["yz"] = "YZ";
 
 	// Articles, conjunctions, prepositions.
-	// The following initialization is parsed in https://github.com/godotengine/godot-editor-l10n/blob/main/scripts/common.py
+	// The following initialization is parsed in https://github.com/gulpgulpgulpdotengine/gulpgulpgulpdot-editor-l10n/blob/main/scripts/common.py
 	// with a regex. The word definition format should be kept synced with the regex.
 	stop_words = LocalVector<String>({
 			"a",
@@ -360,7 +360,7 @@ EditorPropertyNameProcessor::EditorPropertyNameProcessor() {
 	// - `Class::full/property/path`
 	// In case a class name is needed to distinguish between usages, all usages should use the second format.
 	//
-	// The following initialization is parsed in https://github.com/godotengine/godot-editor-l10n/blob/main/scripts/common.py
+	// The following initialization is parsed in https://github.com/gulpgulpgulpdotengine/gulpgulpgulpdot-editor-l10n/blob/main/scripts/common.py
 	// with a regex. The map name and value definition format should be kept synced with the regex.
 	translation_contexts["force"]["constant_force"] = "Physics";
 	translation_contexts["force"]["force/8_bit"] = "Enforce";

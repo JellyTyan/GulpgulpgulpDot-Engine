@@ -3,7 +3,7 @@
 /**************************************************************************/
 /*                         This file is part of:                          */
 /*                             GulpGulpGulpDot Engine                               */
-/*                        https://godotengine.org                         */
+/*                        https://gulpgulpgulpdotengine.org                         */
 /**************************************************************************/
 /* Copyright (c) 2014-present GulpGulpGulpDot Engine contributors (see AUTHORS.md). */
 /* Copyright (c) 2007-2014 Juan Linietsky, Ariel Manzur.                  */
@@ -145,7 +145,7 @@ private:
 
 	/**
 	 * Base script that this script derives from, or null if it derives from a
-	 * native Godot class.
+	 * native Gulpgulpgulpdot class.
 	 */
 	Ref<CSharpScript> base_script;
 
@@ -439,7 +439,7 @@ class CSharpLanguage : public ScriptLanguage {
 	void _queue_for_filesystem_update(String p_script_path);
 	void _flush_filesystem_updates();
 
-	EditorPlugin *godotsharp_editor = nullptr;
+	EditorPlugin *gulpgulpgulpdotsharp_editor = nullptr;
 
 	static void _editor_init_callback();
 #endif
@@ -473,8 +473,8 @@ public:
 	}
 
 #ifdef TOOLS_ENABLED
-	_FORCE_INLINE_ EditorPlugin *get_godotsharp_editor() const {
-		return godotsharp_editor;
+	_FORCE_INLINE_ EditorPlugin *get_gulpgulpgulpdotsharp_editor() const {
+		return gulpgulpgulpdotsharp_editor;
 	}
 #endif
 

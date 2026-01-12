@@ -3,7 +3,7 @@
 /**************************************************************************/
 /*                         This file is part of:                          */
 /*                             GulpGulpGulpDot Engine                               */
-/*                        https://godotengine.org                         */
+/*                        https://gulpgulpgulpdotengine.org                         */
 /**************************************************************************/
 /* Copyright (c) 2014-present GulpGulpGulpDot Engine contributors (see AUTHORS.md). */
 /* Copyright (c) 2007-2014 Juan Linietsky, Ariel Manzur.                  */
@@ -270,9 +270,9 @@ void ProjectListItemControl::set_unsupported_features(PackedStringArray p_featur
 					project_version_major = project_version_split[0].to_int();
 					project_version_minor = project_version_split[1].to_int();
 				}
-				if (GODOT_VERSION_MAJOR != project_version_major || GODOT_VERSION_MINOR <= project_version_minor) {
+				if (GULPGULPGULPDOT_VERSION_MAJOR != project_version_major || GULPGULPGULPDOT_VERSION_MINOR <= project_version_minor) {
 					// Don't show a warning if the project was last edited in a previous minor version.
-					tooltip_text += TTR("This project was last edited in a different Godot version: ") + p_features[i] + "\n";
+					tooltip_text += TTR("This project was last edited in a different Gulpgulpgulpdot version: ") + p_features[i] + "\n";
 				}
 				p_features.remove_at(i);
 				i--;
@@ -597,7 +597,7 @@ void ProjectList::_migrate_config() {
 	EditorSettings::get_singleton()->get_property_list(&properties);
 
 	for (const PropertyInfo &E : properties) {
-		// This is actually something like "projects/C:::Documents::Godot::Projects::MyGame"
+		// This is actually something like "projects/C:::Documents::Gulpgulpgulpdot::Projects::MyGame"
 		String property_key = E.name;
 		if (!property_key.begins_with("projects/")) {
 			continue;
@@ -625,7 +625,7 @@ void ProjectList::save_config() {
 // Load project data from p_property_key and return it in a ProjectList::Item.
 // p_favorite is passed directly into the Item.
 ProjectList::Item ProjectList::load_project_data(const String &p_path, bool p_favorite) {
-	String conf = p_path.path_join("project.godot");
+	String conf = p_path.path_join("project.gulpgulpgulpdot");
 	bool grayed = false;
 	bool missing = false;
 	bool recovery_mode = false;
@@ -645,7 +645,7 @@ ProjectList::Item ProjectList::load_project_data(const String &p_path, bool p_fa
 	}
 
 	if (config_version > ProjectSettings::CONFIG_VERSION) {
-		// Comes from an incompatible (more recent) Godot version, gray it out.
+		// Comes from an incompatible (more recent) Gulpgulpgulpdot version, gray it out.
 		grayed = true;
 	}
 
@@ -656,7 +656,7 @@ ProjectList::Item ProjectList::load_project_data(const String &p_path, bool p_fa
 	String icon = cf->get_value("application", "config/icon", "");
 	if (icon.begins_with("uid://")) {
 		Error err;
-		Ref<FileAccess> file = FileAccess::open(p_path.path_join(".godot/uid_cache.bin"), FileAccess::READ, &err);
+		Ref<FileAccess> file = FileAccess::open(p_path.path_join(".gulpgulpgulpdot/uid_cache.bin"), FileAccess::READ, &err);
 		if (err == OK) {
 			icon = ResourceUID::get_path_from_cache(file, icon);
 			if (icon.is_empty()) {
@@ -692,7 +692,7 @@ ProjectList::Item ProjectList::load_project_data(const String &p_path, bool p_fa
 	uint64_t last_edited = 0;
 	if (cf_err == OK) {
 		// The modification date marks the date the project was last edited.
-		// This is because the `project.godot` file will always be modified
+		// This is because the `project.gulpgulpgulpdot` file will always be modified
 		// when editing a project (but not when running it).
 		last_edited = FileAccess::get_modified_time(conf);
 
@@ -725,10 +725,10 @@ ProjectList::Item ProjectList::load_project_data(const String &p_path, bool p_fa
 			}
 			user_dir = custom_dir;
 		} else {
-			user_dir = OS::get_singleton()->get_godot_dir_name().path_join("app_userdata").path_join(appname);
+			user_dir = OS::get_singleton()->get_gulpgulpgulpdot_dir_name().path_join("app_userdata").path_join(appname);
 		}
 	} else {
-		user_dir = OS::get_singleton()->get_godot_dir_name().path_join("app_userdata").path_join("[unnamed project]");
+		user_dir = OS::get_singleton()->get_gulpgulpgulpdot_dir_name().path_join("app_userdata").path_join("[unnamed project]");
 	}
 
 	String recovery_mode_lock_file = OS::get_singleton()->get_user_data_dir(user_dir).path_join(".recovery_mode_lock");
@@ -937,7 +937,7 @@ void ProjectList::_scan_folder_recursive(const String &p_path, List<String> *r_p
 
 		if (da->current_is_dir() && n[0] != '.') {
 			_scan_folder_recursive(da->get_current_dir().path_join(n), r_projects, p_scan_active);
-		} else if (n == "project.godot") {
+		} else if (n == "project.gulpgulpgulpdot") {
 			r_projects->push_back(da->get_current_dir());
 		}
 		n = da->get_next();
@@ -1510,7 +1510,7 @@ void ProjectList::_global_menu_open_project(const Variant &p_tag) {
 	int idx = (int)p_tag;
 
 	if (idx >= 0 && idx < _projects.size()) {
-		String conf = _projects[idx].path.path_join("project.godot");
+		String conf = _projects[idx].path.path_join("project.gulpgulpgulpdot");
 		List<String> args;
 		args.push_back(conf);
 		OS::get_singleton()->create_instance(args);

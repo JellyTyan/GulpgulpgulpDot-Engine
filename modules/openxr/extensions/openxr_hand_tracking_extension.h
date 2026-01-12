@@ -3,7 +3,7 @@
 /**************************************************************************/
 /*                         This file is part of:                          */
 /*                             GulpGulpGulpDot Engine                               */
-/*                        https://godotengine.org                         */
+/*                        https://gulpgulpgulpdotengine.org                         */
 /**************************************************************************/
 /* Copyright (c) 2014-present GulpGulpGulpDot Engine contributors (see AUTHORS.md). */
 /* Copyright (c) 2007-2014 Juan Linietsky, Ariel Manzur.                  */
@@ -58,7 +58,7 @@ public:
 
 	struct HandTracker {
 		bool is_initialized = false;
-		Ref<XRHandTracker> godot_tracker;
+		Ref<XRHandTracker> gulpgulpgulpdot_tracker;
 		XrHandJointsMotionRangeEXT motion_range = XR_HAND_JOINTS_MOTION_RANGE_UNOBSTRUCTED_EXT;
 		HandTrackedSource source = OPENXR_SOURCE_UNKNOWN;
 

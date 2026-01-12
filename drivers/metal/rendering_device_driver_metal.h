@@ -3,7 +3,7 @@
 /**************************************************************************/
 /*                         This file is part of:                          */
 /*                             GulpGulpGulpDot Engine                               */
-/*                        https://godotengine.org                         */
+/*                        https://gulpgulpgulpdotengine.org                         */
 /**************************************************************************/
 /* Copyright (c) 2014-present GulpGulpGulpDot Engine contributors (see AUTHORS.md). */
 /* Copyright (c) 2007-2014 Juan Linietsky, Ariel Manzur.                  */
@@ -200,10 +200,10 @@ private:
 		}
 
 		virtual Error wait(uint32_t p_timeout_ms) override {
-			GODOT_CLANG_WARNING_PUSH
-			GODOT_CLANG_WARNING_PUSH_AND_IGNORE("-Wunguarded-availability")
+			GULPGULPGULPDOT_CLANG_WARNING_PUSH
+			GULPGULPGULPDOT_CLANG_WARNING_PUSH_AND_IGNORE("-Wunguarded-availability")
 			BOOL signaled = [event waitUntilSignaledValue:value timeoutMS:p_timeout_ms];
-			GODOT_CLANG_WARNING_POP
+			GULPGULPGULPDOT_CLANG_WARNING_POP
 			if (!signaled) {
 #ifdef DEBUG_ENABLED
 				ERR_PRINT("timeout waiting for fence");

@@ -7,11 +7,11 @@
 		The [Node3D] node is the base representation of a node in 3D space. All other 3D nodes inherit from this class.
 		Affine operations (translation, rotation, scale) are calculated in the coordinate system relative to the parent, unless the [Node3D]'s [member top_level] is [code]true[/code]. In this coordinate system, affine operations correspond to direct affine operations on the [Node3D]'s [member transform]. The term [i]parent space[/i] refers to this coordinate system. The coordinate system that is attached to the [Node3D] itself is referred to as object-local coordinate system, or [i]local space[/i].
 		[b]Note:[/b] Unless otherwise specified, all methods that need angle parameters must receive angles in [i]radians[/i]. To convert degrees to radians, use [method @GlobalScope.deg_to_rad].
-		[b]Note:[/b] In Godot 3 and older, [Node3D] was named [i]Spatial[/i].
+		[b]Note:[/b] In Gulpgulpgulpdot 3 and older, [Node3D] was named [i]Spatial[/i].
 	</description>
 	<tutorials>
 		<link title="Introduction to 3D">$DOCS_URL/tutorials/3d/introduction_to_3d.html</link>
-		<link title="All 3D Demos">https://github.com/godotengine/godot-demo-projects/tree/master/3d</link>
+		<link title="All 3D Demos">https://github.com/gulpgulpgulpdotengine/gulpgulpgulpdot-demo-projects/tree/master/3d</link>
 	</tutorials>
 	<methods>
 		<method name="add_gizmo">

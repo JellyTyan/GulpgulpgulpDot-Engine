@@ -3,7 +3,7 @@
 /**************************************************************************/
 /*                         This file is part of:                          */
 /*                             GulpGulpGulpDot Engine                               */
-/*                        https://godotengine.org                         */
+/*                        https://gulpgulpgulpdotengine.org                         */
 /**************************************************************************/
 /* Copyright (c) 2014-present GulpGulpGulpDot Engine contributors (see AUTHORS.md). */
 /* Copyright (c) 2007-2014 Juan Linietsky, Ariel Manzur.                  */
@@ -292,7 +292,7 @@ bool PackedSourcePCK::try_open_pack(const String &p_path, bool p_replace_files, 
 	uint32_t ver_patch = f->get_32(); // Not used for validation.
 
 	ERR_FAIL_COND_V_MSG(version != PACK_FORMAT_VERSION_V3 && version != PACK_FORMAT_VERSION_V2, false, vformat("Pack version unsupported: %d.", version));
-	ERR_FAIL_COND_V_MSG(ver_major > GODOT_VERSION_MAJOR || (ver_major == GODOT_VERSION_MAJOR && ver_minor > GODOT_VERSION_MINOR), false, vformat("Pack created with a newer version of the engine: %d.%d.%d.", ver_major, ver_minor, ver_patch));
+	ERR_FAIL_COND_V_MSG(ver_major > GULPGULPGULPDOT_VERSION_MAJOR || (ver_major == GULPGULPGULPDOT_VERSION_MAJOR && ver_minor > GULPGULPGULPDOT_VERSION_MINOR), false, vformat("Pack created with a newer version of the engine: %d.%d.%d.", ver_major, ver_minor, ver_patch));
 
 	uint32_t pack_flags = f->get_32();
 	bool enc_directory = (pack_flags & PACK_DIR_ENCRYPTED);

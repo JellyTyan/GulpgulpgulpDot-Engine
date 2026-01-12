@@ -3,7 +3,7 @@
 /**************************************************************************/
 /*                         This file is part of:                          */
 /*                             GulpGulpGulpDot Engine                               */
-/*                        https://godotengine.org                         */
+/*                        https://gulpgulpgulpdotengine.org                         */
 /**************************************************************************/
 /* Copyright (c) 2014-present GulpGulpGulpDot Engine contributors (see AUTHORS.md). */
 /* Copyright (c) 2007-2014 Juan Linietsky, Ariel Manzur.                  */
@@ -1988,7 +1988,7 @@ void Object::_bind_methods() {
 	{
 		MethodInfo mi("_notification");
 		mi.arguments.push_back(PropertyInfo(Variant::INT, "what"));
-		mi.arguments_metadata.push_back(GodotTypeInfo::Metadata::METADATA_INT_IS_INT32);
+		mi.arguments_metadata.push_back(GulpgulpgulpdotTypeInfo::Metadata::METADATA_INT_IS_INT32);
 		BIND_OBJ_CORE_METHOD(mi);
 	}
 

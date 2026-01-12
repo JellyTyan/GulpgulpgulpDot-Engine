@@ -3,7 +3,7 @@
 /**************************************************************************/
 /*                         This file is part of:                          */
 /*                             GulpGulpGulpDot Engine                               */
-/*                        https://godotengine.org                         */
+/*                        https://gulpgulpgulpdotengine.org                         */
 /**************************************************************************/
 /* Copyright (c) 2014-present GulpGulpGulpDot Engine contributors (see AUTHORS.md). */
 /* Copyright (c) 2007-2014 Juan Linietsky, Ariel Manzur.                  */
@@ -324,7 +324,7 @@ TEST_CASE("[Quaternion] Product") {
 
 	// Test ZYX dynamic-axes since test data is available online.
 	// Rotate first about X axis, then new Y axis, then new Z axis.
-	// (Godot uses YXZ Yaw-Pitch-Roll order).
+	// (Gulpgulpgulpdot uses YXZ Yaw-Pitch-Roll order).
 	Quaternion q_yp = q_y * q_p;
 	CHECK(q_yp[0] == doctest::Approx(0.239118));
 	CHECK(q_yp[1] == doctest::Approx(0.369644));

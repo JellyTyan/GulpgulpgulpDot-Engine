@@ -3,7 +3,7 @@
 /**************************************************************************/
 /*                         This file is part of:                          */
 /*                             GulpGulpGulpDot Engine                               */
-/*                        https://godotengine.org                         */
+/*                        https://gulpgulpgulpdotengine.org                         */
 /**************************************************************************/
 /* Copyright (c) 2014-present GulpGulpGulpDot Engine contributors (see AUTHORS.md). */
 /* Copyright (c) 2007-2014 Juan Linietsky, Ariel Manzur.                  */
@@ -37,9 +37,9 @@
 
 // Optional environment variables for defining confidential information. If any
 // of these is set, they will override the values set in the credentials file.
-const String ENV_WIN_CODESIGN_ID_TYPE = "GODOT_WINDOWS_CODESIGN_IDENTITY_TYPE";
-const String ENV_WIN_CODESIGN_ID = "GODOT_WINDOWS_CODESIGN_IDENTITY";
-const String ENV_WIN_CODESIGN_PASS = "GODOT_WINDOWS_CODESIGN_PASSWORD";
+const String ENV_WIN_CODESIGN_ID_TYPE = "GULPGULPGULPDOT_WINDOWS_CODESIGN_IDENTITY_TYPE";
+const String ENV_WIN_CODESIGN_ID = "GULPGULPGULPDOT_WINDOWS_CODESIGN_IDENTITY";
+const String ENV_WIN_CODESIGN_PASS = "GULPGULPGULPDOT_WINDOWS_CODESIGN_PASSWORD";
 
 class EditorExportPlatformWindows : public EditorExportPlatformPC {
 	GDCLASS(EditorExportPlatformWindows, EditorExportPlatformPC);

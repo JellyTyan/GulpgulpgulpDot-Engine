@@ -3,7 +3,7 @@
 /**************************************************************************/
 /*                         This file is part of:                          */
 /*                             GulpGulpGulpDot Engine                               */
-/*                        https://godotengine.org                         */
+/*                        https://gulpgulpgulpdotengine.org                         */
 /**************************************************************************/
 /* Copyright (c) 2014-present GulpGulpGulpDot Engine contributors (see AUTHORS.md). */
 /* Copyright (c) 2007-2014 Juan Linietsky, Ariel Manzur.                  */
@@ -55,9 +55,9 @@ public:
 		BUILD_OPTION_METAL,
 		BUILD_OPTION_OPENGL,
 		BUILD_OPTION_PHYSICS_2D,
-		BUILD_OPTION_PHYSICS_GODOT_2D,
+		BUILD_OPTION_PHYSICS_GULPGULPGULPDOT_2D,
 		BUILD_OPTION_PHYSICS_3D,
-		BUILD_OPTION_PHYSICS_GODOT_3D,
+		BUILD_OPTION_PHYSICS_GULPGULPGULPDOT_3D,
 		BUILD_OPTION_PHYSICS_JOLT,
 		BUILD_OPTION_TEXT_SERVER_FALLBACK,
 		BUILD_OPTION_TEXT_SERVER_ADVANCED,

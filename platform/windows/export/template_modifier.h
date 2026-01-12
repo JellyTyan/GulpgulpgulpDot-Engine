@@ -3,7 +3,7 @@
 /**************************************************************************/
 /*                         This file is part of:                          */
 /*                             GulpGulpGulpDot Engine                               */
-/*                        https://godotengine.org                         */
+/*                        https://gulpgulpgulpdotengine.org                         */
 /**************************************************************************/
 /* Copyright (c) 2014-present GulpGulpGulpDot Engine contributors (see AUTHORS.md). */
 /* Copyright (c) 2007-2014 Juan Linietsky, Ariel Manzur.                  */
@@ -189,7 +189,7 @@ class TemplateModifier {
 
 		Vector<uint8_t> save() const;
 		void load(Ref<FileAccess> p_icon_file);
-		void fill_with_godot_blue();
+		void fill_with_gulpgulpgulpdot_blue();
 	};
 
 	struct SectionEntry : ByteStream {

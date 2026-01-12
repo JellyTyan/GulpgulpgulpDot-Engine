@@ -3,7 +3,7 @@
 /**************************************************************************/
 /*                         This file is part of:                          */
 /*                             GulpGulpGulpDot Engine                               */
-/*                        https://godotengine.org                         */
+/*                        https://gulpgulpgulpdotengine.org                         */
 /**************************************************************************/
 /* Copyright (c) 2014-present GulpGulpGulpDot Engine contributors (see AUTHORS.md). */
 /* Copyright (c) 2007-2014 Juan Linietsky, Ariel Manzur.                  */
@@ -32,7 +32,7 @@
 
 #include "../../openxr_api.h"
 
-#include "java_godot_wrapper.h"
+#include "java_gulpgulpgulpdot_wrapper.h"
 #include "os_android.h"
 #include "thread_jandroid.h"
 
@@ -52,7 +52,7 @@ OpenXRAndroidExtension::OpenXRAndroidExtension() {
 	ERR_FAIL_NULL(env);
 
 	env->GetJavaVM(&vm);
-	activity_object = env->NewGlobalRef(static_cast<OS_Android *>(OS::get_singleton())->get_godot_java()->get_activity());
+	activity_object = env->NewGlobalRef(static_cast<OS_Android *>(OS::get_singleton())->get_gulpgulpgulpdot_java()->get_activity());
 }
 
 HashMap<String, bool *> OpenXRAndroidExtension::get_requested_extensions(XrVersion p_version) {

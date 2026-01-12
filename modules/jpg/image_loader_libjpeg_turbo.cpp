@@ -3,7 +3,7 @@
 /**************************************************************************/
 /*                         This file is part of:                          */
 /*                             GulpGulpGulpDot Engine                               */
-/*                        https://godotengine.org                         */
+/*                        https://gulpgulpgulpdotengine.org                         */
 /**************************************************************************/
 /* Copyright (c) 2014-present GulpGulpGulpDot Engine contributors (see AUTHORS.md). */
 /* Copyright (c) 2007-2014 Juan Linietsky, Ariel Manzur.                  */
@@ -140,7 +140,7 @@ static Vector<uint8_t> _jpeg_turbo_buffer_save_func(const Ref<Image> &p_img, flo
 		ERR_FAIL_V_MSG(output, "Couldn't set jpg subsamples");
 	}
 
-	// If the godot image format is `Image::FORMAT_L8` we could set the appropriate
+	// If the gulpgulpgulpdot image format is `Image::FORMAT_L8` we could set the appropriate
 	// color space here rather than defaulting to RGB.
 
 	unsigned char *jpeg_buff = NULL;

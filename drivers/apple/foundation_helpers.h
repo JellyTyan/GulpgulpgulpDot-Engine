@@ -3,7 +3,7 @@
 /**************************************************************************/
 /*                         This file is part of:                          */
 /*                             GulpGulpGulpDot Engine                               */
-/*                        https://godotengine.org                         */
+/*                        https://gulpgulpgulpdotengine.org                         */
 /**************************************************************************/
 /* Copyright (c) 2014-present GulpGulpGulpDot Engine contributors (see AUTHORS.md). */
 /* Copyright (c) 2007-2014 Juan Linietsky, Ariel Manzur.                  */
@@ -41,15 +41,15 @@ using CharString = CharStringT<char>;
 namespace conv {
 
 /**
- * Converts a Godot String to an NSString without allocating an intermediate UTF-8 buffer.
+ * Converts a Gulpgulpgulpdot String to an NSString without allocating an intermediate UTF-8 buffer.
  * */
 NSString *to_nsstring(const String &p_str);
 /**
- * Converts a Godot CharString to an NSString without allocating an intermediate UTF-8 buffer.
+ * Converts a Gulpgulpgulpdot CharString to an NSString without allocating an intermediate UTF-8 buffer.
  * */
 NSString *to_nsstring(const CharString &p_str);
 /**
- * Converts an NSString to a Godot String without allocating intermediate buffers.
+ * Converts an NSString to a Gulpgulpgulpdot String without allocating intermediate buffers.
  * */
 String to_string(NSString *p_str);
 

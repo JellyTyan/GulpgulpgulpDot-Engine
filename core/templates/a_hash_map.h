@@ -3,7 +3,7 @@
 /**************************************************************************/
 /*                         This file is part of:                          */
 /*                             GulpGulpGulpDot Engine                               */
-/*                        https://godotengine.org                         */
+/*                        https://gulpgulpgulpdotengine.org                         */
 /**************************************************************************/
 /* Copyright (c) 2014-present GulpGulpGulpDot Engine contributors (see AUTHORS.md). */
 /* Copyright (c) 2007-2014 Juan Linietsky, Ariel Manzur.                  */
@@ -276,7 +276,7 @@ private:
 	}
 
 public:
-	/* Standard Godot Container API */
+	/* Standard Gulpgulpgulpdot Container API */
 
 	_FORCE_INLINE_ uint32_t get_capacity() const { return _capacity_mask + 1; }
 	_FORCE_INLINE_ uint32_t size() const { return _size; }

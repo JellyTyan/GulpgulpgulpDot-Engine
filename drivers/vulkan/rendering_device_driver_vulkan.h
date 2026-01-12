@@ -3,7 +3,7 @@
 /**************************************************************************/
 /*                         This file is part of:                          */
 /*                             GulpGulpGulpDot Engine                               */
-/*                        https://godotengine.org                         */
+/*                        https://gulpgulpgulpdotengine.org                         */
 /**************************************************************************/
 /* Copyright (c) 2014-present GulpGulpGulpDot Engine contributors (see AUTHORS.md). */
 /* Copyright (c) 2007-2014 Juan Linietsky, Ariel Manzur.                  */
@@ -44,7 +44,7 @@
 #include "thirdparty/re-spirv/re-spirv.h"
 #include "thirdparty/vulkan/vk_mem_alloc.h"
 
-#include "drivers/vulkan/godot_vulkan.h"
+#include "drivers/vulkan/gulpgulpgulpdot_vulkan.h"
 
 // Design principles:
 // - Vulkan structs are zero-initialized and fields not requiring a non-zero value are omitted (except in cases where expresivity reasons apply).

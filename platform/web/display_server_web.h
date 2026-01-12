@@ -3,7 +3,7 @@
 /**************************************************************************/
 /*                         This file is part of:                          */
 /*                             GulpGulpGulpDot Engine                               */
-/*                        https://godotengine.org                         */
+/*                        https://gulpgulpgulpdotengine.org                         */
 /**************************************************************************/
 /* Copyright (c) 2014-present GulpGulpGulpDot Engine contributors (see AUTHORS.md). */
 /* Copyright (c) 2007-2014 Juan Linietsky, Ariel Manzur.                  */
@@ -32,7 +32,7 @@
 
 #include "servers/display/display_server.h"
 
-#include "godot_js.h"
+#include "gulpgulpgulpdot_js.h"
 
 #include <emscripten.h>
 #include <emscripten/html5.h>
@@ -112,8 +112,8 @@ private:
 	void _mouse_update_mode();
 
 	// utilities
-	static void dom2godot_mod(Ref<InputEventWithModifiers> ev, int p_mod, Key p_keycode);
-	static const char *godot2dom_cursor(DisplayServer::CursorShape p_shape);
+	static void dom2gulpgulpgulpdot_mod(Ref<InputEventWithModifiers> ev, int p_mod, Key p_keycode);
+	static const char *gulpgulpgulpdot2dom_cursor(DisplayServer::CursorShape p_shape);
 
 	// events
 	WASM_EXPORT static void fullscreen_change_callback(int p_fullscreen);

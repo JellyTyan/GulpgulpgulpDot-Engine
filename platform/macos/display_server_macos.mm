@@ -3,7 +3,7 @@
 /**************************************************************************/
 /*                         This file is part of:                          */
 /*                             GulpGulpGulpDot Engine                               */
-/*                        https://godotengine.org                         */
+/*                        https://gulpgulpgulpdotengine.org                         */
 /**************************************************************************/
 /* Copyright (c) 2014-present GulpGulpGulpDot Engine contributors (see AUTHORS.md). */
 /* Copyright (c) 2007-2014 Juan Linietsky, Ariel Manzur.                  */
@@ -30,17 +30,17 @@
 
 #import "display_server_macos.h"
 
-#import "godot_application.h"
-#import "godot_application_delegate.h"
-#import "godot_button_view.h"
-#import "godot_content_view.h"
-#import "godot_core_cursor.h"
-#import "godot_menu_delegate.h"
-#import "godot_menu_item.h"
-#import "godot_open_save_delegate.h"
-#import "godot_status_item.h"
-#import "godot_window.h"
-#import "godot_window_delegate.h"
+#import "gulpgulpgulpdot_application.h"
+#import "gulpgulpgulpdot_application_delegate.h"
+#import "gulpgulpgulpdot_button_view.h"
+#import "gulpgulpgulpdot_content_view.h"
+#import "gulpgulpgulpdot_core_cursor.h"
+#import "gulpgulpgulpdot_menu_delegate.h"
+#import "gulpgulpgulpdot_menu_item.h"
+#import "gulpgulpgulpdot_open_save_delegate.h"
+#import "gulpgulpgulpdot_status_item.h"
+#import "gulpgulpgulpdot_window.h"
+#import "gulpgulpgulpdot_window_delegate.h"
 #import "key_mapping_macos.h"
 #import "os_macos.h"
 
@@ -93,7 +93,7 @@ DisplayServerMacOS::WindowID DisplayServerMacOS::_create_window(WindowMode p_mod
 	{
 		WindowData &wd = windows[id];
 
-		wd.window_delegate = [[GodotWindowDelegate alloc] initWithDisplayServer:this];
+		wd.window_delegate = [[GulpgulpgulpdotWindowDelegate alloc] initWithDisplayServer:this];
 		ERR_FAIL_NULL_V_MSG(wd.window_delegate, INVALID_WINDOW_ID, "Can't create a window delegate");
 		[wd.window_delegate setWindowID:id];
 
@@ -108,13 +108,13 @@ DisplayServerMacOS::WindowID DisplayServerMacOS::_create_window(WindowMode p_mod
 			wpos = wpos.clamp(srect.position, srect.position + srect.size - p_rect.size / 3);
 		}
 		// macOS native y-coordinate relative to _get_screens_origin() is negative,
-		// Godot passes a positive value.
+		// Gulpgulpgulpdot passes a positive value.
 		wpos.y *= -1;
 		wpos += _get_screens_origin();
 		wpos /= scale;
 
 		// initWithContentRect uses bottom-left corner of the window’s frame as origin.
-		wd.window_object = [[GodotWindow alloc]
+		wd.window_object = [[GulpgulpgulpdotWindow alloc]
 				initWithContentRect:NSMakeRect(100, 100, MAX(1, p_rect.size.width / scale), MAX(1, p_rect.size.height / scale))
 						  styleMask:NSWindowStyleMaskTitled | NSWindowStyleMaskClosable | NSWindowStyleMaskMiniaturizable | NSWindowStyleMaskResizable
 							backing:NSBackingStoreBuffered
@@ -123,7 +123,7 @@ DisplayServerMacOS::WindowID DisplayServerMacOS::_create_window(WindowMode p_mod
 		[wd.window_object setWindowID:id];
 		[wd.window_object setReleasedWhenClosed:NO];
 
-		wd.window_view = [[GodotContentView alloc] init];
+		wd.window_view = [[GulpgulpgulpdotContentView alloc] init];
 		if (wd.window_view == nil) {
 			windows.erase(id);
 			ERR_FAIL_V_MSG(INVALID_WINDOW_ID, "Can't create a window view");
@@ -381,7 +381,7 @@ Point2i DisplayServerMacOS::_get_screens_origin() const {
 	// Returns the native top-left screen coordinate of the smallest rectangle
 	// that encompasses all screens. Needed in get_screen_position(),
 	// window_get_position, and window_set_position()
-	// to convert between macOS native screen coordinates and the ones expected by Godot.
+	// to convert between macOS native screen coordinates and the ones expected by Gulpgulpgulpdot.
 
 	if (displays_arrangement_dirty) {
 		_update_displays_arrangement();
@@ -602,7 +602,7 @@ void DisplayServerMacOS::menu_callback(id p_sender) {
 		return;
 	}
 
-	GodotMenuItem *value = [p_sender representedObject];
+	GulpgulpgulpdotMenuItem *value = [p_sender representedObject];
 	if (value) {
 		if (value->callback.is_valid()) {
 			MenuCall mc;
@@ -930,7 +930,7 @@ Error DisplayServerMacOS::_file_dialog_with_options_show(const String &p_title, 
 		nswindow = windows[p_window_id].window_object;
 	}
 
-	GodotOpenSaveDelegate *panel_delegate = [[GodotOpenSaveDelegate alloc] init];
+	GulpgulpgulpdotOpenSaveDelegate *panel_delegate = [[GulpgulpgulpdotOpenSaveDelegate alloc] init];
 	if (p_root.length() > 0) {
 		[panel_delegate setRootPath:p_root];
 	}
@@ -1475,7 +1475,7 @@ Point2i DisplayServerMacOS::screen_get_position(int p_screen) const {
 
 	Point2i position = _get_native_screen_position(p_screen) - _get_screens_origin();
 	// macOS native y-coordinate relative to _get_screens_origin() is negative,
-	// Godot expects a positive value.
+	// Gulpgulpgulpdot expects a positive value.
 	position.y *= -1;
 	return position;
 }
@@ -1781,7 +1781,7 @@ void DisplayServerMacOS::show_window(WindowID p_id) {
 	WindowData &wd = windows[p_id];
 
 	if (p_id == MAIN_WINDOW_ID) {
-		[GodotApp activateApplication];
+		[GulpgulpgulpdotApp activateApplication];
 	}
 
 	popup_open(p_id);
@@ -2048,7 +2048,7 @@ Point2i DisplayServerMacOS::window_get_position(WindowID p_window) const {
 	pos *= scale;
 	pos -= _get_screens_origin();
 	// macOS native y-coordinate relative to _get_screens_origin() is negative,
-	// Godot expects a positive value.
+	// Gulpgulpgulpdot expects a positive value.
 	pos.y *= -1;
 	return pos;
 }
@@ -2069,7 +2069,7 @@ Point2i DisplayServerMacOS::window_get_position_with_decorations(WindowID p_wind
 	pos *= scale;
 	pos -= _get_screens_origin();
 	// macOS native y-coordinate relative to _get_screens_origin() is negative,
-	// Godot expects a positive value.
+	// Gulpgulpgulpdot expects a positive value.
 	pos.y *= -1;
 	return pos;
 }
@@ -2086,7 +2086,7 @@ void DisplayServerMacOS::window_set_position(const Point2i &p_position, WindowID
 
 	Point2i position = p_position;
 	// macOS native y-coordinate relative to _get_screens_origin() is negative,
-	// Godot passes a positive value.
+	// Gulpgulpgulpdot passes a positive value.
 	position.y *= -1;
 	position += _get_screens_origin();
 	position /= screen_get_max_scale();
@@ -2484,7 +2484,7 @@ void DisplayServerMacOS::window_set_custom_window_buttons(WindowData &p_wd, bool
 		[[p_wd.window_object standardWindowButton:NSWindowMiniaturizeButton] setHidden:YES];
 		[[p_wd.window_object standardWindowButton:NSWindowCloseButton] setHidden:YES];
 
-		p_wd.window_button_view = [[GodotButtonView alloc] initWithFrame:NSZeroRect];
+		p_wd.window_button_view = [[GulpgulpgulpdotButtonView alloc] initWithFrame:NSZeroRect];
 		[p_wd.window_button_view initButtons:window_buttons_spacing offset:NSMakePoint(p_wd.wb_offset.x, p_wd.wb_offset.y) rtl:is_rtl];
 		[p_wd.window_view addSubview:p_wd.window_button_view];
 
@@ -2901,19 +2901,19 @@ DisplayServer::VSyncMode DisplayServerMacOS::window_get_vsync_mode(WindowID p_wi
 }
 
 int DisplayServerMacOS::accessibility_should_increase_contrast() const {
-	return [(GodotApplicationDelegate *)[[NSApplication sharedApplication] delegate] getHighContrast];
+	return [(GulpgulpgulpdotApplicationDelegate *)[[NSApplication sharedApplication] delegate] getHighContrast];
 }
 
 int DisplayServerMacOS::accessibility_should_reduce_animation() const {
-	return [(GodotApplicationDelegate *)[[NSApplication sharedApplication] delegate] getReduceMotion];
+	return [(GulpgulpgulpdotApplicationDelegate *)[[NSApplication sharedApplication] delegate] getReduceMotion];
 }
 
 int DisplayServerMacOS::accessibility_should_reduce_transparency() const {
-	return [(GodotApplicationDelegate *)[[NSApplication sharedApplication] delegate] getReduceTransparency];
+	return [(GulpgulpgulpdotApplicationDelegate *)[[NSApplication sharedApplication] delegate] getReduceTransparency];
 }
 
 int DisplayServerMacOS::accessibility_screen_reader_active() const {
-	return [(GodotApplicationDelegate *)[[NSApplication sharedApplication] delegate] getVoiceOver];
+	return [(GulpgulpgulpdotApplicationDelegate *)[[NSApplication sharedApplication] delegate] getVoiceOver];
 }
 
 Point2i DisplayServerMacOS::ime_get_selection() const {
@@ -2971,7 +2971,7 @@ void DisplayServerMacOS::cursor_update_shape() {
 				[_cursor_from_selector(@selector(_windowResizeNorthWestSouthEastCursor)) set];
 				break;
 			case CURSOR_MOVE:
-				[[[GodotCoreCursor alloc] initWithType:GDCoreCursorWindowMove] set];
+				[[[GulpgulpgulpdotCoreCursor alloc] initWithType:GDCoreCursorWindowMove] set];
 				break;
 			case CURSOR_VSPLIT:
 				[[NSCursor resizeUpDownCursor] set];
@@ -3377,7 +3377,7 @@ DisplayServer::IndicatorID DisplayServerMacOS::create_status_indicator(const Ref
 
 	NSStatusItem *item = [[NSStatusBar systemStatusBar] statusItemWithLength:NSSquareStatusItemLength];
 	idat.item = item;
-	idat.delegate = [[GodotStatusItemDelegate alloc] init];
+	idat.delegate = [[GulpgulpgulpdotStatusItemDelegate alloc] init];
 	[idat.delegate setCallback:p_callback];
 
 	item.button.image = nsimg;
@@ -3455,7 +3455,7 @@ Rect2 DisplayServerMacOS::status_indicator_get_rect(IndicatorID p_id) const {
 	rect.position *= scale;
 	rect.position -= _get_screens_origin();
 	// macOS native y-coordinate relative to _get_screens_origin() is negative,
-	// Godot expects a positive value.
+	// Gulpgulpgulpdot expects a positive value.
 	rect.position.y *= -1;
 	return rect;
 }
@@ -3591,7 +3591,7 @@ void DisplayServerMacOS::popup_open(WindowID p_window) {
 
 		if (was_empty && popup_list.is_empty()) {
 			// Inform OS that popup was opened, to close other native popups.
-			[[NSDistributedNotificationCenter defaultCenter] postNotificationName:@"com.apple.HIToolbox.beginMenuTrackingNotification" object:@"org.godotengine.godot.popup_window"];
+			[[NSDistributedNotificationCenter defaultCenter] postNotificationName:@"com.apple.HIToolbox.beginMenuTrackingNotification" object:@"org.gulpgulpgulpdotengine.gulpgulpgulpdot.popup_window"];
 		}
 		time_since_popup = OS::get_singleton()->get_ticks_msec();
 		popup_list.push_back(p_window);
@@ -3616,7 +3616,7 @@ void DisplayServerMacOS::popup_close(WindowID p_window) {
 	}
 	if (!was_empty && popup_list.is_empty()) {
 		// Inform OS that all popups are closed.
-		[[NSDistributedNotificationCenter defaultCenter] postNotificationName:@"com.apple.HIToolbox.endMenuTrackingNotification" object:@"org.godotengine.godot.popup_window"];
+		[[NSDistributedNotificationCenter defaultCenter] postNotificationName:@"com.apple.HIToolbox.endMenuTrackingNotification" object:@"org.gulpgulpgulpdotengine.gulpgulpgulpdot.popup_window"];
 	}
 }
 
@@ -3634,7 +3634,7 @@ bool DisplayServerMacOS::mouse_process_popups(bool p_close) {
 		}
 		if (!was_empty) {
 			// Inform OS that all popups are closed.
-			[[NSDistributedNotificationCenter defaultCenter] postNotificationName:@"com.apple.HIToolbox.endMenuTrackingNotification" object:@"org.godotengine.godot.popup_window"];
+			[[NSDistributedNotificationCenter defaultCenter] postNotificationName:@"com.apple.HIToolbox.endMenuTrackingNotification" object:@"org.gulpgulpgulpdotengine.gulpgulpgulpdot.popup_window"];
 		}
 	} else {
 		uint64_t delta = OS::get_singleton()->get_ticks_msec() - time_since_popup;
@@ -3666,7 +3666,7 @@ bool DisplayServerMacOS::mouse_process_popups(bool p_close) {
 		}
 		if (!was_empty && popup_list.is_empty()) {
 			// Inform OS that all popups are closed.
-			[[NSDistributedNotificationCenter defaultCenter] postNotificationName:@"com.apple.HIToolbox.endMenuTrackingNotification" object:@"org.godotengine.godot.popup_window"];
+			[[NSDistributedNotificationCenter defaultCenter] postNotificationName:@"com.apple.HIToolbox.endMenuTrackingNotification" object:@"org.gulpgulpgulpdotengine.gulpgulpgulpdot.popup_window"];
 		}
 	}
 	return closed;
@@ -3712,7 +3712,7 @@ DisplayServerMacOS::DisplayServerMacOS(const String &p_rendering_driver, WindowM
 		nsappname = [[NSProcessInfo processInfo] processName];
 	}
 
-	menu_delegate = [[GodotMenuDelegate alloc] init];
+	menu_delegate = [[GulpgulpgulpdotMenuDelegate alloc] init];
 
 	// Setup Dock menu.
 	NSMenu *dock_menu = [[NSMenu alloc] initWithTitle:@"_dock"];

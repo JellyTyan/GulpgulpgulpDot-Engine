@@ -3,7 +3,7 @@
 /**************************************************************************/
 /*                         This file is part of:                          */
 /*                             GulpGulpGulpDot Engine                               */
-/*                        https://godotengine.org                         */
+/*                        https://gulpgulpgulpdotengine.org                         */
 /**************************************************************************/
 /* Copyright (c) 2014-present GulpGulpGulpDot Engine contributors (see AUTHORS.md). */
 /* Copyright (c) 2007-2014 Juan Linietsky, Ariel Manzur.                  */
@@ -776,9 +776,9 @@ TranslationServer::TranslationServer() {
 	main_domain.instantiate();
 
 #ifdef TOOLS_ENABLED
-	editor_domain = get_or_add_domain("godot.editor");
-	property_domain = get_or_add_domain("godot.properties");
-	doc_domain = get_or_add_domain("godot.documentation");
+	editor_domain = get_or_add_domain("gulpgulpgulpdot.editor");
+	property_domain = get_or_add_domain("gulpgulpgulpdot.properties");
+	doc_domain = get_or_add_domain("gulpgulpgulpdot.documentation");
 #endif // TOOLS_ENABLED
 
 	init_locale_info();

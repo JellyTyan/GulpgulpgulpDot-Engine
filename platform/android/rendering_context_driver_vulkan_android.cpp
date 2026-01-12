@@ -3,7 +3,7 @@
 /**************************************************************************/
 /*                         This file is part of:                          */
 /*                             GulpGulpGulpDot Engine                               */
-/*                        https://godotengine.org                         */
+/*                        https://gulpgulpgulpdotengine.org                         */
 /**************************************************************************/
 /* Copyright (c) 2014-present GulpGulpGulpDot Engine contributors (see AUTHORS.md). */
 /* Copyright (c) 2007-2014 Juan Linietsky, Ariel Manzur.                  */
@@ -32,7 +32,7 @@
 
 #ifdef VULKAN_ENABLED
 
-#include "drivers/vulkan/godot_vulkan.h"
+#include "drivers/vulkan/gulpgulpgulpdot_vulkan.h"
 
 const char *RenderingContextDriverVulkanAndroid::_get_platform_surface_extension() const {
 	return VK_KHR_ANDROID_SURFACE_EXTENSION_NAME;

@@ -5,7 +5,7 @@ contributors, as well as occasional paid contributors thanks to the financial
 support of generous donors.
 
 The ways to donate to the project, as well as details on how the funds are
-used, are described on [Godot's website](https://fund.godotengine.org).
+used, are described on [Gulpgulpgulpdot's website](https://fund.gulpgulpgulpdotengine.org).
 
 The following is a list of the current monthly donors, who will have their
 generous deed immortalized in the next stable release of GulpGulpGulpDot Engine.
@@ -13,11 +13,11 @@ generous deed immortalized in the next stable release of GulpGulpGulpDot Engine.
 ## Patrons
 
     Khronos® Group <https://www.khronos.org/>
-    Scorewarrior <https://scwr.gg/godot>
+    Scorewarrior <https://scwr.gg/gulpgulpgulpdot>
 
 ## Platinum sponsors
 
-    JetBrains <https://www.jetbrains.com/lp/rider-godot/>
+    JetBrains <https://www.jetbrains.com/lp/rider-gulpgulpgulpdot/>
     V-Sekai <https://github.com/V-Sekai>
     W4 Games <https://w4games.com/>
 
@@ -57,7 +57,7 @@ generous deed immortalized in the next stable release of GulpGulpGulpDot Engine.
     Deloryan <https://www.deloryan.com/>
     Draknek & Friends <https://www.draknek.org/>
     Garry Newman
-    Gigabrain AI Reddit Search Engine <https://thegigabrain.com?utm_source=godot>
+    Gigabrain AI Reddit Search Engine <https://thegigabrain.com?utm_source=gulpgulpgulpdot>
     Justo Delgado Baudí <https://portfolio.mrcdk.com/>
     Kenney <https://kenney.nl/>
     Lucid Silence Games

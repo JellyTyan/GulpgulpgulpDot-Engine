@@ -3,7 +3,7 @@
 /**************************************************************************/
 /*                         This file is part of:                          */
 /*                             GulpGulpGulpDot Engine                               */
-/*                        https://godotengine.org                         */
+/*                        https://gulpgulpgulpdotengine.org                         */
 /**************************************************************************/
 /* Copyright (c) 2014-present GulpGulpGulpDot Engine contributors (see AUTHORS.md). */
 /* Copyright (c) 2007-2014 Juan Linietsky, Ariel Manzur.                  */
@@ -41,7 +41,7 @@
 #include "../language_server/gdscript_extend_parser.h"
 #include "../language_server/gdscript_language_protocol.h"
 #include "../language_server/gdscript_workspace.h"
-#include "../language_server/godot_lsp.h"
+#include "../language_server/gulpgulpgulpdot_lsp.h"
 
 #include "core/io/dir_access.h"
 #include "core/io/file_access_pack.h"
@@ -80,8 +80,8 @@ struct doctest::StringMaker<LSP::Range> {
 };
 
 template <>
-struct doctest::StringMaker<GodotPosition> {
-	static doctest::String convert(const GodotPosition &p_val) {
+struct doctest::StringMaker<GulpgulpgulpdotPosition> {
+	static doctest::String convert(const GulpgulpgulpdotPosition &p_val) {
 		return p_val.to_string().utf8().get_data();
 	}
 };
@@ -330,8 +330,8 @@ inline LSP::Position lsp_pos(int line, int character) {
 	return p;
 }
 
-void test_position_roundtrip(LSP::Position p_lsp, GodotPosition p_gd, const PackedStringArray &p_lines) {
-	GodotPosition actual_gd = GodotPosition::from_lsp(p_lsp, p_lines);
+void test_position_roundtrip(LSP::Position p_lsp, GulpgulpgulpdotPosition p_gd, const PackedStringArray &p_lines) {
+	GulpgulpgulpdotPosition actual_gd = GulpgulpgulpdotPosition::from_lsp(p_lsp, p_lines);
 	CHECK_EQ(p_gd, actual_gd);
 	LSP::Position actual_lsp = p_gd.to_lsp(p_lines);
 	CHECK_EQ(p_lsp, actual_lsp);
@@ -345,9 +345,9 @@ void test_position_roundtrip(LSP::Position p_lsp, GodotPosition p_gd, const Pack
 //      -> Character on `r` -> cursor between `a`&`r`s for tests:
 // * Line & Char:
 //   * LSP: both 0-based
-//   * Godot: both 1-based
+//   * Gulpgulpgulpdot: both 1-based
 TEST_SUITE("[Modules][GDScript][LSP][Editor]") {
-	TEST_CASE("Can convert positions to and from Godot") {
+	TEST_CASE("Can convert positions to and from Gulpgulpgulpdot") {
 		String code = R"(extends Node
 
 var member := 42
@@ -359,58 +359,58 @@ func f():
 
 		SUBCASE("line after end") {
 			LSP::Position lsp = lsp_pos(7, 0);
-			GodotPosition gd(8, 1);
+			GulpgulpgulpdotPosition gd(8, 1);
 			test_position_roundtrip(lsp, gd, lines);
 		}
 		SUBCASE("first char in first line") {
 			LSP::Position lsp = lsp_pos(0, 0);
-			GodotPosition gd(1, 1);
+			GulpgulpgulpdotPosition gd(1, 1);
 			test_position_roundtrip(lsp, gd, lines);
 		}
 
 		SUBCASE("with tabs") {
 			// On `v` in `value` in `var value := ...`.
 			LSP::Position lsp = lsp_pos(5, 6);
-			GodotPosition gd(6, 13);
+			GulpgulpgulpdotPosition gd(6, 13);
 			test_position_roundtrip(lsp, gd, lines);
 		}
 
 		SUBCASE("doesn't fail with column outside of character length") {
 			LSP::Position lsp = lsp_pos(2, 100);
-			GodotPosition::from_lsp(lsp, lines);
+			GulpgulpgulpdotPosition::from_lsp(lsp, lines);
 
-			GodotPosition gd(3, 100);
+			GulpgulpgulpdotPosition gd(3, 100);
 			gd.to_lsp(lines);
 		}
 
 		SUBCASE("doesn't fail with line outside of line length") {
 			LSP::Position lsp = lsp_pos(200, 100);
-			GodotPosition::from_lsp(lsp, lines);
+			GulpgulpgulpdotPosition::from_lsp(lsp, lines);
 
-			GodotPosition gd(300, 100);
+			GulpgulpgulpdotPosition gd(300, 100);
 			gd.to_lsp(lines);
 		}
 
 		SUBCASE("special case: zero column for root class") {
-			GodotPosition gd(1, 0);
+			GulpgulpgulpdotPosition gd(1, 0);
 			LSP::Position expected = lsp_pos(0, 0);
 			LSP::Position actual = gd.to_lsp(lines);
 			CHECK_EQ(actual, expected);
 		}
 		SUBCASE("special case: zero line and column for root class") {
-			GodotPosition gd(0, 0);
+			GulpgulpgulpdotPosition gd(0, 0);
 			LSP::Position expected = lsp_pos(0, 0);
 			LSP::Position actual = gd.to_lsp(lines);
 			CHECK_EQ(actual, expected);
 		}
 		SUBCASE("special case: negative line for root class") {
-			GodotPosition gd(-1, 0);
+			GulpgulpgulpdotPosition gd(-1, 0);
 			LSP::Position expected = lsp_pos(0, 0);
 			LSP::Position actual = gd.to_lsp(lines);
 			CHECK_EQ(actual, expected);
 		}
 		SUBCASE("special case: lines.length() + 1 for root class") {
-			GodotPosition gd(lines.size() + 1, 0);
+			GulpgulpgulpdotPosition gd(lines.size() + 1, 0);
 			LSP::Position expected = lsp_pos(lines.size(), 0);
 			LSP::Position actual = gd.to_lsp(lines);
 			CHECK_EQ(actual, expected);
@@ -563,7 +563,7 @@ func f():
 		CHECK_EQ(LSP::marked_documentation("[color=red]red text[/color]"), "red text");
 		CHECK_EQ(LSP::marked_documentation("[font=Arial]Arial text[/font]"), "Arial text");
 
-		// The following tests are for all the link patterns specific to Godot's built-in docs that we render as inline code.
+		// The following tests are for all the link patterns specific to Gulpgulpgulpdot's built-in docs that we render as inline code.
 		CHECK_EQ(LSP::marked_documentation("Class link: [Node2D], [Sprite2D]"), "Class link: `Node2D`, `Sprite2D`");
 		CHECK_EQ(LSP::marked_documentation("Single class [RigidBody2D]"), "Single class `RigidBody2D`");
 		CHECK_EQ(LSP::marked_documentation("[method Node2D.set_position]"), "`Node2D.set_position`");
@@ -578,16 +578,16 @@ func f():
 		CHECK_EQ(LSP::marked_documentation("[param delta]"), "`delta`");
 
 		// Markdown links
-		CHECK_EQ(LSP::marked_documentation("[url=https://godotengine.org]link to GulpGulpGulpDot Engine[/url]"),
-				"[link to GulpGulpGulpDot Engine](https://godotengine.org)");
-		CHECK_EQ(LSP::marked_documentation("[url]https://godotengine.org/[/url]"),
-				"[https://godotengine.org/](https://godotengine.org/)");
+		CHECK_EQ(LSP::marked_documentation("[url=https://gulpgulpgulpdotengine.org]link to GulpGulpGulpDot Engine[/url]"),
+				"[link to GulpGulpGulpDot Engine](https://gulpgulpgulpdotengine.org)");
+		CHECK_EQ(LSP::marked_documentation("[url]https://gulpgulpgulpdotengine.org/[/url]"),
+				"[https://gulpgulpgulpdotengine.org/](https://gulpgulpgulpdotengine.org/)");
 
 		// Code listings
-		CHECK_EQ(LSP::marked_documentation("[codeblock]\nfunc test():\n    print(\"Hello, Godot!\")\n[/codeblock]"),
-				"```gdscript\nfunc test():\n    print(\"Hello, Godot!\")\n```");
-		CHECK_EQ(LSP::marked_documentation("[codeblock lang=csharp]\npublic void Test()\n{\n    GD.Print(\"Hello, Godot!\");\n}\n[/codeblock]"),
-				"```csharp\npublic void Test()\n{\n    GD.Print(\"Hello, Godot!\");\n}\n```");
+		CHECK_EQ(LSP::marked_documentation("[codeblock]\nfunc test():\n    print(\"Hello, Gulpgulpgulpdot!\")\n[/codeblock]"),
+				"```gdscript\nfunc test():\n    print(\"Hello, Gulpgulpgulpdot!\")\n```");
+		CHECK_EQ(LSP::marked_documentation("[codeblock lang=csharp]\npublic void Test()\n{\n    GD.Print(\"Hello, Gulpgulpgulpdot!\");\n}\n[/codeblock]"),
+				"```csharp\npublic void Test()\n{\n    GD.Print(\"Hello, Gulpgulpgulpdot!\");\n}\n```");
 		// Code listings with multiple languages (the codeblocks tag is used in the built-in reference)
 		// When [codeblocks] is used, we only convert the [gdscript] tag to a code block like the built-in editor.
 		// NOTE: There is always a GDScript code listing in the built-in class reference.
@@ -600,8 +600,8 @@ func f():
 
 		// We have to be careful that different patterns don't conflict with each
 		// other, especially with urls that use brackets in markdown.
-		CHECK_EQ(LSP::marked_documentation("Class [Sprite2D] with [url=https://godotengine.org]link[/url]"),
-				"Class `Sprite2D` with [link](https://godotengine.org)");
+		CHECK_EQ(LSP::marked_documentation("Class [Sprite2D] with [url=https://gulpgulpgulpdotengine.org]link[/url]"),
+				"Class `Sprite2D` with [link](https://gulpgulpgulpdotengine.org)");
 	}
 }
 

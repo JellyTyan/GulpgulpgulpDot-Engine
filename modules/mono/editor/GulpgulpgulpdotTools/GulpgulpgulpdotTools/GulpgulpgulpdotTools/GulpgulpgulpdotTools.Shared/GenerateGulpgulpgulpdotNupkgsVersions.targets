@@ -1,0 +1,39 @@
+<Project>
+  <!-- Generate C# file with the version of all the nupkgs bundled with Gulpgulpgulpdot -->
+
+  <Target Name="SetPropertiesForGenerateGulpgulpgulpdotNupkgsVersions">
+    <PropertyGroup>
+      <GeneratedGulpgulpgulpdotNupkgsVersionsFile>$(IntermediateOutputPath)GulpgulpgulpdotNupkgsVersions.g.cs</GeneratedGulpgulpgulpdotNupkgsVersionsFile>
+    </PropertyGroup>
+  </Target>
+
+  <Target Name="GenerateGulpgulpgulpdotNupkgsVersionsFile"
+          DependsOnTargets="_GenerateGulpgulpgulpdotNupkgsVersionsFile"
+          BeforeTargets="PrepareForBuild;CompileDesignTime;BeforeCompile;CoreCompile">
+    <ItemGroup>
+      <Compile Include="$(GeneratedGulpgulpgulpdotNupkgsVersionsFile)" />
+      <FileWrites Include="$(GeneratedGulpgulpgulpdotNupkgsVersionsFile)" />
+    </ItemGroup>
+  </Target>
+  <Target Name="_GenerateGulpgulpgulpdotNupkgsVersionsFile"
+          DependsOnTargets="SetPropertiesForGenerateGulpgulpgulpdotNupkgsVersions"
+          Inputs="$(MSBuildProjectFile);$(MSBuildThisFileDirectory);$(MSBuildProjectFile)\..\..\..\SdkPackageVersions.props"
+          Outputs="$(GeneratedGulpgulpgulpdotNupkgsVersionsFile)">
+    <PropertyGroup>
+      <GenerateGulpgulpgulpdotNupkgsVersionsCode><![CDATA[
+namespace $(RootNamespace)
+{
+    public class GeneratedGulpgulpgulpdotNupkgsVersions
+    {
+        public const string GulpgulpgulpdotNETSdk = "$(PackageVersion_Gulpgulpgulpdot_NET_Sdk)"%3b
+        public const string GulpgulpgulpdotSourceGenerators = "$(PackageVersion_Gulpgulpgulpdot_SourceGenerators)"%3b
+        public const string GulpgulpgulpdotSharp = "$(PackageVersion_GulpgulpgulpdotSharp)"%3b
+    }
+}
+]]></GenerateGulpgulpgulpdotNupkgsVersionsCode>
+    </PropertyGroup>
+    <WriteLinesToFile Lines="$(GenerateGulpgulpgulpdotNupkgsVersionsCode)"
+                      File="$(GeneratedGulpgulpgulpdotNupkgsVersionsFile)"
+                      Overwrite="True" WriteOnlyWhenDifferent="True" />
+  </Target>
+</Project>

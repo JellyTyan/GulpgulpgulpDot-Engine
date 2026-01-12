@@ -3,7 +3,7 @@
 /**************************************************************************/
 /*                         This file is part of:                          */
 /*                             GulpGulpGulpDot Engine                               */
-/*                        https://godotengine.org                         */
+/*                        https://gulpgulpgulpdotengine.org                         */
 /**************************************************************************/
 /* Copyright (c) 2014-present GulpGulpGulpDot Engine contributors (see AUTHORS.md). */
 /* Copyright (c) 2007-2014 Juan Linietsky, Ariel Manzur.                  */
@@ -54,11 +54,11 @@ void uninitialize_text_server_fb_module(ModuleInitializationLevel p_level) {
 
 #ifdef GDEXTENSION
 
-#include <godot_cpp/core/class_db.hpp>
-#include <godot_cpp/core/defs.hpp>
-#include <godot_cpp/core/memory.hpp>
+#include <gulpgulpgulpdot_cpp/core/class_db.hpp>
+#include <gulpgulpgulpdot_cpp/core/defs.hpp>
+#include <gulpgulpgulpdot_cpp/core/memory.hpp>
 
-using namespace godot;
+using namespace gulpgulpgulpdot;
 
 extern "C" {
 

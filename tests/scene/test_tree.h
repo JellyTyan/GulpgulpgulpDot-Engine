@@ -3,7 +3,7 @@
 /**************************************************************************/
 /*                         This file is part of:                          */
 /*                             GulpGulpGulpDot Engine                               */
-/*                        https://godotengine.org                         */
+/*                        https://gulpgulpgulpdotengine.org                         */
 /**************************************************************************/
 /* Copyright (c) 2014-present GulpGulpGulpDot Engine contributors (see AUTHORS.md). */
 /* Copyright (c) 2007-2014 Juan Linietsky, Ariel Manzur.                  */
@@ -107,7 +107,7 @@ TEST_CASE("[SceneTree][Tree]") {
 		memdelete(tree);
 	}
 
-	// https://github.com/godotengine/godot/issues/96205
+	// https://github.com/gulpgulpgulpdotengine/gulpgulpgulpdot/issues/96205
 	SUBCASE("[Tree] Get last item after removal.") {
 		Tree *tree = memnew(Tree);
 		TreeItem *root = tree->create_item();

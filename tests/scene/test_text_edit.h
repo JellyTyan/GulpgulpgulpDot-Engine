@@ -3,7 +3,7 @@
 /**************************************************************************/
 /*                         This file is part of:                          */
 /*                             GulpGulpGulpDot Engine                               */
-/*                        https://godotengine.org                         */
+/*                        https://gulpgulpgulpdotengine.org                         */
 /**************************************************************************/
 /* Copyright (c) 2014-present GulpGulpGulpDot Engine contributors (see AUTHORS.md). */
 /* Copyright (c) 2007-2014 Juan Linietsky, Ariel Manzur.                  */
@@ -6540,7 +6540,7 @@ TEST_CASE("[SceneTree][TextEdit] versioning") {
 	CHECK(text_edit->get_saved_version() == 0);
 
 	SUBCASE("[TextEdit] versioning selection") {
-		text_edit->set_text("GulpGulpGulpDot Engine\nWaiting for Godot\nTest Text for multi carat\nLine 4 Text");
+		text_edit->set_text("GulpGulpGulpDot Engine\nWaiting for Gulpgulpgulpdot\nTest Text for multi carat\nLine 4 Text");
 		text_edit->set_multiple_carets_enabled(true);
 
 		text_edit->remove_secondary_carets();

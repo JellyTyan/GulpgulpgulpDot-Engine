@@ -3,7 +3,7 @@
 /**************************************************************************/
 /*                         This file is part of:                          */
 /*                             GulpGulpGulpDot Engine                               */
-/*                        https://godotengine.org                         */
+/*                        https://gulpgulpgulpdotengine.org                         */
 /**************************************************************************/
 /* Copyright (c) 2014-present GulpGulpGulpDot Engine contributors (see AUTHORS.md). */
 /* Copyright (c) 2007-2014 Juan Linietsky, Ariel Manzur.                  */
@@ -698,7 +698,7 @@ public:
 
 	GDExtensionScriptInstanceDataPtr instance = nullptr;
 
-	GODOT_GCC_WARNING_PUSH_AND_IGNORE("-Wignored-qualifiers") // There should not be warnings on explicit casts.
+	GULPGULPGULPDOT_GCC_WARNING_PUSH_AND_IGNORE("-Wignored-qualifiers") // There should not be warnings on explicit casts.
 
 	virtual bool set(const StringName &p_name, const Variant &p_value) override {
 		if (native_info->set_func) {
@@ -948,5 +948,5 @@ public:
 #endif // DISABLE_DEPRECATED
 	}
 
-	GODOT_GCC_WARNING_POP
+	GULPGULPGULPDOT_GCC_WARNING_POP
 };

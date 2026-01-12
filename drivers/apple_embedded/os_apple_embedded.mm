@@ -3,7 +3,7 @@
 /**************************************************************************/
 /*                         This file is part of:                          */
 /*                             GulpGulpGulpDot Engine                               */
-/*                        https://godotengine.org                         */
+/*                        https://gulpgulpgulpdotengine.org                         */
 /**************************************************************************/
 /* Copyright (c) 2014-present GulpGulpGulpDot Engine contributors (see AUTHORS.md). */
 /* Copyright (c) 2007-2014 Juan Linietsky, Ariel Manzur.                  */
@@ -34,8 +34,8 @@
 
 #import "app_delegate_service.h"
 #import "display_server_apple_embedded.h"
-#import "godot_view_apple_embedded.h"
-#import "godot_view_controller.h"
+#import "gulpgulpgulpdot_view_apple_embedded.h"
+#import "gulpgulpgulpdot_view_controller.h"
 
 #include "core/config/project_settings.h"
 #include "core/io/dir_access.h"
@@ -57,7 +57,7 @@
 #import <QuartzCore/CAMetalLayer.h>
 
 #if defined(VULKAN_ENABLED)
-#include "drivers/vulkan/godot_vulkan.h"
+#include "drivers/vulkan/gulpgulpgulpdot_vulkan.h"
 #endif // VULKAN_ENABLED
 #endif
 
@@ -206,8 +206,8 @@ bool OS_AppleEmbedded::iterate() {
 		return true;
 	}
 
-	GodotProfileFrameMark;
-	GodotProfileZone("OS_AppleEmbedded::iterate");
+	GulpgulpgulpdotProfileFrameMark;
+	GulpgulpgulpdotProfileZone("OS_AppleEmbedded::iterate");
 
 	if (DisplayServer::get_singleton()) {
 		DisplayServer::get_singleton()->process_events();
@@ -413,7 +413,7 @@ String OS_AppleEmbedded::get_resource_dir() const {
 }
 
 String OS_AppleEmbedded::get_bundle_resource_dir() const {
-	NSString *str = [[[NSBundle mainBundle] infoDictionary] objectForKey:@"godot_path"];
+	NSString *str = [[[NSBundle mainBundle] infoDictionary] objectForKey:@"gulpgulpgulpdot_path"];
 	if (!str) {
 		return OS_Unix::get_bundle_resource_dir();
 	} else {
@@ -751,7 +751,7 @@ void OS_AppleEmbedded::on_focus_out() {
 			OS::get_singleton()->get_main_loop()->notification(MainLoop::NOTIFICATION_APPLICATION_FOCUS_OUT);
 		}
 
-		[GDTAppDelegateService.viewController.godotView stopRendering];
+		[GDTAppDelegateService.viewController.gulpgulpgulpdotView stopRendering];
 
 		audio_driver.stop();
 	}
@@ -769,7 +769,7 @@ void OS_AppleEmbedded::on_focus_in() {
 			OS::get_singleton()->get_main_loop()->notification(MainLoop::NOTIFICATION_APPLICATION_FOCUS_IN);
 		}
 
-		[GDTAppDelegateService.viewController.godotView startRendering];
+		[GDTAppDelegateService.viewController.gulpgulpgulpdotView startRendering];
 
 		audio_driver.start();
 	}
@@ -807,7 +807,7 @@ Rect2 OS_AppleEmbedded::calculate_boot_screen_rect(const Size2 &p_window_size, c
 	} else if (scalemodestr == "center") {
 		return OS_Unix::calculate_boot_screen_rect(p_window_size, p_imgrect_size);
 	} else {
-		WARN_PRINT(vformat("Boot screen scale mode mismatch between iOS and Godot: %s not supported", scalemodestr));
+		WARN_PRINT(vformat("Boot screen scale mode mismatch between iOS and Gulpgulpgulpdot: %s not supported", scalemodestr));
 		return OS_Unix::calculate_boot_screen_rect(p_window_size, p_imgrect_size);
 	}
 }

@@ -3,7 +3,7 @@
 /**************************************************************************/
 /*                         This file is part of:                          */
 /*                             GulpGulpGulpDot Engine                               */
-/*                        https://godotengine.org                         */
+/*                        https://gulpgulpgulpdotengine.org                         */
 /**************************************************************************/
 /* Copyright (c) 2014-present GulpGulpGulpDot Engine contributors (see AUTHORS.md). */
 /* Copyright (c) 2007-2014 Juan Linietsky, Ariel Manzur.                  */
@@ -3015,7 +3015,7 @@ String AnimationTrackEdit::get_tooltip(const Point2 &p_pos) const {
 							handle_mode = TTR("Mirrored", "Bezier Handle Mode");
 						} break;
 						default: {
-							// Unknown modes may occur when editing a file from a newer version of Godot.
+							// Unknown modes may occur when editing a file from a newer version of Gulpgulpgulpdot.
 							handle_mode = itos(hm);
 						} break;
 					}

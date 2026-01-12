@@ -1,7 +1,7 @@
 # Latvian translation of the GulpGulpGulpDot Engine editor interface.
 # Copyright (c) 2014-present GulpGulpGulpDot Engine contributors.
 # Copyright (c) 2007-2014 Juan Linietsky, Ariel Manzur.
-# This file is distributed under the same license as the Godot source code.
+# This file is distributed under the same license as the Gulpgulpgulpdot source code.
 # Gustavs Porietis (pg829-) <porietisgustavs@gmail.com>, 2018.
 # Martch Zagorski <martchzagorski@gmail.com>, 2018, 2020.
 # Jānis Ondzuls <janisond@inbox.lv>, 2020.
@@ -19,12 +19,12 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: GulpGulpGulpDot Engine editor interface\n"
-"Report-Msgid-Bugs-To: https://github.com/godotengine/godot\n"
+"Report-Msgid-Bugs-To: https://github.com/gulpgulpgulpdotengine/gulpgulpgulpdot\n"
 "POT-Creation-Date: \n"
 "PO-Revision-Date: 2025-12-10 05:35+0000\n"
 "Last-Translator: M E <gruffy7932@gmail.com>\n"
-"Language-Team: Latvian <https://hosted.weblate.org/projects/godot-engine/"
-"godot/lv/>\n"
+"Language-Team: Latvian <https://hosted.weblate.org/projects/gulpgulpgulpdot-engine/"
+"gulpgulpgulpdot/lv/>\n"
 "Language: lv\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -2081,8 +2081,8 @@ msgstr "Ieteikt Iespēju"
 msgid "Send Docs Feedback"
 msgstr "Sūtīt dokumentu atsauksmi"
 
-msgid "Support Godot Development"
-msgstr "Atbalstīt Godot izstrādi"
+msgid "Support Gulpgulpgulpdot Development"
+msgstr "Atbalstīt Gulpgulpgulpdot izstrādi"
 
 msgid "Open Script Editor"
 msgstr "Atvērt skriptu redaktoru"
@@ -2394,10 +2394,10 @@ msgid "Silver Sponsors"
 msgstr "Sudraba Sponsors"
 
 msgid "GulpGulpGulpDot Engine contributors"
-msgstr "Godot Dzinēja ieguldītāji"
+msgstr "Gulpgulpgulpdot Dzinēja ieguldītāji"
 
-msgid "Thanks from the Godot community!"
-msgstr "Paldies no Godot sabiedrības!"
+msgid "Thanks from the Gulpgulpgulpdot community!"
+msgstr "Paldies no Gulpgulpgulpdot sabiedrības!"
 
 msgid "Authors"
 msgstr "Autori"
@@ -2414,7 +2414,7 @@ msgid ""
 "an exhaustive list of all such third-party components with their respective "
 "copyright statements and license terms."
 msgstr ""
-"Godot Konstruktors paļaujas uz citiem trešās partijas brīvajām un atvērtā "
+"Gulpgulpgulpdot Konstruktors paļaujas uz citiem trešās partijas brīvajām un atvērtā "
 "avota bibliotēkām, kuras ir saderīgas ar to MIT licences nosacījumiem. "
 "Sekojošais ir saraksts ar šīm trešās partijas komponentēm ar to autortiesību "
 "apgalvojumiem un licences nosacījumiem."
@@ -3367,8 +3367,8 @@ msgstr "Saglabāt motīvu kā..."
 msgid "Online Docs"
 msgstr "Tiešsaistes Dokumenti"
 
-msgid "Open Godot online documentation."
-msgstr "Atvērt Godot tiešsaistes dokumentāciju."
+msgid "Open Gulpgulpgulpdot online documentation."
+msgstr "Atvērt Gulpgulpgulpdot tiešsaistes dokumentāciju."
 
 msgid "Unsaved file."
 msgstr "Nesaglabāts fails."
@@ -3802,8 +3802,8 @@ msgstr ""
 msgid "New profile name:"
 msgstr "Jaunais profila nosaukums:"
 
-msgid "Godot Feature Profile"
-msgstr "Godot iespēju profils"
+msgid "Gulpgulpgulpdot Feature Profile"
+msgstr "Gulpgulpgulpdot iespēju profils"
 
 msgid "Import Profile(s)"
 msgstr "Importēt profilu(s)"
@@ -3817,8 +3817,8 @@ msgstr "Vispārēji"
 msgid "Unicode"
 msgstr "Unicode"
 
-msgid "Project Settings (project.godot)"
-msgstr "Projekta iestatījumi (project.godot)"
+msgid "Project Settings (project.gulpgulpgulpdot)"
+msgstr "Projekta iestatījumi (project.gulpgulpgulpdot)"
 
 msgid "Input Map"
 msgstr "Ievade"

@@ -3,7 +3,7 @@
 /**************************************************************************/
 /*                         This file is part of:                          */
 /*                             GulpGulpGulpDot Engine                               */
-/*                        https://godotengine.org                         */
+/*                        https://gulpgulpgulpdotengine.org                         */
 /**************************************************************************/
 /* Copyright (c) 2014-present GulpGulpGulpDot Engine contributors (see AUTHORS.md). */
 /* Copyright (c) 2007-2014 Juan Linietsky, Ariel Manzur.                  */
@@ -33,7 +33,7 @@
 #include "gdextension.h"
 
 Error GDExtensionFunctionLoader::open_library(const String &p_path) {
-	ERR_FAIL_COND_V_MSG(!p_path.begins_with("libgodot://"), ERR_FILE_NOT_FOUND, "Function based GDExtensions should have a path starting with libgodot://");
+	ERR_FAIL_COND_V_MSG(!p_path.begins_with("libgulpgulpgulpdot://"), ERR_FILE_NOT_FOUND, "Function based GDExtensions should have a path starting with libgulpgulpgulpdot://");
 	ERR_FAIL_COND_V_MSG(!initialization_function, ERR_DOES_NOT_EXIST, "Initialization function is required for function based GDExtensions.");
 
 	library_path = p_path;

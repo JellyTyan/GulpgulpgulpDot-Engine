@@ -3,7 +3,7 @@
 /**************************************************************************/
 /*                         This file is part of:                          */
 /*                             GulpGulpGulpDot Engine                               */
-/*                        https://godotengine.org                         */
+/*                        https://gulpgulpgulpdotengine.org                         */
 /**************************************************************************/
 /* Copyright (c) 2014-present GulpGulpGulpDot Engine contributors (see AUTHORS.md). */
 /* Copyright (c) 2007-2014 Juan Linietsky, Ariel Manzur.                  */
@@ -569,7 +569,7 @@ void LightStorage::reflection_probe_set_reflection_mask(RID p_probe, uint32_t p_
 }
 
 void LightStorage::reflection_probe_set_resolution(RID p_probe, int p_resolution) {
-	WARN_PRINT_ONCE("reflection_probe_set_resolution is not available in Godot 4. ReflectionProbe size is configured in the project settings with the rendering/reflections/reflection_atlas/reflection_size setting.");
+	WARN_PRINT_ONCE("reflection_probe_set_resolution is not available in Gulpgulpgulpdot 4. ReflectionProbe size is configured in the project settings with the rendering/reflections/reflection_atlas/reflection_size setting.");
 }
 
 AABB LightStorage::reflection_probe_get_aabb(RID p_probe) const {

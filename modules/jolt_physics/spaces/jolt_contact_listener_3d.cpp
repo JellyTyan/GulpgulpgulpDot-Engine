@@ -3,7 +3,7 @@
 /**************************************************************************/
 /*                         This file is part of:                          */
 /*                             GulpGulpGulpDot Engine                               */
-/*                        https://godotengine.org                         */
+/*                        https://gulpgulpgulpdotengine.org                         */
 /**************************************************************************/
 /* Copyright (c) 2014-present GulpGulpGulpDot Engine contributors (see AUTHORS.md). */
 /* Copyright (c) 2007-2014 Juan Linietsky, Ariel Manzur.                  */
@@ -226,21 +226,21 @@ bool JoltContactListener3D::_try_add_contacts(const JPH::Body &p_jolt_body1, con
 		const JPH::Vec3 combined_impulse = contact_impulse + friction_impulse1 + friction_impulse2;
 
 		Contact contact1;
-		contact1.point_self = to_godot(world_point1);
-		contact1.point_other = to_godot(world_point2);
-		contact1.normal = to_godot(-p_manifold.mWorldSpaceNormal);
-		contact1.velocity_self = to_godot(velocity1);
-		contact1.velocity_other = to_godot(velocity2);
-		contact1.impulse = to_godot(-combined_impulse);
+		contact1.point_self = to_gulpgulpgulpdot(world_point1);
+		contact1.point_other = to_gulpgulpgulpdot(world_point2);
+		contact1.normal = to_gulpgulpgulpdot(-p_manifold.mWorldSpaceNormal);
+		contact1.velocity_self = to_gulpgulpgulpdot(velocity1);
+		contact1.velocity_other = to_gulpgulpgulpdot(velocity2);
+		contact1.impulse = to_gulpgulpgulpdot(-combined_impulse);
 		manifold.contacts1.push_back(contact1);
 
 		Contact contact2;
-		contact2.point_self = to_godot(world_point2);
-		contact2.point_other = to_godot(world_point1);
-		contact2.normal = to_godot(p_manifold.mWorldSpaceNormal);
-		contact2.velocity_self = to_godot(velocity2);
-		contact2.velocity_other = to_godot(velocity1);
-		contact2.impulse = to_godot(combined_impulse);
+		contact2.point_self = to_gulpgulpgulpdot(world_point2);
+		contact2.point_other = to_gulpgulpgulpdot(world_point1);
+		contact2.normal = to_gulpgulpgulpdot(p_manifold.mWorldSpaceNormal);
+		contact2.velocity_self = to_gulpgulpgulpdot(velocity2);
+		contact2.velocity_other = to_gulpgulpgulpdot(velocity1);
+		contact2.impulse = to_gulpgulpgulpdot(combined_impulse);
 		manifold.contacts2.push_back(contact2);
 	}
 
@@ -361,8 +361,8 @@ bool JoltContactListener3D::_try_add_debug_contacts(const JPH::Body &p_body1, co
 		const JPH::RVec3 point_on_1 = p_manifold.GetWorldSpaceContactPointOn1((JPH::uint)i);
 		const JPH::RVec3 point_on_2 = p_manifold.GetWorldSpaceContactPointOn2((JPH::uint)i);
 
-		debug_contacts.write[pair_index + 0] = to_godot(point_on_1);
-		debug_contacts.write[pair_index + 1] = to_godot(point_on_2);
+		debug_contacts.write[pair_index + 0] = to_gulpgulpgulpdot(point_on_1);
+		debug_contacts.write[pair_index + 1] = to_gulpgulpgulpdot(point_on_2);
 	}
 
 	return true;
@@ -406,7 +406,7 @@ bool JoltContactListener3D::_try_add_debug_contacts(const JPH::Body &p_soft_body
 		const JPH::Vec3 local_contact_point = p_manifold.GetLocalContactPoint(vertex);
 		const JPH::RVec3 contact_point = body_com_transform * local_contact_point;
 
-		debug_contacts.write[contact_index++] = to_godot(contact_point);
+		debug_contacts.write[contact_index++] = to_gulpgulpgulpdot(contact_point);
 	}
 
 	return true;

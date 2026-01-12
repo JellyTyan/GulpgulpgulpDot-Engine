@@ -3,7 +3,7 @@
 /**************************************************************************/
 /*                         This file is part of:                          */
 /*                             GulpGulpGulpDot Engine                               */
-/*                        https://godotengine.org                         */
+/*                        https://gulpgulpgulpdotengine.org                         */
 /**************************************************************************/
 /* Copyright (c) 2014-present GulpGulpGulpDot Engine contributors (see AUTHORS.md). */
 /* Copyright (c) 2007-2014 Juan Linietsky, Ariel Manzur.                  */
@@ -36,23 +36,23 @@
 
 #include <zlib.h>
 
-GODOT_GCC_WARNING_PUSH
-GODOT_GCC_WARNING_IGNORE("-Wimplicit-fallthrough")
-GODOT_GCC_WARNING_IGNORE("-Wlogical-not-parentheses")
-GODOT_GCC_WARNING_IGNORE("-Wmissing-field-initializers")
-GODOT_GCC_WARNING_IGNORE("-Wnon-virtual-dtor")
-GODOT_GCC_WARNING_IGNORE("-Wshadow")
-GODOT_GCC_WARNING_IGNORE("-Wswitch")
-GODOT_CLANG_WARNING_PUSH
-GODOT_CLANG_WARNING_IGNORE("-Wimplicit-fallthrough")
-GODOT_CLANG_WARNING_IGNORE("-Wlogical-not-parentheses")
-GODOT_CLANG_WARNING_IGNORE("-Wmissing-field-initializers")
-GODOT_CLANG_WARNING_IGNORE("-Wnon-virtual-dtor")
-GODOT_CLANG_WARNING_IGNORE("-Wstring-plus-int")
-GODOT_CLANG_WARNING_IGNORE("-Wswitch")
-GODOT_MSVC_WARNING_PUSH
-GODOT_MSVC_WARNING_IGNORE(4200) // "nonstandard extension used: zero-sized array in struct/union".
-GODOT_MSVC_WARNING_IGNORE(4806) // "'&': unsafe operation: no value of type 'bool' promoted to type 'uint32_t' can equal the given constant".
+GULPGULPGULPDOT_GCC_WARNING_PUSH
+GULPGULPGULPDOT_GCC_WARNING_IGNORE("-Wimplicit-fallthrough")
+GULPGULPGULPDOT_GCC_WARNING_IGNORE("-Wlogical-not-parentheses")
+GULPGULPGULPDOT_GCC_WARNING_IGNORE("-Wmissing-field-initializers")
+GULPGULPGULPDOT_GCC_WARNING_IGNORE("-Wnon-virtual-dtor")
+GULPGULPGULPDOT_GCC_WARNING_IGNORE("-Wshadow")
+GULPGULPGULPDOT_GCC_WARNING_IGNORE("-Wswitch")
+GULPGULPGULPDOT_CLANG_WARNING_PUSH
+GULPGULPGULPDOT_CLANG_WARNING_IGNORE("-Wimplicit-fallthrough")
+GULPGULPGULPDOT_CLANG_WARNING_IGNORE("-Wlogical-not-parentheses")
+GULPGULPGULPDOT_CLANG_WARNING_IGNORE("-Wmissing-field-initializers")
+GULPGULPGULPDOT_CLANG_WARNING_IGNORE("-Wnon-virtual-dtor")
+GULPGULPGULPDOT_CLANG_WARNING_IGNORE("-Wstring-plus-int")
+GULPGULPGULPDOT_CLANG_WARNING_IGNORE("-Wswitch")
+GULPGULPGULPDOT_MSVC_WARNING_PUSH
+GULPGULPGULPDOT_MSVC_WARNING_IGNORE(4200) // "nonstandard extension used: zero-sized array in struct/union".
+GULPGULPGULPDOT_MSVC_WARNING_IGNORE(4806) // "'&': unsafe operation: no value of type 'bool' promoted to type 'uint32_t' can equal the given constant".
 
 #include <dxgi1_6.h>
 #include <thirdparty/directx_headers/include/directx/d3dx12.h>
@@ -71,9 +71,9 @@ void dxil_reassign_driver_locations(nir_shader *s, nir_variable_mode modes,
 		uint64_t other_stage_mask, const BITSET_WORD *other_stage_frac_mask);
 }
 
-GODOT_GCC_WARNING_POP
-GODOT_CLANG_WARNING_POP
-GODOT_MSVC_WARNING_POP
+GULPGULPGULPDOT_GCC_WARNING_POP
+GULPGULPGULPDOT_CLANG_WARNING_POP
+GULPGULPGULPDOT_MSVC_WARNING_POP
 
 // SPIR-V to DXIL does way too many allocations, which causes worker threads
 // to bottleneck each other due to sharing the same global process heap.
@@ -101,7 +101,7 @@ constexpr size_t ALLOC_HEADER_SIZE = sizeof(Win32Heap *) * 2;
 } //namespace
 
 extern "C" {
-void *godot_nir_malloc(size_t p_size) {
+void *gulpgulpgulpdot_nir_malloc(size_t p_size) {
 	// This RAII helper is for allowing the heap to be destroyed when the thread quits.
 	struct Win32HeapHolder {
 		Win32Heap *win32_heap = nullptr;
@@ -128,13 +128,13 @@ void *godot_nir_malloc(size_t p_size) {
 	return (uint8_t *)block + ALLOC_HEADER_SIZE;
 }
 
-void *godot_nir_realloc(void *p_block, size_t p_size) {
+void *gulpgulpgulpdot_nir_realloc(void *p_block, size_t p_size) {
 	uint8_t *actual_block = (uint8_t *)p_block - ALLOC_HEADER_SIZE;
 	Win32Heap *win32_heap = *(Win32Heap **)actual_block;
 	return (uint8_t *)HeapReAlloc(win32_heap->handle, 0, actual_block, p_size + ALLOC_HEADER_SIZE) + ALLOC_HEADER_SIZE;
 }
 
-void godot_nir_free(void *p_block) {
+void gulpgulpgulpdot_nir_free(void *p_block) {
 	if (p_block != nullptr) {
 		uint8_t *actual_block = (uint8_t *)p_block - ALLOC_HEADER_SIZE;
 		Win32Heap *win32_heap = *(Win32Heap **)actual_block;
@@ -151,15 +151,15 @@ void godot_nir_free(void *p_block) {
 #else
 
 extern "C" {
-void *godot_nir_malloc(size_t p_size) {
+void *gulpgulpgulpdot_nir_malloc(size_t p_size) {
 	return malloc(p_size);
 }
 
-void *godot_nir_realloc(void *p_block, size_t p_size) {
+void *gulpgulpgulpdot_nir_realloc(void *p_block, size_t p_size) {
 	return realloc(p_block, p_size);
 }
 
-void godot_nir_free(void *p_block) {
+void gulpgulpgulpdot_nir_free(void *p_block) {
 	return free(p_block);
 }
 }
@@ -258,7 +258,7 @@ uint32_t RenderingDXIL::patch_specialization_constant(
 #ifdef DEV_ENABLED
 		uint64_t orig_patch_val = tamper_bits(bytecode.ptrw(), offset, (uint64_t)patch_val);
 		// Checking against the value the NIR patch should have set.
-		DEV_ASSERT(!p_is_first_patch || ((orig_patch_val >> 1) & GODOT_NIR_SC_SENTINEL_MAGIC_MASK) == GODOT_NIR_SC_SENTINEL_MAGIC);
+		DEV_ASSERT(!p_is_first_patch || ((orig_patch_val >> 1) & GULPGULPGULPDOT_NIR_SC_SENTINEL_MAGIC_MASK) == GULPGULPGULPDOT_NIR_SC_SENTINEL_MAGIC);
 		uint64_t readback_patch_val = tamper_bits(bytecode.ptrw(), offset, (uint64_t)patch_val);
 		DEV_ASSERT(readback_patch_val == (uint64_t)patch_val);
 #else
@@ -467,7 +467,7 @@ bool RenderingShaderContainerD3D12::_convert_spirv_to_nir(Span<ReflectShaderStag
 	return true;
 }
 
-struct GodotNirCallbackUserData {
+struct GulpgulpgulpdotNirCallbackUserData {
 	RenderingShaderContainerD3D12 *container;
 	RenderingDeviceCommons::ShaderStage stage;
 };
@@ -484,21 +484,21 @@ bool RenderingShaderContainerD3D12::_convert_nir_to_dxil(const HashMap<int, nir_
 	// Translate NIR to DXIL.
 	for (KeyValue<int, nir_shader *> it : p_stages_nir_shaders) {
 		RenderingDeviceCommons::ShaderStage stage = (RenderingDeviceCommons::ShaderStage)(it.key);
-		GodotNirCallbackUserData godot_nir_callback_user_data;
-		godot_nir_callback_user_data.container = this;
-		godot_nir_callback_user_data.stage = stage;
+		GulpgulpgulpdotNirCallbackUserData gulpgulpgulpdot_nir_callback_user_data;
+		gulpgulpgulpdot_nir_callback_user_data.container = this;
+		gulpgulpgulpdot_nir_callback_user_data.stage = stage;
 
-		GodotNirCallbacks godot_nir_callbacks = {};
-		godot_nir_callbacks.data = &godot_nir_callback_user_data;
-		godot_nir_callbacks.report_resource = _nir_report_resource;
-		godot_nir_callbacks.report_sc_bit_offset_fn = _nir_report_sc_bit_offset;
-		godot_nir_callbacks.report_bitcode_bit_offset_fn = _nir_report_bitcode_bit_offset;
+		GulpgulpgulpdotNirCallbacks gulpgulpgulpdot_nir_callbacks = {};
+		gulpgulpgulpdot_nir_callbacks.data = &gulpgulpgulpdot_nir_callback_user_data;
+		gulpgulpgulpdot_nir_callbacks.report_resource = _nir_report_resource;
+		gulpgulpgulpdot_nir_callbacks.report_sc_bit_offset_fn = _nir_report_sc_bit_offset;
+		gulpgulpgulpdot_nir_callbacks.report_bitcode_bit_offset_fn = _nir_report_bitcode_bit_offset;
 
 		nir_to_dxil_options nir_to_dxil_options = {};
 		nir_to_dxil_options.environment = DXIL_ENVIRONMENT_VULKAN;
 		nir_to_dxil_options.shader_model_max = shader_model_d3d_to_dxil(D3D_SHADER_MODEL(REQUIRED_SHADER_MODEL));
 		nir_to_dxil_options.validator_version_max = NO_DXIL_VALIDATION;
-		nir_to_dxil_options.godot_nir_callbacks = &godot_nir_callbacks;
+		nir_to_dxil_options.gulpgulpgulpdot_nir_callbacks = &gulpgulpgulpdot_nir_callbacks;
 
 		dxil_logger logger = {};
 		logger.log = [](void *p_priv, const char *p_msg) {
@@ -693,7 +693,7 @@ bool RenderingShaderContainerD3D12::_generate_root_signature(BitField<RenderingD
 				}
 			}
 
-			uint32_t dxil_register = i * GODOT_NIR_DESCRIPTOR_SET_MULTIPLIER + uniform.binding * GODOT_NIR_BINDING_MULTIPLIER;
+			uint32_t dxil_register = i * GULPGULPGULPDOT_NIR_DESCRIPTOR_SET_MULTIPLIER + uniform.binding * GULPGULPGULPDOT_NIR_BINDING_MULTIPLIER;
 			if (range_type != (D3D12_DESCRIPTOR_RANGE_TYPE)UINT_MAX) {
 				// Dynamic buffers are converted to root descriptors to prevent copying descriptors during command recording.
 				// Out of bounds accesses are not a concern because that's already undefined behavior on Vulkan.
@@ -811,7 +811,7 @@ bool RenderingShaderContainerD3D12::_generate_root_signature(BitField<RenderingD
 }
 
 void RenderingShaderContainerD3D12::_nir_report_resource(uint32_t p_register, uint32_t p_space, uint32_t p_dxil_type, void *p_data) {
-	const GodotNirCallbackUserData &user_data = *(GodotNirCallbackUserData *)p_data;
+	const GulpgulpgulpdotNirCallbackUserData &user_data = *(GulpgulpgulpdotNirCallbackUserData *)p_data;
 
 	// Types based on Mesa's dxil_container.h.
 	static const uint32_t DXIL_RES_SAMPLER = 1;
@@ -840,8 +840,8 @@ void RenderingShaderContainerD3D12::_nir_report_resource(uint32_t p_register, ui
 	} else {
 		DEV_ASSERT(p_space == 0);
 
-		uint32_t set = p_register / GODOT_NIR_DESCRIPTOR_SET_MULTIPLIER;
-		uint32_t binding = (p_register % GODOT_NIR_DESCRIPTOR_SET_MULTIPLIER) / GODOT_NIR_BINDING_MULTIPLIER;
+		uint32_t set = p_register / GULPGULPGULPDOT_NIR_DESCRIPTOR_SET_MULTIPLIER;
+		uint32_t binding = (p_register % GULPGULPGULPDOT_NIR_DESCRIPTOR_SET_MULTIPLIER) / GULPGULPGULPDOT_NIR_BINDING_MULTIPLIER;
 
 		DEV_ASSERT(set < (uint32_t)user_data.container->reflection_binding_set_uniforms_count.size());
 
@@ -875,7 +875,7 @@ void RenderingShaderContainerD3D12::_nir_report_resource(uint32_t p_register, ui
 }
 
 void RenderingShaderContainerD3D12::_nir_report_sc_bit_offset(uint32_t p_sc_id, uint64_t p_bit_offset, void *p_data) {
-	const GodotNirCallbackUserData &user_data = *(GodotNirCallbackUserData *)p_data;
+	const GulpgulpgulpdotNirCallbackUserData &user_data = *(GulpgulpgulpdotNirCallbackUserData *)p_data;
 	[[maybe_unused]] bool found = false;
 	for (int64_t i = 0; i < user_data.container->reflection_specialization_data.size(); i++) {
 		const ReflectionSpecializationData &sc = user_data.container->reflection_specialization_data[i];
@@ -897,7 +897,7 @@ void RenderingShaderContainerD3D12::_nir_report_sc_bit_offset(uint32_t p_sc_id, 
 void RenderingShaderContainerD3D12::_nir_report_bitcode_bit_offset(uint64_t p_bit_offset, void *p_data) {
 	DEV_ASSERT(p_bit_offset % 8 == 0);
 
-	const GodotNirCallbackUserData &user_data = *(GodotNirCallbackUserData *)p_data;
+	const GulpgulpgulpdotNirCallbackUserData &user_data = *(GulpgulpgulpdotNirCallbackUserData *)p_data;
 	uint32_t offset_idx = SHADER_STAGES_BIT_OFFSET_INDICES[user_data.stage];
 	for (int64_t i = 0; i < user_data.container->reflection_specialization_data.size(); i++) {
 		ReflectionSpecializationDataD3D12 &sc_d3d12 = user_data.container->reflection_specialization_data_d3d12.ptrw()[i];

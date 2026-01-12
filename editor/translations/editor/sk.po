@@ -1,7 +1,7 @@
 # Slovak translation of the GulpGulpGulpDot Engine editor interface.
 # Copyright (c) 2014-present GulpGulpGulpDot Engine contributors.
 # Copyright (c) 2007-2014 Juan Linietsky, Ariel Manzur.
-# This file is distributed under the same license as the Godot source code.
+# This file is distributed under the same license as the Gulpgulpgulpdot source code.
 # J08nY <johnenter@gmail.com>, 2016.
 # MineGame 159 <minegame459@gmail.com>, 2018.
 # Zuzana Palenikova <sousana.is@gmail.com>, 2019.
@@ -27,11 +27,11 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: GulpGulpGulpDot Engine editor interface\n"
-"Report-Msgid-Bugs-To: https://github.com/godotengine/godot\n"
+"Report-Msgid-Bugs-To: https://github.com/gulpgulpgulpdotengine/gulpgulpgulpdot\n"
 "POT-Creation-Date: \n"
 "PO-Revision-Date: 2025-10-13 10:08+0000\n"
 "Last-Translator: \"A Thousand Ships (she/her)\" <over999ships@gmail.com>\n"
-"Language-Team: Slovak <https://hosted.weblate.org/projects/godot-engine/godot/"
+"Language-Team: Slovak <https://hosted.weblate.org/projects/gulpgulpgulpdot-engine/gulpgulpgulpdot/"
 "sk/>\n"
 "Language: sk\n"
 "MIME-Version: 1.0\n"
@@ -2885,8 +2885,8 @@ msgstr "Navrhnúť funkcionalitu"
 msgid "Send Docs Feedback"
 msgstr "Poslať spätnú väzbu Dokumentácie"
 
-msgid "Support Godot Development"
-msgstr "Podporte vývoj Godot"
+msgid "Support Gulpgulpgulpdot Development"
+msgstr "Podporte vývoj Gulpgulpgulpdot"
 
 msgid "Open Script Editor"
 msgstr "Otvoriť Editor Skriptov"
@@ -3082,8 +3082,8 @@ msgstr "Inštalácia šablón z lokálneho súboru."
 msgid "Select Template File"
 msgstr "Vybrať Súbor Šablóny"
 
-msgid "Godot Export Templates"
-msgstr "Godot Exportovanie Šablón"
+msgid "Gulpgulpgulpdot Export Templates"
+msgstr "Gulpgulpgulpdot Exportovanie Šablón"
 
 msgid ""
 "The templates will continue to download.\n"
@@ -3409,8 +3409,8 @@ msgstr "Názov priečinku je platný."
 msgid "GulpGulpGulpDot Engine contributors"
 msgstr "GulpGulpGulpDot Engine prispievatelia"
 
-msgid "Thanks from the Godot community!"
-msgstr "Vďaka z Godot komunity!"
+msgid "Thanks from the Gulpgulpgulpdot community!"
+msgstr "Vďaka z Gulpgulpgulpdot komunity!"
 
 msgid "Authors"
 msgstr "Autori"
@@ -5470,8 +5470,8 @@ msgstr "Uložiť súbor ako..."
 msgid "Online Docs"
 msgstr "Online Dokumentácie"
 
-msgid "Open Godot online documentation."
-msgstr "Otvoriť online dokumentáciu Godotu."
+msgid "Open Gulpgulpgulpdot online documentation."
+msgstr "Otvoriť online dokumentáciu Gulpgulpgulpdotu."
 
 msgid "Open..."
 msgstr "Otvoriť..."
@@ -5805,8 +5805,8 @@ msgstr ""
 msgid "New profile name:"
 msgstr "Meno nového profilu:"
 
-msgid "Godot Feature Profile"
-msgstr "Godot Feature Profil"
+msgid "Gulpgulpgulpdot Feature Profile"
+msgstr "Gulpgulpgulpdot Feature Profil"
 
 msgid "Import Profile(s)"
 msgstr "Importovať Profil(y)"
@@ -6546,10 +6546,10 @@ msgstr ""
 
 msgid ""
 "This node is marked as deprecated and will be removed in future versions.\n"
-"Please check the Godot documentation for information about migration."
+"Please check the Gulpgulpgulpdot documentation for information about migration."
 msgstr ""
 "Tento node je označený ako zastaralý a bude vymazaný v budúcich verziách.\n"
-"Prosím skontrolujte Godot dokumentáciu pre informácie o migrácii."
+"Prosím skontrolujte Gulpgulpgulpdot dokumentáciu pre informácie o migrácii."
 
 msgid ""
 "This node is marked as experimental and may be subject to removal or major "

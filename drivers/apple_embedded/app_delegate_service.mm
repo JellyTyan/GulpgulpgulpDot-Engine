@@ -3,7 +3,7 @@
 /**************************************************************************/
 /*                         This file is part of:                          */
 /*                             GulpGulpGulpDot Engine                               */
-/*                        https://godotengine.org                         */
+/*                        https://gulpgulpgulpdotengine.org                         */
 /**************************************************************************/
 /* Copyright (c) 2014-present GulpGulpGulpDot Engine contributors (see AUTHORS.md). */
 /* Copyright (c) 2007-2014 Juan Linietsky, Ariel Manzur.                  */
@@ -30,8 +30,8 @@
 
 #import "app_delegate_service.h"
 
-#import "godot_view_apple_embedded.h"
-#import "godot_view_controller.h"
+#import "gulpgulpgulpdot_view_apple_embedded.h"
+#import "gulpgulpgulpdot_view_controller.h"
 #import "os_apple_embedded.h"
 
 #include "core/config/project_settings.h"
@@ -72,7 +72,7 @@ static GDTViewController *mainViewController = nil;
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
 	// TODO: might be required to make an early return, so app wouldn't crash because of timeout.
 	// TODO: logo screen is not displayed while shaders are compiling
-	// DummyViewController(Splash/LoadingViewController) -> setup -> GodotViewController
+	// DummyViewController(Splash/LoadingViewController) -> setup -> GulpgulpgulpdotViewController
 
 	// Fetch the command-line arguments from NSProcessInfo
 	NSArray *arguments = [[NSProcessInfo processInfo] arguments];

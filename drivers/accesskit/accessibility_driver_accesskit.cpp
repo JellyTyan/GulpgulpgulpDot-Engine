@@ -3,7 +3,7 @@
 /**************************************************************************/
 /*                         This file is part of:                          */
 /*                             GulpGulpGulpDot Engine                               */
-/*                        https://godotengine.org                         */
+/*                        https://gulpgulpgulpdotengine.org                         */
 /**************************************************************************/
 /* Copyright (c) 2014-present GulpGulpGulpDot Engine contributors (see AUTHORS.md). */
 /* Copyright (c) 2007-2014 Juan Linietsky, Ariel Manzur.                  */
@@ -1603,7 +1603,7 @@ Error AccessibilityDriverAccessKit::init() {
 	}
 #endif
 #ifdef MACOS_ENABLED
-	//accesskit_macos_add_focus_forwarder_to_window_class("GodotWindow");
+	//accesskit_macos_add_focus_forwarder_to_window_class("GulpgulpgulpdotWindow");
 #endif
 	return OK;
 }

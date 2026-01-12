@@ -3,7 +3,7 @@
 /**************************************************************************/
 /*                         This file is part of:                          */
 /*                             GulpGulpGulpDot Engine                               */
-/*                        https://godotengine.org                         */
+/*                        https://gulpgulpgulpdotengine.org                         */
 /**************************************************************************/
 /* Copyright (c) 2014-present GulpGulpGulpDot Engine contributors (see AUTHORS.md). */
 /* Copyright (c) 2007-2014 Juan Linietsky, Ariel Manzur.                  */
@@ -561,7 +561,7 @@ void NavMeshGenerator3D::generator_bake_from_source_geometry_data(NavMeshGenerat
 		for (unsigned int j = 0; j < detail_mesh_ntris; j++) {
 			Vector<int> nav_indices;
 			nav_indices.resize(3);
-			// Polygon order in recast is opposite than godot's
+			// Polygon order in recast is opposite than gulpgulpgulpdot's
 			int index1 = ((int)(detail_mesh_bverts + detail_mesh_tris[j * 4 + 0]));
 			int index2 = ((int)(detail_mesh_bverts + detail_mesh_tris[j * 4 + 2]));
 			int index3 = ((int)(detail_mesh_bverts + detail_mesh_tris[j * 4 + 1]));

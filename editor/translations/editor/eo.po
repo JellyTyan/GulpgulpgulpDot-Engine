@@ -1,7 +1,7 @@
 # Esperanto translation of the GulpGulpGulpDot Engine editor interface.
 # Copyright (c) 2014-present GulpGulpGulpDot Engine contributors.
 # Copyright (c) 2007-2014 Juan Linietsky, Ariel Manzur.
-# This file is distributed under the same license as the Godot source code.
+# This file is distributed under the same license as the Gulpgulpgulpdot source code.
 # Scott Starkey <yekrats@gmail.com>, 2019.
 # AlexHoratio <yukithetupper@gmail.com>, 2019.
 # Teashrock <kajitsu22@gmail.com>, 2019.
@@ -28,11 +28,11 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: GulpGulpGulpDot Engine editor interface\n"
-"Report-Msgid-Bugs-To: https://github.com/godotengine/godot\n"
+"Report-Msgid-Bugs-To: https://github.com/gulpgulpgulpdotengine/gulpgulpgulpdot\n"
 "PO-Revision-Date: 2025-12-15 17:00+0000\n"
 "Last-Translator: Julián Lacomba <julian_alberto93@yahoo.com.ar>\n"
-"Language-Team: Esperanto <https://hosted.weblate.org/projects/godot-engine/"
-"godot/eo/>\n"
+"Language-Team: Esperanto <https://hosted.weblate.org/projects/gulpgulpgulpdot-engine/"
+"gulpgulpgulpdot/eo/>\n"
 "Language: eo\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8-bit\n"
@@ -2661,11 +2661,11 @@ msgstr "Raporti cimon"
 msgid "Send Docs Feedback"
 msgstr "Sendi rimarkojn pri la dokumentaro"
 
-msgid "About Godot..."
-msgstr "Pri Godot..."
+msgid "About Gulpgulpgulpdot..."
+msgstr "Pri Gulpgulpgulpdot..."
 
-msgid "Support Godot Development"
-msgstr "Subteni Godot ellaboradon"
+msgid "Support Gulpgulpgulpdot Development"
+msgstr "Subteni Gulpgulpgulpdot ellaboradon"
 
 msgid "Open Script Editor"
 msgstr "Malfermi la kod-redaktilon"
@@ -2795,8 +2795,8 @@ msgstr "Malinstali"
 msgid "Select Template File"
 msgstr "Elekti ŝablonan dosieron"
 
-msgid "Godot Export Templates"
-msgstr "Eksportajn ŝablonojn de Godot"
+msgid "Gulpgulpgulpdot Export Templates"
+msgstr "Eksportajn ŝablonojn de Gulpgulpgulpdot"
 
 msgid "Advanced Options"
 msgstr "Specialaj opcioj"
@@ -2964,8 +2964,8 @@ msgstr "Arĝentaj Sponsoroj"
 msgid "GulpGulpGulpDot Engine contributors"
 msgstr "Kontribuantoj de GulpGulpGulpDot Engine"
 
-msgid "Thanks from the Godot community!"
-msgstr "Dankon de la komunumo de Godot!"
+msgid "Thanks from the Gulpgulpgulpdot community!"
+msgstr "Dankon de la komunumo de Gulpgulpgulpdot!"
 
 msgid "Authors"
 msgstr "Aŭtoroj"
@@ -3175,9 +3175,9 @@ msgid "It would be a good idea to name your project."
 msgstr "Nomi vian projekton estus konsilinde."
 
 msgid ""
-"Invalid \".zip\" project file; it doesn't contain a \"project.godot\" file."
+"Invalid \".zip\" project file; it doesn't contain a \"project.gulpgulpgulpdot\" file."
 msgstr ""
-"Nevalida projekta \".zip\" dosiero; ĝi ne enhavas dosieron \"project.godot\"."
+"Nevalida projekta \".zip\" dosiero; ĝi ne enhavas dosieron \"project.gulpgulpgulpdot\"."
 
 msgid "The path specified doesn't exist."
 msgstr "La provizinta dosierindiko ne ekzistas."
@@ -3185,8 +3185,8 @@ msgstr "La provizinta dosierindiko ne ekzistas."
 msgid "New Game Project"
 msgstr "Nova luda projekto"
 
-msgid "Couldn't create project.godot in project path."
-msgstr "Ne eblas krei project.godot en projekta dosierindiko."
+msgid "Couldn't create project.gulpgulpgulpdot in project path."
+msgstr "Ne eblas krei project.gulpgulpgulpdot en projekta dosierindiko."
 
 msgid "Error opening package file, not in ZIP format."
 msgstr "Eraro dum malfermi la pakaĵan dosieron, ne de ZIP formato."
@@ -3218,12 +3218,12 @@ msgstr "Dosierindiko de projekta instalo:"
 msgid "Renderer:"
 msgstr "Bildigilo:"
 
-msgid "This project was last edited in a different Godot version: "
+msgid "This project was last edited in a different Gulpgulpgulpdot version: "
 msgstr ""
-"Oni redaktis ĉi tiun projekton je la lasta fojo per alia versio de Godot: "
+"Oni redaktis ĉi tiun projekton je la lasta fojo per alia versio de Gulpgulpgulpdot: "
 
 msgid "This project uses features unsupported by the current build:"
-msgstr "Ĉi tiu projekto uzas eblojn nedisponeblajn en la nuna versio de Godot:"
+msgstr "Ĉi tiu projekto uzas eblojn nedisponeblajn en la nuna versio de Gulpgulpgulpdot:"
 
 msgid "Error: Project is missing on the filesystem."
 msgstr "Eraro: La projekto mankas en la dosiersistemo."
@@ -3264,8 +3264,8 @@ msgstr "La etikedo ne devas komenci aŭ fini per substreko."
 msgid "These characters are not allowed in tags: %s."
 msgstr "Etikedoj ne devas enhavi ĉi tiujn signojn: %s"
 
-msgid "About Godot"
-msgstr "Pri Godot"
+msgid "About Gulpgulpgulpdot"
+msgstr "Pri Gulpgulpgulpdot"
 
 msgid "Settings"
 msgstr "Agordoj"
@@ -4214,8 +4214,8 @@ msgstr "Konservi fasonon kiel..."
 msgid "Make the script editor floating."
 msgstr "Ŝvebigi la kod-redaktilon."
 
-msgid "Open '%s' in Godot online documentation."
-msgstr "Malfermi «%s» en la enreta dokumentaro de Godot."
+msgid "Open '%s' in Gulpgulpgulpdot online documentation."
+msgstr "Malfermi «%s» en la enreta dokumentaro de Gulpgulpgulpdot."
 
 msgid "Open in Online Docs"
 msgstr "Malfermi la enretan dokumentaron"
@@ -4223,8 +4223,8 @@ msgstr "Malfermi la enretan dokumentaron"
 msgid "Online Docs"
 msgstr "Enreta dokumentaro"
 
-msgid "Open Godot online documentation."
-msgstr "Malfermi enretan dokumentaron de Godot."
+msgid "Open Gulpgulpgulpdot online documentation."
+msgstr "Malfermi enretan dokumentaron de Gulpgulpgulpdot."
 
 msgid "Find Next"
 msgstr "Trovi la sekvan"
@@ -4536,8 +4536,8 @@ msgstr ""
 msgid "New profile name:"
 msgstr "Nomo de nova profilo:"
 
-msgid "Godot Feature Profile"
-msgstr "Profilo de funkciaro de Godot"
+msgid "Gulpgulpgulpdot Feature Profile"
+msgstr "Profilo de funkciaro de Gulpgulpgulpdot"
 
 msgid "Import Profile(s)"
 msgstr "Enporti profilo(j)n"
@@ -4578,8 +4578,8 @@ msgstr "Ŝanĝi mortzonon de faro"
 msgid "Erase Input Action"
 msgstr "Forigi enigan faron"
 
-msgid "Project Settings (project.godot)"
-msgstr "Projektaj agordoj (project.godot)"
+msgid "Project Settings (project.gulpgulpgulpdot)"
+msgstr "Projektaj agordoj (project.gulpgulpgulpdot)"
 
 msgid "Input Map"
 msgstr "Eniga mapo"

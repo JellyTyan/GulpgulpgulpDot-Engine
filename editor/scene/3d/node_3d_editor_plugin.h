@@ -3,7 +3,7 @@
 /**************************************************************************/
 /*                         This file is part of:                          */
 /*                             GulpGulpGulpDot Engine                               */
-/*                        https://godotengine.org                         */
+/*                        https://gulpgulpgulpdotengine.org                         */
 /**************************************************************************/
 /* Copyright (c) 2014-present GulpGulpGulpDot Engine contributors (see AUTHORS.md). */
 /* Copyright (c) 2007-2014 Juan Linietsky, Ariel Manzur.                  */
@@ -191,7 +191,7 @@ public:
 	static constexpr int32_t FRAME_TIME_HISTORY = 20;
 
 	enum NavigationScheme {
-		NAVIGATION_GODOT = 0,
+		NAVIGATION_GULPGULPGULPDOT = 0,
 		NAVIGATION_MAYA = 1,
 		NAVIGATION_MODO = 2,
 		NAVIGATION_CUSTOM = 3,

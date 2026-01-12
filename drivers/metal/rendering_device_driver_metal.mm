@@ -3,7 +3,7 @@
 /**************************************************************************/
 /*                         This file is part of:                          */
 /*                             GulpGulpGulpDot Engine                               */
-/*                        https://godotengine.org                         */
+/*                        https://gulpgulpgulpdotengine.org                         */
 /**************************************************************************/
 /* Copyright (c) 2014-present GulpGulpGulpDot Engine contributors (see AUTHORS.md). */
 /* Copyright (c) 2007-2014 Juan Linietsky, Ariel Manzur.                  */
@@ -331,9 +331,9 @@ RDD::TextureID RenderingDeviceDriverMetal::texture_create(const TextureFormat &p
 #if defined(VISIONOS_ENABLED)
 	const bool supports_memoryless = true;
 #else
-	GODOT_CLANG_WARNING_PUSH_AND_IGNORE("-Wdeprecated-declarations")
+	GULPGULPGULPDOT_CLANG_WARNING_PUSH_AND_IGNORE("-Wdeprecated-declarations")
 	const bool supports_memoryless = (*device_properties).features.highestFamily >= MTLGPUFamilyApple2 && (*device_properties).features.highestFamily < MTLGPUFamilyMac1;
-	GODOT_CLANG_WARNING_POP
+	GULPGULPGULPDOT_CLANG_WARNING_POP
 #endif
 	if (supports_memoryless && p_format.usage_bits & TEXTURE_USAGE_TRANSIENT_BIT) {
 		options = MTLResourceStorageModeMemoryless | MTLResourceHazardTrackingModeTracked;
@@ -874,7 +874,7 @@ void RenderingDeviceDriverMetal::fence_free(FenceID p_fence) {
 #pragma mark - Semaphores
 
 RDD::SemaphoreID RenderingDeviceDriverMetal::semaphore_create() {
-	// Metal doesn't use semaphores, as their purpose within Godot is to ensure ordering of command buffer execution.
+	// Metal doesn't use semaphores, as their purpose within Gulpgulpgulpdot is to ensure ordering of command buffer execution.
 	return SemaphoreID(1);
 }
 
@@ -1343,7 +1343,7 @@ RDD::UniformSetID RenderingDeviceDriverMetal::uniform_set_create(VectorView<Boun
 
 	if (device_properties->features.argument_buffers_supported()) {
 		// If argument buffers are enabled, we have already verified availability, so we can skip the runtime check.
-		GODOT_CLANG_WARNING_PUSH_AND_IGNORE("-Wunguarded-availability-new")
+		GULPGULPGULPDOT_CLANG_WARNING_PUSH_AND_IGNORE("-Wunguarded-availability-new")
 
 		set->arg_buffer = [device newBufferWithLength:shader_set.buffer_size options:MTLResourceStorageModeShared];
 		uint64_t *ptr = (uint64_t *)set->arg_buffer.contents;
@@ -1463,7 +1463,7 @@ RDD::UniformSetID RenderingDeviceDriverMetal::uniform_set_create(VectorView<Boun
 			}
 		}
 
-		GODOT_CLANG_WARNING_POP
+		GULPGULPGULPDOT_CLANG_WARNING_POP
 	}
 	Vector<BoundUniform> bound_uniforms;
 	bound_uniforms.resize(p_uniforms.size());
@@ -2420,7 +2420,7 @@ uint64_t RenderingDeviceDriverMetal::get_total_memory_used() {
 }
 
 uint64_t RenderingDeviceDriverMetal::get_lazily_memory_used() {
-	return 0; // TODO: Track this (grep for memoryless in Godot's Metal backend).
+	return 0; // TODO: Track this (grep for memoryless in Gulpgulpgulpdot's Metal backend).
 }
 
 uint64_t RenderingDeviceDriverMetal::limit_get(Limit p_limit) {
@@ -2620,7 +2620,7 @@ RenderingDeviceDriverMetal::RenderingDeviceDriverMetal(RenderingContextDriverMet
 	DEV_ASSERT(p_context_driver != nullptr);
 
 #if TARGET_OS_OSX
-	if (String res = OS::get_singleton()->get_environment("GODOT_MTL_SHADER_LOAD_STRATEGY"); res == U"lazy") {
+	if (String res = OS::get_singleton()->get_environment("GULPGULPGULPDOT_MTL_SHADER_LOAD_STRATEGY"); res == U"lazy") {
 		_shader_load_strategy = ShaderLoadStrategy::LAZY;
 	}
 #else
@@ -2660,7 +2660,7 @@ Error RenderingDeviceDriverMetal::_create_device() {
 	ERR_FAIL_NULL_V(device_queue, ERR_CANT_CREATE);
 
 	device_scope = [MTLCaptureManager.sharedCaptureManager newCaptureScopeWithCommandQueue:device_queue];
-	device_scope.label = @"Godot Frame";
+	device_scope.label = @"Gulpgulpgulpdot Frame";
 	[device_scope beginScope]; // Allow Xcode to capture the first frame, if desired.
 
 	resource_cache = std::make_unique<MDResourceCache>(this);
@@ -2760,7 +2760,7 @@ Error RenderingDeviceDriverMetal::initialize(uint32_t p_device_index, uint32_t p
 
 	// The Metal renderer requires Apple4 family. This is 2017 era A11 chips and newer.
 	if (device_properties->features.highestFamily < MTLGPUFamilyApple4) {
-		String error_string = vformat("Your Apple GPU does not support the following features, which are required to use Metal-based renderers in Godot:\n\n");
+		String error_string = vformat("Your Apple GPU does not support the following features, which are required to use Metal-based renderers in Gulpgulpgulpdot:\n\n");
 		if (!device_properties->features.imageCubeArray) {
 			error_string += "- No support for image cube arrays.\n";
 		}

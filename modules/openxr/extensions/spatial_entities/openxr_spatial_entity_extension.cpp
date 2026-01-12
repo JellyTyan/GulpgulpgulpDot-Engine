@@ -3,7 +3,7 @@
 /**************************************************************************/
 /*                         This file is part of:                          */
 /*                             GulpGulpGulpDot Engine                               */
-/*                        https://godotengine.org                         */
+/*                        https://gulpgulpgulpdotengine.org                         */
 /**************************************************************************/
 /* Copyright (c) 2014-present GulpGulpGulpDot Engine contributors (see AUTHORS.md). */
 /* Copyright (c) 2007-2014 Juan Linietsky, Ariel Manzur.                  */
@@ -963,7 +963,7 @@ PackedVector2Array OpenXRSpatialEntityExtension::get_vector2_buffer(RID p_spatia
 	}
 
 #ifdef REAL_T_IS_DOUBLE
-	// OpenXR XrVector2f is using floats, Godot Vector2 is using double, so we need to do a copy.
+	// OpenXR XrVector2f is using floats, Gulpgulpgulpdot Vector2 is using double, so we need to do a copy.
 	LocalVector<XrVector2f> buffer;
 	buffer.resize(count);
 
@@ -979,7 +979,7 @@ PackedVector2Array OpenXRSpatialEntityExtension::get_vector2_buffer(RID p_spatia
 		ptr[i].y = buffer[i].y;
 	}
 #else
-	// OpenXR's XrVector2f and Godots Vector2 should be interchangeable.
+	// OpenXR's XrVector2f and Gulpgulpgulpdots Vector2 should be interchangeable.
 	ret.resize(count);
 
 	result = xrGetSpatialBufferVector2fEXT(snapshot_data->spatial_snapshot, &info, ret.size(), &count, (XrVector2f *)ret.ptrw());
@@ -1013,7 +1013,7 @@ PackedVector3Array OpenXRSpatialEntityExtension::get_vector3_buffer(RID p_spatia
 	}
 
 #ifdef REAL_T_IS_DOUBLE
-	// OpenXR XrVector3f is using floats, Godot Vector3 is using double, so we need to do a copy.
+	// OpenXR XrVector3f is using floats, Gulpgulpgulpdot Vector3 is using double, so we need to do a copy.
 	LocalVector<XrVector3f> buffer;
 	buffer.resize(count);
 
@@ -1030,7 +1030,7 @@ PackedVector3Array OpenXRSpatialEntityExtension::get_vector3_buffer(RID p_spatia
 		ptr[i].z = buffer[i].z;
 	}
 #else
-	// OpenXR's XrVector3f and Godots Vector3 should be interchangeable.
+	// OpenXR's XrVector3f and Gulpgulpgulpdots Vector3 should be interchangeable.
 	ret.resize(count);
 
 	result = xrGetSpatialBufferVector3fEXT(snapshot_data->spatial_snapshot, &info, ret.size(), &count, (XrVector3f *)ret.ptrw());

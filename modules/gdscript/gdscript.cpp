@@ -3,7 +3,7 @@
 /**************************************************************************/
 /*                         This file is part of:                          */
 /*                             GulpGulpGulpDot Engine                               */
-/*                        https://godotengine.org                         */
+/*                        https://gulpgulpgulpdotengine.org                         */
 /**************************************************************************/
 /* Copyright (c) 2014-present GulpGulpGulpDot Engine contributors (see AUTHORS.md). */
 /* Copyright (c) 2007-2014 Juan Linietsky, Ariel Manzur.                  */
@@ -3014,7 +3014,7 @@ GDScriptLanguage::GDScriptLanguage() {
 
 	// TODO: This setting has nothing to do with warnings. It should be moved at the next compatibility breakage,
 	// if the setting is still relevant at that time.
-	GLOBAL_DEF("debug/gdscript/warnings/renamed_in_godot_4_hint", true);
+	GLOBAL_DEF("debug/gdscript/warnings/renamed_in_gulpgulpgulpdot_4_hint", true);
 #endif // DEBUG_ENABLED
 }
 

@@ -3,7 +3,7 @@
 /**************************************************************************/
 /*                         This file is part of:                          */
 /*                             GulpGulpGulpDot Engine                               */
-/*                        https://godotengine.org                         */
+/*                        https://gulpgulpgulpdotengine.org                         */
 /**************************************************************************/
 /* Copyright (c) 2014-present GulpGulpGulpDot Engine contributors (see AUTHORS.md). */
 /* Copyright (c) 2007-2014 Juan Linietsky, Ariel Manzur.                  */
@@ -160,7 +160,7 @@ public:
 };
 
 // These functions are used to convert between Objective-C objects and
-// the RIDs used by Godot, respecting automatic reference counting.
+// the RIDs used by Gulpgulpgulpdot, respecting automatic reference counting.
 namespace rid {
 
 // Converts an Objective-C object to a pointer, and incrementing the

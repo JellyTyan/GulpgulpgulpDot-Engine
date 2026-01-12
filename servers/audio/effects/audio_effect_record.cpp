@@ -3,7 +3,7 @@
 /**************************************************************************/
 /*                         This file is part of:                          */
 /*                             GulpGulpGulpDot Engine                               */
-/*                        https://godotengine.org                         */
+/*                        https://gulpgulpgulpdotengine.org                         */
 /**************************************************************************/
 /* Copyright (c) 2014-present GulpGulpGulpDot Engine contributors (see AUTHORS.md). */
 /* Copyright (c) 2007-2014 Juan Linietsky, Ariel Manzur.                  */
@@ -166,7 +166,7 @@ void AudioEffectRecord::ensure_thread_stopped() {
 void AudioEffectRecord::set_recording_active(bool p_record) {
 	if (p_record) {
 		if (current_instance.is_null()) {
-			WARN_PRINT("Recording should not be set as active before Godot has initialized.");
+			WARN_PRINT("Recording should not be set as active before Gulpgulpgulpdot has initialized.");
 			return;
 		}
 		ensure_thread_stopped();

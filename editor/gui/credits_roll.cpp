@@ -3,7 +3,7 @@
 /**************************************************************************/
 /*                         This file is part of:                          */
 /*                             GulpGulpGulpDot Engine                               */
-/*                        https://godotengine.org                         */
+/*                        https://gulpgulpgulpdotengine.org                         */
 /**************************************************************************/
 /* Copyright (c) 2014-present GulpGulpGulpDot Engine contributors (see AUTHORS.md). */
 /* Copyright (c) 2007-2014 Juan Linietsky, Ariel Manzur.                  */
@@ -223,7 +223,7 @@ void CreditsRoll::roll_credits() {
 		_create_label(_build_string(DONORS_MEMBERS_GOLD));
 
 		_create_nothing();
-		_create_label(String::utf8(GODOT_LICENSE_TEXT));
+		_create_label(String::utf8(GULPGULPGULPDOT_LICENSE_TEXT));
 
 		_create_nothing(400 * EDSCALE);
 		_create_label(TTRC("Thank you for choosing GulpGulpGulpDot Engine!"), LabelSize::BIG_HEADER);

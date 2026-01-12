@@ -3,7 +3,7 @@
 /**************************************************************************/
 /*                         This file is part of:                          */
 /*                             GulpGulpGulpDot Engine                               */
-/*                        https://godotengine.org                         */
+/*                        https://gulpgulpgulpdotengine.org                         */
 /**************************************************************************/
 /* Copyright (c) 2014-present GulpGulpGulpDot Engine contributors (see AUTHORS.md). */
 /* Copyright (c) 2007-2014 Juan Linietsky, Ariel Manzur.                  */
@@ -110,10 +110,10 @@ bool ShaderBakerExportPlugin::_begin_customize_resources(const Ref<EditorExportP
 	tasks_cancelled = false;
 
 	StringBuilder to_hash;
-	to_hash.append("[GodotVersionNumber]");
-	to_hash.append(GODOT_VERSION_NUMBER);
-	to_hash.append("[GodotVersionHash]");
-	to_hash.append(GODOT_VERSION_HASH);
+	to_hash.append("[GulpgulpgulpdotVersionNumber]");
+	to_hash.append(GULPGULPGULPDOT_VERSION_NUMBER);
+	to_hash.append("[GulpgulpgulpdotVersionHash]");
+	to_hash.append(GULPGULPGULPDOT_VERSION_HASH);
 	to_hash.append("[Renderer]");
 	to_hash.append(shader_cache_renderer_name);
 	customization_configuration_hash = to_hash.as_string().hash64();

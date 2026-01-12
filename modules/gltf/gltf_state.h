@@ -3,7 +3,7 @@
 /**************************************************************************/
 /*                         This file is part of:                          */
 /*                             GulpGulpGulpDot Engine                               */
-/*                        https://godotengine.org                         */
+/*                        https://gulpgulpgulpdotengine.org                         */
 /**************************************************************************/
 /* Copyright (c) 2014-present GulpGulpGulpDot Engine contributors (see AUTHORS.md). */
 /* Copyright (c) 2007-2014 Juan Linietsky, Ariel Manzur.                  */
@@ -172,7 +172,7 @@ public:
 
 	void add_used_extension(const String &p_extension, bool p_required = false);
 	GLTFBufferViewIndex append_data_to_buffers(const Vector<uint8_t> &p_data, const bool p_deduplication);
-	GLTFNodeIndex append_gltf_node(Ref<GLTFNode> p_gltf_node, Node *p_godot_scene_node, GLTFNodeIndex p_parent_node_index);
+	GLTFNodeIndex append_gltf_node(Ref<GLTFNode> p_gltf_node, Node *p_gulpgulpgulpdot_scene_node, GLTFNodeIndex p_parent_node_index);
 
 	// Deprecated, use HandleBinaryImageMode instead.
 	enum GLTFHandleBinary {

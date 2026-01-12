@@ -3,7 +3,7 @@
 /**************************************************************************/
 /*                         This file is part of:                          */
 /*                             GulpGulpGulpDot Engine                               */
-/*                        https://godotengine.org                         */
+/*                        https://gulpgulpgulpdotengine.org                         */
 /**************************************************************************/
 /* Copyright (c) 2014-present GulpGulpGulpDot Engine contributors (see AUTHORS.md). */
 /* Copyright (c) 2007-2014 Juan Linietsky, Ariel Manzur.                  */
@@ -38,7 +38,7 @@
 OsLogLogger::OsLogLogger(const char *p_subsystem) {
 	const char *subsystem = p_subsystem;
 	if (!subsystem) {
-		subsystem = "org.godotengine.godot";
+		subsystem = "org.gulpgulpgulpdotengine.gulpgulpgulpdot";
 		os_log_info(OS_LOG_DEFAULT, "Missing subsystem for os_log logging; using %{public}s", subsystem);
 	}
 

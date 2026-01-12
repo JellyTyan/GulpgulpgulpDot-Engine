@@ -183,7 +183,7 @@ opts.Add(
         "lto", "Link-time optimization (production builds)", "none", ["none", "auto", "thin", "full"], ignorecase=2
     )
 )
-opts.Add(BoolVariable("production", "Set defaults to build Godot for use in production", False))
+opts.Add(BoolVariable("production", "Set defaults to build Gulpgulpgulpdot for use in production", False))
 opts.Add(BoolVariable("threads", "Enable threading support", True))
 
 # Components
@@ -250,7 +250,7 @@ opts.Add(BoolVariable("werror", "Treat compiler warnings as errors", False))
 opts.Add("extra_suffix", "Custom extra suffix added to the base filename of all generated binary files", "")
 opts.Add("object_prefix", "Custom prefix added to the base filename of all generated object files", "")
 opts.Add(BoolVariable("vsproj", "Generate a Visual Studio solution", False))
-opts.Add("vsproj_name", "Name of the Visual Studio solution", "godot")
+opts.Add("vsproj_name", "Name of the Visual Studio solution", "gulpgulpgulpdot")
 opts.Add("import_env_vars", "A comma-separated list of environment variables to copy from the outer environment.", "")
 opts.Add(BoolVariable("disable_exceptions", "Force disabling exception handling code", True))
 opts.Add(BoolVariable("disable_3d", "Disable 3D nodes for a smaller executable", False))
@@ -395,7 +395,7 @@ if env["platform"] in compatibility_platform_aliases:
     alias = env["platform"]
     platform = compatibility_platform_aliases[alias]
     print_warning(
-        f'Platform "{alias}" has been renamed to "{platform}" in Godot 4. Building for platform "{platform}".'
+        f'Platform "{alias}" has been renamed to "{platform}" in Gulpgulpgulpdot 4. Building for platform "{platform}".'
     )
     env["platform"] = platform
 
@@ -593,7 +593,7 @@ if env["library_type"] != "executable":
     if "library" not in env.get("supported", []):
         print_error(f"Library builds unsupported for {env['platform']}")
         Exit(255)
-    env.Append(CPPDEFINES=["LIBGODOT_ENABLED"])
+    env.Append(CPPDEFINES=["LIBGULPGULPGULPDOT_ENABLED"])
 
 # Default num_jobs to local cpu count if not user specified.
 # SCons has a peculiarity where user-specified options won't be overridden
@@ -712,7 +712,7 @@ elif methods.using_gcc(env):
     if cc_version_major < 9:
         print_error(
             "Detected GCC version older than 9, which does not fully support "
-            "C++17, or has bugs when compiling Godot. Supported versions are 9 "
+            "C++17, or has bugs when compiling Gulpgulpgulpdot. Supported versions are 9 "
             "and later. Use a newer GCC version, or Clang 6 or later by passing "
             '"use_llvm=yes" to the SCons command line.'
         )
@@ -747,22 +747,22 @@ elif methods.using_clang(env):
 
 elif env.msvc:
     # Ensure latest minor builds of Visual Studio 2017/2019.
-    # https://github.com/godotengine/godot/pull/94995#issuecomment-2336464574
+    # https://github.com/gulpgulpgulpdotengine/gulpgulpgulpdot/pull/94995#issuecomment-2336464574
     if cc_version_major == 16 and cc_version_minor < 11:
         print_error(
             "Detected Visual Studio 2019 version older than 16.11, which has bugs "
-            "when compiling Godot. Use a newer VS2019 version, or VS2022."
+            "when compiling Gulpgulpgulpdot. Use a newer VS2019 version, or VS2022."
         )
         Exit(255)
     if cc_version_major == 15 and cc_version_minor < 9:
         print_error(
             "Detected Visual Studio 2017 version older than 15.9, which has bugs "
-            "when compiling Godot. Use a newer VS2017 version, or VS2019/VS2022."
+            "when compiling Gulpgulpgulpdot. Use a newer VS2017 version, or VS2019/VS2022."
         )
         Exit(255)
     if cc_version_major < 15:
         print_error(
-            "Detected Visual Studio 2015 or earlier, which is unsupported in Godot. "
+            "Detected Visual Studio 2015 or earlier, which is unsupported in Gulpgulpgulpdot. "
             "Supported versions are Visual Studio 2017 and later."
         )
         Exit(255)
@@ -904,7 +904,7 @@ else:
     # Allow use of `__cplusplus` macro to determine C++ standard universally.
     env.Prepend(CXXFLAGS=["/Zc:__cplusplus"])
 
-# Disable exception handling. Godot doesn't use exceptions anywhere, and this
+# Disable exception handling. Gulpgulpgulpdot doesn't use exceptions anywhere, and this
 # saves around 20% of binary size and very significant build time (GH-80513).
 if env["disable_exceptions"]:
     if env.msvc:

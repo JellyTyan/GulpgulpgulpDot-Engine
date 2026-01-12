@@ -3,7 +3,7 @@
 /**************************************************************************/
 /*                         This file is part of:                          */
 /*                             GulpGulpGulpDot Engine                               */
-/*                        https://godotengine.org                         */
+/*                        https://gulpgulpgulpdotengine.org                         */
 /**************************************************************************/
 /* Copyright (c) 2014-present GulpGulpGulpDot Engine contributors (see AUTHORS.md). */
 /* Copyright (c) 2007-2014 Juan Linietsky, Ariel Manzur.                  */
@@ -226,7 +226,7 @@ public:
 
 	// Native structs, used by binder
 	struct NativeStruct {
-		String ccode; // C code to create the native struct, fields separated by ; Arrays accepted (even containing other structs), also function pointers. All types must be Godot types.
+		String ccode; // C code to create the native struct, fields separated by ; Arrays accepted (even containing other structs), also function pointers. All types must be Gulpgulpgulpdot types.
 		uint64_t struct_size; // local size of struct, for comparison
 	};
 	static HashMap<StringName, NativeStruct> native_structs;

@@ -3,7 +3,7 @@
 /**************************************************************************/
 /*                         This file is part of:                          */
 /*                             GulpGulpGulpDot Engine                               */
-/*                        https://godotengine.org                         */
+/*                        https://gulpgulpgulpdotengine.org                         */
 /**************************************************************************/
 /* Copyright (c) 2014-present GulpGulpGulpDot Engine contributors (see AUTHORS.md). */
 /* Copyright (c) 2007-2014 Juan Linietsky, Ariel Manzur.                  */
@@ -34,7 +34,7 @@
 
 #import <functional>
 
-/// Godot limits the number of dynamic buffers to 8.
+/// Gulpgulpgulpdot limits the number of dynamic buffers to 8.
 ///
 /// This is a minimum guarantee for Vulkan.
 constexpr uint32_t MAX_DYNAMIC_BUFFERS = 8;

@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<mime-info xmlns="http://www.freedesktop.org/standards/shared-mime-info">
+  <mime-type type="application/x-gulpgulpgulpdot-project">
+    <comment>GulpGulpGulpDot Engine project</comment>
+    <sub-class-of type="text/plain"/>
+    <icon name="x-gulpgulpgulpdot-project"/>
+    <glob pattern="project.gulpgulpgulpdot"/>
+  </mime-type>
+
+  <mime-type type="application/x-gulpgulpgulpdot-resource">
+    <comment>GulpGulpGulpDot Engine resource</comment>
+    <icon name="x-gulpgulpgulpdot-resource"/>
+    <glob pattern="*.res"/>
+    <glob pattern="*.tres"/>
+  </mime-type>
+
+  <mime-type type="application/x-gulpgulpgulpdot-scene">
+    <comment>GulpGulpGulpDot Engine scene</comment>
+    <icon name="x-gulpgulpgulpdot-scene"/>
+    <glob pattern="*.scn"/>
+    <glob pattern="*.tscn"/>
+    <glob pattern="*.escn"/>
+  </mime-type>
+
+  <mime-type type="application/x-gulpgulpgulpdot-shader">
+    <comment>GulpGulpGulpDot Engine shader</comment>
+    <sub-class-of type="text/plain"/>
+    <icon name="x-gulpgulpgulpdot-shader"/>
+    <glob pattern="*.gdshader"/>
+  </mime-type>
+
+  <mime-type type="application/x-gdscript">
+    <comment>GDScript script</comment>
+    <sub-class-of type="text/plain"/>
+    <icon name="x-gdscript"/>
+    <glob pattern="*.gd"/>
+  </mime-type>
+</mime-info>

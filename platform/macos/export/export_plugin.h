@@ -3,7 +3,7 @@
 /**************************************************************************/
 /*                         This file is part of:                          */
 /*                             GulpGulpGulpDot Engine                               */
-/*                        https://godotengine.org                         */
+/*                        https://gulpgulpgulpdotengine.org                         */
 /**************************************************************************/
 /* Copyright (c) 2014-present GulpGulpGulpDot Engine contributors (see AUTHORS.md). */
 /* Copyright (c) 2007-2014 Juan Linietsky, Ariel Manzur.                  */
@@ -45,14 +45,14 @@
 
 // Optional environment variables for defining confidential information. If any
 // of these is set, they will override the values set in the credentials file.
-const String ENV_MAC_CODESIGN_CERT_FILE = "GODOT_MACOS_CODESIGN_CERTIFICATE_FILE";
-const String ENV_MAC_CODESIGN_CERT_PASS = "GODOT_MACOS_CODESIGN_CERTIFICATE_PASSWORD";
-const String ENV_MAC_CODESIGN_PROFILE = "GODOT_MACOS_CODESIGN_PROVISIONING_PROFILE";
-const String ENV_MAC_NOTARIZATION_UUID = "GODOT_MACOS_NOTARIZATION_API_UUID";
-const String ENV_MAC_NOTARIZATION_KEY = "GODOT_MACOS_NOTARIZATION_API_KEY";
-const String ENV_MAC_NOTARIZATION_KEY_ID = "GODOT_MACOS_NOTARIZATION_API_KEY_ID";
-const String ENV_MAC_NOTARIZATION_APPLE_ID = "GODOT_MACOS_NOTARIZATION_APPLE_ID_NAME";
-const String ENV_MAC_NOTARIZATION_APPLE_PASS = "GODOT_MACOS_NOTARIZATION_APPLE_ID_PASSWORD";
+const String ENV_MAC_CODESIGN_CERT_FILE = "GULPGULPGULPDOT_MACOS_CODESIGN_CERTIFICATE_FILE";
+const String ENV_MAC_CODESIGN_CERT_PASS = "GULPGULPGULPDOT_MACOS_CODESIGN_CERTIFICATE_PASSWORD";
+const String ENV_MAC_CODESIGN_PROFILE = "GULPGULPGULPDOT_MACOS_CODESIGN_PROVISIONING_PROFILE";
+const String ENV_MAC_NOTARIZATION_UUID = "GULPGULPGULPDOT_MACOS_NOTARIZATION_API_UUID";
+const String ENV_MAC_NOTARIZATION_KEY = "GULPGULPGULPDOT_MACOS_NOTARIZATION_API_KEY";
+const String ENV_MAC_NOTARIZATION_KEY_ID = "GULPGULPGULPDOT_MACOS_NOTARIZATION_API_KEY_ID";
+const String ENV_MAC_NOTARIZATION_APPLE_ID = "GULPGULPGULPDOT_MACOS_NOTARIZATION_APPLE_ID_NAME";
+const String ENV_MAC_NOTARIZATION_APPLE_PASS = "GULPGULPGULPDOT_MACOS_NOTARIZATION_APPLE_ID_PASSWORD";
 
 class EditorExportPlatformMacOS : public EditorExportPlatform {
 	GDCLASS(EditorExportPlatformMacOS, EditorExportPlatform);

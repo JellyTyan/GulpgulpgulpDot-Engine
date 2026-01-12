@@ -3,7 +3,7 @@
 /**************************************************************************/
 /*                         This file is part of:                          */
 /*                             GulpGulpGulpDot Engine                               */
-/*                        https://godotengine.org                         */
+/*                        https://gulpgulpgulpdotengine.org                         */
 /**************************************************************************/
 /* Copyright (c) 2014-present GulpGulpGulpDot Engine contributors (see AUTHORS.md). */
 /* Copyright (c) 2007-2014 Juan Linietsky, Ariel Manzur.                  */
@@ -300,7 +300,7 @@ RendererCompositorRD::RendererCompositorRD() {
 		}
 
 		// Check if a directory exists for the shader cache to pull shaders from as read-only. This is used on exported projects with baked shaders.
-		String shader_cache_res_dir = "res://.godot/shader_cache";
+		String shader_cache_res_dir = "res://.gulpgulpgulpdot/shader_cache";
 		Ref<DirAccess> res_da = DirAccess::open(shader_cache_res_dir);
 		if (res_da.is_valid()) {
 			ShaderRD::set_shader_cache_res_dir(shader_cache_res_dir);

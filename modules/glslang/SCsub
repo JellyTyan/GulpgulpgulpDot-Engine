@@ -74,7 +74,7 @@ if env["builtin_glslang"]:
     env.modules_sources += thirdparty_obj
 
 
-# Godot source files
+# Gulpgulpgulpdot source files
 
 module_obj = []
 

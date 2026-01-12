@@ -3,7 +3,7 @@
 /**************************************************************************/
 /*                         This file is part of:                          */
 /*                             GulpGulpGulpDot Engine                               */
-/*                        https://godotengine.org                         */
+/*                        https://gulpgulpgulpdotengine.org                         */
 /**************************************************************************/
 /* Copyright (c) 2014-present GulpGulpGulpDot Engine contributors (see AUTHORS.md). */
 /* Copyright (c) 2007-2014 Juan Linietsky, Ariel Manzur.                  */
@@ -46,8 +46,8 @@ Error ImageLoaderTinyEXR::load_image(Ref<Image> p_image, Ref<FileAccess> f, BitF
 
 	f->get_buffer(&w[0], src_image_len);
 
-	// Re-implementation of tinyexr's LoadEXRFromMemory using Godot types to store the Image data
-	// and Godot's error codes.
+	// Re-implementation of tinyexr's LoadEXRFromMemory using Gulpgulpgulpdot types to store the Image data
+	// and Gulpgulpgulpdot's error codes.
 	// When debugging after updating the thirdparty library, check that we're still in sync with
 	// their API usage in LoadEXRFromMemory.
 
@@ -112,7 +112,7 @@ Error ImageLoaderTinyEXR::load_image(Ref<Image> p_image, Ref<FileAccess> f, BitF
 		}
 	}
 
-	// EXR image data loaded, now parse it into Godot-friendly image data
+	// EXR image data loaded, now parse it into Gulpgulpgulpdot-friendly image data
 
 	Vector<uint8_t> imgdata;
 	Image::Format format;

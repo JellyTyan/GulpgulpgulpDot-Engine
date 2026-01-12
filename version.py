@@ -1,9 +1,9 @@
-short_name = "godot"
+short_name = "gulpgulpgulpdot"
 name = "GulpGulpGulpDot Engine"
-major = 4
-minor = 6
+major = 5
+minor = 0
 patch = 0
 status = "beta"
 module_config = ""
-website = "https://godotengine.org"
+website = "https://gulpgulpgulpdotengine.org"
 docs = "latest"

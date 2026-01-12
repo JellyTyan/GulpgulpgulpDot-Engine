@@ -3,7 +3,7 @@
 /**************************************************************************/
 /*                         This file is part of:                          */
 /*                             GulpGulpGulpDot Engine                               */
-/*                        https://godotengine.org                         */
+/*                        https://gulpgulpgulpdotengine.org                         */
 /**************************************************************************/
 /* Copyright (c) 2014-present GulpGulpGulpDot Engine contributors (see AUTHORS.md). */
 /* Copyright (c) 2007-2014 Juan Linietsky, Ariel Manzur.                  */
@@ -309,8 +309,8 @@ void OpenXRHand::_update_skeleton() {
 		Quaternion(),
 
 		// SKELETON_RIG_HUMANOID bone adjustment. This rotation performs:
-		// OpenXR Z+ -> Godot Humanoid Y-  (Back along the bone)
-		// OpenXR Y+ -> Godot Humanoid Z- (Out the back of the hand)
+		// OpenXR Z+ -> Gulpgulpgulpdot Humanoid Y-  (Back along the bone)
+		// OpenXR Y+ -> Gulpgulpgulpdot Humanoid Z- (Out the back of the hand)
 		Quaternion(0.0, -Math::SQRT12, Math::SQRT12, 0.0),
 	};
 

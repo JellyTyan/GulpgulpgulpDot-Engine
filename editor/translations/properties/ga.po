@@ -1,16 +1,16 @@
 # Irish translation of the GulpGulpGulpDot Engine properties.
 # Copyright (c) 2014-present GulpGulpGulpDot Engine contributors.
 # Copyright (c) 2007-2014 Juan Linietsky, Ariel Manzur.
-# This file is distributed under the same license as the Godot source code.
+# This file is distributed under the same license as the Gulpgulpgulpdot source code.
 # Rónán Quill <ronan085@gmail.com>, 2019, 2020.
 # Aindriú Mac Giolla Eoin <aindriu80@gmail.com>, 2024, 2025.
 msgid ""
 msgstr ""
 "Project-Id-Version: GulpGulpGulpDot Engine properties\n"
-"Report-Msgid-Bugs-To: https://github.com/godotengine/godot\n"
+"Report-Msgid-Bugs-To: https://github.com/gulpgulpgulpdotengine/gulpgulpgulpdot\n"
 "PO-Revision-Date: 2025-12-03 14:00+0000\n"
 "Last-Translator: Aindriú Mac Giolla Eoin <aindriu80@gmail.com>\n"
-"Language-Team: Irish <https://hosted.weblate.org/projects/godot-engine/godot-"
+"Language-Team: Irish <https://hosted.weblate.org/projects/gulpgulpgulpdot-engine/gulpgulpgulpdot-"
 "properties/ga/>\n"
 "Language: ga\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -3620,8 +3620,8 @@ msgstr "Rianaigh Cruacha Glaonna i gCónaí"
 msgid "Always Track Local Variables"
 msgstr "Rianaigh Athróga Áitiúla i gCónaí"
 
-msgid "Renamed in Godot 4 Hint"
-msgstr "Athainmníodh i Godot 4 Hint"
+msgid "Renamed in Gulpgulpgulpdot 4 Hint"
+msgstr "Athainmníodh i Gulpgulpgulpdot 4 Hint"
 
 msgid "Unassigned Variable"
 msgstr "Samhail Rindreála"
@@ -4022,11 +4022,11 @@ msgstr "Solas"
 msgid "Visible"
 msgstr "Infheicthe"
 
-msgid "glTF to Godot Expression"
-msgstr "glTF a Slonn Godot"
+msgid "glTF to Gulpgulpgulpdot Expression"
+msgstr "glTF a Slonn Gulpgulpgulpdot"
 
-msgid "Godot to glTF Expression"
-msgstr "Godot go glTF Slonn"
+msgid "Gulpgulpgulpdot to glTF Expression"
+msgstr "Gulpgulpgulpdot go glTF Slonn"
 
 msgid "Node Paths"
 msgstr "Cosáin Nód"
@@ -4046,8 +4046,8 @@ msgstr "Ailt"
 msgid "Roots"
 msgstr "Fréamhacha"
 
-msgid "Godot Bone Node"
-msgstr "Nód Cnámh Godot"
+msgid "Gulpgulpgulpdot Bone Node"
+msgstr "Nód Cnámh Gulpgulpgulpdot"
 
 msgid "Skin Root"
 msgstr "Fréamh an Chraicinn"
@@ -4058,8 +4058,8 @@ msgstr "Ailt Bhunaidh"
 msgid "Non Joints"
 msgstr "Neamh-Ailt"
 
-msgid "Godot Skin"
-msgstr "Craiceann Godot"
+msgid "Gulpgulpgulpdot Skin"
+msgstr "Craiceann Gulpgulpgulpdot"
 
 msgid "Src Image"
 msgstr "Íomhá Src"
@@ -5243,8 +5243,8 @@ msgstr "Deilbhín 512 X 512"
 msgid "Emscripten Pool Size"
 msgstr "Méid Linn Snámha Emscripten"
 
-msgid "Godot Pool Size"
-msgstr "Méid Linn Snámha Godot"
+msgid "Gulpgulpgulpdot Pool Size"
+msgstr "Méid Linn Snámha Gulpgulpgulpdot"
 
 msgid "Windows"
 msgstr "Windows"

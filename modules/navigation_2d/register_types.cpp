@@ -3,7 +3,7 @@
 /**************************************************************************/
 /*                         This file is part of:                          */
 /*                             GulpGulpGulpDot Engine                               */
-/*                        https://godotengine.org                         */
+/*                        https://gulpgulpgulpdotengine.org                         */
 /**************************************************************************/
 /* Copyright (c) 2014-present GulpGulpGulpDot Engine contributors (see AUTHORS.md). */
 /* Copyright (c) 2007-2014 Juan Linietsky, Ariel Manzur.                  */
@@ -30,7 +30,7 @@
 
 #include "register_types.h"
 
-#include "2d/godot_navigation_server_2d.h"
+#include "2d/gulpgulpgulpdot_navigation_server_2d.h"
 
 #include "core/config/engine.h"
 #include "servers/navigation_2d/navigation_server_2d.h"
@@ -41,14 +41,14 @@
 #include "editor/navigation_region_2d_editor_plugin.h"
 #endif
 
-static NavigationServer2D *_createGodotNavigation2DCallback() {
-	return memnew(GodotNavigationServer2D);
+static NavigationServer2D *_createGulpgulpgulpdotNavigation2DCallback() {
+	return memnew(GulpgulpgulpdotNavigationServer2D);
 }
 
 void initialize_navigation_2d_module(ModuleInitializationLevel p_level) {
 	if (p_level == MODULE_INITIALIZATION_LEVEL_SERVERS) {
-		NavigationServer2DManager::get_singleton()->register_server("GodotNavigation2D", callable_mp_static(_createGodotNavigation2DCallback));
-		NavigationServer2DManager::get_singleton()->set_default_server("GodotNavigation2D");
+		NavigationServer2DManager::get_singleton()->register_server("GulpgulpgulpdotNavigation2D", callable_mp_static(_createGulpgulpgulpdotNavigation2DCallback));
+		NavigationServer2DManager::get_singleton()->set_default_server("GulpgulpgulpdotNavigation2D");
 	}
 
 #ifdef TOOLS_ENABLED

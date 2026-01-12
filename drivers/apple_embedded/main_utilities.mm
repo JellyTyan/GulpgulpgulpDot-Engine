@@ -3,7 +3,7 @@
 /**************************************************************************/
 /*                         This file is part of:                          */
 /*                             GulpGulpGulpDot Engine                               */
-/*                        https://godotengine.org                         */
+/*                        https://gulpgulpgulpdotengine.org                         */
 /**************************************************************************/
 /* Copyright (c) 2014-present GulpGulpGulpDot Engine contributors (see AUTHORS.md). */
 /* Copyright (c) 2007-2014 Juan Linietsky, Ariel Manzur.                  */
@@ -53,7 +53,7 @@ void change_to_launch_dir(char **p_args) {
 }
 
 int add_cmdline(int p_argc, char **p_args) {
-	NSArray *arr = [[[NSBundle mainBundle] infoDictionary] objectForKey:@"godot_cmdline"];
+	NSArray *arr = [[[NSBundle mainBundle] infoDictionary] objectForKey:@"gulpgulpgulpdot_cmdline"];
 	if (!arr) {
 		return p_argc;
 	}

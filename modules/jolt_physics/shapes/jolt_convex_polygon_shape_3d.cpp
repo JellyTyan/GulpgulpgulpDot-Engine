@@ -3,7 +3,7 @@
 /**************************************************************************/
 /*                         This file is part of:                          */
 /*                             GulpGulpGulpDot Engine                               */
-/*                        https://godotengine.org                         */
+/*                        https://gulpgulpgulpdotengine.org                         */
 /**************************************************************************/
 /* Copyright (c) 2014-present GulpGulpGulpDot Engine contributors (see AUTHORS.md). */
 /* Copyright (c) 2007-2014 Juan Linietsky, Ariel Manzur.                  */
@@ -59,7 +59,7 @@ JPH::ShapeRefC JoltConvexPolygonShape3D::_build() const {
 
 	const JPH::ConvexHullShapeSettings shape_settings(jolt_vertices, actual_margin);
 	const JPH::ShapeSettings::ShapeResult shape_result = shape_settings.Create();
-	ERR_FAIL_COND_V_MSG(shape_result.HasError(), nullptr, vformat("Failed to build Jolt Physics convex polygon shape with %s. It returned the following error: '%s'. This shape belongs to %s.", to_string(), to_godot(shape_result.GetError()), _owners_to_string()));
+	ERR_FAIL_COND_V_MSG(shape_result.HasError(), nullptr, vformat("Failed to build Jolt Physics convex polygon shape with %s. It returned the following error: '%s'. This shape belongs to %s.", to_string(), to_gulpgulpgulpdot(shape_result.GetError()), _owners_to_string()));
 
 	return shape_result.Get();
 }

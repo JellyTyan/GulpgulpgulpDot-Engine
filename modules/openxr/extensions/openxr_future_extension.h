@@ -3,7 +3,7 @@
 /**************************************************************************/
 /*                         This file is part of:                          */
 /*                             GulpGulpGulpDot Engine                               */
-/*                        https://godotengine.org                         */
+/*                        https://gulpgulpgulpdotengine.org                         */
 /**************************************************************************/
 /* Copyright (c) 2014-present GulpGulpGulpDot Engine contributors (see AUTHORS.md). */
 /* Copyright (c) 2007-2014 Juan Linietsky, Ariel Manzur.                  */
@@ -42,7 +42,7 @@
 	The API call for this is often part of the extension that utilizes
 	the future.
 
-	We will be using Godot Callables to drive responses on futures.
+	We will be using Gulpgulpgulpdot Callables to drive responses on futures.
 */
 
 #include "../util.h"

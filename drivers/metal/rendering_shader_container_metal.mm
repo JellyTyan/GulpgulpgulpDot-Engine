@@ -3,7 +3,7 @@
 /**************************************************************************/
 /*                         This file is part of:                          */
 /*                             GulpGulpGulpDot Engine                               */
-/*                        https://godotengine.org                         */
+/*                        https://gulpgulpgulpdotengine.org                         */
 /**************************************************************************/
 /* Copyright (c) 2014-present GulpGulpGulpDot Engine contributors (see AUTHORS.md). */
 /* Copyright (c) 2007-2014 Juan Linietsky, Ariel Manzur.                  */
@@ -516,7 +516,7 @@ bool RenderingShaderContainerMetal::_set_code_from_spirv(const ReflectShader &p_
 							found->texture_type = MTLTextureTypeTextureBuffer;
 						} break;
 						case SpvDimTileImageDataEXT: {
-							// Godot does not use this extension.
+							// Gulpgulpgulpdot does not use this extension.
 							// See: https://registry.khronos.org/vulkan/specs/latest/man/html/VK_EXT_shader_tile_image.html
 						} break;
 						case SpvDimMax: {

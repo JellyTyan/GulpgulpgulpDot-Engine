@@ -3,7 +3,7 @@
 /**************************************************************************/
 /*                         This file is part of:                          */
 /*                             GulpGulpGulpDot Engine                               */
-/*                        https://godotengine.org                         */
+/*                        https://gulpgulpgulpdotengine.org                         */
 /**************************************************************************/
 /* Copyright (c) 2014-present GulpGulpGulpDot Engine contributors (see AUTHORS.md). */
 /* Copyright (c) 2007-2014 Juan Linietsky, Ariel Manzur.                  */
@@ -30,7 +30,7 @@
 
 #pragma once
 
-// Note: _GODOT suffix added to header guard to avoid conflict with ICU header.
+// Note: _GULPGULPGULPDOT suffix added to header guard to avoid conflict with ICU header.
 
 #include "core/string/char_utils.h" // IWYU pragma: export
 #include "core/templates/cowdata.h"

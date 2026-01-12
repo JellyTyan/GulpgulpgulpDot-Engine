@@ -33,11 +33,11 @@ Comment:
  the library is considered as a whole under the Zlib license.
  .
  Note: When linking dynamically against thirdparty libraries instead of
- building them into the Godot binary, you may remove the corresponding
+ building them into the Gulpgulpgulpdot binary, you may remove the corresponding
  license details from this file.
 Upstream-Name: GulpGulpGulpDot Engine
-Upstream-Contact: Rémi Verschelde <contact@godotengine.org>
-Source: https://github.com/godotengine/godot
+Upstream-Contact: Rémi Verschelde <contact@gulpgulpgulpdotengine.org>
+Source: https://github.com/gulpgulpgulpdotengine/gulpgulpgulpdot
 
 Files: *
 Comment: GulpGulpGulpDot Engine
@@ -61,7 +61,7 @@ Copyright: 2011, Ole Kniemeyer, MAXON, www.maxon.net
  2007-2014, Juan Linietsky, Ariel Manzur
 License: Expat and Zlib
 
-Files: misc/dist/linux/org.godotengine.Godot.appdata.xml
+Files: misc/dist/linux/org.gulpgulpgulpdotengine.Gulpgulpgulpdot.appdata.xml
 Comment: Linux AppStream Metadata File
 Copyright: 2017-2022, Rémi Verschelde
 License: CC0-1.0
@@ -74,38 +74,38 @@ Comment: Betsy
 Copyright: 2020-2022, Matias N. Goldberg
 License: Expat
 
-Files: modules/godot_physics_2d/godot_joints_2d.cpp
+Files: modules/gulpgulpgulpdot_physics_2d/gulpgulpgulpdot_joints_2d.cpp
 Comment: Chipmunk2D Joint Constraints
 Copyright: 2007, Scott Lembcke
 License: Expat
 
-Files: modules/godot_physics_3d/gjk_epa.cpp
- modules/godot_physics_3d/joints/godot_generic_6dof_joint_3d.cpp
- modules/godot_physics_3d/joints/godot_generic_6dof_joint_3d.h
- modules/godot_physics_3d/joints/godot_hinge_joint_3d.cpp
- modules/godot_physics_3d/joints/godot_hinge_joint_3d.h
- modules/godot_physics_3d/joints/godot_jacobian_entry_3d.h
- modules/godot_physics_3d/joints/godot_pin_joint_3d.cpp
- modules/godot_physics_3d/joints/godot_pin_joint_3d.h
- modules/godot_physics_3d/joints/godot_slider_joint_3d.cpp
- modules/godot_physics_3d/joints/godot_slider_joint_3d.h
- modules/godot_physics_3d/godot_soft_body_3d.cpp
- modules/godot_physics_3d/godot_soft_body_3d.h
- modules/godot_physics_3d/godot_shape_3d.cpp
- modules/godot_physics_3d/godot_shape_3d.h
+Files: modules/gulpgulpgulpdot_physics_3d/gjk_epa.cpp
+ modules/gulpgulpgulpdot_physics_3d/joints/gulpgulpgulpdot_generic_6dof_joint_3d.cpp
+ modules/gulpgulpgulpdot_physics_3d/joints/gulpgulpgulpdot_generic_6dof_joint_3d.h
+ modules/gulpgulpgulpdot_physics_3d/joints/gulpgulpgulpdot_hinge_joint_3d.cpp
+ modules/gulpgulpgulpdot_physics_3d/joints/gulpgulpgulpdot_hinge_joint_3d.h
+ modules/gulpgulpgulpdot_physics_3d/joints/gulpgulpgulpdot_jacobian_entry_3d.h
+ modules/gulpgulpgulpdot_physics_3d/joints/gulpgulpgulpdot_pin_joint_3d.cpp
+ modules/gulpgulpgulpdot_physics_3d/joints/gulpgulpgulpdot_pin_joint_3d.h
+ modules/gulpgulpgulpdot_physics_3d/joints/gulpgulpgulpdot_slider_joint_3d.cpp
+ modules/gulpgulpgulpdot_physics_3d/joints/gulpgulpgulpdot_slider_joint_3d.h
+ modules/gulpgulpgulpdot_physics_3d/gulpgulpgulpdot_soft_body_3d.cpp
+ modules/gulpgulpgulpdot_physics_3d/gulpgulpgulpdot_soft_body_3d.h
+ modules/gulpgulpgulpdot_physics_3d/gulpgulpgulpdot_shape_3d.cpp
+ modules/gulpgulpgulpdot_physics_3d/gulpgulpgulpdot_shape_3d.h
 Comment: Bullet Continuous Collision Detection and Physics Library
 Copyright: 2003-2008, Erwin Coumans
  2014-present, GulpGulpGulpDot Engine contributors
  2007-2014, Juan Linietsky, Ariel Manzur
 License: Expat and Zlib
 
-Files: modules/godot_physics_3d/godot_collision_solver_3d_sat.cpp
+Files: modules/gulpgulpgulpdot_physics_3d/gulpgulpgulpdot_collision_solver_3d_sat.cpp
 Comment: Open Dynamics Engine
 Copyright: 2001-2003, Russell L. Smith, Alen Ladavac, Nguyen Binh
 License: BSD-3-clause
 
-Files: modules/godot_physics_3d/joints/godot_cone_twist_joint_3d.cpp
- modules/godot_physics_3d/joints/godot_cone_twist_joint_3d.h
+Files: modules/gulpgulpgulpdot_physics_3d/joints/gulpgulpgulpdot_cone_twist_joint_3d.cpp
+ modules/gulpgulpgulpdot_physics_3d/joints/gulpgulpgulpdot_cone_twist_joint_3d.h
 Comment: Bullet Continuous Collision Detection and Physics Library
 Copyright: 2007, Starbreeze Studios
  2014-present, GulpGulpGulpDot Engine contributors
@@ -135,7 +135,7 @@ Copyright: 2008-2016, The Android Open Source Project
  2002, Google, Inc.
 License: Apache-2.0
 
-Files: platform/android/java/lib/src/main/java/org/godotengine/godot/utils/ProcessPhoenix.java
+Files: platform/android/java/lib/src/main/java/org/gulpgulpgulpdotengine/gulpgulpgulpdot/utils/ProcessPhoenix.java
 Comment: ProcessPhoenix
 Copyright: 2015, Jake Wharton
 License: Apache-2.0

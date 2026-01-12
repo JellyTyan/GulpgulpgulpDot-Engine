@@ -3,7 +3,7 @@
 /**************************************************************************/
 /*                         This file is part of:                          */
 /*                             GulpGulpGulpDot Engine                               */
-/*                        https://godotengine.org                         */
+/*                        https://gulpgulpgulpdotengine.org                         */
 /**************************************************************************/
 /* Copyright (c) 2014-present GulpGulpGulpDot Engine contributors (see AUTHORS.md). */
 /* Copyright (c) 2007-2014 Juan Linietsky, Ariel Manzur.                  */
@@ -95,7 +95,7 @@ private:
 		float range;
 	};
 
-	// Same order as godot.
+	// Same order as gulpgulpgulpdot.
 	enum PlaneOrder {
 		PLANE_NEAR,
 		PLANE_FAR,
@@ -106,7 +106,7 @@ private:
 		PLANE_TOTAL,
 	};
 
-	// Same order as godot.
+	// Same order as gulpgulpgulpdot.
 	enum PointOrder {
 		PT_FAR_LEFT_TOP,
 		PT_FAR_LEFT_BOTTOM,

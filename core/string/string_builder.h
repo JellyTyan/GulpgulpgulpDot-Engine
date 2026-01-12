@@ -3,7 +3,7 @@
 /**************************************************************************/
 /*                         This file is part of:                          */
 /*                             GulpGulpGulpDot Engine                               */
-/*                        https://godotengine.org                         */
+/*                        https://gulpgulpgulpdotengine.org                         */
 /**************************************************************************/
 /* Copyright (c) 2014-present GulpGulpGulpDot Engine contributors (see AUTHORS.md). */
 /* Copyright (c) 2007-2014 Juan Linietsky, Ariel Manzur.                  */
@@ -39,7 +39,7 @@ class StringBuilder {
 	LocalVector<String> strings;
 	LocalVector<const char *> c_strings;
 
-	// -1 means it's a Godot String
+	// -1 means it's a Gulpgulpgulpdot String
 	// a natural number means C string.
 	LocalVector<int32_t> appended_strings;
 

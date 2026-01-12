@@ -3,7 +3,7 @@
 /**************************************************************************/
 /*                         This file is part of:                          */
 /*                             GulpGulpGulpDot Engine                               */
-/*                        https://godotengine.org                         */
+/*                        https://gulpgulpgulpdotengine.org                         */
 /**************************************************************************/
 /* Copyright (c) 2014-present GulpGulpGulpDot Engine contributors (see AUTHORS.md). */
 /* Copyright (c) 2007-2014 Juan Linietsky, Ariel Manzur.                  */
@@ -44,7 +44,7 @@ struct NamedColor {
 };
 
 // NOTE: This data is duplicated in the file:
-// modules/mono/glue/GodotSharp/GodotSharp/Core/Colors.cs
+// modules/mono/glue/GulpgulpgulpdotSharp/GulpgulpgulpdotSharp/Core/Colors.cs
 
 static NamedColor named_colors[] = {
 	{ "ALICE_BLUE", Color::hex(0xF0F8FFFF) },

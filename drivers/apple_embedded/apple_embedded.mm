@@ -3,7 +3,7 @@
 /**************************************************************************/
 /*                         This file is part of:                          */
 /*                             GulpGulpGulpDot Engine                               */
-/*                        https://godotengine.org                         */
+/*                        https://gulpgulpgulpdotengine.org                         */
 /**************************************************************************/
 /* Copyright (c) 2014-present GulpGulpGulpDot Engine contributors (see AUTHORS.md). */
 /* Copyright (c) 2007-2014 Juan Linietsky, Ariel Manzur.                  */
@@ -31,7 +31,7 @@
 #import "apple_embedded.h"
 
 #import "app_delegate_service.h"
-#import "godot_view_controller.h"
+#import "gulpgulpgulpdot_view_controller.h"
 
 #import <CoreHaptics/CoreHaptics.h>
 #import <UIKit/UIKit.h>

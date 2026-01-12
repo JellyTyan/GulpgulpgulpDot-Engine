@@ -3,7 +3,7 @@
 /**************************************************************************/
 /*                         This file is part of:                          */
 /*                             GulpGulpGulpDot Engine                               */
-/*                        https://godotengine.org                         */
+/*                        https://gulpgulpgulpdotengine.org                         */
 /**************************************************************************/
 /* Copyright (c) 2014-present GulpGulpGulpDot Engine contributors (see AUTHORS.md). */
 /* Copyright (c) 2007-2014 Juan Linietsky, Ariel Manzur.                  */
@@ -355,7 +355,7 @@ void ResourceImporterTexture::_save_ctex(const Ref<Image> &p_image, const String
 	Ref<FileAccess> f = FileAccess::open(p_to_path, FileAccess::WRITE);
 	ERR_FAIL_COND(f.is_null());
 
-	// Godot Streamable Texture 2D.
+	// Gulpgulpgulpdot Streamable Texture 2D.
 	f->store_8('G');
 	f->store_8('S');
 	f->store_8('T');

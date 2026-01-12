@@ -3,7 +3,7 @@
 /**************************************************************************/
 /*                         This file is part of:                          */
 /*                             GulpGulpGulpDot Engine                               */
-/*                        https://godotengine.org                         */
+/*                        https://gulpgulpgulpdotengine.org                         */
 /**************************************************************************/
 /* Copyright (c) 2014-present GulpGulpGulpDot Engine contributors (see AUTHORS.md). */
 /* Copyright (c) 2007-2014 Juan Linietsky, Ariel Manzur.                  */
@@ -205,7 +205,7 @@ void EditorFileServer::poll() {
 		_add_custom_file(forced_export[i], files_to_send, cached_files);
 	}
 
-	_add_custom_file("res://project.godot", files_to_send, cached_files);
+	_add_custom_file("res://project.gulpgulpgulpdot", files_to_send, cached_files);
 	// Check which files were removed and also add them
 	for (KeyValue<String, uint64_t> K : cached_files) {
 		if (!files_to_send.has(K.key)) {

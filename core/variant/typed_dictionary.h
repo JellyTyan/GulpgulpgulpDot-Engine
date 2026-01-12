@@ -3,7 +3,7 @@
 /**************************************************************************/
 /*                         This file is part of:                          */
 /*                             GulpGulpGulpDot Engine                               */
-/*                        https://godotengine.org                         */
+/*                        https://gulpgulpgulpdotengine.org                         */
 /**************************************************************************/
 /* Copyright (c) 2014-present GulpGulpGulpDot Engine contributors (see AUTHORS.md). */
 /* Copyright (c) 2007-2014 Juan Linietsky, Ariel Manzur.                  */
@@ -41,8 +41,8 @@ public:
 	}
 
 	_FORCE_INLINE_ TypedDictionary(const Dictionary &p_dictionary) {
-		set_typed(GodotTypeInfo::Internal::get_variant_type<K>(), GodotTypeInfo::Internal::get_object_class_name_or_empty<K>(), Variant(),
-				GodotTypeInfo::Internal::get_variant_type<V>(), GodotTypeInfo::Internal::get_object_class_name_or_empty<V>(), Variant());
+		set_typed(GulpgulpgulpdotTypeInfo::Internal::get_variant_type<K>(), GulpgulpgulpdotTypeInfo::Internal::get_object_class_name_or_empty<K>(), Variant(),
+				GulpgulpgulpdotTypeInfo::Internal::get_variant_type<V>(), GulpgulpgulpdotTypeInfo::Internal::get_object_class_name_or_empty<V>(), Variant());
 		if (is_same_typed(p_dictionary)) {
 			Dictionary::operator=(p_dictionary);
 		} else {
@@ -54,7 +54,7 @@ public:
 			TypedDictionary(Dictionary(p_init)) {}
 
 	_FORCE_INLINE_ TypedDictionary() {
-		set_typed(GodotTypeInfo::Internal::get_variant_type<K>(), GodotTypeInfo::Internal::get_object_class_name_or_empty<K>(), Variant(),
-				GodotTypeInfo::Internal::get_variant_type<V>(), GodotTypeInfo::Internal::get_object_class_name_or_empty<V>(), Variant());
+		set_typed(GulpgulpgulpdotTypeInfo::Internal::get_variant_type<K>(), GulpgulpgulpdotTypeInfo::Internal::get_object_class_name_or_empty<K>(), Variant(),
+				GulpgulpgulpdotTypeInfo::Internal::get_variant_type<V>(), GulpgulpgulpdotTypeInfo::Internal::get_object_class_name_or_empty<V>(), Variant());
 	}
 };

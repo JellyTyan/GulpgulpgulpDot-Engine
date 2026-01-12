@@ -3,7 +3,7 @@
 /**************************************************************************/
 /*                         This file is part of:                          */
 /*                             GulpGulpGulpDot Engine                               */
-/*                        https://godotengine.org                         */
+/*                        https://gulpgulpgulpdotengine.org                         */
 /**************************************************************************/
 /* Copyright (c) 2014-present GulpGulpGulpDot Engine contributors (see AUTHORS.md). */
 /* Copyright (c) 2007-2014 Juan Linietsky, Ariel Manzur.                  */
@@ -36,7 +36,7 @@
 #include <cstdio>
 #include <cstdlib>
 
-GODOT_CLANG_WARNING_PUSH_AND_IGNORE("-Wdeprecated-declarations") // OpenGL is deprecated in macOS 10.14.
+GULPGULPGULPDOT_CLANG_WARNING_PUSH_AND_IGNORE("-Wdeprecated-declarations") // OpenGL is deprecated in macOS 10.14.
 
 Error GLManagerLegacy_MacOS::create_context(GLWindow &win) {
 	NSOpenGLPixelFormatAttribute attributes[] = {
@@ -203,6 +203,6 @@ GLManagerLegacy_MacOS::~GLManagerLegacy_MacOS() {
 	release_current();
 }
 
-GODOT_CLANG_WARNING_POP
+GULPGULPGULPDOT_CLANG_WARNING_POP
 
 #endif // MACOS_ENABLED && GLES3_ENABLED

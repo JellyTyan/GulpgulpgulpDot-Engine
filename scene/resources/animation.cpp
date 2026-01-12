@@ -3,7 +3,7 @@
 /**************************************************************************/
 /*                         This file is part of:                          */
 /*                             GulpGulpGulpDot Engine                               */
-/*                        https://godotengine.org                         */
+/*                        https://gulpgulpgulpdotengine.org                         */
 /**************************************************************************/
 /* Copyright (c) 2014-present GulpGulpGulpDot Engine contributors (see AUTHORS.md). */
 /* Copyright (c) 2007-2014 Juan Linietsky, Ariel Manzur.                  */
@@ -449,7 +449,7 @@ bool Animation::_set(const StringName &p_name, const Variant &p_value) {
 			return false;
 		}
 #ifndef DISABLE_DEPRECATED
-	} else if (prop_name == "loop" && p_value.operator bool()) { // Compatibility with Godot 3.x.
+	} else if (prop_name == "loop" && p_value.operator bool()) { // Compatibility with Gulpgulpgulpdot 3.x.
 		loop_mode = Animation::LoopMode::LOOP_LINEAR;
 		return true;
 #endif // DISABLE_DEPRECATED

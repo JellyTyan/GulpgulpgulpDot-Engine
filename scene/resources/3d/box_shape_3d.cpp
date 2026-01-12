@@ -3,7 +3,7 @@
 /**************************************************************************/
 /*                         This file is part of:                          */
 /*                             GulpGulpGulpDot Engine                               */
-/*                        https://godotengine.org                         */
+/*                        https://gulpgulpgulpdotengine.org                         */
 /**************************************************************************/
 /* Copyright (c) 2014-present GulpGulpGulpDot Engine contributors (see AUTHORS.md). */
 /* Copyright (c) 2007-2014 Juan Linietsky, Ariel Manzur.                  */
@@ -78,7 +78,7 @@ void BoxShape3D::_update_shape() {
 
 #ifndef DISABLE_DEPRECATED
 bool BoxShape3D::_set(const StringName &p_name, const Variant &p_value) {
-	if (p_name == "extents") { // Compatibility with Godot 3.x.
+	if (p_name == "extents") { // Compatibility with Gulpgulpgulpdot 3.x.
 		// Convert to `size`, twice as big.
 		set_size((Vector3)p_value * 2);
 		return true;
@@ -87,7 +87,7 @@ bool BoxShape3D::_set(const StringName &p_name, const Variant &p_value) {
 }
 
 bool BoxShape3D::_get(const StringName &p_name, Variant &r_property) const {
-	if (p_name == "extents") { // Compatibility with Godot 3.x.
+	if (p_name == "extents") { // Compatibility with Gulpgulpgulpdot 3.x.
 		// Convert to `extents`, half as big.
 		r_property = size / 2;
 		return true;

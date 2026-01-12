@@ -3,7 +3,7 @@
 /**************************************************************************/
 /*                         This file is part of:                          */
 /*                             GulpGulpGulpDot Engine                               */
-/*                        https://godotengine.org                         */
+/*                        https://gulpgulpgulpdotengine.org                         */
 /**************************************************************************/
 /* Copyright (c) 2014-present GulpGulpGulpDot Engine contributors (see AUTHORS.md). */
 /* Copyright (c) 2007-2014 Juan Linietsky, Ariel Manzur.                  */
@@ -209,8 +209,8 @@ String _android_xml_escape(const String &p_string) {
 Error _create_project_name_strings_files(const Ref<EditorExportPreset> &p_preset, const String &p_project_name, const String &p_gradle_build_dir, const Dictionary &p_appnames) {
 	print_verbose("Creating strings resources for supported locales for project " + p_project_name);
 	// Stores the string into the default values directory.
-	String processed_default_xml_string = vformat(GODOT_PROJECT_NAME_XML_STRING, _android_xml_escape(p_project_name));
-	store_string_at_path(p_gradle_build_dir.path_join("res/values/godot_project_name_string.xml"), processed_default_xml_string);
+	String processed_default_xml_string = vformat(GULPGULPGULPDOT_PROJECT_NAME_XML_STRING, _android_xml_escape(p_project_name));
+	store_string_at_path(p_gradle_build_dir.path_join("res/values/gulpgulpgulpdot_project_name_string.xml"), processed_default_xml_string);
 
 	// Searches the Gradle project res/ directory to find all supported locales
 	Ref<DirAccess> da = DirAccess::open(p_gradle_build_dir.path_join("res"));
@@ -222,7 +222,7 @@ Error _create_project_name_strings_files(const Ref<EditorExportPreset> &p_preset
 	}
 
 	// Setup a temporary translation domain to translate the project name.
-	const StringName domain_name = "godot.project_name_localization";
+	const StringName domain_name = "gulpgulpgulpdot.project_name_localization";
 	Ref<TranslationDomain> domain = TranslationServer::get_singleton()->get_or_add_domain(domain_name);
 	TranslationServer::get_singleton()->load_project_translations(domain);
 
@@ -237,7 +237,7 @@ Error _create_project_name_strings_files(const Ref<EditorExportPreset> &p_preset
 			continue;
 		}
 		String locale = file.replace("values-", "").replace("-r", "_");
-		String locale_directory = p_gradle_build_dir.path_join("res/" + file + "/godot_project_name_string.xml");
+		String locale_directory = p_gradle_build_dir.path_join("res/" + file + "/gulpgulpgulpdot_project_name_string.xml");
 
 		String locale_project_name;
 		if (p_appnames.is_empty()) {
@@ -247,7 +247,7 @@ Error _create_project_name_strings_files(const Ref<EditorExportPreset> &p_preset
 			locale_project_name = p_appnames.get(locale, p_project_name);
 		}
 		if (locale_project_name != p_project_name) {
-			String processed_xml_string = vformat(GODOT_PROJECT_NAME_XML_STRING, _android_xml_escape(locale_project_name));
+			String processed_xml_string = vformat(GULPGULPGULPDOT_PROJECT_NAME_XML_STRING, _android_xml_escape(locale_project_name));
 			print_verbose("Storing project name for locale " + locale + " under " + locale_directory);
 			store_string_at_path(locale_directory, processed_xml_string);
 		} else {
@@ -297,10 +297,10 @@ String _get_activity_tag(const Ref<EditorExportPlatform> &p_export_platform, con
 		}
 	}
 
-	// Update the GodotApp activity tag.
+	// Update the GulpgulpgulpdotApp activity tag.
 	String orientation = _get_android_orientation_label(DisplayServer::ScreenOrientation(int(p_export_platform->get_project_setting(p_preset, "display/window/handheld/orientation"))));
 	String manifest_activity_text = vformat(
-			"        <activity android:name=\".GodotApp\" "
+			"        <activity android:name=\".GulpgulpgulpdotApp\" "
 			"tools:replace=\"android:screenOrientation,android:excludeFromRecents,android:resizeableActivity\" "
 			"tools:node=\"mergeOnlyAttributes\" "
 			"android:excludeFromRecents=\"%s\" "
@@ -317,11 +317,11 @@ String _get_activity_tag(const Ref<EditorExportPlatform> &p_export_platform, con
 
 	manifest_activity_text += "        </activity>\n";
 
-	// Update the GodotAppLauncher activity tag.
+	// Update the GulpgulpgulpdotAppLauncher activity tag.
 	manifest_activity_text += "        <activity-alias\n"
 							  "            tools:node=\"mergeOnlyAttributes\"\n"
-							  "            android:name=\".GodotAppLauncher\"\n"
-							  "            android:targetActivity=\".GodotApp\"\n"
+							  "            android:name=\".GulpgulpgulpdotAppLauncher\"\n"
+							  "            android:targetActivity=\".GulpgulpgulpdotApp\"\n"
 							  "            android:exported=\"true\">\n";
 
 	manifest_activity_text += "            <intent-filter>\n"
@@ -345,8 +345,8 @@ String _get_activity_tag(const Ref<EditorExportPlatform> &p_export_platform, con
 
 	manifest_activity_text += "            </intent-filter>\n";
 
-	// Hybrid categories should only go to the actual 'GodotApp' activity.
-	Ref<RegEx> activity_alias_content_to_remove_regex = RegEx::create_from_string(R"delim(<category\s+android:name\s*=\s*"org.godotengine.xr.hybrid.(IMMERSIVE|PANEL)"\s*\/>)delim");
+	// Hybrid categories should only go to the actual 'GulpgulpgulpdotApp' activity.
+	Ref<RegEx> activity_alias_content_to_remove_regex = RegEx::create_from_string(R"delim(<category\s+android:name\s*=\s*"org.gulpgulpgulpdotengine.xr.hybrid.(IMMERSIVE|PANEL)"\s*\/>)delim");
 	String updated_export_plugins_activity_alias_element_contents = activity_alias_content_to_remove_regex->sub(export_plugins_activity_element_contents, "", true);
 	manifest_activity_text += updated_export_plugins_activity_alias_element_contents;
 
@@ -359,7 +359,7 @@ String _get_application_tag(const Ref<EditorExportPlatform> &p_export_platform, 
 	bool is_game = app_category_index == APP_CATEGORY_GAME;
 
 	String manifest_application_text = vformat(
-			"    <application android:label=\"@string/godot_project_name_string\"\n"
+			"    <application android:label=\"@string/gulpgulpgulpdot_project_name_string\"\n"
 			"        android:allowBackup=\"%s\"\n"
 			"        android:icon=\"@mipmap/icon\"\n"
 			"        android:isGame=\"%s\"\n"

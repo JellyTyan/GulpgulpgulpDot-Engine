@@ -3,7 +3,7 @@
 /**************************************************************************/
 /*                         This file is part of:                          */
 /*                             GulpGulpGulpDot Engine                               */
-/*                        https://godotengine.org                         */
+/*                        https://gulpgulpgulpdotengine.org                         */
 /**************************************************************************/
 /* Copyright (c) 2014-present GulpGulpGulpDot Engine contributors (see AUTHORS.md). */
 /* Copyright (c) 2007-2014 Juan Linietsky, Ariel Manzur.                  */
@@ -44,7 +44,7 @@ class Texture2D;
 struct EditorProgress;
 struct SharedObject;
 
-const String ENV_SCRIPT_ENCRYPTION_KEY = "GODOT_SCRIPT_ENCRYPTION_KEY";
+const String ENV_SCRIPT_ENCRYPTION_KEY = "GULPGULPGULPDOT_SCRIPT_ENCRYPTION_KEY";
 
 class EditorExportPlatform : public RefCounted {
 	GDCLASS(EditorExportPlatform, RefCounted);

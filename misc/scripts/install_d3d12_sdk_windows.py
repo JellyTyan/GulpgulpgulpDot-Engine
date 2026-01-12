@@ -22,17 +22,17 @@ parser.add_argument(
 )
 args = parser.parse_args()
 
-# Base Godot dependencies path
+# Base Gulpgulpgulpdot dependencies path
 # If cross-compiling (no LOCALAPPDATA), we install in `bin`
 deps_folder = os.getenv("LOCALAPPDATA")
 if deps_folder:
-    deps_folder = os.path.join(deps_folder, "Godot", "build_deps")
+    deps_folder = os.path.join(deps_folder, "Gulpgulpgulpdot", "build_deps")
 else:
     deps_folder = os.path.join("bin", "build_deps")
 
 # Mesa NIR
 # Sync with `drivers/d3d12/SCsub` when updating Mesa.
-# Check for latest version: https://github.com/godotengine/godot-nir-static/releases/latest
+# Check for latest version: https://github.com/gulpgulpgulpdotengine/gulpgulpgulpdot-nir-static/releases/latest
 mesa_version = "25.3.1-1"
 # WinPixEventRuntime
 # Check for latest version: https://www.nuget.org/api/v2/package/WinPixEventRuntime (check downloaded filename)
@@ -63,7 +63,7 @@ for arch in [
     "x86_64-llvm",
     "x86_64-msvc",
 ]:
-    mesa_filename = "godot-nir-static-" + arch + "-release.zip"
+    mesa_filename = "gulpgulpgulpdot-nir-static-" + arch + "-release.zip"
     mesa_archive = os.path.join(deps_folder, mesa_filename)
     mesa_folder = os.path.join(deps_folder, "mesa-" + arch)
 
@@ -71,7 +71,7 @@ for arch in [
         os.remove(mesa_archive)
     print(f"Downloading Mesa NIR {mesa_filename} ...")
     urllib.request.urlretrieve(
-        f"https://github.com/godotengine/godot-nir-static/releases/download/{mesa_version}/{mesa_filename}",
+        f"https://github.com/gulpgulpgulpdotengine/gulpgulpgulpdot-nir-static/releases/download/{mesa_version}/{mesa_filename}",
         mesa_archive,
     )
     if os.path.exists(mesa_folder):
@@ -144,4 +144,4 @@ print(f"DirectX 12 Agility SDK {agility_sdk_version} installed successfully.\n")
 
 # Complete message
 color_print(f'{Ansi.GREEN}All Direct3D 12 SDK components were installed to "{deps_folder}" successfully!')
-color_print(f'{Ansi.GREEN}You can now build Godot with Direct3D 12 support enabled by running "scons d3d12=yes".')
+color_print(f'{Ansi.GREEN}You can now build Gulpgulpgulpdot with Direct3D 12 support enabled by running "scons d3d12=yes".')

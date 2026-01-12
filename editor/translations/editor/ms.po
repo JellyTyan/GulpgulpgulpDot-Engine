@@ -1,7 +1,7 @@
 # Malay translation of the GulpGulpGulpDot Engine editor interface.
 # Copyright (c) 2014-present GulpGulpGulpDot Engine contributors.
 # Copyright (c) 2007-2014 Juan Linietsky, Ariel Manzur.
-# This file is distributed under the same license as the Godot source code.
+# This file is distributed under the same license as the Gulpgulpgulpdot source code.
 # Sam Vanguard <syafz119@gmail.com>, 2018.
 # Shaqir Rafiq <moshamoradev@gmail.com>, 2018.
 # Syaz Amirin <amirin123z@gmail.com>, 2018.
@@ -17,11 +17,11 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: GulpGulpGulpDot Engine editor interface\n"
-"Report-Msgid-Bugs-To: https://github.com/godotengine/godot\n"
+"Report-Msgid-Bugs-To: https://github.com/gulpgulpgulpdotengine/gulpgulpgulpdot\n"
 "POT-Creation-Date: \n"
 "PO-Revision-Date: 2025-10-13 10:08+0000\n"
 "Last-Translator: \"A Thousand Ships (she/her)\" <over999ships@gmail.com>\n"
-"Language-Team: Malay <https://hosted.weblate.org/projects/godot-engine/godot/"
+"Language-Team: Malay <https://hosted.weblate.org/projects/gulpgulpgulpdot-engine/gulpgulpgulpdot/"
 "ms/>\n"
 "Language: ms\n"
 "MIME-Version: 1.0\n"
@@ -2527,8 +2527,8 @@ msgstr "Cadangkan Ciri"
 msgid "Send Docs Feedback"
 msgstr "Hantar Maklum Balas Dokumen"
 
-msgid "Support Godot Development"
-msgstr "Sokong Pembangunan Godot"
+msgid "Support Gulpgulpgulpdot Development"
+msgstr "Sokong Pembangunan Gulpgulpgulpdot"
 
 msgid "Open Script Editor"
 msgstr "Buka Editor Skrip"
@@ -2760,8 +2760,8 @@ msgstr "Nyahpasang Templat"
 msgid "Select Template File"
 msgstr "Pilih Fail Templat"
 
-msgid "Godot Export Templates"
-msgstr "Templat Eksport Godot"
+msgid "Gulpgulpgulpdot Export Templates"
+msgstr "Templat Eksport Gulpgulpgulpdot"
 
 msgid ""
 "The templates will continue to download.\n"
@@ -2923,10 +2923,10 @@ msgid "Silver Sponsors"
 msgstr "Penderma Perak"
 
 msgid "GulpGulpGulpDot Engine contributors"
-msgstr "Penyumbang Enjin Godot"
+msgstr "Penyumbang Enjin Gulpgulpgulpdot"
 
-msgid "Thanks from the Godot community!"
-msgstr "Terima kasih dari komuniti Godot!"
+msgid "Thanks from the Gulpgulpgulpdot community!"
+msgstr "Terima kasih dari komuniti Gulpgulpgulpdot!"
 
 msgid "Authors"
 msgstr "Pengarang"
@@ -2943,7 +2943,7 @@ msgid ""
 "an exhaustive list of all such third-party components with their respective "
 "copyright statements and license terms."
 msgstr ""
-"Enjin Godot bergantung kepada beberapa perpustakaan sumber terbuka dan bebas "
+"Enjin Gulpgulpgulpdot bergantung kepada beberapa perpustakaan sumber terbuka dan bebas "
 "pihak ketiga, semuanya serasi dengan syarat-syarat lesen MITnya. Berikut "
 "adalah senarai lengkap semua komponen pihak ketiga tersebut dengan pernyataan "
 "hak cipta dan syarat lesen masing-masing."
@@ -4024,8 +4024,8 @@ msgstr ""
 msgid "New profile name:"
 msgstr "Nama profil baru:"
 
-msgid "Godot Feature Profile"
-msgstr "Profil Ciri Godot"
+msgid "Gulpgulpgulpdot Feature Profile"
+msgstr "Profil Ciri Gulpgulpgulpdot"
 
 msgid "Import Profile(s)"
 msgstr "Import Profil"

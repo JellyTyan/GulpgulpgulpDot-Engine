@@ -3,7 +3,7 @@
 /**************************************************************************/
 /*                         This file is part of:                          */
 /*                             GulpGulpGulpDot Engine                               */
-/*                        https://godotengine.org                         */
+/*                        https://gulpgulpgulpdotengine.org                         */
 /**************************************************************************/
 /* Copyright (c) 2014-present GulpGulpGulpDot Engine contributors (see AUTHORS.md). */
 /* Copyright (c) 2007-2014 Juan Linietsky, Ariel Manzur.                  */
@@ -1667,7 +1667,7 @@ Error DocTools::save_classes(const String &p_default_path, const HashMap<String,
 			// Modules are nested deep, so change the path to reference the same schema everywhere.
 			schema_path = save_path.contains("modules/") ? "../../../doc/class.xsd" : "../class.xsd";
 		} else {
-			schema_path = "https://raw.githubusercontent.com/godotengine/godot/master/doc/class.xsd";
+			schema_path = "https://raw.githubusercontent.com/gulpgulpgulpdotengine/gulpgulpgulpdot/master/doc/class.xsd";
 		}
 		header += vformat(
 				R"( xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="%s">)",

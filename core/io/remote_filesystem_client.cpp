@@ -3,7 +3,7 @@
 /**************************************************************************/
 /*                         This file is part of:                          */
 /*                             GulpGulpGulpDot Engine                               */
-/*                        https://godotengine.org                         */
+/*                        https://gulpgulpgulpdotengine.org                         */
 /**************************************************************************/
 /* Copyright (c) 2014-present GulpGulpGulpDot Engine contributors (see AUTHORS.md). */
 /* Copyright (c) 2007-2014 Juan Linietsky, Ariel Manzur.                  */
@@ -168,7 +168,7 @@ Error RemoteFilesystemClient::_synchronize_with_server(const String &p_host, int
 	// Connection OK, now send the current file state.
 	print_verbose("Remote Filesystem: Connection OK.");
 
-	// Header (GRFS) - Godot Remote File System
+	// Header (GRFS) - Gulpgulpgulpdot Remote File System
 	print_verbose("Remote Filesystem: Sending header");
 	tcp_client->put_u8('G');
 	tcp_client->put_u8('R');

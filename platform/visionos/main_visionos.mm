@@ -3,7 +3,7 @@
 /**************************************************************************/
 /*                         This file is part of:                          */
 /*                             GulpGulpGulpDot Engine                               */
-/*                        https://godotengine.org                         */
+/*                        https://gulpgulpgulpdotengine.org                         */
 /**************************************************************************/
 /* Copyright (c) 2014-present GulpGulpGulpDot Engine contributors (see AUTHORS.md). */
 /* Copyright (c) 2007-2014 Juan Linietsky, Ariel Manzur.                  */
@@ -31,7 +31,7 @@
 #import "os_visionos.h"
 
 #include "core/profiling/profiling.h"
-#import "drivers/apple_embedded/godot_app_delegate.h"
+#import "drivers/apple_embedded/gulpgulpgulpdot_app_delegate.h"
 #import "drivers/apple_embedded/main_utilities.h"
 #include "main/main.h"
 
@@ -51,7 +51,7 @@ int apple_embedded_main(int argc, char **argv) {
 	char *fargv[64];
 	argc = process_args(argc, argv, fargv);
 
-	godot_init_profiler();
+	gulpgulpgulpdot_init_profiler();
 
 	Error err = Main::setup(fargv[0], argc - 1, &fargv[1], false);
 
@@ -69,6 +69,6 @@ int apple_embedded_main(int argc, char **argv) {
 
 void apple_embedded_finish() {
 	Main::cleanup();
-	godot_cleanup_profiler();
+	gulpgulpgulpdot_cleanup_profiler();
 	delete os;
 }

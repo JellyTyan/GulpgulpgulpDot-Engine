@@ -12,9 +12,9 @@ sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), "../
 from misc.utility.color import Ansi, color_print
 
 # Swappy
-# Check for latest version: https://github.com/godotengine/godot-swappy/releases/latest
+# Check for latest version: https://github.com/gulpgulpgulpdotengine/gulpgulpgulpdot-swappy/releases/latest
 swappy_tag = "from-source-2025-01-31"
-swappy_filename = "godot-swappy.zip"
+swappy_filename = "gulpgulpgulpdot-swappy.zip"
 swappy_folder = "thirdparty/swappy-frame-pacing"
 swappy_archs = [
     "arm64-v8a",
@@ -30,7 +30,7 @@ if os.path.isfile(swappy_archive_destination):
 
 print(f"Downloading Swappy {swappy_tag} ...")
 urllib.request.urlretrieve(
-    f"https://github.com/godotengine/godot-swappy/releases/download/{swappy_tag}/{swappy_filename}",
+    f"https://github.com/gulpgulpgulpdotengine/gulpgulpgulpdot-swappy/releases/download/{swappy_tag}/{swappy_filename}",
     swappy_archive_destination,
 )
 
@@ -53,5 +53,5 @@ print("Swappy installed successfully.\n")
 # Complete message
 color_print(f'{Ansi.GREEN}Swappy was installed to "{swappy_folder}" successfully!')
 color_print(
-    f'{Ansi.GREEN}You can now build Godot with Swappy support enabled by running "scons platform=android swappy=yes".'
+    f'{Ansi.GREEN}You can now build Gulpgulpgulpdot with Swappy support enabled by running "scons platform=android swappy=yes".'
 )

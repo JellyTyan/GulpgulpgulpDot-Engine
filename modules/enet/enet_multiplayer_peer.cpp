@@ -3,7 +3,7 @@
 /**************************************************************************/
 /*                         This file is part of:                          */
 /*                             GulpGulpGulpDot Engine                               */
-/*                        https://godotengine.org                         */
+/*                        https://gulpgulpgulpdotengine.org                         */
 /**************************************************************************/
 /* Copyright (c) 2014-present GulpGulpGulpDot Engine contributors (see AUTHORS.md). */
 /* Copyright (c) 2007-2014 Juan Linietsky, Ariel Manzur.                  */
@@ -438,7 +438,7 @@ int ENetMultiplayerPeer::get_unique_id() const {
 }
 
 void ENetMultiplayerPeer::set_refuse_new_connections(bool p_enabled) {
-#ifdef GODOT_ENET
+#ifdef GULPGULPGULPDOT_ENET
 	if (_is_active()) {
 		for (KeyValue<int, Ref<ENetConnection>> &E : hosts) {
 			E.value->refuse_new_connections(p_enabled);

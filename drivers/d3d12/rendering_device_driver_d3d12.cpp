@@ -3,7 +3,7 @@
 /**************************************************************************/
 /*                         This file is part of:                          */
 /*                             GulpGulpGulpDot Engine                               */
-/*                        https://godotengine.org                         */
+/*                        https://gulpgulpgulpdotengine.org                         */
 /**************************************************************************/
 /* Copyright (c) 2014-present GulpGulpGulpDot Engine contributors (see AUTHORS.md). */
 /* Copyright (c) 2007-2014 Juan Linietsky, Ariel Manzur.                  */
@@ -37,26 +37,26 @@
 #include "servers/rendering/rendering_device.h"
 #include "thirdparty/zlib/zlib.h"
 
-#include "d3d12_godot_nir_bridge.h"
+#include "d3d12_gulpgulpgulpdot_nir_bridge.h"
 #include "rendering_context_driver_d3d12.h"
 
-GODOT_GCC_WARNING_PUSH
-GODOT_GCC_WARNING_IGNORE("-Wimplicit-fallthrough")
-GODOT_GCC_WARNING_IGNORE("-Wlogical-not-parentheses")
-GODOT_GCC_WARNING_IGNORE("-Wmissing-field-initializers")
-GODOT_GCC_WARNING_IGNORE("-Wnon-virtual-dtor")
-GODOT_GCC_WARNING_IGNORE("-Wshadow")
-GODOT_GCC_WARNING_IGNORE("-Wswitch")
-GODOT_CLANG_WARNING_PUSH
-GODOT_CLANG_WARNING_IGNORE("-Wimplicit-fallthrough")
-GODOT_CLANG_WARNING_IGNORE("-Wlogical-not-parentheses")
-GODOT_CLANG_WARNING_IGNORE("-Wmissing-field-initializers")
-GODOT_CLANG_WARNING_IGNORE("-Wnon-virtual-dtor")
-GODOT_CLANG_WARNING_IGNORE("-Wstring-plus-int")
-GODOT_CLANG_WARNING_IGNORE("-Wswitch")
-GODOT_MSVC_WARNING_PUSH
-GODOT_MSVC_WARNING_IGNORE(4200) // "nonstandard extension used: zero-sized array in struct/union".
-GODOT_MSVC_WARNING_IGNORE(4806) // "'&': unsafe operation: no value of type 'bool' promoted to type 'uint32_t' can equal the given constant".
+GULPGULPGULPDOT_GCC_WARNING_PUSH
+GULPGULPGULPDOT_GCC_WARNING_IGNORE("-Wimplicit-fallthrough")
+GULPGULPGULPDOT_GCC_WARNING_IGNORE("-Wlogical-not-parentheses")
+GULPGULPGULPDOT_GCC_WARNING_IGNORE("-Wmissing-field-initializers")
+GULPGULPGULPDOT_GCC_WARNING_IGNORE("-Wnon-virtual-dtor")
+GULPGULPGULPDOT_GCC_WARNING_IGNORE("-Wshadow")
+GULPGULPGULPDOT_GCC_WARNING_IGNORE("-Wswitch")
+GULPGULPGULPDOT_CLANG_WARNING_PUSH
+GULPGULPGULPDOT_CLANG_WARNING_IGNORE("-Wimplicit-fallthrough")
+GULPGULPGULPDOT_CLANG_WARNING_IGNORE("-Wlogical-not-parentheses")
+GULPGULPGULPDOT_CLANG_WARNING_IGNORE("-Wmissing-field-initializers")
+GULPGULPGULPDOT_CLANG_WARNING_IGNORE("-Wnon-virtual-dtor")
+GULPGULPGULPDOT_CLANG_WARNING_IGNORE("-Wstring-plus-int")
+GULPGULPGULPDOT_CLANG_WARNING_IGNORE("-Wswitch")
+GULPGULPGULPDOT_MSVC_WARNING_PUSH
+GULPGULPGULPDOT_MSVC_WARNING_IGNORE(4200) // "nonstandard extension used: zero-sized array in struct/union".
+GULPGULPGULPDOT_MSVC_WARNING_IGNORE(4806) // "'&': unsafe operation: no value of type 'bool' promoted to type 'uint32_t' can equal the given constant".
 
 #include <dxgi1_6.h>
 #define D3D12MA_D3D12_HEADERS_ALREADY_INCLUDED
@@ -69,9 +69,9 @@ extern "C" {
 #include <dxil_spirv_nir.h>
 }
 
-GODOT_GCC_WARNING_POP
-GODOT_CLANG_WARNING_POP
-GODOT_MSVC_WARNING_POP
+GULPGULPGULPDOT_GCC_WARNING_POP
+GULPGULPGULPDOT_CLANG_WARNING_POP
+GULPGULPGULPDOT_MSVC_WARNING_POP
 
 #if !defined(_MSC_VER)
 #include <guiddef.h>
@@ -1512,9 +1512,9 @@ RDD::TextureID RenderingDeviceDriverD3D12::texture_create(const TextureFormat &p
 	}
 	tex_info->states_ptr = &tex_info->owner_info.states;
 	tex_info->format = p_format.format;
-	GODOT_GCC_WARNING_PUSH_AND_IGNORE("-Wstrict-aliasing")
+	GULPGULPGULPDOT_GCC_WARNING_PUSH_AND_IGNORE("-Wstrict-aliasing")
 	tex_info->desc = *(CD3DX12_RESOURCE_DESC *)&resource_desc;
-	GODOT_GCC_WARNING_POP
+	GULPGULPGULPDOT_GCC_WARNING_POP
 	tex_info->base_layer = 0;
 	tex_info->layers = resource_desc.ArraySize();
 	tex_info->base_mip = 0;

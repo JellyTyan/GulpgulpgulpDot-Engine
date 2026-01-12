@@ -3,7 +3,7 @@
 /**************************************************************************/
 /*                         This file is part of:                          */
 /*                             GulpGulpGulpDot Engine                               */
-/*                        https://godotengine.org                         */
+/*                        https://gulpgulpgulpdotengine.org                         */
 /**************************************************************************/
 /* Copyright (c) 2014-present GulpGulpGulpDot Engine contributors (see AUTHORS.md). */
 /* Copyright (c) 2007-2014 Juan Linietsky, Ariel Manzur.                  */
@@ -73,7 +73,7 @@
 #include "wayland/protocol/xdg_system_bell.gen.h"
 #include "wayland/protocol/xdg_toplevel_icon.gen.h"
 
-#include "wayland/protocol/godot_embedding_compositor.gen.h"
+#include "wayland/protocol/gulpgulpgulpdot_embedding_compositor.gen.h"
 
 // NOTE: Deprecated.
 #include "wayland/protocol/xdg_foreign_v1.gen.h"
@@ -93,7 +93,7 @@
 
 class WaylandThread {
 public:
-	// Messages used for exchanging information between Godot's and Wayland's thread.
+	// Messages used for exchanging information between Gulpgulpgulpdot's and Wayland's thread.
 	class Message : public RefCounted {
 		GDSOFTCLASS(Message, RefCounted);
 
@@ -234,8 +234,8 @@ public:
 		// whether it's available.
 		uint32_t wp_fifo_manager_name = 0;
 
-		struct godot_embedding_compositor *godot_embedding_compositor = nullptr;
-		uint32_t godot_embedding_compositor_name = 0;
+		struct gulpgulpgulpdot_embedding_compositor *gulpgulpgulpdot_embedding_compositor = nullptr;
+		uint32_t gulpgulpgulpdot_embedding_compositor_name = 0;
 	};
 
 	// General Wayland-specific states. Shouldn't be accessed directly.
@@ -318,7 +318,7 @@ public:
 		WaylandThread *wayland_thread;
 	};
 
-	// "High level" Godot-side screen data.
+	// "High level" Gulpgulpgulpdot-side screen data.
 	struct ScreenData {
 		// Geometry data.
 		Point2i position;
@@ -446,7 +446,7 @@ public:
 
 		// Used for delta calculations.
 		// NOTE: The wp_pointer_gestures protocol keeps track of the total scale of
-		// the pinch gesture, while godot instead wants its delta.
+		// the pinch gesture, while gulpgulpgulpdot instead wants its delta.
 		wl_fixed_t old_pinch_scale = 0;
 
 		struct wl_surface *cursor_surface = nullptr;
@@ -547,16 +547,16 @@ public:
 	};
 
 	struct EmbeddingCompositorState {
-		LocalVector<struct godot_embedded_client *> clients;
+		LocalVector<struct gulpgulpgulpdot_embedded_client *> clients;
 
 		// Only a client per PID can create a window.
-		HashMap<int, struct godot_embedded_client *> mapped_clients;
+		HashMap<int, struct gulpgulpgulpdot_embedded_client *> mapped_clients;
 
 		OS::ProcessID focused_pid = -1;
 	};
 
 	struct EmbeddedClientState {
-		struct godot_embedding_compositor *embedding_compositor = nullptr;
+		struct gulpgulpgulpdot_embedding_compositor *embedding_compositor = nullptr;
 
 		uint32_t pid = 0;
 		bool window_mapped = false;
@@ -571,7 +571,7 @@ private:
 	};
 
 	// FIXME: Is this the right thing to do?
-	inline static const char *proxy_tag = "godot";
+	inline static const char *proxy_tag = "gulpgulpgulpdot";
 
 	Thread events_thread;
 	ThreadData thread_data;
@@ -779,12 +779,12 @@ private:
 
 	static void _xdg_activation_token_on_done(void *data, struct xdg_activation_token_v1 *xdg_activation_token, const char *token);
 
-	static void _godot_embedding_compositor_on_client(void *data, struct godot_embedding_compositor *godot_embedding_compositor, struct godot_embedded_client *godot_embedded_client, int32_t pid);
+	static void _gulpgulpgulpdot_embedding_compositor_on_client(void *data, struct gulpgulpgulpdot_embedding_compositor *gulpgulpgulpdot_embedding_compositor, struct gulpgulpgulpdot_embedded_client *gulpgulpgulpdot_embedded_client, int32_t pid);
 
-	static void _godot_embedded_client_on_disconnected(void *data, struct godot_embedded_client *godot_embedded_client);
-	static void _godot_embedded_client_on_window_embedded(void *data, struct godot_embedded_client *godot_embedded_client);
-	static void _godot_embedded_client_on_window_focus_in(void *data, struct godot_embedded_client *godot_embedded_client);
-	static void _godot_embedded_client_on_window_focus_out(void *data, struct godot_embedded_client *godot_embedded_client);
+	static void _gulpgulpgulpdot_embedded_client_on_disconnected(void *data, struct gulpgulpgulpdot_embedded_client *gulpgulpgulpdot_embedded_client);
+	static void _gulpgulpgulpdot_embedded_client_on_window_embedded(void *data, struct gulpgulpgulpdot_embedded_client *gulpgulpgulpdot_embedded_client);
+	static void _gulpgulpgulpdot_embedded_client_on_window_focus_in(void *data, struct gulpgulpgulpdot_embedded_client *gulpgulpgulpdot_embedded_client);
+	static void _gulpgulpgulpdot_embedded_client_on_window_focus_out(void *data, struct gulpgulpgulpdot_embedded_client *gulpgulpgulpdot_embedded_client);
 
 	// Core Wayland event listeners.
 	static constexpr struct wl_registry_listener wl_registry_listener = {
@@ -973,16 +973,16 @@ private:
 		.done = _xdg_activation_token_on_done,
 	};
 
-	// Godot interfaces.
-	static constexpr struct godot_embedding_compositor_listener godot_embedding_compositor_listener = {
-		.client = _godot_embedding_compositor_on_client,
+	// Gulpgulpgulpdot interfaces.
+	static constexpr struct gulpgulpgulpdot_embedding_compositor_listener gulpgulpgulpdot_embedding_compositor_listener = {
+		.client = _gulpgulpgulpdot_embedding_compositor_on_client,
 	};
 
-	static constexpr struct godot_embedded_client_listener godot_embedded_client_listener = {
-		.disconnected = _godot_embedded_client_on_disconnected,
-		.window_embedded = _godot_embedded_client_on_window_embedded,
-		.window_focus_in = _godot_embedded_client_on_window_focus_in,
-		.window_focus_out = _godot_embedded_client_on_window_focus_out,
+	static constexpr struct gulpgulpgulpdot_embedded_client_listener gulpgulpgulpdot_embedded_client_listener = {
+		.disconnected = _gulpgulpgulpdot_embedded_client_on_disconnected,
+		.window_embedded = _gulpgulpgulpdot_embedded_client_on_window_embedded,
+		.window_focus_in = _gulpgulpgulpdot_embedded_client_on_window_focus_in,
+		.window_focus_out = _gulpgulpgulpdot_embedded_client_on_window_focus_out,
 	};
 
 #ifdef LIBDECOR_ENABLED
@@ -1056,8 +1056,8 @@ public:
 	struct wl_display *get_wl_display() const;
 
 	// Core Wayland utilities for integrating with our own data structures.
-	static bool wl_proxy_is_godot(struct wl_proxy *p_proxy);
-	static void wl_proxy_tag_godot(struct wl_proxy *p_proxy);
+	static bool wl_proxy_is_gulpgulpgulpdot(struct wl_proxy *p_proxy);
+	static void wl_proxy_tag_gulpgulpgulpdot(struct wl_proxy *p_proxy);
 
 	static WindowState *wl_surface_get_window_state(struct wl_surface *p_surface);
 	static ScreenState *wl_output_get_screen_state(struct wl_output *p_output);
@@ -1067,7 +1067,7 @@ public:
 
 	static OfferState *wp_primary_selection_offer_get_offer_state(struct zwp_primary_selection_offer_v1 *p_offer);
 
-	static EmbeddingCompositorState *godot_embedding_compositor_get_state(struct godot_embedding_compositor *p_compositor);
+	static EmbeddingCompositorState *gulpgulpgulpdot_embedding_compositor_get_state(struct gulpgulpgulpdot_embedding_compositor *p_compositor);
 
 	void seat_state_unlock_pointer(SeatState *p_ss);
 	void seat_state_lock_pointer(SeatState *p_ss);
@@ -1178,7 +1178,7 @@ public:
 	bool window_is_suspended(DisplayServer::WindowID p_window_id) const;
 	bool is_suspended() const;
 
-	struct godot_embedding_compositor *get_embedding_compositor();
+	struct gulpgulpgulpdot_embedding_compositor *get_embedding_compositor();
 
 	OS::ProcessID embedded_compositor_get_focused_pid();
 

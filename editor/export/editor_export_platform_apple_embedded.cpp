@@ -3,7 +3,7 @@
 /**************************************************************************/
 /*                         This file is part of:                          */
 /*                             GulpGulpGulpDot Engine                               */
-/*                        https://godotengine.org                         */
+/*                        https://gulpgulpgulpdotengine.org                         */
 /**************************************************************************/
 /* Copyright (c) 2014-present GulpGulpGulpDot Engine contributors (see AUTHORS.md). */
 /* Copyright (c) 2007-2014 Juan Linietsky, Ariel Manzur.                  */
@@ -457,8 +457,8 @@ String EditorExportPlatformAppleEmbedded::_process_config_file_line(const Ref<Ed
 		strnew += p_line.replace("$code_sign_identity_release", p_code_signing.release_signing_identity) + "\n";
 	} else if (p_line.contains("$additional_plist_content")) {
 		strnew += p_line.replace("$additional_plist_content", p_config.plist_content) + "\n";
-	} else if (p_line.contains("$godot_archs")) {
-		strnew += p_line.replace("$godot_archs", p_config.architectures) + "\n";
+	} else if (p_line.contains("$gulpgulpgulpdot_archs")) {
+		strnew += p_line.replace("$gulpgulpgulpdot_archs", p_config.architectures) + "\n";
 	} else if (p_line.contains("$linker_flags")) {
 		strnew += p_line.replace("$linker_flags", p_config.linker_flags) + "\n";
 	} else if (p_line.contains("$targeted_device_family")) {
@@ -1105,7 +1105,7 @@ Error EditorExportPlatformAppleEmbedded::_convert_to_framework(const String &p_s
 }
 
 void EditorExportPlatformAppleEmbedded::_add_assets_to_project(const String &p_out_dir, const Ref<EditorExportPreset> &p_preset, Vector<uint8_t> &p_project_data, const Vector<AppleEmbeddedExportAsset> &p_additional_assets) {
-	// that is just a random number, we just need Godot IDs not to clash with
+	// that is just a random number, we just need Gulpgulpgulpdot IDs not to clash with
 	// existing IDs in the project.
 	PbxId current_id = { 0x58938401, 0, 0 };
 	String pbx_files;
@@ -1210,7 +1210,7 @@ Error EditorExportPlatformAppleEmbedded::_copy_asset(const Ref<EditorExportPrese
 		return ERR_FILE_NOT_FOUND;
 	}
 
-	String base_dir = p_asset.get_base_dir().replace("res://", "").replace(".godot/mono/temp/bin/", "");
+	String base_dir = p_asset.get_base_dir().replace("res://", "").replace(".gulpgulpgulpdot/mono/temp/bin/", "");
 	String asset = p_asset.ends_with("/") ? p_asset.left(-1) : p_asset;
 	String destination_dir;
 	String destination;
@@ -1581,16 +1581,16 @@ Error EditorExportPlatformAppleEmbedded::_export_apple_embedded_plugins(const Re
 		plugin_format["initialization"] = plugin_initialization_cpp_code;
 		plugin_format["deinitialization"] = plugin_deinitialization_cpp_code;
 
-		String plugin_cpp_code = "\n// Godot Plugins\n"
-								 "void godot_apple_embedded_plugins_initialize();\n"
-								 "void godot_apple_embedded_plugins_deinitialize();\n"
+		String plugin_cpp_code = "\n// Gulpgulpgulpdot Plugins\n"
+								 "void gulpgulpgulpdot_apple_embedded_plugins_initialize();\n"
+								 "void gulpgulpgulpdot_apple_embedded_plugins_deinitialize();\n"
 								 "// Exported Plugins\n\n"
 								 "$definition"
 								 "// Use Plugins\n"
-								 "void godot_apple_embedded_plugins_initialize() {\n"
+								 "void gulpgulpgulpdot_apple_embedded_plugins_initialize() {\n"
 								 "$initialization"
 								 "}\n\n"
-								 "void godot_apple_embedded_plugins_deinitialize() {\n"
+								 "void gulpgulpgulpdot_apple_embedded_plugins_deinitialize() {\n"
 								 "$deinitialization"
 								 "}\n";
 
@@ -1709,7 +1709,7 @@ Error EditorExportPlatformAppleEmbedded::_export_project_helper(const Ref<Editor
 					for (String n = da->get_next(); !n.is_empty(); n = da->get_next()) {
 						if (!n.begins_with(".")) { // Ignore ".", ".." and hidden files.
 							if (da->current_is_dir()) {
-								if (n == "dylibs" || n == "Images.xcassets" || n.ends_with(".lproj") || n == "godot-publish-dotnet" || n.ends_with(".xcframework") || n.ends_with(".framework")) {
+								if (n == "dylibs" || n == "Images.xcassets" || n.ends_with(".lproj") || n == "gulpgulpgulpdot-publish-dotnet" || n.ends_with(".xcframework") || n.ends_with(".framework")) {
 									expected_files++;
 								}
 							} else {
@@ -1756,7 +1756,7 @@ Error EditorExportPlatformAppleEmbedded::_export_project_helper(const Ref<Editor
 		return ERR_SKIP;
 	}
 
-	String library_to_use = "libgodot." + get_platform_name() + "." + String(p_debug ? "debug" : "release") + ".xcframework";
+	String library_to_use = "libgulpgulpgulpdot." + get_platform_name() + "." + String(p_debug ? "debug" : "release") + ".xcframework";
 
 	print_line("Static framework: " + library_to_use);
 	String pkg_name;
@@ -1769,15 +1769,15 @@ Error EditorExportPlatformAppleEmbedded::_export_project_helper(const Ref<Editor
 	bool found_library = false;
 
 	HashSet<String> files_to_parse;
-	const String project_file = "godot_apple_embedded.xcodeproj/project.pbxproj";
+	const String project_file = "gulpgulpgulpdot_apple_embedded.xcodeproj/project.pbxproj";
 	files_to_parse.insert(project_file);
-	files_to_parse.insert("godot_apple_embedded.xcodeproj/project.xcworkspace/contents.xcworkspacedata");
-	files_to_parse.insert("godot_apple_embedded.xcodeproj/xcshareddata/xcschemes/godot_apple_embedded.xcscheme");
-	files_to_parse.insert("godot_apple_embedded/godot_apple_embedded-Info.plist");
-	files_to_parse.insert("godot_apple_embedded/godot_apple_embedded.entitlements");
-	files_to_parse.insert("godot_apple_embedded/export_options.plist");
-	files_to_parse.insert("godot_apple_embedded/dummy.cpp");
-	files_to_parse.insert("godot_apple_embedded/Launch Screen.storyboard");
+	files_to_parse.insert("gulpgulpgulpdot_apple_embedded.xcodeproj/project.xcworkspace/contents.xcworkspacedata");
+	files_to_parse.insert("gulpgulpgulpdot_apple_embedded.xcodeproj/xcshareddata/xcschemes/gulpgulpgulpdot_apple_embedded.xcscheme");
+	files_to_parse.insert("gulpgulpgulpdot_apple_embedded/gulpgulpgulpdot_apple_embedded-Info.plist");
+	files_to_parse.insert("gulpgulpgulpdot_apple_embedded/gulpgulpgulpdot_apple_embedded.entitlements");
+	files_to_parse.insert("gulpgulpgulpdot_apple_embedded/export_options.plist");
+	files_to_parse.insert("gulpgulpgulpdot_apple_embedded/dummy.cpp");
+	files_to_parse.insert("gulpgulpgulpdot_apple_embedded/Launch Screen.storyboard");
 	files_to_parse.insert("PrivacyInfo.xcprivacy");
 
 	AppleEmbeddedConfigData config_data = {
@@ -1853,7 +1853,7 @@ Error EditorExportPlatformAppleEmbedded::_export_project_helper(const Ref<Editor
 
 		if (files_to_parse.has(file)) {
 			_fix_config_file(p_preset, data, config_data, p_debug);
-		} else if (file.begins_with("libgodot." + get_platform_name())) {
+		} else if (file.begins_with("libgulpgulpgulpdot." + get_platform_name())) {
 			if (!file.begins_with(library_to_use) || file.ends_with(String("/empty"))) {
 				ret = unzGoToNextFile(src_pkg_zip);
 				continue; //ignore!
@@ -1872,7 +1872,7 @@ Error EditorExportPlatformAppleEmbedded::_export_project_helper(const Ref<Editor
 		///@TODO need to parse logo files
 
 		if (data.size() > 0) {
-			file = file.replace("godot_apple_embedded", binary_name);
+			file = file.replace("gulpgulpgulpdot_apple_embedded", binary_name);
 
 			print_line("ADDING: " + file + " size: " + itos(data.size()));
 
@@ -1927,7 +1927,7 @@ Error EditorExportPlatformAppleEmbedded::_export_project_helper(const Ref<Editor
 
 	const String project_name = get_project_setting(p_preset, "application/config/name");
 	const Dictionary appnames = get_project_setting(p_preset, "application/config/name_localized");
-	const StringName domain_name = "godot.project_name_localization";
+	const StringName domain_name = "gulpgulpgulpdot.project_name_localization";
 	Ref<TranslationDomain> domain = TranslationServer::get_singleton()->get_or_add_domain(domain_name);
 	TranslationServer::get_singleton()->load_project_translations(domain);
 	const Vector<String> locales = domain->get_loaded_locales();
@@ -2409,7 +2409,7 @@ void EditorExportPlatformAppleEmbedded::_check_for_changes_poll_thread(void *ud)
 			args.push_back("-j");
 			args.push_back("-");
 			args.push_back("-q");
-			// Add a timeout, so the process doesn't hang indefinitely, which can prevent Godot shutting down.
+			// Add a timeout, so the process doesn't hang indefinitely, which can prevent Gulpgulpgulpdot shutting down.
 			args.push_back("--timeout");
 			args.push_back("5");
 			args.push_back("--filter");

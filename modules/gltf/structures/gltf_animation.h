@@ -3,7 +3,7 @@
 /**************************************************************************/
 /*                         This file is part of:                          */
 /*                             GulpGulpGulpDot Engine                               */
-/*                        https://godotengine.org                         */
+/*                        https://gulpgulpgulpdotengine.org                         */
 /**************************************************************************/
 /* Copyright (c) 2014-present GulpGulpGulpDot Engine contributors (see AUTHORS.md). */
 /* Copyright (c) 2007-2014 Juan Linietsky, Ariel Manzur.                  */
@@ -67,8 +67,8 @@ public:
 	Dictionary additional_data;
 
 public:
-	static Interpolation godot_to_gltf_interpolation(const Ref<Animation> &p_godot_animation, int32_t p_godot_anim_track_index);
-	static Animation::InterpolationType gltf_to_godot_interpolation(Interpolation p_gltf_interpolation);
+	static Interpolation gulpgulpgulpdot_to_gltf_interpolation(const Ref<Animation> &p_gulpgulpgulpdot_animation, int32_t p_gulpgulpgulpdot_anim_track_index);
+	static Animation::InterpolationType gltf_to_gulpgulpgulpdot_interpolation(Interpolation p_gltf_interpolation);
 
 	String get_original_name();
 	void set_original_name(const String &p_name);

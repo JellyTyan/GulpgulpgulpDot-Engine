@@ -1,7 +1,7 @@
 # Dutch translation of the GulpGulpGulpDot Engine editor interface.
 # Copyright (c) 2014-present GulpGulpGulpDot Engine contributors.
 # Copyright (c) 2007-2014 Juan Linietsky, Ariel Manzur.
-# This file is distributed under the same license as the Godot source code.
+# This file is distributed under the same license as the Gulpgulpgulpdot source code.
 # aelspire <aelspire@gmail.com>, 2017.
 # Aram Nap <xyphex.aram@gmail.com>, 2017.
 # Arjan219 <arjannugteren1@gmail.com>, 2017-2018, 2020.
@@ -55,7 +55,7 @@
 # naan <xlightfox@hotmail.com>, 2021.
 # Tim Visee <tim+weblate@visee.me>, 2022.
 # Ferhat Geçdoğan <ferhatgectao@gmail.com>, 2022.
-# Rémi Verschelde <remi@godotengine.org>, 2022.
+# Rémi Verschelde <remi@gulpgulpgulpdotengine.org>, 2022.
 # Wouter <mysticaldev@hotmail.com>, 2022.
 # voylin <0voylin0@gmail.com>, 2022.
 # Gert-dev <qnyasgjhapqyuhoibr@kiabws.com>, 2022.
@@ -92,11 +92,11 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: GulpGulpGulpDot Engine editor interface\n"
-"Report-Msgid-Bugs-To: https://github.com/godotengine/godot\n"
+"Report-Msgid-Bugs-To: https://github.com/gulpgulpgulpdotengine/gulpgulpgulpdot\n"
 "POT-Creation-Date: \n"
 "PO-Revision-Date: 2025-10-13 10:07+0000\n"
 "Last-Translator: \"A Thousand Ships (she/her)\" <over999ships@gmail.com>\n"
-"Language-Team: Dutch <https://hosted.weblate.org/projects/godot-engine/godot/"
+"Language-Team: Dutch <https://hosted.weblate.org/projects/gulpgulpgulpdot-engine/gulpgulpgulpdot/"
 "nl/>\n"
 "Language: nl\n"
 "MIME-Version: 1.0\n"
@@ -3393,7 +3393,7 @@ msgid "History of recently edited objects."
 msgstr "Geschiedenis van recent bewerkte objecten."
 
 msgid "Open documentation for this object."
-msgstr "Open Godot online documentatie."
+msgstr "Open Gulpgulpgulpdot online documentatie."
 
 msgid "Open Documentation"
 msgstr "Documentatie openen"
@@ -3705,10 +3705,10 @@ msgstr "Bestand '%s' of een van de afhankelijkheden ontbreekt."
 
 msgid ""
 "File '%s' is saved in a format that is newer than the formats supported by "
-"this version of Godot, so it can't be opened."
+"this version of Gulpgulpgulpdot, so it can't be opened."
 msgstr ""
 "Bestand \"%s\" is in een bestandsformaat opgeslagen dat nieuwer is dan de "
-"bestandsformaten die ondersteund worden door deze versie van Godot, dus kan "
+"bestandsformaten die ondersteund worden door deze versie van Gulpgulpgulpdot, dus kan "
 "het niet opgeslagen worden."
 
 msgid "Error while loading file '%s'."
@@ -4231,11 +4231,11 @@ msgstr "Stel een functie voor"
 msgid "Send Docs Feedback"
 msgstr "Stuur documentatie­feedback"
 
-msgid "About Godot..."
-msgstr "Over Godot…"
+msgid "About Gulpgulpgulpdot..."
+msgstr "Over Gulpgulpgulpdot…"
 
-msgid "Support Godot Development"
-msgstr "Steun Godot-ontwikkeling"
+msgid "Support Gulpgulpgulpdot Development"
+msgstr "Steun Gulpgulpgulpdot-ontwikkeling"
 
 msgid "Open Script Editor"
 msgstr "Script­bewerker openen"
@@ -4513,8 +4513,8 @@ msgstr "Sjabloon verwijderen"
 msgid "Select Template File"
 msgstr "Selecteer sjabloonbestand"
 
-msgid "Godot Export Templates"
-msgstr "Godot Export Templates"
+msgid "Gulpgulpgulpdot Export Templates"
+msgstr "Gulpgulpgulpdot Export Templates"
 
 msgid ""
 "The templates will continue to download.\n"
@@ -4661,19 +4661,19 @@ msgstr "Exporteer PCK/Zip..."
 
 msgid ""
 "Export the project resources as a PCK or ZIP package. This is not a playable "
-"build, only the project data without a Godot executable."
+"build, only the project data without a Gulpgulpgulpdot executable."
 msgstr ""
 "Exporteer de project resources als een PCK of ZIP pakket. Dit is geen "
-"uitvoerbare build, alleen de project data zonder Godot executable."
+"uitvoerbare build, alleen de project data zonder Gulpgulpgulpdot executable."
 
 msgid "Export Project..."
 msgstr "Exporteer project..."
 
 msgid ""
-"Export the project as a playable build (Godot executable and project data) "
+"Export the project as a playable build (Gulpgulpgulpdot executable and project data) "
 "for the selected preset."
 msgstr ""
-"Exporteer het project als een speelbare build (Godot ecxecutable en project "
+"Exporteer het project als een speelbare build (Gulpgulpgulpdot ecxecutable en project "
 "data) voor de geselecteerde voorinstelling."
 
 msgid "Export All"
@@ -5030,8 +5030,8 @@ msgstr "Bijdragers aan GulpGulpGulpDot Engine"
 msgid "Double-click to open in browser."
 msgstr "Dubbelklik om in een browser te openen."
 
-msgid "Thanks from the Godot community!"
-msgstr "Bedankt van de Godot-gemeenschap!"
+msgid "Thanks from the Gulpgulpgulpdot community!"
+msgstr "Bedankt van de Gulpgulpgulpdot-gemeenschap!"
 
 msgid "Authors"
 msgstr "Auteurs"
@@ -5562,8 +5562,8 @@ msgid "It would be a good idea to name your project."
 msgstr "Het zou een goed idee zijn om uw project een naam te geven."
 
 msgid ""
-"Invalid \".zip\" project file; it doesn't contain a \"project.godot\" file."
-msgstr "Ongeldig '.zip' projectbestand, bevat geen 'project.godot' bestand."
+"Invalid \".zip\" project file; it doesn't contain a \"project.gulpgulpgulpdot\" file."
+msgstr "Ongeldig '.zip' projectbestand, bevat geen 'project.gulpgulpgulpdot' bestand."
 
 msgid "The path specified doesn't exist."
 msgstr "Dit pad bestaat niet."
@@ -5571,8 +5571,8 @@ msgstr "Dit pad bestaat niet."
 msgid "New Game Project"
 msgstr "Nieuw spelproject"
 
-msgid "Couldn't create project.godot in project path."
-msgstr "Kan project.godot niet in projectpad maken."
+msgid "Couldn't create project.gulpgulpgulpdot in project path."
+msgstr "Kan project.gulpgulpgulpdot niet in projectpad maken."
 
 msgid "Error opening package file, not in ZIP format."
 msgstr "Fout bij het openen van het pakketbestand, geen zip-formaat."
@@ -7802,8 +7802,8 @@ msgstr "Thema Opslaan Als..."
 msgid "Online Docs"
 msgstr "Online Documentatie"
 
-msgid "Open Godot online documentation."
-msgstr "Open Godot online documentatie."
+msgid "Open Gulpgulpgulpdot online documentation."
+msgstr "Open Gulpgulpgulpdot online documentatie."
 
 msgid "%s Class Reference"
 msgstr "%s Klassereferentie"
@@ -8162,14 +8162,14 @@ msgstr "OpenGL"
 msgid "Physics Server (2D)"
 msgstr "Fysica-server (2D)"
 
-msgid "Godot Physics (2D)"
-msgstr "Godot Physics (2D)"
+msgid "Gulpgulpgulpdot Physics (2D)"
+msgstr "Gulpgulpgulpdot Physics (2D)"
 
 msgid "Physics Server (3D)"
 msgstr "Fysica-server (3D)"
 
-msgid "Godot Physics (3D)"
-msgstr "Godot Physics (3D)"
+msgid "Gulpgulpgulpdot Physics (3D)"
+msgstr "Gulpgulpgulpdot Physics (3D)"
 
 msgid "Jolt Physics"
 msgstr "Jolt Physics"
@@ -8242,14 +8242,14 @@ msgstr ""
 msgid "Physics Server and capabilities for 2D."
 msgstr "Fysicaserver en -mogelijkheden voor 2D."
 
-msgid "Godot Physics backend (2D)."
-msgstr "Godot Physics-backend (2D)."
+msgid "Gulpgulpgulpdot Physics backend (2D)."
+msgstr "Gulpgulpgulpdot Physics-backend (2D)."
 
 msgid "Physics Server and capabilities for 3D."
 msgstr "Fysicaserver en -mogelijkheden voor 3D."
 
-msgid "Godot Physics backend (3D)."
-msgstr "Godot Physics-backend (3D)."
+msgid "Gulpgulpgulpdot Physics backend (3D)."
+msgstr "Gulpgulpgulpdot Physics-backend (3D)."
 
 msgid "Jolt Physics backend (3D only)."
 msgstr "Jolt Physics-backend (alleen voor 3D)."
@@ -8530,8 +8530,8 @@ msgstr ""
 msgid "New profile name:"
 msgstr "Nieuwe profielnaam:"
 
-msgid "Godot Feature Profile"
-msgstr "Godot-eigenschappenprofiel"
+msgid "Gulpgulpgulpdot Feature Profile"
+msgstr "Gulpgulpgulpdot-eigenschappenprofiel"
 
 msgid "Import Profile(s)"
 msgstr "Profiel(en) importeren"
@@ -8656,8 +8656,8 @@ msgstr "Wijzig Action Deadzone"
 msgid "Erase Input Action"
 msgstr "Verwijder Input Actie"
 
-msgid "Project Settings (project.godot)"
-msgstr "Projectinstellingen (project.godot)"
+msgid "Project Settings (project.gulpgulpgulpdot)"
+msgstr "Projectinstellingen (project.gulpgulpgulpdot)"
 
 msgid "Input Map"
 msgstr "Invoertoewijzing"
@@ -9273,11 +9273,11 @@ msgstr ""
 "en 'y''."
 
 msgid ""
-"Custom Godot Shader Language expression, with custom amount of input and "
+"Custom Gulpgulpgulpdot Shader Language expression, with custom amount of input and "
 "output ports. This is a direct injection of code into the vertex/fragment/"
 "light function, do not use it to write the function declarations inside."
 msgstr ""
-"Aangepaste Godot Shader Language expressie, met aangepast aantal in- en "
+"Aangepaste Gulpgulpgulpdot Shader Language expressie, met aangepast aantal in- en "
 "uitvoerpoorten. Dit is een directe injectie van code in de vertex/fragment/"
 "light functie, niet gebruiken om functie declaraties in te schrijven."
 

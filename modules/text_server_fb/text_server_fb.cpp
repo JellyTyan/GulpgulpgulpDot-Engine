@@ -3,7 +3,7 @@
 /**************************************************************************/
 /*                         This file is part of:                          */
 /*                             GulpGulpGulpDot Engine                               */
-/*                        https://godotengine.org                         */
+/*                        https://gulpgulpgulpdotengine.org                         */
 /**************************************************************************/
 /* Copyright (c) 2014-present GulpGulpGulpDot Engine contributors (see AUTHORS.md). */
 /* Copyright (c) 2007-2014 Juan Linietsky, Ariel Manzur.                  */
@@ -33,20 +33,20 @@
 #ifdef GDEXTENSION
 // Headers for building as GDExtension plug-in.
 
-#include <godot_cpp/classes/file_access.hpp>
-#include <godot_cpp/classes/os.hpp>
-#include <godot_cpp/classes/project_settings.hpp>
-#include <godot_cpp/classes/rendering_server.hpp>
-#include <godot_cpp/classes/translation_server.hpp>
-#include <godot_cpp/core/error_macros.hpp>
+#include <gulpgulpgulpdot_cpp/classes/file_access.hpp>
+#include <gulpgulpgulpdot_cpp/classes/os.hpp>
+#include <gulpgulpgulpdot_cpp/classes/project_settings.hpp>
+#include <gulpgulpgulpdot_cpp/classes/rendering_server.hpp>
+#include <gulpgulpgulpdot_cpp/classes/translation_server.hpp>
+#include <gulpgulpgulpdot_cpp/core/error_macros.hpp>
 
 #define OT_TAG(m_c1, m_c2, m_c3, m_c4) ((int32_t)((((uint32_t)(m_c1) & 0xff) << 24) | (((uint32_t)(m_c2) & 0xff) << 16) | (((uint32_t)(m_c3) & 0xff) << 8) | ((uint32_t)(m_c4) & 0xff)))
 
-using namespace godot;
+using namespace gulpgulpgulpdot;
 
 #define GLOBAL_GET(m_var) ProjectSettings::get_singleton()->get_setting_with_override(m_var)
 
-#elif defined(GODOT_MODULE)
+#elif defined(GULPGULPGULPDOT_MODULE)
 // Headers for building as built-in module.
 
 #include "core/config/project_settings.h"
@@ -63,8 +63,8 @@ using namespace godot;
 // Thirdparty headers.
 
 #ifdef MODULE_MSDFGEN_ENABLED
-GODOT_GCC_WARNING_PUSH_AND_IGNORE("-Wshadow")
-GODOT_MSVC_WARNING_PUSH_AND_IGNORE(4458) // "Declaration of 'identifier' hides class member".
+GULPGULPGULPDOT_GCC_WARNING_PUSH_AND_IGNORE("-Wshadow")
+GULPGULPGULPDOT_MSVC_WARNING_PUSH_AND_IGNORE(4458) // "Declaration of 'identifier' hides class member".
 
 #include <core/EdgeHolder.h>
 #include <core/ShapeDistanceFinder.h>
@@ -72,8 +72,8 @@ GODOT_MSVC_WARNING_PUSH_AND_IGNORE(4458) // "Declaration of 'identifier' hides c
 #include <core/edge-selectors.h>
 #include <msdfgen.h>
 
-GODOT_GCC_WARNING_POP
-GODOT_MSVC_WARNING_POP
+GULPGULPGULPDOT_GCC_WARNING_POP
+GULPGULPGULPDOT_MSVC_WARNING_POP
 #endif
 
 #ifdef MODULE_FREETYPE_ENABLED
@@ -106,7 +106,7 @@ bool TextServerFallback::_has_feature(Feature p_feature) const {
 String TextServerFallback::_get_name() const {
 #ifdef GDEXTENSION
 	return "Fallback (GDExtension)";
-#elif defined(GODOT_MODULE)
+#elif defined(GULPGULPGULPDOT_MODULE)
 	return "Fallback (Built-in)";
 #endif
 }
@@ -4445,7 +4445,7 @@ RID TextServerFallback::_find_sys_font_for_text(const RID &p_fdef, const String 
 #ifdef GDEXTENSION
 		for (int fb = 0; fb < fallback_font_name.size(); fb++) {
 			const String &E = fallback_font_name[fb];
-#elif defined(GODOT_MODULE)
+#elif defined(GULPGULPGULPDOT_MODULE)
 		for (const String &E : fallback_font_name) {
 #endif
 			SystemFontKey key = SystemFontKey(E, font_style & TextServer::FONT_ITALIC, font_weight, font_stretch, p_fdef, this);

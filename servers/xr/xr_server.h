@@ -3,7 +3,7 @@
 /**************************************************************************/
 /*                         This file is part of:                          */
 /*                             GulpGulpGulpDot Engine                               */
-/*                        https://godotengine.org                         */
+/*                        https://gulpgulpgulpdotengine.org                         */
 /**************************************************************************/
 /* Copyright (c) 2014-present GulpGulpGulpDot Engine contributors (see AUTHORS.md). */
 /* Copyright (c) 2007-2014 Juan Linietsky, Ariel Manzur.                  */
@@ -200,7 +200,7 @@ public:
 	inline bool is_camera_locked_to_origin() const { return camera_locked_to_origin; }
 
 	/*
-		Interfaces are objects that 'glue' Godot to an AR or VR SDK such as the Oculus SDK, OpenVR, OpenHMD, etc.
+		Interfaces are objects that 'glue' Gulpgulpgulpdot to an AR or VR SDK such as the Oculus SDK, OpenVR, OpenHMD, etc.
 	*/
 	void add_interface(const Ref<XRInterface> &p_interface);
 	void remove_interface(const Ref<XRInterface> &p_interface);
@@ -240,7 +240,7 @@ public:
 	// Many of these interfaces will also do a predictive sync which ensures we run at a steady framerate.
 	void pre_render();
 
-	// End-frame is called right after Godot has finished its rendering bits.
+	// End-frame is called right after Gulpgulpgulpdot has finished its rendering bits.
 	void end_frame();
 
 	XRServer();

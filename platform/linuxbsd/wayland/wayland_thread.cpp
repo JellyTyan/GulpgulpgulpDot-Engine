@@ -3,7 +3,7 @@
 /**************************************************************************/
 /*                         This file is part of:                          */
 /*                             GulpGulpGulpDot Engine                               */
-/*                        https://godotengine.org                         */
+/*                        https://gulpgulpgulpdotengine.org                         */
 /**************************************************************************/
 /* Copyright (c) 2014-present GulpGulpGulpDot Engine contributors (see AUTHORS.md). */
 /* Copyright (c) 2007-2014 Juan Linietsky, Ariel Manzur.                  */
@@ -113,7 +113,7 @@ int WaylandThread::_allocate_shm_file(size_t size) {
 
 	do {
 		// Generate a random name.
-		char name[] = "/wl_shm-godot-XXXXXX";
+		char name[] = "/wl_shm-gulpgulpgulpdot-XXXXXX";
 		for (long unsigned int i = sizeof(name) - 7; i < sizeof(name) - 1; i++) {
 			name[i] = Math::random('A', 'Z');
 		}
@@ -206,7 +206,7 @@ Ref<InputEventKey> WaylandThread::_seat_state_get_key_event(SeatState *p_ss, xkb
 
 	Key plain_key = Key::NONE;
 	// NOTE: xkbcommon's API really encourages to apply the modifier state but we
-	// only want a "plain" symbol so that we can convert it into a godot keycode.
+	// only want a "plain" symbol so that we can convert it into a gulpgulpgulpdot keycode.
 	const xkb_keysym_t *syms = nullptr;
 	int num_sys = xkb_keymap_key_get_syms_by_level(p_ss->xkb_keymap, p_keycode, p_ss->current_layout_index, 0, &syms);
 	if (num_sys > 0 && syms) {
@@ -278,7 +278,7 @@ Ref<InputEventKey> WaylandThread::_seat_state_get_key_event(SeatState *p_ss, xkb
 // NOTE: Due to the nature of the way keys are encoded, there's an ambiguity
 // regarding "special" keys. In other words: there's no reliable way of
 // switching between a special key and a character key if not marking a
-// different Godot keycode, even if we're actually using the same XKB raw
+// different Gulpgulpgulpdot keycode, even if we're actually using the same XKB raw
 // keycode. This means that, during this switch, the old key will get "stuck",
 // as it will never receive a release event. This method returns the necessary
 // event to fix this if needed.
@@ -539,7 +539,7 @@ void WaylandThread::_wl_registry_on_global(void *data, struct wl_registry *wl_re
 
 	if (strcmp(interface, wl_output_interface.name) == 0) {
 		struct wl_output *wl_output = (struct wl_output *)wl_registry_bind(wl_registry, name, &wl_output_interface, CLAMP((int)version, 1, 4));
-		wl_proxy_tag_godot((struct wl_proxy *)wl_output);
+		wl_proxy_tag_gulpgulpgulpdot((struct wl_proxy *)wl_output);
 
 		registry->wl_outputs.push_back(wl_output);
 
@@ -547,14 +547,14 @@ void WaylandThread::_wl_registry_on_global(void *data, struct wl_registry *wl_re
 		ss->wl_output_name = name;
 		ss->wayland_thread = registry->wayland_thread;
 
-		wl_proxy_tag_godot((struct wl_proxy *)wl_output);
+		wl_proxy_tag_gulpgulpgulpdot((struct wl_proxy *)wl_output);
 		wl_output_add_listener(wl_output, &wl_output_listener, ss);
 		return;
 	}
 
 	if (strcmp(interface, wl_seat_interface.name) == 0) {
 		struct wl_seat *wl_seat = (struct wl_seat *)wl_registry_bind(wl_registry, name, &wl_seat_interface, CLAMP((int)version, 1, 9));
-		wl_proxy_tag_godot((struct wl_proxy *)wl_seat);
+		wl_proxy_tag_gulpgulpgulpdot((struct wl_proxy *)wl_seat);
 
 		SeatState *ss = memnew(SeatState);
 		ss->wl_seat = wl_seat;
@@ -730,11 +730,11 @@ void WaylandThread::_wl_registry_on_global(void *data, struct wl_registry *wl_re
 		registry->wp_fifo_manager_name = name;
 	}
 
-	if (strcmp(interface, godot_embedding_compositor_interface.name) == 0) {
-		registry->godot_embedding_compositor = (struct godot_embedding_compositor *)wl_registry_bind(wl_registry, name, &godot_embedding_compositor_interface, 1);
-		registry->godot_embedding_compositor_name = name;
+	if (strcmp(interface, gulpgulpgulpdot_embedding_compositor_interface.name) == 0) {
+		registry->gulpgulpgulpdot_embedding_compositor = (struct gulpgulpgulpdot_embedding_compositor *)wl_registry_bind(wl_registry, name, &gulpgulpgulpdot_embedding_compositor_interface, 1);
+		registry->gulpgulpgulpdot_embedding_compositor_name = name;
 
-		godot_embedding_compositor_add_listener(registry->godot_embedding_compositor, &godot_embedding_compositor_listener, memnew(EmbeddingCompositorState));
+		gulpgulpgulpdot_embedding_compositor_add_listener(registry->gulpgulpgulpdot_embedding_compositor, &gulpgulpgulpdot_embedding_compositor_listener, memnew(EmbeddingCompositorState));
 	}
 }
 
@@ -1167,28 +1167,28 @@ void WaylandThread::_wl_registry_on_global_remove(void *data, struct wl_registry
 		registry->wp_fifo_manager_name = 0;
 	}
 
-	if (name == registry->godot_embedding_compositor_name) {
-		registry->godot_embedding_compositor_name = 0;
+	if (name == registry->gulpgulpgulpdot_embedding_compositor_name) {
+		registry->gulpgulpgulpdot_embedding_compositor_name = 0;
 
-		EmbeddingCompositorState *es = godot_embedding_compositor_get_state(registry->godot_embedding_compositor);
+		EmbeddingCompositorState *es = gulpgulpgulpdot_embedding_compositor_get_state(registry->gulpgulpgulpdot_embedding_compositor);
 		ERR_FAIL_NULL(es);
 
 		es->mapped_clients.clear();
 
-		for (struct godot_embedded_client *client : es->clients) {
-			godot_embedded_client_destroy(client);
+		for (struct gulpgulpgulpdot_embedded_client *client : es->clients) {
+			gulpgulpgulpdot_embedded_client_destroy(client);
 		}
 		es->clients.clear();
 
 		memdelete(es);
 
-		godot_embedding_compositor_destroy(registry->godot_embedding_compositor);
-		registry->godot_embedding_compositor = nullptr;
+		gulpgulpgulpdot_embedding_compositor_destroy(registry->gulpgulpgulpdot_embedding_compositor);
+		registry->gulpgulpgulpdot_embedding_compositor = nullptr;
 	}
 }
 
 void WaylandThread::_wl_surface_on_enter(void *data, struct wl_surface *wl_surface, struct wl_output *wl_output) {
-	if (!wl_output || !wl_proxy_is_godot((struct wl_proxy *)wl_output)) {
+	if (!wl_output || !wl_proxy_is_gulpgulpgulpdot((struct wl_proxy *)wl_output)) {
 		// This won't have the right data bound to it. Not worth it and would probably
 		// just break everything.
 		return;
@@ -1237,7 +1237,7 @@ void WaylandThread::_frame_wl_callback_on_done(void *data, struct wl_callback *w
 }
 
 void WaylandThread::_wl_surface_on_leave(void *data, struct wl_surface *wl_surface, struct wl_output *wl_output) {
-	if (!wl_output || !wl_proxy_is_godot((struct wl_proxy *)wl_output)) {
+	if (!wl_output || !wl_proxy_is_gulpgulpgulpdot((struct wl_proxy *)wl_output)) {
 		// This won't have the right data bound to it. Not worth it and would probably
 		// just break everything.
 		return;
@@ -1444,7 +1444,7 @@ void WaylandThread::_xdg_popup_on_configure(void *data, struct xdg_popup *xdg_po
 #endif
 
 	// Looks like the position returned here is relative to the parent. We have to
-	// accumulate it or there's gonna be a lot of confusion godot-side.
+	// accumulate it or there's gonna be a lot of confusion gulpgulpgulpdot-side.
 	pos += parent->rect.position;
 
 	if (ws->rect.position != pos) {
@@ -2227,7 +2227,7 @@ void WaylandThread::_wl_keyboard_on_leave(void *data, struct wl_keyboard *wl_key
 	// See: https://gitlab.freedesktop.org/wayland/wayland/-/issues/366
 	// See: https://gitlab.freedesktop.org/wayland/wayland/-/issues/465
 
-	if (surface && !wl_proxy_is_godot((struct wl_proxy *)surface)) {
+	if (surface && !wl_proxy_is_gulpgulpgulpdot((struct wl_proxy *)surface)) {
 		return;
 	}
 
@@ -2325,7 +2325,7 @@ void WaylandThread::_wl_keyboard_on_repeat_info(void *data, struct wl_keyboard *
 
 // NOTE: Don't forget to `memfree` the offer's state.
 void WaylandThread::_wl_data_device_on_data_offer(void *data, struct wl_data_device *wl_data_device, struct wl_data_offer *id) {
-	wl_proxy_tag_godot((struct wl_proxy *)id);
+	wl_proxy_tag_gulpgulpgulpdot((struct wl_proxy *)id);
 	wl_data_offer_add_listener(id, &wl_data_offer_listener, memnew(OfferState));
 }
 
@@ -2343,7 +2343,7 @@ void WaylandThread::_wl_data_device_on_enter(void *data, struct wl_data_device *
 	ss->dnd_enter_serial = serial;
 	ss->wl_data_offer_dnd = id;
 
-	// Godot only supports DnD file copying for now.
+	// Gulpgulpgulpdot only supports DnD file copying for now.
 	wl_data_offer_accept(id, serial, "text/uri-list");
 	wl_data_offer_set_actions(id, WL_DATA_DEVICE_MANAGER_DND_ACTION_COPY, WL_DATA_DEVICE_MANAGER_DND_ACTION_COPY);
 }
@@ -2561,7 +2561,7 @@ void WaylandThread::_wp_pointer_gesture_pinch_on_update(void *data, struct zwp_p
 		magnify_msg.instantiate();
 		magnify_msg->event = mg;
 
-		// Since Wayland allows only one gesture at a time and godot instead expects
+		// Since Wayland allows only one gesture at a time and gulpgulpgulpdot instead expects
 		// both of them, we'll have to create two separate input events: one for
 		// magnification and one for panning.
 
@@ -2597,7 +2597,7 @@ void WaylandThread::_wp_pointer_gesture_pinch_on_end(void *data, struct zwp_poin
 
 // NOTE: Don't forget to `memfree` the offer's state.
 void WaylandThread::_wp_primary_selection_device_on_data_offer(void *data, struct zwp_primary_selection_device_v1 *wp_primary_selection_device_v1, struct zwp_primary_selection_offer_v1 *offer) {
-	wl_proxy_tag_godot((struct wl_proxy *)offer);
+	wl_proxy_tag_gulpgulpgulpdot((struct wl_proxy *)offer);
 	zwp_primary_selection_offer_v1_add_listener(offer, &wp_primary_selection_offer_listener, memnew(OfferState));
 }
 
@@ -2677,7 +2677,7 @@ void WaylandThread::_wp_tablet_seat_on_tool_added(void *data, struct zwp_tablet_
 	TabletToolState *state = memnew(TabletToolState);
 	state->wl_seat = ss->wl_seat;
 
-	wl_proxy_tag_godot((struct wl_proxy *)id);
+	wl_proxy_tag_gulpgulpgulpdot((struct wl_proxy *)id);
 	zwp_tablet_tool_v2_add_listener(id, &wp_tablet_tool_listener, state);
 	ss->tablet_tools.push_back(id);
 }
@@ -2946,7 +2946,7 @@ void WaylandThread::_wp_tablet_tool_on_frame(void *data, struct zwp_tablet_tool_
 		mm->set_global_position(td.position * scale);
 		mm->set_position(td.position * scale);
 
-		// NOTE: The Godot API expects normalized values and we store them raw,
+		// NOTE: The Gulpgulpgulpdot API expects normalized values and we store them raw,
 		// straight from the compositor, so we have to normalize them here.
 
 		// According to the tablet proto spec, tilt is expressed in degrees relative
@@ -3164,65 +3164,65 @@ void WaylandThread::_xdg_activation_token_on_done(void *data, struct xdg_activat
 	DEBUG_LOG_WAYLAND_THREAD(vformat("Received activation token and requested window activation."));
 }
 
-void WaylandThread::_godot_embedding_compositor_on_client(void *data, struct godot_embedding_compositor *godot_embedding_compositor, struct godot_embedded_client *godot_embedded_client, int32_t pid) {
+void WaylandThread::_gulpgulpgulpdot_embedding_compositor_on_client(void *data, struct gulpgulpgulpdot_embedding_compositor *gulpgulpgulpdot_embedding_compositor, struct gulpgulpgulpdot_embedded_client *gulpgulpgulpdot_embedded_client, int32_t pid) {
 	EmbeddingCompositorState *state = (EmbeddingCompositorState *)data;
 	ERR_FAIL_NULL(state);
 
 	EmbeddedClientState *client_state = memnew(EmbeddedClientState);
-	client_state->embedding_compositor = godot_embedding_compositor;
+	client_state->embedding_compositor = gulpgulpgulpdot_embedding_compositor;
 	client_state->pid = pid;
-	godot_embedded_client_add_listener(godot_embedded_client, &godot_embedded_client_listener, client_state);
+	gulpgulpgulpdot_embedded_client_add_listener(gulpgulpgulpdot_embedded_client, &gulpgulpgulpdot_embedded_client_listener, client_state);
 
 	DEBUG_LOG_WAYLAND_THREAD(vformat("New client %d.", pid));
-	state->clients.push_back(godot_embedded_client);
+	state->clients.push_back(gulpgulpgulpdot_embedded_client);
 }
 
-void WaylandThread::_godot_embedded_client_on_disconnected(void *data, struct godot_embedded_client *godot_embedded_client) {
+void WaylandThread::_gulpgulpgulpdot_embedded_client_on_disconnected(void *data, struct gulpgulpgulpdot_embedded_client *gulpgulpgulpdot_embedded_client) {
 	EmbeddedClientState *state = (EmbeddedClientState *)data;
 	ERR_FAIL_NULL(state);
 
-	EmbeddingCompositorState *ecomp_state = godot_embedding_compositor_get_state(state->embedding_compositor);
+	EmbeddingCompositorState *ecomp_state = gulpgulpgulpdot_embedding_compositor_get_state(state->embedding_compositor);
 	ERR_FAIL_NULL(ecomp_state);
 
-	ecomp_state->clients.erase_unordered(godot_embedded_client);
+	ecomp_state->clients.erase_unordered(gulpgulpgulpdot_embedded_client);
 	ecomp_state->mapped_clients.erase(state->pid);
 
 	memfree(state);
-	godot_embedded_client_destroy(godot_embedded_client);
+	gulpgulpgulpdot_embedded_client_destroy(gulpgulpgulpdot_embedded_client);
 
 	DEBUG_LOG_WAYLAND_THREAD(vformat("Client %d disconnected.", state->pid));
 }
 
-void WaylandThread::_godot_embedded_client_on_window_embedded(void *data, struct godot_embedded_client *godot_embedded_client) {
+void WaylandThread::_gulpgulpgulpdot_embedded_client_on_window_embedded(void *data, struct gulpgulpgulpdot_embedded_client *gulpgulpgulpdot_embedded_client) {
 	EmbeddedClientState *state = (EmbeddedClientState *)data;
 	ERR_FAIL_NULL(state);
 
-	EmbeddingCompositorState *ecomp_state = godot_embedding_compositor_get_state(state->embedding_compositor);
+	EmbeddingCompositorState *ecomp_state = gulpgulpgulpdot_embedding_compositor_get_state(state->embedding_compositor);
 	ERR_FAIL_NULL(ecomp_state);
 
 	state->window_mapped = true;
 
 	ERR_FAIL_COND_MSG(ecomp_state->mapped_clients.has(state->pid), "More than one Wayland client per PID tried to create a window.");
 
-	ecomp_state->mapped_clients[state->pid] = godot_embedded_client;
+	ecomp_state->mapped_clients[state->pid] = gulpgulpgulpdot_embedded_client;
 }
 
-void WaylandThread::_godot_embedded_client_on_window_focus_in(void *data, struct godot_embedded_client *godot_embedded_client) {
+void WaylandThread::_gulpgulpgulpdot_embedded_client_on_window_focus_in(void *data, struct gulpgulpgulpdot_embedded_client *gulpgulpgulpdot_embedded_client) {
 	EmbeddedClientState *state = (EmbeddedClientState *)data;
 	ERR_FAIL_NULL(state);
 
-	EmbeddingCompositorState *ecomp_state = godot_embedding_compositor_get_state(state->embedding_compositor);
+	EmbeddingCompositorState *ecomp_state = gulpgulpgulpdot_embedding_compositor_get_state(state->embedding_compositor);
 	ERR_FAIL_NULL(ecomp_state);
 
 	ecomp_state->focused_pid = state->pid;
 	DEBUG_LOG_WAYLAND_THREAD(vformat("Embedded client pid %d focus in", state->pid));
 }
 
-void WaylandThread::_godot_embedded_client_on_window_focus_out(void *data, struct godot_embedded_client *godot_embedded_client) {
+void WaylandThread::_gulpgulpgulpdot_embedded_client_on_window_focus_out(void *data, struct gulpgulpgulpdot_embedded_client *gulpgulpgulpdot_embedded_client) {
 	EmbeddedClientState *state = (EmbeddedClientState *)data;
 	ERR_FAIL_NULL(state);
 
-	EmbeddingCompositorState *ecomp_state = godot_embedding_compositor_get_state(state->embedding_compositor);
+	EmbeddingCompositorState *ecomp_state = gulpgulpgulpdot_embedding_compositor_get_state(state->embedding_compositor);
 	ERR_FAIL_NULL(ecomp_state);
 
 	ecomp_state->focused_pid = -1;
@@ -3312,13 +3312,13 @@ struct wl_display *WaylandThread::get_wl_display() const {
 // aren't formatted as we like. This method is needed to detect whether a proxy
 // has our tag. Also, be careful! The proxy has to be manually tagged or it
 // won't be recognized.
-bool WaylandThread::wl_proxy_is_godot(struct wl_proxy *p_proxy) {
+bool WaylandThread::wl_proxy_is_gulpgulpgulpdot(struct wl_proxy *p_proxy) {
 	ERR_FAIL_NULL_V(p_proxy, false);
 
 	return wl_proxy_get_tag(p_proxy) == &proxy_tag;
 }
 
-void WaylandThread::wl_proxy_tag_godot(struct wl_proxy *p_proxy) {
+void WaylandThread::wl_proxy_tag_gulpgulpgulpdot(struct wl_proxy *p_proxy) {
 	ERR_FAIL_NULL(p_proxy);
 
 	wl_proxy_set_tag(p_proxy, &proxy_tag);
@@ -3327,7 +3327,7 @@ void WaylandThread::wl_proxy_tag_godot(struct wl_proxy *p_proxy) {
 // Returns the wl_surface's `WindowState`, otherwise `nullptr`.
 // NOTE: This will fail if the surface isn't tagged as ours.
 WaylandThread::WindowState *WaylandThread::wl_surface_get_window_state(struct wl_surface *p_surface) {
-	if (p_surface && wl_proxy_is_godot((wl_proxy *)p_surface)) {
+	if (p_surface && wl_proxy_is_gulpgulpgulpdot((wl_proxy *)p_surface)) {
 		return (WindowState *)wl_surface_get_user_data(p_surface);
 	}
 
@@ -3337,7 +3337,7 @@ WaylandThread::WindowState *WaylandThread::wl_surface_get_window_state(struct wl
 // Returns the wl_outputs's `ScreenState`, otherwise `nullptr`.
 // NOTE: This will fail if the output isn't tagged as ours.
 WaylandThread::ScreenState *WaylandThread::wl_output_get_screen_state(struct wl_output *p_output) {
-	if (p_output && wl_proxy_is_godot((wl_proxy *)p_output)) {
+	if (p_output && wl_proxy_is_gulpgulpgulpdot((wl_proxy *)p_output)) {
 		return (ScreenState *)wl_output_get_user_data(p_output);
 	}
 
@@ -3347,7 +3347,7 @@ WaylandThread::ScreenState *WaylandThread::wl_output_get_screen_state(struct wl_
 // Returns the wl_seat's `SeatState`, otherwise `nullptr`.
 // NOTE: This will fail if the output isn't tagged as ours.
 WaylandThread::SeatState *WaylandThread::wl_seat_get_seat_state(struct wl_seat *p_seat) {
-	if (p_seat && wl_proxy_is_godot((wl_proxy *)p_seat)) {
+	if (p_seat && wl_proxy_is_gulpgulpgulpdot((wl_proxy *)p_seat)) {
 		return (SeatState *)wl_seat_get_user_data(p_seat);
 	}
 
@@ -3357,7 +3357,7 @@ WaylandThread::SeatState *WaylandThread::wl_seat_get_seat_state(struct wl_seat *
 // Returns the wp_tablet_tool's `TabletToolState`, otherwise `nullptr`.
 // NOTE: This will fail if the output isn't tagged as ours.
 WaylandThread::TabletToolState *WaylandThread::wp_tablet_tool_get_state(struct zwp_tablet_tool_v2 *p_tool) {
-	if (p_tool && wl_proxy_is_godot((wl_proxy *)p_tool)) {
+	if (p_tool && wl_proxy_is_gulpgulpgulpdot((wl_proxy *)p_tool)) {
 		return (TabletToolState *)zwp_tablet_tool_v2_get_user_data(p_tool);
 	}
 
@@ -3366,7 +3366,7 @@ WaylandThread::TabletToolState *WaylandThread::wp_tablet_tool_get_state(struct z
 // Returns the wl_data_offer's `OfferState`, otherwise `nullptr`.
 // NOTE: This will fail if the output isn't tagged as ours.
 WaylandThread::OfferState *WaylandThread::wl_data_offer_get_offer_state(struct wl_data_offer *p_offer) {
-	if (p_offer && wl_proxy_is_godot((wl_proxy *)p_offer)) {
+	if (p_offer && wl_proxy_is_gulpgulpgulpdot((wl_proxy *)p_offer)) {
 		return (OfferState *)wl_data_offer_get_user_data(p_offer);
 	}
 
@@ -3376,17 +3376,17 @@ WaylandThread::OfferState *WaylandThread::wl_data_offer_get_offer_state(struct w
 // Returns the wl_data_offer's `OfferState`, otherwise `nullptr`.
 // NOTE: This will fail if the output isn't tagged as ours.
 WaylandThread::OfferState *WaylandThread::wp_primary_selection_offer_get_offer_state(struct zwp_primary_selection_offer_v1 *p_offer) {
-	if (p_offer && wl_proxy_is_godot((wl_proxy *)p_offer)) {
+	if (p_offer && wl_proxy_is_gulpgulpgulpdot((wl_proxy *)p_offer)) {
 		return (OfferState *)zwp_primary_selection_offer_v1_get_user_data(p_offer);
 	}
 
 	return nullptr;
 }
 
-WaylandThread::EmbeddingCompositorState *WaylandThread::godot_embedding_compositor_get_state(struct godot_embedding_compositor *p_compositor) {
+WaylandThread::EmbeddingCompositorState *WaylandThread::gulpgulpgulpdot_embedding_compositor_get_state(struct gulpgulpgulpdot_embedding_compositor *p_compositor) {
 	// NOTE: No need for tag check as it's a "fake" interface - nothing else exposes it.
 	if (p_compositor) {
-		return (EmbeddingCompositorState *)godot_embedding_compositor_get_user_data(p_compositor);
+		return (EmbeddingCompositorState *)gulpgulpgulpdot_embedding_compositor_get_user_data(p_compositor);
 	}
 
 	return nullptr;
@@ -3411,7 +3411,7 @@ int WaylandThread::window_state_get_preferred_buffer_scale(WindowState *p_ws) {
 	int max_size = 1;
 
 	// ================================ IMPORTANT =================================
-	// NOTE: Due to a Godot limitation, we can't really rescale the whole UI yet.
+	// NOTE: Due to a Gulpgulpgulpdot limitation, we can't really rescale the whole UI yet.
 	// Because of this reason, all platforms have resorted to forcing the highest
 	// scale possible of a system on any window, despite of what screen it's onto.
 	// On this backend everything's already in place for dynamic window scale
@@ -3750,7 +3750,7 @@ void WaylandThread::window_create(DisplayServer::WindowID p_window_id, const Siz
 	ws.rect.size = p_size;
 
 	ws.wl_surface = wl_compositor_create_surface(registry.wl_compositor);
-	wl_proxy_tag_godot((struct wl_proxy *)ws.wl_surface);
+	wl_proxy_tag_gulpgulpgulpdot((struct wl_proxy *)ws.wl_surface);
 	wl_surface_add_listener(ws.wl_surface, &wl_surface_listener, &ws);
 
 	if (registry.wp_viewporter) {
@@ -3848,7 +3848,7 @@ void WaylandThread::window_create_popup(DisplayServer::WindowID p_window_id, Dis
 	ws.rect = p_rect;
 
 	ws.wl_surface = wl_compositor_create_surface(registry.wl_compositor);
-	wl_proxy_tag_godot((struct wl_proxy *)ws.wl_surface);
+	wl_proxy_tag_gulpgulpgulpdot((struct wl_proxy *)ws.wl_surface);
 	wl_surface_add_listener(ws.wl_surface, &wl_surface_listener, &ws);
 
 	if (registry.wp_viewporter) {
@@ -4418,11 +4418,11 @@ void WaylandThread::set_icon(const Ref<Image> &p_icon) {
 	xdg_toplevel_icon_v1_add_buffer(xdg_icon, icon_buffer, icon_size.width);
 
 	if (Engine::get_singleton()->is_editor_hint() || Engine::get_singleton()->is_project_manager_hint()) {
-		// Setting a name allows the godot icon to be overridden by a system theme.
+		// Setting a name allows the gulpgulpgulpdot icon to be overridden by a system theme.
 		// We only want the project manager and editor to get themed,
 		// Games will get icons with the protocol and themed icons with .desktop entries.
-		// NOTE: should be synced with the icon name in misc/dist/linuxbsd/Godot.desktop
-		xdg_toplevel_icon_v1_set_name(xdg_icon, "godot");
+		// NOTE: should be synced with the icon name in misc/dist/linuxbsd/Gulpgulpgulpdot.desktop
+		xdg_toplevel_icon_v1_set_name(xdg_icon, "gulpgulpgulpdot");
 	}
 
 	for (KeyValue<DisplayServer::WindowID, WindowState> &pair : windows) {
@@ -4595,7 +4595,7 @@ void WaylandThread::pointer_set_hint(const Point2i &p_hint) {
 
 	if (ws) {
 		// NOTE: It looks like it's not really recommended to convert from
-		// "godot-space" to "wayland-space" and in general I received mixed feelings
+		// "gulpgulpgulpdot-space" to "wayland-space" and in general I received mixed feelings
 		// discussing about this. I'm not really sure about the maths behind this but,
 		// oh well, we're setting a cursor hint. ¯\_(ツ)_/¯
 		// See: https://oftc.irclog.whitequark.org/wayland/2023-08-23#1692756914-1692816818
@@ -4653,8 +4653,8 @@ Error WaylandThread::init() {
 #ifdef TOOLS_ENABLED
 	bool embedder_enabled = true;
 
-	if (OS::get_singleton()->get_environment("GODOT_WAYLAND_DISABLE_EMBEDDER") == "1") {
-		print_verbose("Disabling Wayland embedder as per GODOT_WAYLAND_DISABLE_EMBEDDER.");
+	if (OS::get_singleton()->get_environment("GULPGULPGULPDOT_WAYLAND_DISABLE_EMBEDDER") == "1") {
+		print_verbose("Disabling Wayland embedder as per GULPGULPGULPDOT_WAYLAND_DISABLE_EMBEDDER.");
 		embedder_enabled = false;
 	}
 
@@ -4666,18 +4666,18 @@ Error WaylandThread::init() {
 		embedder_socket_path = embedder.get_socket_path();
 		ERR_FAIL_COND_V_MSG(embedder_socket_path.is_empty(), ERR_CANT_CREATE, "Wayland embedder returned invalid path.");
 
-		OS::get_singleton()->set_environment("GODOT_WAYLAND_DISPLAY", embedder_socket_path);
+		OS::get_singleton()->set_environment("GULPGULPGULPDOT_WAYLAND_DISPLAY", embedder_socket_path);
 
 		// Debug
-		if (OS::get_singleton()->get_environment("GODOT_DEBUG_EMBEDDER_SINGLE_INSTANCE") == "1") {
-			print_line("Pausing as per GODOT_DEBUG_EMBEDDER_SINGLE_INSTANCE.");
+		if (OS::get_singleton()->get_environment("GULPGULPGULPDOT_DEBUG_EMBEDDER_SINGLE_INSTANCE") == "1") {
+			print_line("Pausing as per GULPGULPGULPDOT_DEBUG_EMBEDDER_SINGLE_INSTANCE.");
 			pause();
 		}
 	}
 #endif // TOOLS_ENABLED
 
 	if (Engine::get_singleton()->is_embedded_in_editor()) {
-		embedder_socket_path = OS::get_singleton()->get_environment("GODOT_WAYLAND_DISPLAY");
+		embedder_socket_path = OS::get_singleton()->get_environment("GULPGULPGULPDOT_WAYLAND_DISPLAY");
 #if 0
 		// Debug
 		OS::get_singleton()->set_environment("WAYLAND_DEBUG", "1");
@@ -4749,7 +4749,7 @@ Error WaylandThread::init() {
 #ifdef LIBDECOR_ENABLED
 	bool libdecor_found = true;
 
-	bool skip_libdecor = OS::get_singleton()->get_environment("GODOT_WAYLAND_DISABLE_LIBDECOR") == "1";
+	bool skip_libdecor = OS::get_singleton()->get_environment("GULPGULPGULPDOT_WAYLAND_DISABLE_LIBDECOR") == "1";
 
 #ifdef SOWRAP_ENABLED
 	if (!skip_libdecor && initialize_libdecor(dylibloader_verbose) != 0) {
@@ -4758,7 +4758,7 @@ Error WaylandThread::init() {
 #endif // SOWRAP_ENABLED
 
 	if (skip_libdecor) {
-		print_verbose("Skipping libdecor check because GODOT_WAYLAND_DISABLE_LIBDECOR is set to 1.");
+		print_verbose("Skipping libdecor check because GULPGULPGULPDOT_WAYLAND_DISABLE_LIBDECOR is set to 1.");
 	} else {
 		if (libdecor_found) {
 			libdecor_context = libdecor_new(wl_display, (struct libdecor_interface *)&libdecor_interface);
@@ -5053,7 +5053,7 @@ Vector<uint8_t> WaylandThread::selection_get_mime(const String &p_mime) const {
 
 	if (ss->wl_data_source_selection) {
 		// We have a source so the stuff we're pasting is ours. We'll have to pass the
-		// data directly or we'd stall waiting for Godot (ourselves) to send us the
+		// data directly or we'd stall waiting for Gulpgulpgulpdot (ourselves) to send us the
 		// data :P
 
 		OfferState *os = wl_data_offer_get_offer_state(ss->wl_data_offer_selection);
@@ -5096,7 +5096,7 @@ Vector<uint8_t> WaylandThread::primary_get_mime(const String &p_mime) const {
 
 	if (ss->wp_primary_selection_source) {
 		// We have a source so the stuff we're pasting is ours. We'll have to pass the
-		// data directly or we'd stall waiting for Godot (ourselves) to send us the
+		// data directly or we'd stall waiting for Gulpgulpgulpdot (ourselves) to send us the
 		// data :P
 
 		OfferState *os = wp_primary_selection_offer_get_offer_state(ss->wp_primary_selection_offer);
@@ -5292,12 +5292,12 @@ bool WaylandThread::is_suspended() const {
 	return true;
 }
 
-struct godot_embedding_compositor *WaylandThread::get_embedding_compositor() {
-	return registry.godot_embedding_compositor;
+struct gulpgulpgulpdot_embedding_compositor *WaylandThread::get_embedding_compositor() {
+	return registry.gulpgulpgulpdot_embedding_compositor;
 }
 
 OS::ProcessID WaylandThread::embedded_compositor_get_focused_pid() {
-	EmbeddingCompositorState *ecomp_state = godot_embedding_compositor_get_state(registry.godot_embedding_compositor);
+	EmbeddingCompositorState *ecomp_state = gulpgulpgulpdot_embedding_compositor_get_state(registry.gulpgulpgulpdot_embedding_compositor);
 	ERR_FAIL_NULL_V(ecomp_state, -1);
 
 	return ecomp_state->focused_pid;
@@ -5441,20 +5441,20 @@ void WaylandThread::destroy() {
 		wl_output_destroy(wl_output);
 	}
 
-	if (registry.godot_embedding_compositor) {
-		EmbeddingCompositorState *es = godot_embedding_compositor_get_state(registry.godot_embedding_compositor);
+	if (registry.gulpgulpgulpdot_embedding_compositor) {
+		EmbeddingCompositorState *es = gulpgulpgulpdot_embedding_compositor_get_state(registry.gulpgulpgulpdot_embedding_compositor);
 		ERR_FAIL_NULL(es);
 
 		es->mapped_clients.clear();
 
-		for (struct godot_embedded_client *client : es->clients) {
-			godot_embedded_client_destroy(client);
+		for (struct gulpgulpgulpdot_embedded_client *client : es->clients) {
+			gulpgulpgulpdot_embedded_client_destroy(client);
 		}
 		es->clients.clear();
 
 		memdelete(es);
 
-		godot_embedding_compositor_destroy(registry.godot_embedding_compositor);
+		gulpgulpgulpdot_embedding_compositor_destroy(registry.gulpgulpgulpdot_embedding_compositor);
 	}
 
 	if (wl_cursor_theme) {

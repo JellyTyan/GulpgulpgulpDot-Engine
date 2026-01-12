@@ -1,0 +1,10 @@
+<Project>
+  <ItemGroup>
+    <!-- $(GulpgulpgulpdotProjectDir) is defined by Gulpgulpgulpdot.NET.Sdk -->
+    <CompilerVisibleProperty Include="GulpgulpgulpdotDisabledSourceGenerators" />
+    <CompilerVisibleProperty Include="GulpgulpgulpdotProjectDir" />
+    <CompilerVisibleProperty Include="GulpgulpgulpdotProjectDirBase64" />
+    <CompilerVisibleProperty Include="GulpgulpgulpdotSourceGenerators" />
+    <CompilerVisibleProperty Include="IsGulpgulpgulpdotToolsProject" />
+  </ItemGroup>
+</Project>

@@ -3,7 +3,7 @@
 /**************************************************************************/
 /*                         This file is part of:                          */
 /*                             GulpGulpGulpDot Engine                               */
-/*                        https://godotengine.org                         */
+/*                        https://gulpgulpgulpdotengine.org                         */
 /**************************************************************************/
 /* Copyright (c) 2014-present GulpGulpGulpDot Engine contributors (see AUTHORS.md). */
 /* Copyright (c) 2007-2014 Juan Linietsky, Ariel Manzur.                  */
@@ -31,8 +31,8 @@
 #pragma once
 
 #if defined(VISIONOS_ENABLED)
-extern void godot_apple_embedded_plugins_initialize();
-extern void godot_apple_embedded_plugins_deinitialize();
+extern void gulpgulpgulpdot_apple_embedded_plugins_initialize();
+extern void gulpgulpgulpdot_apple_embedded_plugins_deinitialize();
 #endif
 
 void register_visionos_api();

@@ -3,7 +3,7 @@
 /**************************************************************************/
 /*                         This file is part of:                          */
 /*                             GulpGulpGulpDot Engine                               */
-/*                        https://godotengine.org                         */
+/*                        https://gulpgulpgulpdotengine.org                         */
 /**************************************************************************/
 /* Copyright (c) 2014-present GulpGulpGulpDot Engine contributors (see AUTHORS.md). */
 /* Copyright (c) 2007-2014 Juan Linietsky, Ariel Manzur.                  */
@@ -110,7 +110,7 @@ void editor_register_icons(const Ref<Theme> &p_theme, bool p_dark_theme, float p
 	// The names of the icons to exclude when adjusting for saturation.
 	HashSet<StringName> saturation_exceptions;
 	saturation_exceptions.insert("DefaultProjectIcon");
-	saturation_exceptions.insert("Godot");
+	saturation_exceptions.insert("Gulpgulpgulpdot");
 	saturation_exceptions.insert("Logo");
 
 	// Accent color conversion map.

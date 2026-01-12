@@ -3,7 +3,7 @@
 /**************************************************************************/
 /*                         This file is part of:                          */
 /*                             GulpGulpGulpDot Engine                               */
-/*                        https://godotengine.org                         */
+/*                        https://gulpgulpgulpdotengine.org                         */
 /**************************************************************************/
 /* Copyright (c) 2014-present GulpGulpGulpDot Engine contributors (see AUTHORS.md). */
 /* Copyright (c) 2007-2014 Juan Linietsky, Ariel Manzur.                  */
@@ -42,7 +42,7 @@
 #undef minor
 #endif
 
-namespace godotsharp {
+namespace gulpgulpgulpdotsharp {
 
 struct SemVer {
 private:
@@ -101,4 +101,4 @@ public:
 	bool parse(const String &p_ver_text, SemVer &r_semver);
 };
 
-} //namespace godotsharp
+} //namespace gulpgulpgulpdotsharp

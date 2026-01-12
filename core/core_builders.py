@@ -19,17 +19,17 @@ def version_info_builder(target, source, env):
     with methods.generated_wrapper(str(target[0])) as file:
         file.write(
             """\
-#define GODOT_VERSION_SHORT_NAME "{short_name}"
-#define GODOT_VERSION_NAME "{name}"
-#define GODOT_VERSION_MAJOR {major}
-#define GODOT_VERSION_MINOR {minor}
-#define GODOT_VERSION_PATCH {patch}
-#define GODOT_VERSION_STATUS "{status}"
-#define GODOT_VERSION_BUILD "{build}"
-#define GODOT_VERSION_MODULE_CONFIG "{module_config}"
-#define GODOT_VERSION_WEBSITE "{website}"
-#define GODOT_VERSION_DOCS_BRANCH "{docs_branch}"
-#define GODOT_VERSION_DOCS_URL "https://docs.godotengine.org/en/" GODOT_VERSION_DOCS_BRANCH
+#define GULPGULPGULPDOT_VERSION_SHORT_NAME "{short_name}"
+#define GULPGULPGULPDOT_VERSION_NAME "{name}"
+#define GULPGULPGULPDOT_VERSION_MAJOR {major}
+#define GULPGULPGULPDOT_VERSION_MINOR {minor}
+#define GULPGULPGULPDOT_VERSION_PATCH {patch}
+#define GULPGULPGULPDOT_VERSION_STATUS "{status}"
+#define GULPGULPGULPDOT_VERSION_BUILD "{build}"
+#define GULPGULPGULPDOT_VERSION_MODULE_CONFIG "{module_config}"
+#define GULPGULPGULPDOT_VERSION_WEBSITE "{website}"
+#define GULPGULPGULPDOT_VERSION_DOCS_BRANCH "{docs_branch}"
+#define GULPGULPGULPDOT_VERSION_DOCS_URL "https://docs.gulpgulpgulpdotengine.org/en/" GULPGULPGULPDOT_VERSION_DOCS_BRANCH
 """.format(**source[0].read())
         )
 
@@ -40,8 +40,8 @@ def version_hash_builder(target, source, env):
             """\
 #include "core/version.h"
 
-const char *const GODOT_VERSION_HASH = "{git_hash}";
-const uint64_t GODOT_VERSION_TIMESTAMP = {git_timestamp};
+const char *const GULPGULPGULPDOT_VERSION_HASH = "{git_hash}";
+const uint64_t GULPGULPGULPDOT_VERSION_TIMESTAMP = {git_timestamp};
 """.format(**source[0].read())
         )
 
@@ -221,7 +221,7 @@ def make_license_header(target, source, env):
 
     with methods.generated_wrapper(str(target[0])) as file:
         file.write(f"""\
-inline constexpr const char *GODOT_LICENSE_TEXT = {{
+inline constexpr const char *GULPGULPGULPDOT_LICENSE_TEXT = {{
 {methods.to_raw_cstring(license_text)}
 }};
 

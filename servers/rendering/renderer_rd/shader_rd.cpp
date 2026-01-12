@@ -3,7 +3,7 @@
 /**************************************************************************/
 /*                         This file is part of:                          */
 /*                             GulpGulpGulpDot Engine                               */
-/*                        https://godotengine.org                         */
+/*                        https://gulpgulpgulpdotengine.org                         */
 /**************************************************************************/
 /* Copyright (c) 2014-present GulpGulpGulpDot Engine contributors (see AUTHORS.md). */
 /* Copyright (c) 2007-2014 Juan Linietsky, Ariel Manzur.                  */
@@ -148,10 +148,10 @@ void ShaderRD::setup(const char *p_vertex_code, const char *p_fragment_code, con
 	}
 
 	StringBuilder tohash;
-	tohash.append("[GodotVersionNumber]");
-	tohash.append(GODOT_VERSION_NUMBER);
-	tohash.append("[GodotVersionHash]");
-	tohash.append(GODOT_VERSION_HASH);
+	tohash.append("[GulpgulpgulpdotVersionNumber]");
+	tohash.append(GULPGULPGULPDOT_VERSION_NUMBER);
+	tohash.append("[GulpgulpgulpdotVersionHash]");
+	tohash.append(GULPGULPGULPDOT_VERSION_HASH);
 	tohash.append("[Vertex]");
 	tohash.append(p_vertex_code ? p_vertex_code : "");
 	tohash.append("[Fragment]");

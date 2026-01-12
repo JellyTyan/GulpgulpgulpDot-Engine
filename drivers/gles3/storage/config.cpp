@@ -3,7 +3,7 @@
 /**************************************************************************/
 /*                         This file is part of:                          */
 /*                             GulpGulpGulpDot Engine                               */
-/*                        https://godotengine.org                         */
+/*                        https://gulpgulpgulpdotengine.org                         */
 /**************************************************************************/
 /* Copyright (c) 2014-present GulpGulpGulpDot Engine contributors (see AUTHORS.md). */
 /* Copyright (c) 2007-2014 Juan Linietsky, Ariel Manzur.                  */
@@ -233,7 +233,7 @@ Config::Config() {
 		String driver_version = gl_version.get_slice("V@", 1).get_slicec(' ', 0);
 		if (driver_version.is_valid_float() && driver_version.to_float() >= 331.0) {
 			//TODO: also 'GPUParticles'?
-			//https://github.com/godotengine/godot/issues/92662#issuecomment-2161199477
+			//https://github.com/gulpgulpgulpdotengine/gulpgulpgulpdot/issues/92662#issuecomment-2161199477
 			//disable_particles_workaround = false;
 		}
 	} else if (rendering_device_name.contains("PowerVR")) {

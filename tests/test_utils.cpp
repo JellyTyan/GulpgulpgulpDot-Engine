@@ -3,7 +3,7 @@
 /**************************************************************************/
 /*                         This file is part of:                          */
 /*                             GulpGulpGulpDot Engine                               */
-/*                        https://godotengine.org                         */
+/*                        https://gulpgulpgulpdotengine.org                         */
 /**************************************************************************/
 /* Copyright (c) 2014-present GulpGulpGulpDot Engine contributors (see AUTHORS.md). */
 /* Copyright (c) 2007-2014 Juan Linietsky, Ariel Manzur.                  */
@@ -43,7 +43,7 @@ String TestUtils::get_executable_dir() {
 }
 
 String TestUtils::get_temp_path(const String &p_suffix) {
-	const String temp_base = OS::get_singleton()->get_cache_path().path_join("godot_test");
+	const String temp_base = OS::get_singleton()->get_cache_path().path_join("gulpgulpgulpdot_test");
 	DirAccess::make_dir_absolute(temp_base); // Ensure the directory exists.
 	return temp_base.path_join(p_suffix);
 }

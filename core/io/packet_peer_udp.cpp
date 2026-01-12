@@ -3,7 +3,7 @@
 /**************************************************************************/
 /*                         This file is part of:                          */
 /*                             GulpGulpGulpDot Engine                               */
-/*                        https://godotengine.org                         */
+/*                        https://gulpgulpgulpdotengine.org                         */
 /**************************************************************************/
 /* Copyright (c) 2014-present GulpGulpGulpDot Engine contributors (see AUTHORS.md). */
 /* Copyright (c) 2007-2014 Juan Linietsky, Ariel Manzur.                  */
@@ -113,8 +113,8 @@ Error PacketPeerUDP::get_packet(const uint8_t **r_buffer, int &r_buffer_size) {
 	 *   68 |                                 p_buf[dst++] = read[pos + i];
 	 *      |                                 ~~~~~~~~~~~~~^~~~~~~
 	 */
-	GODOT_GCC_WARNING_PUSH
-	GODOT_GCC_PRAGMA(GCC diagnostic warning "-Wstringop-overflow=0") // Can't "ignore" this for some reason.
+	GULPGULPGULPDOT_GCC_WARNING_PUSH
+	GULPGULPGULPDOT_GCC_PRAGMA(GCC diagnostic warning "-Wstringop-overflow=0") // Can't "ignore" this for some reason.
 
 	uint32_t size = 0;
 	uint8_t ipv6[16] = {};
@@ -127,7 +127,7 @@ Error PacketPeerUDP::get_packet(const uint8_t **r_buffer, int &r_buffer_size) {
 	*r_buffer = packet_buffer;
 	r_buffer_size = size;
 
-	GODOT_GCC_WARNING_POP
+	GULPGULPGULPDOT_GCC_WARNING_POP
 
 	return OK;
 }

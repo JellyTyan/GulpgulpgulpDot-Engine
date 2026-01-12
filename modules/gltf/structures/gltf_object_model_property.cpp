@@ -3,7 +3,7 @@
 /**************************************************************************/
 /*                         This file is part of:                          */
 /*                             GulpGulpGulpDot Engine                               */
-/*                        https://godotengine.org                         */
+/*                        https://gulpgulpgulpdotengine.org                         */
 /**************************************************************************/
 /* Copyright (c) 2014-present GulpGulpGulpDot Engine contributors (see AUTHORS.md). */
 /* Copyright (c) 2007-2014 Juan Linietsky, Ariel Manzur.                  */
@@ -49,10 +49,10 @@ void GLTFObjectModelProperty::_bind_methods() {
 	ClassDB::bind_method(D_METHOD("append_path_to_property", "node_path", "prop_name"), &GLTFObjectModelProperty::append_path_to_property);
 
 	ClassDB::bind_method(D_METHOD("get_accessor_type"), &GLTFObjectModelProperty::get_accessor_type);
-	ClassDB::bind_method(D_METHOD("get_gltf_to_godot_expression"), &GLTFObjectModelProperty::get_gltf_to_godot_expression);
-	ClassDB::bind_method(D_METHOD("set_gltf_to_godot_expression", "gltf_to_godot_expr"), &GLTFObjectModelProperty::set_gltf_to_godot_expression);
-	ClassDB::bind_method(D_METHOD("get_godot_to_gltf_expression"), &GLTFObjectModelProperty::get_godot_to_gltf_expression);
-	ClassDB::bind_method(D_METHOD("set_godot_to_gltf_expression", "godot_to_gltf_expr"), &GLTFObjectModelProperty::set_godot_to_gltf_expression);
+	ClassDB::bind_method(D_METHOD("get_gltf_to_gulpgulpgulpdot_expression"), &GLTFObjectModelProperty::get_gltf_to_gulpgulpgulpdot_expression);
+	ClassDB::bind_method(D_METHOD("set_gltf_to_gulpgulpgulpdot_expression", "gltf_to_gulpgulpgulpdot_expr"), &GLTFObjectModelProperty::set_gltf_to_gulpgulpgulpdot_expression);
+	ClassDB::bind_method(D_METHOD("get_gulpgulpgulpdot_to_gltf_expression"), &GLTFObjectModelProperty::get_gulpgulpgulpdot_to_gltf_expression);
+	ClassDB::bind_method(D_METHOD("set_gulpgulpgulpdot_to_gltf_expression", "gulpgulpgulpdot_to_gltf_expr"), &GLTFObjectModelProperty::set_gulpgulpgulpdot_to_gltf_expression);
 	ClassDB::bind_method(D_METHOD("get_node_paths"), &GLTFObjectModelProperty::get_node_paths);
 	ClassDB::bind_method(D_METHOD("has_node_paths"), &GLTFObjectModelProperty::has_node_paths);
 	ClassDB::bind_method(D_METHOD("set_node_paths", "node_paths"), &GLTFObjectModelProperty::set_node_paths);
@@ -65,8 +65,8 @@ void GLTFObjectModelProperty::_bind_methods() {
 	ClassDB::bind_method(D_METHOD("set_variant_type", "variant_type"), &GLTFObjectModelProperty::set_variant_type);
 	ClassDB::bind_method(D_METHOD("set_types", "variant_type", "obj_model_type"), &GLTFObjectModelProperty::set_types);
 
-	ADD_PROPERTY(PropertyInfo(Variant::OBJECT, "gltf_to_godot_expression", PROPERTY_HINT_RESOURCE_TYPE, "Expression"), "set_gltf_to_godot_expression", "get_gltf_to_godot_expression"); // Ref<Expression>
-	ADD_PROPERTY(PropertyInfo(Variant::OBJECT, "godot_to_gltf_expression", PROPERTY_HINT_RESOURCE_TYPE, "Expression"), "set_godot_to_gltf_expression", "get_godot_to_gltf_expression"); // Ref<Expression>
+	ADD_PROPERTY(PropertyInfo(Variant::OBJECT, "gltf_to_gulpgulpgulpdot_expression", PROPERTY_HINT_RESOURCE_TYPE, "Expression"), "set_gltf_to_gulpgulpgulpdot_expression", "get_gltf_to_gulpgulpgulpdot_expression"); // Ref<Expression>
+	ADD_PROPERTY(PropertyInfo(Variant::OBJECT, "gulpgulpgulpdot_to_gltf_expression", PROPERTY_HINT_RESOURCE_TYPE, "Expression"), "set_gulpgulpgulpdot_to_gltf_expression", "get_gulpgulpgulpdot_to_gltf_expression"); // Ref<Expression>
 	ADD_PROPERTY(PropertyInfo(Variant::ARRAY, "node_paths", PROPERTY_HINT_TYPE_STRING, "NodePath"), "set_node_paths", "get_node_paths"); // TypedArray<NodePath>
 	ADD_PROPERTY(PropertyInfo(Variant::INT, "object_model_type"), "set_object_model_type", "get_object_model_type"); // GLTFObjectModelType
 	ADD_PROPERTY(PropertyInfo(Variant::PACKED_STRING_ARRAY, "json_pointers"), "set_json_pointers", "get_json_pointers"); // TypedArray<PackedStringArray>
@@ -122,20 +122,20 @@ GLTFAccessor::GLTFComponentType GLTFObjectModelProperty::get_component_type(cons
 	}
 }
 
-Ref<Expression> GLTFObjectModelProperty::get_gltf_to_godot_expression() const {
-	return gltf_to_godot_expr;
+Ref<Expression> GLTFObjectModelProperty::get_gltf_to_gulpgulpgulpdot_expression() const {
+	return gltf_to_gulpgulpgulpdot_expr;
 }
 
-void GLTFObjectModelProperty::set_gltf_to_godot_expression(const Ref<Expression> &p_gltf_to_godot_expr) {
-	gltf_to_godot_expr = p_gltf_to_godot_expr;
+void GLTFObjectModelProperty::set_gltf_to_gulpgulpgulpdot_expression(const Ref<Expression> &p_gltf_to_gulpgulpgulpdot_expr) {
+	gltf_to_gulpgulpgulpdot_expr = p_gltf_to_gulpgulpgulpdot_expr;
 }
 
-Ref<Expression> GLTFObjectModelProperty::get_godot_to_gltf_expression() const {
-	return godot_to_gltf_expr;
+Ref<Expression> GLTFObjectModelProperty::get_gulpgulpgulpdot_to_gltf_expression() const {
+	return gulpgulpgulpdot_to_gltf_expr;
 }
 
-void GLTFObjectModelProperty::set_godot_to_gltf_expression(const Ref<Expression> &p_godot_to_gltf_expr) {
-	godot_to_gltf_expr = p_godot_to_gltf_expr;
+void GLTFObjectModelProperty::set_gulpgulpgulpdot_to_gltf_expression(const Ref<Expression> &p_gulpgulpgulpdot_to_gltf_expr) {
+	gulpgulpgulpdot_to_gltf_expr = p_gulpgulpgulpdot_to_gltf_expr;
 }
 
 TypedArray<NodePath> GLTFObjectModelProperty::get_node_paths() const {

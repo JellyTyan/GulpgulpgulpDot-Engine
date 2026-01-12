@@ -3,7 +3,7 @@
 /**************************************************************************/
 /*                         This file is part of:                          */
 /*                             GulpGulpGulpDot Engine                               */
-/*                        https://godotengine.org                         */
+/*                        https://gulpgulpgulpdotengine.org                         */
 /**************************************************************************/
 /* Copyright (c) 2014-present GulpGulpGulpDot Engine contributors (see AUTHORS.md). */
 /* Copyright (c) 2007-2014 Juan Linietsky, Ariel Manzur.                  */
@@ -1388,7 +1388,7 @@ Node *ResourceImporterScene::_replace_node_with_type_and_script(Node *p_node, St
 		}
 	}
 	if (!p_node_type.is_empty() && p_node->get_class_name() != p_node_type) {
-		// If the user specified a Godot node type that does not match
+		// If the user specified a Gulpgulpgulpdot node type that does not match
 		// what the scene import gave us, replace the root node.
 		Node *new_base_node = Object::cast_to<Node>(ClassDB::instantiate(p_node_type));
 		if (new_base_node) {
@@ -3219,7 +3219,7 @@ Error ResourceImporterScene::import(ResourceUID::ID p_source_id, const String &p
 
 	String root_name = p_options["nodes/root_name"];
 	if (!root_name.is_empty() && root_name != "Scene Root") {
-		// TODO: Remove `&& root_name != "Scene Root"` for Godot 5.0.
+		// TODO: Remove `&& root_name != "Scene Root"` for Gulpgulpgulpdot 5.0.
 		// For backwards compatibility with existing .import files,
 		// treat "Scene Root" as having no root name override.
 		scene->set_name(root_name);

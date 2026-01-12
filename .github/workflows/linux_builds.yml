@@ -9,7 +9,7 @@ env:
     dev_mode=yes
     module_text_server_fb_enabled=yes
     "accesskit_sdk_path=${{ github.workspace }}/accesskit-c-0.18.0/"
-  GODOT_CPP_BRANCH: 4.5
+  GULPGULPGULPDOT_CPP_BRANCH: 4.5
   DOTNET_NOLOGO: true
   DOTNET_CLI_TELEMETRY_OPTOUT: true
   ASAN_OPTIONS: color=always:print_suppressions=1:suppressions=${{ github.workspace }}/misc/error_suppressions/asan.txt
@@ -31,14 +31,14 @@ jobs:
             cache-name: linux-editor-mono
             target: editor
             scons-flags: module_mono_enabled=yes
-            bin: ./bin/godot.linuxbsd.editor.x86_64.mono
+            bin: ./bin/gulpgulpgulpdot.linuxbsd.editor.x86_64.mono
             build-mono: true
             doc-test: true
             proj-conv: true
             api-compat: true
             artifact: true
-            # Validate godot-cpp compatibility on one arbitrary editor build.
-            godot-cpp: true
+            # Validate gulpgulpgulpdot-cpp compatibility on one arbitrary editor build.
+            gulpgulpgulpdot-cpp: true
 
           - name: Editor with doubles and GCC sanitizers (target=editor, dev_build=yes, scu_build=yes, precision=double, use_asan=yes, use_ubsan=yes, linker=mold)
             cache-name: linux-editor-double-sanitizers
@@ -52,7 +52,7 @@ jobs:
               use_asan=yes
               use_ubsan=yes
               linker=mold
-            bin: ./bin/godot.linuxbsd.editor.dev.double.x86_64.san
+            bin: ./bin/gulpgulpgulpdot.linuxbsd.editor.dev.double.x86_64.san
             proj-test: true
 
           - name: Editor with clang sanitizers (target=editor, dev_build=yes, use_asan=yes, use_ubsan=yes, use_llvm=yes, linker=lld)
@@ -64,7 +64,7 @@ jobs:
               use_ubsan=yes
               use_llvm=yes
               linker=lld
-            bin: ./bin/godot.linuxbsd.editor.dev.x86_64.llvm.san
+            bin: ./bin/gulpgulpgulpdot.linuxbsd.editor.dev.x86_64.llvm.san
             # Test our oldest supported SCons/Python versions on one arbitrary editor build.
             legacy-scons: true
 
@@ -76,20 +76,20 @@ jobs:
               use_tsan=yes
               use_llvm=yes
               linker=lld
-            bin: ./bin/godot.linuxbsd.editor.dev.x86_64.llvm.san
+            bin: ./bin/gulpgulpgulpdot.linuxbsd.editor.dev.x86_64.llvm.san
 
           - name: Template w/ Mono, release (target=template_release)
             cache-name: linux-template-mono
             target: template_release
             scons-flags: module_mono_enabled=yes
-            bin: ./bin/godot.linuxbsd.template_release.x86_64.mono
+            bin: ./bin/gulpgulpgulpdot.linuxbsd.template_release.x86_64.mono
             artifact: true
 
           - name: Template w/ Mono, debug (target=template_debug)
             cache-name: linux-template-mono-debug
             target: template_debug
             scons-flags: module_mono_enabled=yes
-            bin: ./bin/godot.linuxbsd.template_debug.x86_64.mono
+            bin: ./bin/gulpgulpgulpdot.linuxbsd.template_debug.x86_64.mono
             artifact: true
 
           - name: Minimal template (target=template_release, everything disabled)
@@ -105,7 +105,7 @@ jobs:
               deprecated=no
               minizip=no
               brotli=no
-            bin: ./bin/godot.linuxbsd.template_release.x86_64
+            bin: ./bin/gulpgulpgulpdot.linuxbsd.template_release.x86_64
             artifact: true
 
     steps:
@@ -128,19 +128,19 @@ jobs:
           sudo rm -rf /usr/local/lib/android
           echo "Disk usage after:" && df -h
 
-      - name: Restore Godot build cache
-        uses: ./.github/actions/godot-cache-restore
+      - name: Restore Gulpgulpgulpdot build cache
+        uses: ./.github/actions/gulpgulpgulpdot-cache-restore
         with:
           cache-name: ${{ matrix.cache-name }}
         continue-on-error: true
 
       - name: Setup Python and SCons
         if: "!matrix.legacy-scons"
-        uses: ./.github/actions/godot-deps
+        uses: ./.github/actions/gulpgulpgulpdot-deps
 
       - name: Setup Python and SCons (legacy versions)
         if: matrix.legacy-scons
-        uses: ./.github/actions/godot-deps
+        uses: ./.github/actions/gulpgulpgulpdot-deps
         with:
           # Sync with Ensure*Version in SConstruct.
           python-version: 3.8
@@ -174,22 +174,22 @@ jobs:
         uses: rui314/setup-mold@v1
 
       - name: Compilation
-        uses: ./.github/actions/godot-build
+        uses: ./.github/actions/gulpgulpgulpdot-build
         with:
           scons-flags: ${{ env.SCONS_FLAGS }} ${{ matrix.scons-flags }}
           platform: linuxbsd
           target: ${{ matrix.target }}
 
-      - name: Compilation (godot-cpp)
-        uses: ./.github/actions/godot-cpp-build
-        if: matrix.godot-cpp
+      - name: Compilation (gulpgulpgulpdot-cpp)
+        uses: ./.github/actions/gulpgulpgulpdot-cpp-build
+        if: matrix.gulpgulpgulpdot-cpp
         with:
           bin: ${{ matrix.bin }}
           scons-flags: target=template_debug dev_build=yes verbose=yes
-          godot-cpp-branch: ${{ env.GODOT_CPP_BRANCH }}
+          gulpgulpgulpdot-cpp-branch: ${{ env.GULPGULPGULPDOT_CPP_BRANCH }}
 
-      - name: Save Godot build cache
-        uses: ./.github/actions/godot-cache-save
+      - name: Save Gulpgulpgulpdot build cache
+        uses: ./.github/actions/gulpgulpgulpdot-cache-save
         with:
           cache-name: ${{ matrix.cache-name }}
         continue-on-error: true
@@ -203,13 +203,13 @@ jobs:
         if: matrix.build-mono
         run: |
           dotnet --info
-          ./modules/mono/build_scripts/build_assemblies.py --godot-output-dir=./bin --godot-platform=linuxbsd --werror
+          ./modules/mono/build_scripts/build_assemblies.py --gulpgulpgulpdot-output-dir=./bin --gulpgulpgulpdot-platform=linuxbsd --werror
 
       - name: Prepare artifact
         if: matrix.artifact
         run: |
-          strip bin/godot.*
-          chmod +x bin/godot.*
+          strip bin/gulpgulpgulpdot.*
+          chmod +x bin/gulpgulpgulpdot.*
 
       - name: Upload artifact
         uses: ./.github/actions/upload-artifact
@@ -226,7 +226,7 @@ jobs:
       - name: .NET source generators tests
         if: matrix.build-mono
         run: |
-          dotnet test modules/mono/editor/Godot.NET.Sdk/Godot.SourceGenerators.Tests
+          dotnet test modules/mono/editor/Gulpgulpgulpdot.NET.Sdk/Gulpgulpgulpdot.SourceGenerators.Tests
 
       # Check class reference
       - name: Check for class reference updates
@@ -244,15 +244,15 @@ jobs:
           ./misc/scripts/validate_extension_api.sh "${{ matrix.bin }}"
 
       # Download and run the test project
-      - name: Test Godot project
-        uses: ./.github/actions/godot-project-test
+      - name: Test Gulpgulpgulpdot project
+        uses: ./.github/actions/gulpgulpgulpdot-project-test
         if: matrix.proj-test
         with:
           bin: ${{ matrix.bin }}
 
       # Test the project converter
       - name: Test project converter
-        uses: ./.github/actions/godot-converter-test
+        uses: ./.github/actions/gulpgulpgulpdot-converter-test
         if: matrix.proj-conv
         with:
           bin: ${{ matrix.bin }}

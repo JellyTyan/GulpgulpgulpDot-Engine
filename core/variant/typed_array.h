@@ -3,7 +3,7 @@
 /**************************************************************************/
 /*                         This file is part of:                          */
 /*                             GulpGulpGulpDot Engine                               */
-/*                        https://godotengine.org                         */
+/*                        https://gulpgulpgulpdotengine.org                         */
 /**************************************************************************/
 /* Copyright (c) 2014-present GulpGulpGulpDot Engine contributors (see AUTHORS.md). */
 /* Copyright (c) 2007-2014 Juan Linietsky, Ariel Manzur.                  */
@@ -41,7 +41,7 @@ public:
 	}
 
 	_FORCE_INLINE_ TypedArray(const Array &p_array) {
-		set_typed(GodotTypeInfo::Internal::get_variant_type<T>(), GodotTypeInfo::Internal::get_object_class_name_or_empty<T>(), Variant());
+		set_typed(GulpgulpgulpdotTypeInfo::Internal::get_variant_type<T>(), GulpgulpgulpdotTypeInfo::Internal::get_object_class_name_or_empty<T>(), Variant());
 		if (is_same_typed(p_array)) {
 			Array::operator=(p_array);
 		} else {
@@ -53,6 +53,6 @@ public:
 			TypedArray(Array(p_init)) {}
 
 	_FORCE_INLINE_ TypedArray() {
-		set_typed(GodotTypeInfo::Internal::get_variant_type<T>(), GodotTypeInfo::Internal::get_object_class_name_or_empty<T>(), Variant());
+		set_typed(GulpgulpgulpdotTypeInfo::Internal::get_variant_type<T>(), GulpgulpgulpdotTypeInfo::Internal::get_object_class_name_or_empty<T>(), Variant());
 	}
 };

@@ -3,7 +3,7 @@
 /**************************************************************************/
 /*                         This file is part of:                          */
 /*                             GulpGulpGulpDot Engine                               */
-/*                        https://godotengine.org                         */
+/*                        https://gulpgulpgulpdotengine.org                         */
 /**************************************************************************/
 /* Copyright (c) 2014-present GulpGulpGulpDot Engine contributors (see AUTHORS.md). */
 /* Copyright (c) 2007-2014 Juan Linietsky, Ariel Manzur.                  */
@@ -51,12 +51,12 @@ private:
 	Vector<GLTFNodeIndex> roots;
 
 	// The created Skeleton3D for the scene
-	Skeleton3D *godot_skeleton = nullptr;
+	Skeleton3D *gulpgulpgulpdot_skeleton = nullptr;
 
 	// Set of unique bone names for the skeleton
 	HashSet<String> unique_names;
 
-	HashMap<int32_t, GLTFNodeIndex> godot_bone_node;
+	HashMap<int32_t, GLTFNodeIndex> gulpgulpgulpdot_bone_node;
 
 	Vector<BoneAttachment3D *> bone_attachments;
 
@@ -70,32 +70,32 @@ public:
 	Vector<GLTFNodeIndex> get_roots();
 	void set_roots(const Vector<GLTFNodeIndex> &p_roots);
 
-	Skeleton3D *get_godot_skeleton();
+	Skeleton3D *get_gulpgulpgulpdot_skeleton();
 
-	// Skeleton *get_godot_skeleton() {
-	// 	return godot_skeleton;
+	// Skeleton *get_gulpgulpgulpdot_skeleton() {
+	// 	return gulpgulpgulpdot_skeleton;
 	// }
-	// void set_godot_skeleton(Skeleton p_*godot_skeleton) {
-	// 	godot_skeleton = p_godot_skeleton;
+	// void set_gulpgulpgulpdot_skeleton(Skeleton p_*gulpgulpgulpdot_skeleton) {
+	// 	gulpgulpgulpdot_skeleton = p_gulpgulpgulpdot_skeleton;
 	// }
 
 	TypedArray<String> get_unique_names();
 	void set_unique_names(const TypedArray<String> &p_unique_names);
 
-	//RBMap<int32_t, GLTFNodeIndex> get_godot_bone_node() {
-	//	return godot_bone_node;
+	//RBMap<int32_t, GLTFNodeIndex> get_gulpgulpgulpdot_bone_node() {
+	//	return gulpgulpgulpdot_bone_node;
 	//}
-	//void set_godot_bone_node(const RBMap<int32_t, GLTFNodeIndex> &p_godot_bone_node) {
-	//	godot_bone_node = p_godot_bone_node;
+	//void set_gulpgulpgulpdot_bone_node(const RBMap<int32_t, GLTFNodeIndex> &p_gulpgulpgulpdot_bone_node) {
+	//	gulpgulpgulpdot_bone_node = p_gulpgulpgulpdot_bone_node;
 	//}
-	Dictionary get_godot_bone_node();
-	void set_godot_bone_node(const Dictionary &p_indict);
+	Dictionary get_gulpgulpgulpdot_bone_node();
+	void set_gulpgulpgulpdot_bone_node(const Dictionary &p_indict);
 
-	//Dictionary get_godot_bone_node() {
-	//	return VariantConversion::to_dict(godot_bone_node);
+	//Dictionary get_gulpgulpgulpdot_bone_node() {
+	//	return VariantConversion::to_dict(gulpgulpgulpdot_bone_node);
 	//}
-	//void set_godot_bone_node(Dictionary p_indict) {
-	//	VariantConversion::set_from_dict(godot_bone_node, p_indict);
+	//void set_gulpgulpgulpdot_bone_node(Dictionary p_indict) {
+	//	VariantConversion::set_from_dict(gulpgulpgulpdot_bone_node, p_indict);
 	//}
 
 	BoneAttachment3D *get_bone_attachment(int idx);

@@ -3,7 +3,7 @@
 /**************************************************************************/
 /*                         This file is part of:                          */
 /*                             GulpGulpGulpDot Engine                               */
-/*                        https://godotengine.org                         */
+/*                        https://gulpgulpgulpdotengine.org                         */
 /**************************************************************************/
 /* Copyright (c) 2014-present GulpGulpGulpDot Engine contributors (see AUTHORS.md). */
 /* Copyright (c) 2007-2014 Juan Linietsky, Ariel Manzur.                  */
@@ -31,7 +31,7 @@
 import SwiftUI
 import UIKit
 
-struct GodotSwiftUIViewController: UIViewControllerRepresentable {
+struct GulpgulpgulpdotSwiftUIViewController: UIViewControllerRepresentable {
 
 	func makeUIViewController(context: Context) -> GDTViewController {
 		let viewController = GDTViewController()
@@ -52,7 +52,7 @@ struct SwiftUIApp: App {
 
 	var body: some Scene {
 		WindowGroup {
-			GodotSwiftUIViewController()
+			GulpgulpgulpdotSwiftUIViewController()
 				.ignoresSafeArea()
 				// UIViewControllerRepresentable does not call viewWillDisappear() nor viewDidDisappear() when
 				// backgrounding the app, or closing the app's main window, update the renderer here.
@@ -62,14 +62,14 @@ struct SwiftUIApp: App {
 					// stop the renderer.
 					switch phase {
 					case .active:
-						print("GodotSwiftUIViewController scene active")
-						GDTAppDelegateService.viewController?.godotView.startRendering()
+						print("GulpgulpgulpdotSwiftUIViewController scene active")
+						GDTAppDelegateService.viewController?.gulpgulpgulpdotView.startRendering()
 					case .inactive:
-						print("GodotSwiftUIViewController scene inactive")
-						GDTAppDelegateService.viewController?.godotView.stopRendering()
+						print("GulpgulpgulpdotSwiftUIViewController scene inactive")
+						GDTAppDelegateService.viewController?.gulpgulpgulpdotView.stopRendering()
 					case .background:
-						print("GodotSwiftUIViewController scene backgrounded")
-						GDTAppDelegateService.viewController?.godotView.stopRendering()
+						print("GulpgulpgulpdotSwiftUIViewController scene backgrounded")
+						GDTAppDelegateService.viewController?.gulpgulpgulpdotView.stopRendering()
 					@unknown default:
 						print("unknown default")
 					}

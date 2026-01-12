@@ -1,7 +1,7 @@
 # Georgian translation of the GulpGulpGulpDot Engine editor interface.
 # Copyright (c) 2014-present GulpGulpGulpDot Engine contributors.
 # Copyright (c) 2007-2014 Juan Linietsky, Ariel Manzur.
-# This file is distributed under the same license as the Godot source code.
+# This file is distributed under the same license as the Gulpgulpgulpdot source code.
 # Giorgi Beriashvili <giorgi.beriashvili@outlook.com>, 2018.
 # George Dzavashvili <dzavashviligeorge@gmail.com>, 2018.
 # დემეტრე შონია <blender.animation.maker@gmail.com>, 2019.
@@ -11,12 +11,12 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: GulpGulpGulpDot Engine editor interface\n"
-"Report-Msgid-Bugs-To: https://github.com/godotengine/godot\n"
+"Report-Msgid-Bugs-To: https://github.com/gulpgulpgulpdotengine/gulpgulpgulpdot\n"
 "POT-Creation-Date: \n"
 "PO-Revision-Date: 2025-10-30 13:39+0000\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
-"Language-Team: Georgian <https://hosted.weblate.org/projects/godot-engine/"
-"godot/ka/>\n"
+"Language-Team: Georgian <https://hosted.weblate.org/projects/gulpgulpgulpdot-engine/"
+"gulpgulpgulpdot/ka/>\n"
 "Language: ka\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -2395,8 +2395,8 @@ msgstr "რესურსები"
 msgid "Keep"
 msgstr "დატოვება"
 
-msgid "Godot Project Pack"
-msgstr "Godot-ის პროექტების ნაკრები"
+msgid "Gulpgulpgulpdot Project Pack"
+msgstr "Gulpgulpgulpdot-ის პროექტების ნაკრები"
 
 msgid "Features"
 msgstr "თვისებები"
@@ -2577,10 +2577,10 @@ msgid "Folder name is valid."
 msgstr "საქაღალდის სახელი სწორია."
 
 msgid "GulpGulpGulpDot Engine contributors"
-msgstr "Godot ძრავის ხელშემწყობები"
+msgstr "Gulpgulpgulpdot ძრავის ხელშემწყობები"
 
-msgid "Thanks from the Godot community!"
-msgstr "მადლობა Godot საზოგადოებისგან!"
+msgid "Thanks from the Gulpgulpgulpdot community!"
+msgstr "მადლობა Gulpgulpgulpdot საზოგადოებისგან!"
 
 msgid "Authors"
 msgstr "ავტორები"

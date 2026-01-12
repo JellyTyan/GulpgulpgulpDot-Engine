@@ -3,7 +3,7 @@
 /**************************************************************************/
 /*                         This file is part of:                          */
 /*                             GulpGulpGulpDot Engine                               */
-/*                        https://godotengine.org                         */
+/*                        https://gulpgulpgulpdotengine.org                         */
 /**************************************************************************/
 /* Copyright (c) 2014-present GulpGulpGulpDot Engine contributors (see AUTHORS.md). */
 /* Copyright (c) 2007-2014 Juan Linietsky, Ariel Manzur.                  */
@@ -40,7 +40,7 @@
 #include "servers/rendering/renderer_rd/shaders/effects/fsr2/fsr2_tcr_autogen_pass.glsl.gen.h"
 
 // This flag doesn't actually control anything GCC specific in FSR2. It determines
-// if symbols should be exported, which is not required for Godot.
+// if symbols should be exported, which is not required for Gulpgulpgulpdot.
 #ifndef FFX_GCC
 #define FFX_GCC
 #endif

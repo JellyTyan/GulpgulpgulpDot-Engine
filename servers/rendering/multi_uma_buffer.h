@@ -3,7 +3,7 @@
 /**************************************************************************/
 /*                         This file is part of:                          */
 /*                             GulpGulpGulpDot Engine                               */
-/*                        https://godotengine.org                         */
+/*                        https://gulpgulpgulpdotengine.org                         */
 /**************************************************************************/
 /* Copyright (c) 2014-present GulpGulpGulpDot Engine contributors (see AUTHORS.md). */
 /* Copyright (c) 2007-2014 Juan Linietsky, Ariel Manzur.                  */
@@ -200,7 +200,7 @@ enum class MultiUmaBufferType : uint8_t {
 ///
 /// # Tricks
 ///
-///	Godot's shadow mapping code calls uma_buffer.uniform_buffers._get(-p_pass_offset) (i.e. a negative value)
+///	Gulpgulpgulpdot's shadow mapping code calls uma_buffer.uniform_buffers._get(-p_pass_offset) (i.e. a negative value)
 /// because for various reasons its shadow mapping code was written like this:
 ///
 ///		for( uint32_t i = 0u; i < num_passes; ++i ) {
@@ -279,7 +279,7 @@ enum class MultiUmaBufferType : uint8_t {
 ///		}
 ///
 ///	After the frame is done, those extra 18 buffers will be deleted.
-/// Launching godot with --verbose will print diagnostic information.
+/// Launching gulpgulpgulpdot with --verbose will print diagnostic information.
 template <uint32_t NUM_BUFFERS, uint32_t MAX_EXTRA_BUFFERS = UINT32_MAX>
 class MultiUmaBuffer : public MultiUmaBufferBase {
 	struct BufferInfo {

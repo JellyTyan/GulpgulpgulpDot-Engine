@@ -3,7 +3,7 @@
 /**************************************************************************/
 /*                         This file is part of:                          */
 /*                             GulpGulpGulpDot Engine                               */
-/*                        https://godotengine.org                         */
+/*                        https://gulpgulpgulpdotengine.org                         */
 /**************************************************************************/
 /* Copyright (c) 2014-present GulpGulpGulpDot Engine contributors (see AUTHORS.md). */
 /* Copyright (c) 2007-2014 Juan Linietsky, Ariel Manzur.                  */
@@ -259,7 +259,7 @@ struct PtrToArg<Ref<T>> {
 template <typename T>
 struct GetTypeInfo<Ref<T>> {
 	static const Variant::Type VARIANT_TYPE = Variant::OBJECT;
-	static const GodotTypeInfo::Metadata METADATA = GodotTypeInfo::METADATA_NONE;
+	static const GulpgulpgulpdotTypeInfo::Metadata METADATA = GulpgulpgulpdotTypeInfo::METADATA_NONE;
 
 	static inline PropertyInfo get_class_info() {
 		return PropertyInfo(Variant::OBJECT, String(), PROPERTY_HINT_RESOURCE_TYPE, T::get_class_static());

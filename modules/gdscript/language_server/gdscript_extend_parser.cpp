@@ -3,7 +3,7 @@
 /**************************************************************************/
 /*                         This file is part of:                          */
 /*                             GulpGulpGulpDot Engine                               */
-/*                        https://godotengine.org                         */
+/*                        https://gulpgulpgulpdotengine.org                         */
 /**************************************************************************/
 /* Copyright (c) 2014-present GulpGulpGulpDot Engine contributors (see AUTHORS.md). */
 /* Copyright (c) 2007-2014 Juan Linietsky, Ariel Manzur.                  */
@@ -44,7 +44,7 @@ int get_indent_size() {
 	}
 }
 
-LSP::Position GodotPosition::to_lsp(const Vector<String> &p_lines) const {
+LSP::Position GulpgulpgulpdotPosition::to_lsp(const Vector<String> &p_lines) const {
 	LSP::Position res;
 
 	// Special case: `line = 0` -> root class (range covers everything).
@@ -89,8 +89,8 @@ LSP::Position GodotPosition::to_lsp(const Vector<String> &p_lines) const {
 	return res;
 }
 
-GodotPosition GodotPosition::from_lsp(const LSP::Position p_pos, const Vector<String> &p_lines) {
-	GodotPosition res(p_pos.line + 1, p_pos.character + 1);
+GulpgulpgulpdotPosition GulpgulpgulpdotPosition::from_lsp(const LSP::Position p_pos, const Vector<String> &p_lines) {
+	GulpgulpgulpdotPosition res(p_pos.line + 1, p_pos.character + 1);
 
 	// Line outside of actual text is valid (-> pos/cursor at end of text).
 	if (res.line > p_lines.size()) {
@@ -113,17 +113,17 @@ GodotPosition GodotPosition::from_lsp(const LSP::Position p_pos, const Vector<St
 	return res;
 }
 
-LSP::Range GodotRange::to_lsp(const Vector<String> &p_lines) const {
+LSP::Range GulpgulpgulpdotRange::to_lsp(const Vector<String> &p_lines) const {
 	LSP::Range res;
 	res.start = start.to_lsp(p_lines);
 	res.end = end.to_lsp(p_lines);
 	return res;
 }
 
-GodotRange GodotRange::from_lsp(const LSP::Range &p_range, const Vector<String> &p_lines) {
-	GodotPosition start = GodotPosition::from_lsp(p_range.start, p_lines);
-	GodotPosition end = GodotPosition::from_lsp(p_range.end, p_lines);
-	return GodotRange(start, end);
+GulpgulpgulpdotRange GulpgulpgulpdotRange::from_lsp(const LSP::Range &p_range, const Vector<String> &p_lines) {
+	GulpgulpgulpdotPosition start = GulpgulpgulpdotPosition::from_lsp(p_range.start, p_lines);
+	GulpgulpgulpdotPosition end = GulpgulpgulpdotPosition::from_lsp(p_range.end, p_lines);
+	return GulpgulpgulpdotRange(start, end);
 }
 
 void ExtendGDScriptParser::update_diagnostics() {
@@ -217,7 +217,7 @@ void ExtendGDScriptParser::update_document_links(const String &p_code) {
 					String value = const_val;
 					LSP::DocumentLink link;
 					link.target = GDScriptLanguageProtocol::get_singleton()->get_workspace()->get_file_uri(scr_path);
-					link.range = GodotRange(GodotPosition(token.start_line, token.start_column), GodotPosition(token.end_line, token.end_column)).to_lsp(lines);
+					link.range = GulpgulpgulpdotRange(GulpgulpgulpdotPosition(token.start_line, token.start_column), GulpgulpgulpdotPosition(token.end_line, token.end_column)).to_lsp(lines);
 					document_links.push_back(link);
 				}
 			}
@@ -226,9 +226,9 @@ void ExtendGDScriptParser::update_document_links(const String &p_code) {
 }
 
 LSP::Range ExtendGDScriptParser::range_of_node(const GDScriptParser::Node *p_node) const {
-	GodotPosition start(p_node->start_line, p_node->start_column);
-	GodotPosition end(p_node->end_line, p_node->end_column);
-	return GodotRange(start, end).to_lsp(lines);
+	GulpgulpgulpdotPosition start(p_node->start_line, p_node->start_column);
+	GulpgulpgulpdotPosition end(p_node->end_line, p_node->end_column);
+	return GulpgulpgulpdotRange(start, end).to_lsp(lines);
 }
 
 void ExtendGDScriptParser::parse_class_symbol(const GDScriptParser::ClassNode *p_class, LSP::DocumentSymbol &r_symbol) {
@@ -404,8 +404,8 @@ void ExtendGDScriptParser::parse_class_symbol(const GDScriptParser::ClassNode *p
 				symbol.name = m.enum_value.identifier->name;
 				symbol.kind = LSP::SymbolKind::EnumMember;
 				symbol.deprecated = false;
-				symbol.range.start = GodotPosition(m.enum_value.line, m.enum_value.start_column).to_lsp(lines);
-				symbol.range.end = GodotPosition(m.enum_value.line, m.enum_value.end_column).to_lsp(lines);
+				symbol.range.start = GulpgulpgulpdotPosition(m.enum_value.line, m.enum_value.start_column).to_lsp(lines);
+				symbol.range.end = GulpgulpgulpdotPosition(m.enum_value.line, m.enum_value.end_column).to_lsp(lines);
 				symbol.selectionRange = range_of_node(m.enum_value.identifier);
 				symbol.documentation = m.enum_value.doc_data.description;
 				symbol.uri = uri;
@@ -440,8 +440,8 @@ void ExtendGDScriptParser::parse_class_symbol(const GDScriptParser::ClassNode *p
 					child.name = value.identifier->name;
 					child.kind = LSP::SymbolKind::EnumMember;
 					child.deprecated = false;
-					child.range.start = GodotPosition(value.line, value.start_column).to_lsp(lines);
-					child.range.end = GodotPosition(value.line, value.end_column).to_lsp(lines);
+					child.range.start = GulpgulpgulpdotPosition(value.line, value.start_column).to_lsp(lines);
+					child.range.end = GulpgulpgulpdotPosition(value.line, value.end_column).to_lsp(lines);
 					child.selectionRange = range_of_node(value.identifier);
 					child.documentation = value.doc_data.description;
 					child.uri = uri;
@@ -615,8 +615,8 @@ void ExtendGDScriptParser::parse_function_symbol(const GDScriptParser::FunctionN
 					break;
 				default:
 					// Fallback.
-					symbol.range.start = GodotPosition(local.start_line, local.start_column).to_lsp(get_lines());
-					symbol.range.end = GodotPosition(local.end_line, local.end_column).to_lsp(get_lines());
+					symbol.range.start = GulpgulpgulpdotPosition(local.start_line, local.start_column).to_lsp(get_lines());
+					symbol.range.end = GulpgulpgulpdotPosition(local.end_line, local.end_column).to_lsp(get_lines());
 					symbol.selectionRange = symbol.range;
 					break;
 			}

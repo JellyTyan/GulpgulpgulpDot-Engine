@@ -3,7 +3,7 @@
 /**************************************************************************/
 /*                         This file is part of:                          */
 /*                             GulpGulpGulpDot Engine                               */
-/*                        https://godotengine.org                         */
+/*                        https://gulpgulpgulpdotengine.org                         */
 /**************************************************************************/
 /* Copyright (c) 2014-present GulpGulpGulpDot Engine contributors (see AUTHORS.md). */
 /* Copyright (c) 2007-2014 Juan Linietsky, Ariel Manzur.                  */
@@ -52,7 +52,7 @@
 
 #include "core/typedefs.h"
 
-GODOT_CLANG_WARNING_PUSH_AND_IGNORE("-Wdeprecated-declarations")
+GULPGULPGULPDOT_CLANG_WARNING_PUSH_AND_IGNORE("-Wdeprecated-declarations")
 
 #import "inflection_map.h"
 #import "metal_device_properties.h"
@@ -285,14 +285,14 @@ public:
 	/** Returns whether the specified Metal MTLPixelFormat is a PVRTC format. */
 	bool isPVRTCFormat(MTLPixelFormat p_format);
 
-	/** Returns the format type corresponding to the specified Godot pixel format, */
+	/** Returns the format type corresponding to the specified Gulpgulpgulpdot pixel format, */
 	MTLFormatType getFormatType(DataFormat p_format);
 
 	/** Returns the format type corresponding to the specified Metal MTLPixelFormat, */
 	MTLFormatType getFormatType(MTLPixelFormat p_format);
 
 	/**
-	 * Returns the Metal MTLPixelFormat corresponding to the specified Godot pixel
+	 * Returns the Metal MTLPixelFormat corresponding to the specified Gulpgulpgulpdot pixel
 	 * or returns MTLPixelFormatInvalid if no corresponding MTLPixelFormat exists.
 	 */
 	MTLPixelFormat getMTLPixelFormat(DataFormat p_format);
@@ -304,7 +304,7 @@ public:
 	DataFormat getDataFormat(MTLPixelFormat p_format);
 
 	/**
-	 * Returns the size, in bytes, of a texel block of the specified Godot pixel.
+	 * Returns the size, in bytes, of a texel block of the specified Gulpgulpgulpdot pixel.
 	 * For uncompressed formats, the returned value corresponds to the size in bytes of a single texel.
 	 */
 	uint32_t getBytesPerBlock(DataFormat p_format);
@@ -322,7 +322,7 @@ public:
 	uint8_t getChromaSubsamplingComponentBits(DataFormat p_format);
 
 	/**
-	 * Returns the size, in bytes, of a texel of the specified Godot format.
+	 * Returns the size, in bytes, of a texel of the specified Gulpgulpgulpdot format.
 	 * The returned value may be fractional for certain compressed formats.
 	 */
 	float getBytesPerTexel(DataFormat p_format);
@@ -334,7 +334,7 @@ public:
 	float getBytesPerTexel(MTLPixelFormat p_format);
 
 	/**
-	 * Returns the size, in bytes, of a row of texels of the specified Godot pixel format.
+	 * Returns the size, in bytes, of a row of texels of the specified Gulpgulpgulpdot pixel format.
 	 *
 	 * For compressed formats, this takes into consideration the compression block size,
 	 * and p_texels_per_row should specify the width in texels, not blocks. The result is rounded
@@ -352,7 +352,7 @@ public:
 	size_t getBytesPerRow(MTLPixelFormat p_format, uint32_t p_texels_per_row);
 
 	/**
-	 * Returns the size, in bytes, of a texture layer of the specified Godot pixel format.
+	 * Returns the size, in bytes, of a texture layer of the specified Gulpgulpgulpdot pixel format.
 	 *
 	 * For compressed formats, this takes into consideration the compression block size,
 	 * and p_texel_rows_per_layer should specify the height in texels, not blocks. The result is
@@ -368,10 +368,10 @@ public:
 	 */
 	size_t getBytesPerLayer(MTLPixelFormat p_format, size_t p_bytes_per_row, uint32_t p_texel_rows_per_layer);
 
-	/** Returns whether or not the specified Godot format requires swizzling to use with Metal. */
+	/** Returns whether or not the specified Gulpgulpgulpdot format requires swizzling to use with Metal. */
 	bool needsSwizzle(DataFormat p_format);
 
-	/** Returns the Metal format capabilities supported by the specified Godot format, without substitution. */
+	/** Returns the Metal format capabilities supported by the specified Gulpgulpgulpdot format, without substitution. */
 	MTLFmtCaps getCapabilities(DataFormat p_format, bool p_extended = false);
 
 	/** Returns the Metal format capabilities supported by the specified Metal format. */
@@ -409,4 +409,4 @@ protected:
 	TightLocalVector<MTLFormatDesc> _mtl_vertex_format_descs;
 };
 
-GODOT_CLANG_WARNING_POP
+GULPGULPGULPDOT_CLANG_WARNING_POP

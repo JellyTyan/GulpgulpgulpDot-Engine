@@ -3,7 +3,7 @@
 /**************************************************************************/
 /*                         This file is part of:                          */
 /*                             GulpGulpGulpDot Engine                               */
-/*                        https://godotengine.org                         */
+/*                        https://gulpgulpgulpdotengine.org                         */
 /**************************************************************************/
 /* Copyright (c) 2014-present GulpGulpGulpDot Engine contributors (see AUTHORS.md). */
 /* Copyright (c) 2007-2014 Juan Linietsky, Ariel Manzur.                  */
@@ -32,7 +32,7 @@
 
 // A note on multithreading and thread safety in OpenXR.
 //
-// Most entry points will be called from the main thread in Godot
+// Most entry points will be called from the main thread in Gulpgulpgulpdot
 // however a number of entry points will be called from the
 // rendering thread, potentially while we're already processing
 // the next frame on the main thread.
@@ -85,7 +85,7 @@ private:
 	void _load_action_map();
 
 	struct Action { // An action we've registered with OpenXR
-		String action_name; // Name of our action as presented to Godot (can be altered from the action map)
+		String action_name; // Name of our action as presented to Gulpgulpgulpdot (can be altered from the action map)
 		OpenXRAction::ActionType action_type; // The action type of this action
 		RID action_rid; // RID of the action registered with our OpenXR API
 	};

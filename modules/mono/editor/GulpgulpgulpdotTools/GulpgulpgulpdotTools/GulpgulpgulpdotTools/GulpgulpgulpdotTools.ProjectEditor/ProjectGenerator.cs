@@ -1,0 +1,59 @@
+using System;
+using System.Globalization;
+using System.IO;
+using System.Text;
+using Microsoft.Build.Construction;
+using Microsoft.Build.Evaluation;
+using GulpgulpgulpdotTools.Shared;
+
+namespace GulpgulpgulpdotTools.ProjectEditor
+{
+    public static class ProjectGenerator
+    {
+        public static string GulpgulpgulpdotSdkAttrValue => $"Gulpgulpgulpdot.NET.Sdk/{GeneratedGulpgulpgulpdotNupkgsVersions.GulpgulpgulpdotNETSdk}";
+
+        public static string GulpgulpgulpdotMinimumRequiredTfm => "net8.0";
+
+        public static ProjectRootElement GenGameProject(string name)
+        {
+            if (name.Length == 0)
+                throw new ArgumentException("Project name is empty.", nameof(name));
+
+            var root = ProjectRootElement.Create(NewProjectFileOptions.None);
+
+            root.Sdk = GulpgulpgulpdotSdkAttrValue;
+
+            var mainGroup = root.AddPropertyGroup();
+            mainGroup.AddProperty("TargetFramework", GulpgulpgulpdotMinimumRequiredTfm);
+
+            // Non-gradle builds require .NET 9 to match the jar libraries included in the export template.
+            var net9 = mainGroup.AddProperty("TargetFramework", "net9.0");
+            net9.Condition = " '$(GulpgulpgulpdotTargetPlatform)' == 'android' ";
+
+            mainGroup.AddProperty("EnableDynamicLoading", "true");
+
+            string sanitizedName = IdentifierUtils.SanitizeQualifiedIdentifier(name, allowEmptyIdentifiers: true);
+
+            // If the name is not a valid namespace, manually set RootNamespace to a sanitized one.
+            if (sanitizedName != name)
+                mainGroup.AddProperty("RootNamespace", sanitizedName);
+
+            return root;
+        }
+
+        public static string GenAndSaveGameProject(string dir, string name)
+        {
+            if (name.Length == 0)
+                throw new ArgumentException("Project name is empty.", nameof(name));
+
+            string path = Path.Combine(dir, name + ".csproj");
+
+            var root = GenGameProject(name);
+
+            // Save (without BOM)
+            root.Save(path, new UTF8Encoding(encoderShouldEmitUTF8Identifier: false));
+
+            return Guid.NewGuid().ToString().ToUpperInvariant();
+        }
+    }
+}

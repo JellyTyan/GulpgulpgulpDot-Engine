@@ -3,7 +3,7 @@
 /**************************************************************************/
 /*                         This file is part of:                          */
 /*                             GulpGulpGulpDot Engine                               */
-/*                        https://godotengine.org                         */
+/*                        https://gulpgulpgulpdotengine.org                         */
 /**************************************************************************/
 /* Copyright (c) 2014-present GulpGulpGulpDot Engine contributors (see AUTHORS.md). */
 /* Copyright (c) 2007-2014 Juan Linietsky, Ariel Manzur.                  */
@@ -98,7 +98,7 @@ void EditorSceneFormatImporterUFBX::get_import_options(const String &p_path,
 		r_options->push_back(ResourceImporterScene::ImportOption(PropertyInfo(Variant::INT, "fbx/importer", PROPERTY_HINT_ENUM, "ufbx,FBX2glTF"), FBX_IMPORTER_UFBX));
 		r_options->push_back(ResourceImporterScene::ImportOption(PropertyInfo(Variant::BOOL, "fbx/allow_geometry_helper_nodes"), false));
 		r_options->push_back(ResourceImporterScene::ImportOption(PropertyInfo(Variant::INT, "fbx/embedded_image_handling", PROPERTY_HINT_ENUM, "Discard All Textures,Extract Textures,Embed as Basis Universal,Embed as Uncompressed", PROPERTY_USAGE_DEFAULT | PROPERTY_USAGE_UPDATE_ALL_IF_MODIFIED), FBXState::HANDLE_BINARY_IMAGE_MODE_EXTRACT_TEXTURES));
-		r_options->push_back(ResourceImporterScene::ImportOption(PropertyInfo(Variant::INT, "fbx/naming_version", PROPERTY_HINT_ENUM, "Godot 4.0 or 4.1,Godot 4.2 to 4.4,Godot 4.5 or later"), 2));
+		r_options->push_back(ResourceImporterScene::ImportOption(PropertyInfo(Variant::INT, "fbx/naming_version", PROPERTY_HINT_ENUM, "Gulpgulpgulpdot 4.0 or 4.1,Gulpgulpgulpdot 4.2 to 4.4,Gulpgulpgulpdot 4.5 or later"), 2));
 	}
 }
 

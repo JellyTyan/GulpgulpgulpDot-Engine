@@ -3,7 +3,7 @@
 /**************************************************************************/
 /*                         This file is part of:                          */
 /*                             GulpGulpGulpDot Engine                               */
-/*                        https://godotengine.org                         */
+/*                        https://gulpgulpgulpdotengine.org                         */
 /**************************************************************************/
 /* Copyright (c) 2014-present GulpGulpGulpDot Engine contributors (see AUTHORS.md). */
 /* Copyright (c) 2007-2014 Juan Linietsky, Ariel Manzur.                  */
@@ -43,23 +43,23 @@
 #define __REQUIRED_RPCNDR_H_VERSION__ 475
 #endif // !defined(_MSC_VER) && !defined(__REQUIRED_RPCNDR_H_VERSION__)
 
-GODOT_GCC_WARNING_PUSH
-GODOT_GCC_WARNING_IGNORE("-Wimplicit-fallthrough")
-GODOT_GCC_WARNING_IGNORE("-Wmissing-field-initializers")
-GODOT_GCC_WARNING_IGNORE("-Wnon-virtual-dtor")
-GODOT_GCC_WARNING_IGNORE("-Wshadow")
-GODOT_GCC_WARNING_IGNORE("-Wswitch")
-GODOT_CLANG_WARNING_PUSH
-GODOT_CLANG_WARNING_IGNORE("-Wimplicit-fallthrough")
-GODOT_CLANG_WARNING_IGNORE("-Wmissing-field-initializers")
-GODOT_CLANG_WARNING_IGNORE("-Wnon-virtual-dtor")
-GODOT_CLANG_WARNING_IGNORE("-Wstring-plus-int")
-GODOT_CLANG_WARNING_IGNORE("-Wswitch")
+GULPGULPGULPDOT_GCC_WARNING_PUSH
+GULPGULPGULPDOT_GCC_WARNING_IGNORE("-Wimplicit-fallthrough")
+GULPGULPGULPDOT_GCC_WARNING_IGNORE("-Wmissing-field-initializers")
+GULPGULPGULPDOT_GCC_WARNING_IGNORE("-Wnon-virtual-dtor")
+GULPGULPGULPDOT_GCC_WARNING_IGNORE("-Wshadow")
+GULPGULPGULPDOT_GCC_WARNING_IGNORE("-Wswitch")
+GULPGULPGULPDOT_CLANG_WARNING_PUSH
+GULPGULPGULPDOT_CLANG_WARNING_IGNORE("-Wimplicit-fallthrough")
+GULPGULPGULPDOT_CLANG_WARNING_IGNORE("-Wmissing-field-initializers")
+GULPGULPGULPDOT_CLANG_WARNING_IGNORE("-Wnon-virtual-dtor")
+GULPGULPGULPDOT_CLANG_WARNING_IGNORE("-Wstring-plus-int")
+GULPGULPGULPDOT_CLANG_WARNING_IGNORE("-Wswitch")
 
 #include <thirdparty/directx_headers/include/directx/d3dx12.h>
 
-GODOT_GCC_WARNING_POP
-GODOT_CLANG_WARNING_POP
+GULPGULPGULPDOT_GCC_WARNING_POP
+GULPGULPGULPDOT_CLANG_WARNING_POP
 
 #include <wrl/client.h>
 

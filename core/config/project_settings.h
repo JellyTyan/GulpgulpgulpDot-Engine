@@ -3,7 +3,7 @@
 /**************************************************************************/
 /*                         This file is part of:                          */
 /*                             GulpGulpGulpDot Engine                               */
-/*                        https://godotengine.org                         */
+/*                        https://gulpgulpgulpdotengine.org                         */
 /**************************************************************************/
 /* Copyright (c) 2014-present GulpGulpGulpDot Engine contributors (see AUTHORS.md). */
 /* Copyright (c) 2007-2014 Juan Linietsky, Ariel Manzur.                  */
@@ -52,8 +52,8 @@ class ProjectSettings : public Object {
 
 public:
 	typedef HashMap<String, Variant> CustomMap;
-	// This constant is used to make the ".godot" folder and paths like "res://.godot/editor".
-	static inline const String PROJECT_DATA_DIR_NAME_SUFFIX = "godot";
+	// This constant is used to make the ".gulpgulpgulpdot" folder and paths like "res://.gulpgulpgulpdot/editor".
+	static inline const String PROJECT_DATA_DIR_NAME_SUFFIX = "gulpgulpgulpdot";
 	static inline const String EDITOR_SETTING_OVERRIDE_PREFIX = PNAME("editor_overrides") + String("/");
 
 	// Properties that are not for built in values begin from this value, so builtin ones are displayed first.

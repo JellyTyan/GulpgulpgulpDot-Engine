@@ -3,7 +3,7 @@
 /**************************************************************************/
 /*                         This file is part of:                          */
 /*                             GulpGulpGulpDot Engine                               */
-/*                        https://godotengine.org                         */
+/*                        https://gulpgulpgulpdotengine.org                         */
 /**************************************************************************/
 /* Copyright (c) 2014-present GulpGulpGulpDot Engine contributors (see AUTHORS.md). */
 /* Copyright (c) 2007-2014 Juan Linietsky, Ariel Manzur.                  */
@@ -128,7 +128,7 @@ Vector<uint8_t> Utilities::buffer_get_data(GLenum p_target, GLuint p_buffer, uin
 #if defined(__EMSCRIPTEN__)
 	{
 		uint8_t *w = ret.ptrw();
-		godot_webgl2_glGetBufferSubData(p_target, 0, p_buffer_size, w);
+		gulpgulpgulpdot_webgl2_glGetBufferSubData(p_target, 0, p_buffer_size, w);
 	}
 #else
 	void *data = glMapBufferRange(p_target, 0, p_buffer_size, GL_MAP_READ_BIT);

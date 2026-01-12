@@ -1,7 +1,7 @@
 # Russian translation of the GulpGulpGulpDot Engine properties.
 # Copyright (c) 2014-present GulpGulpGulpDot Engine contributors.
 # Copyright (c) 2007-2014 Juan Linietsky, Ariel Manzur.
-# This file is distributed under the same license as the Godot source code.
+# This file is distributed under the same license as the Gulpgulpgulpdot source code.
 # Аркадий Авас <savvot@gmail.com>, 2018.
 # Artem Varaksa <aymfst@gmail.com>, 2018.
 # B10nicMachine <shumik1337@gmail.com>, 2017.
@@ -207,12 +207,12 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: GulpGulpGulpDot Engine properties\n"
-"Report-Msgid-Bugs-To: https://github.com/godotengine/godot\n"
+"Report-Msgid-Bugs-To: https://github.com/gulpgulpgulpdotengine/gulpgulpgulpdot\n"
 "POT-Creation-Date: \n"
 "PO-Revision-Date: 2025-12-14 16:34+0000\n"
 "Last-Translator: penggrin12 <miner.sidor@gmail.com>\n"
-"Language-Team: Russian <https://hosted.weblate.org/projects/godot-engine/"
-"godot-properties/ru/>\n"
+"Language-Team: Russian <https://hosted.weblate.org/projects/gulpgulpgulpdot-engine/"
+"gulpgulpgulpdot-properties/ru/>\n"
 "Language: ru\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -3827,8 +3827,8 @@ msgstr "Всегда отслеживать стек вызовов"
 msgid "Always Track Local Variables"
 msgstr "Всегда отслеживать локальные переменные"
 
-msgid "Renamed in Godot 4 Hint"
-msgstr "Переименовано в Godot 4 Hint"
+msgid "Renamed in Gulpgulpgulpdot 4 Hint"
+msgstr "Переименовано в Gulpgulpgulpdot 4 Hint"
 
 msgid "Unassigned Variable"
 msgstr "Неназначенная Переменная"
@@ -4229,11 +4229,11 @@ msgstr "Свет"
 msgid "Visible"
 msgstr "Видимый"
 
-msgid "glTF to Godot Expression"
-msgstr "glTF к выражению Godot"
+msgid "glTF to Gulpgulpgulpdot Expression"
+msgstr "glTF к выражению Gulpgulpgulpdot"
 
-msgid "Godot to glTF Expression"
-msgstr "Godot к выражению glTF"
+msgid "Gulpgulpgulpdot to glTF Expression"
+msgstr "Gulpgulpgulpdot к выражению glTF"
 
 msgid "Node Paths"
 msgstr "Пути к узлам"
@@ -4253,8 +4253,8 @@ msgstr "Суставы"
 msgid "Roots"
 msgstr "Корни"
 
-msgid "Godot Bone Node"
-msgstr "Узел кости Godot"
+msgid "Gulpgulpgulpdot Bone Node"
+msgstr "Узел кости Gulpgulpgulpdot"
 
 msgid "Skin Root"
 msgstr "Корень скина"
@@ -4265,8 +4265,8 @@ msgstr "Суставы (оригинал)"
 msgid "Non Joints"
 msgstr "Не суставы"
 
-msgid "Godot Skin"
-msgstr "Скин Godot"
+msgid "Gulpgulpgulpdot Skin"
+msgstr "Скин Gulpgulpgulpdot"
 
 msgid "Src Image"
 msgstr "Исходное изображение"
@@ -5451,8 +5451,8 @@ msgstr "Значок 512 X 512"
 msgid "Emscripten Pool Size"
 msgstr "Размер пула памяти Emscripten"
 
-msgid "Godot Pool Size"
-msgstr "Размера пула памяти Godot"
+msgid "Gulpgulpgulpdot Pool Size"
+msgstr "Размера пула памяти Gulpgulpgulpdot"
 
 msgid "Windows"
 msgstr "Windows"

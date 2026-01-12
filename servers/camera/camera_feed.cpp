@@ -3,7 +3,7 @@
 /**************************************************************************/
 /*                         This file is part of:                          */
 /*                             GulpGulpGulpDot Engine                               */
-/*                        https://godotengine.org                         */
+/*                        https://gulpgulpgulpdotengine.org                         */
 /**************************************************************************/
 /* Copyright (c) 2014-present GulpGulpGulpDot Engine contributors (see AUTHORS.md). */
 /* Copyright (c) 2007-2014 Juan Linietsky, Ariel Manzur.                  */
@@ -191,7 +191,7 @@ void CameraFeed::set_rgb_image(const Ref<Image> &p_rgb_img) {
 
 		// Emit `format_changed` signal if feed datatype or frame size is changed.
 		// The signal is deferred to ensure:
-		// - They are emitted on Godot's main thread.
+		// - They are emitted on Gulpgulpgulpdot's main thread.
 		// - Both datatype and frame size are updated before the emission.
 		if (datatype != CameraFeed::FEED_RGB || (base_width != new_width) || (base_height != new_height)) {
 			call_deferred("emit_signal", format_changed_signal_name);
@@ -209,8 +209,8 @@ void CameraFeed::set_rgb_image(const Ref<Image> &p_rgb_img) {
 		}
 
 		datatype = CameraFeed::FEED_RGB;
-		// Most of the time the pixel data of camera devices comes from threads outside Godot.
-		// Defer `frame_changed` signals to ensure they are emitted on Godot's main thread.
+		// Most of the time the pixel data of camera devices comes from threads outside Gulpgulpgulpdot.
+		// Defer `frame_changed` signals to ensure they are emitted on Gulpgulpgulpdot's main thread.
 		call_deferred("emit_signal", frame_changed_signal_name);
 	}
 }
@@ -223,7 +223,7 @@ void CameraFeed::set_ycbcr_image(const Ref<Image> &p_ycbcr_img) {
 
 		// Emit `format_changed` signal if feed datatype or frame size is changed.
 		// The signal is deferred to ensure:
-		// - They are emitted on Godot's main thread.
+		// - They are emitted on Gulpgulpgulpdot's main thread.
 		// - Both datatype and frame size are updated before the emission.
 		if (datatype != CameraFeed::FEED_YCBCR || (base_width != new_width) || (base_height != new_height)) {
 			call_deferred("emit_signal", format_changed_signal_name);
@@ -241,8 +241,8 @@ void CameraFeed::set_ycbcr_image(const Ref<Image> &p_ycbcr_img) {
 		}
 
 		datatype = CameraFeed::FEED_YCBCR;
-		// Most of the time the pixel data of camera devices comes from threads outside Godot.
-		// Defer `frame_changed` signals to ensure they are emitted on Godot's main thread.
+		// Most of the time the pixel data of camera devices comes from threads outside Gulpgulpgulpdot.
+		// Defer `frame_changed` signals to ensure they are emitted on Gulpgulpgulpdot's main thread.
 		call_deferred("emit_signal", frame_changed_signal_name);
 	}
 }
@@ -260,7 +260,7 @@ void CameraFeed::set_ycbcr_images(const Ref<Image> &p_y_img, const Ref<Image> &p
 
 		// Emit `format_changed` signal if feed datatype or frame size is changed.
 		// The signal is deferred to ensure:
-		// - They are emitted on Godot's main thread.
+		// - They are emitted on Gulpgulpgulpdot's main thread.
 		// - Both datatype and frame size are updated before the emission.
 		if (datatype != CameraFeed::FEED_YCBCR_SEP || (base_width != new_y_width) || (base_height != new_y_height)) {
 			call_deferred("emit_signal", format_changed_signal_name);
@@ -284,8 +284,8 @@ void CameraFeed::set_ycbcr_images(const Ref<Image> &p_y_img, const Ref<Image> &p
 		}
 
 		datatype = CameraFeed::FEED_YCBCR_SEP;
-		// Most of the time the pixel data of camera devices comes from threads outside Godot.
-		// Defer `frame_changed` signals to ensure they are emitted on Godot's main thread.
+		// Most of the time the pixel data of camera devices comes from threads outside Gulpgulpgulpdot.
+		// Defer `frame_changed` signals to ensure they are emitted on Gulpgulpgulpdot's main thread.
 		call_deferred("emit_signal", frame_changed_signal_name);
 	}
 }
@@ -293,7 +293,7 @@ void CameraFeed::set_ycbcr_images(const Ref<Image> &p_y_img, const Ref<Image> &p
 void CameraFeed::set_external(int p_width, int p_height) {
 	// Emit `format_changed` signal if feed datatype or frame size is changed.
 	// The signal is deferred to ensure:
-	// - They are emitted on Godot's main thread.
+	// - They are emitted on Gulpgulpgulpdot's main thread.
 	// - Both datatype and frame size are updated before the emission.
 	if (datatype != CameraFeed::FEED_EXTERNAL || (base_width != p_width) || (base_height != p_height)) {
 		call_deferred("emit_signal", format_changed_signal_name);
@@ -309,8 +309,8 @@ void CameraFeed::set_external(int p_width, int p_height) {
 	}
 
 	datatype = CameraFeed::FEED_EXTERNAL;
-	// Most of the time the pixel data of camera devices comes from threads outside Godot.
-	// Defer `frame_changed` signals to ensure they are emitted on Godot's main thread.
+	// Most of the time the pixel data of camera devices comes from threads outside Gulpgulpgulpdot.
+	// Defer `frame_changed` signals to ensure they are emitted on Gulpgulpgulpdot's main thread.
 	call_deferred("emit_signal", frame_changed_signal_name);
 }
 

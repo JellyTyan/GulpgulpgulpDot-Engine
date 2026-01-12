@@ -3,7 +3,7 @@
 /**************************************************************************/
 /*                         This file is part of:                          */
 /*                             GulpGulpGulpDot Engine                               */
-/*                        https://godotengine.org                         */
+/*                        https://gulpgulpgulpdotengine.org                         */
 /**************************************************************************/
 /* Copyright (c) 2014-present GulpGulpGulpDot Engine contributors (see AUTHORS.md). */
 /* Copyright (c) 2007-2014 Juan Linietsky, Ariel Manzur.                  */
@@ -129,7 +129,7 @@ public:
 		JOINT_RIGHT_PINKY_FINGER_PHALANX_DISTAL,
 		JOINT_RIGHT_PINKY_FINGER_TIP,
 
-		// Extra joints that aren't part of the Godot humanoid skeleton, but are commonly used in some VR avatars.
+		// Extra joints that aren't part of the Gulpgulpgulpdot humanoid skeleton, but are commonly used in some VR avatars.
 		JOINT_LOWER_CHEST,
 		JOINT_LEFT_SCAPULA,
 		JOINT_LEFT_WRIST_TWIST,

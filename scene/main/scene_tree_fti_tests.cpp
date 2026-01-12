@@ -3,7 +3,7 @@
 /**************************************************************************/
 /*                         This file is part of:                          */
 /*                             GulpGulpGulpDot Engine                               */
-/*                        https://godotengine.org                         */
+/*                        https://gulpgulpgulpdotengine.org                         */
 /**************************************************************************/
 /* Copyright (c) 2014-present GulpGulpGulpDot Engine contributors (see AUTHORS.md). */
 /* Copyright (c) 2007-2014 Juan Linietsky, Ariel Manzur.                  */
@@ -30,7 +30,7 @@
 
 #ifndef _3D_DISABLED
 
-#ifdef GODOT_SCENE_TREE_FTI_VERIFY
+#ifdef GULPGULPGULPDOT_SCENE_TREE_FTI_VERIFY
 #include "scene_tree_fti_tests.h"
 
 #include "scene/3d/node_3d.h"
@@ -238,9 +238,9 @@ void SceneTreeFTITests::frame_update(Node *p_root, uint32_t p_half_frame, float 
 
 SceneTreeFTITests::SceneTreeFTITests(SceneTreeFTI &p_fti) :
 		_fti(p_fti) {
-	print_line("SceneTreeFTI : GODOT_SCENE_TREE_FTI_VERIFY defined");
+	print_line("SceneTreeFTI : GULPGULPGULPDOT_SCENE_TREE_FTI_VERIFY defined");
 }
 
-#endif // def GODOT_SCENE_TREE_FTI_VERIFY
+#endif // def GULPGULPGULPDOT_SCENE_TREE_FTI_VERIFY
 
 #endif // ndef _3D_DISABLED

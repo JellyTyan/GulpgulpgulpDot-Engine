@@ -3,7 +3,7 @@
 /**************************************************************************/
 /*                         This file is part of:                          */
 /*                             GulpGulpGulpDot Engine                               */
-/*                        https://godotengine.org                         */
+/*                        https://gulpgulpgulpdotengine.org                         */
 /**************************************************************************/
 /* Copyright (c) 2014-present GulpGulpGulpDot Engine contributors (see AUTHORS.md). */
 /* Copyright (c) 2007-2014 Juan Linietsky, Ariel Manzur.                  */
@@ -93,7 +93,7 @@ public:
 	bool run_test = false;                                         \
 	int return_code = Main::test_entrypoint(argc, argv, run_test); \
 	if (run_test) {                                                \
-		godot_cleanup_profiler();                                  \
+		gulpgulpgulpdot_cleanup_profiler();                                  \
 		return return_code;                                        \
 	}
 
@@ -101,6 +101,6 @@ public:
 	bool run_test = false;                                         \
 	int return_code = Main::test_entrypoint(argc, argv, run_test); \
 	if (run_test) {                                                \
-		godot_cleanup_profiler();                                  \
+		gulpgulpgulpdot_cleanup_profiler();                                  \
 		return return_code;                                        \
 	}

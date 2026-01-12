@@ -3,7 +3,7 @@
 /**************************************************************************/
 /*                         This file is part of:                          */
 /*                             GulpGulpGulpDot Engine                               */
-/*                        https://godotengine.org                         */
+/*                        https://gulpgulpgulpdotengine.org                         */
 /**************************************************************************/
 /* Copyright (c) 2014-present GulpGulpGulpDot Engine contributors (see AUTHORS.md). */
 /* Copyright (c) 2007-2014 Juan Linietsky, Ariel Manzur.                  */
@@ -94,7 +94,7 @@ void AtlasMergingDialog::_generate_merged(const Vector<Ref<TileSetAtlasSource>> 
 							// 2D coordinate(`frame_coords`).
 							frame_coords = new_tile_rect_in_atlas.position + (size_in_atlas + anim_separation) * Vector2i(frame % columns, frame / columns);
 						} else {
-							// Godot lays frames out horizontally(`Vector2i(frame,0)`) if columns are set to 0.
+							// Gulpgulpgulpdot lays frames out horizontally(`Vector2i(frame,0)`) if columns are set to 0.
 							frame_coords = new_tile_rect_in_atlas.position + (size_in_atlas + anim_separation) * Vector2i(frame, 0);
 						}
 						// Enlarge the atlas offset if new frame_coords fall outside its current dimensions.

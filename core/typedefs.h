@@ -3,7 +3,7 @@
 /**************************************************************************/
 /*                         This file is part of:                          */
 /*                             GulpGulpGulpDot Engine                               */
-/*                        https://godotengine.org                         */
+/*                        https://gulpgulpgulpdotengine.org                         */
 /**************************************************************************/
 /* Copyright (c) 2014-present GulpGulpGulpDot Engine contributors (see AUTHORS.md). */
 /* Copyright (c) 2007-2014 Juan Linietsky, Ariel Manzur.                  */
@@ -406,45 +406,45 @@ inline constexpr bool is_zero_constructible_v = is_zero_constructible<T>::value;
 
 // Warning suppression helper macros.
 #if defined(__clang__)
-#define GODOT_CLANG_PRAGMA(m_content) _Pragma(#m_content)
-#define GODOT_CLANG_WARNING_PUSH GODOT_CLANG_PRAGMA(clang diagnostic push)
-#define GODOT_CLANG_WARNING_IGNORE(m_warning) GODOT_CLANG_PRAGMA(clang diagnostic ignored m_warning)
-#define GODOT_CLANG_WARNING_POP GODOT_CLANG_PRAGMA(clang diagnostic pop)
-#define GODOT_CLANG_WARNING_PUSH_AND_IGNORE(m_warning) GODOT_CLANG_WARNING_PUSH GODOT_CLANG_WARNING_IGNORE(m_warning)
+#define GULPGULPGULPDOT_CLANG_PRAGMA(m_content) _Pragma(#m_content)
+#define GULPGULPGULPDOT_CLANG_WARNING_PUSH GULPGULPGULPDOT_CLANG_PRAGMA(clang diagnostic push)
+#define GULPGULPGULPDOT_CLANG_WARNING_IGNORE(m_warning) GULPGULPGULPDOT_CLANG_PRAGMA(clang diagnostic ignored m_warning)
+#define GULPGULPGULPDOT_CLANG_WARNING_POP GULPGULPGULPDOT_CLANG_PRAGMA(clang diagnostic pop)
+#define GULPGULPGULPDOT_CLANG_WARNING_PUSH_AND_IGNORE(m_warning) GULPGULPGULPDOT_CLANG_WARNING_PUSH GULPGULPGULPDOT_CLANG_WARNING_IGNORE(m_warning)
 #else
-#define GODOT_CLANG_PRAGMA(m_content)
-#define GODOT_CLANG_WARNING_PUSH
-#define GODOT_CLANG_WARNING_IGNORE(m_warning)
-#define GODOT_CLANG_WARNING_POP
-#define GODOT_CLANG_WARNING_PUSH_AND_IGNORE(m_warning)
+#define GULPGULPGULPDOT_CLANG_PRAGMA(m_content)
+#define GULPGULPGULPDOT_CLANG_WARNING_PUSH
+#define GULPGULPGULPDOT_CLANG_WARNING_IGNORE(m_warning)
+#define GULPGULPGULPDOT_CLANG_WARNING_POP
+#define GULPGULPGULPDOT_CLANG_WARNING_PUSH_AND_IGNORE(m_warning)
 #endif
 
 #if defined(__GNUC__) && !defined(__clang__)
-#define GODOT_GCC_PRAGMA(m_content) _Pragma(#m_content)
-#define GODOT_GCC_WARNING_PUSH GODOT_GCC_PRAGMA(GCC diagnostic push)
-#define GODOT_GCC_WARNING_IGNORE(m_warning) GODOT_GCC_PRAGMA(GCC diagnostic ignored m_warning)
-#define GODOT_GCC_WARNING_POP GODOT_GCC_PRAGMA(GCC diagnostic pop)
-#define GODOT_GCC_WARNING_PUSH_AND_IGNORE(m_warning) GODOT_GCC_WARNING_PUSH GODOT_GCC_WARNING_IGNORE(m_warning)
+#define GULPGULPGULPDOT_GCC_PRAGMA(m_content) _Pragma(#m_content)
+#define GULPGULPGULPDOT_GCC_WARNING_PUSH GULPGULPGULPDOT_GCC_PRAGMA(GCC diagnostic push)
+#define GULPGULPGULPDOT_GCC_WARNING_IGNORE(m_warning) GULPGULPGULPDOT_GCC_PRAGMA(GCC diagnostic ignored m_warning)
+#define GULPGULPGULPDOT_GCC_WARNING_POP GULPGULPGULPDOT_GCC_PRAGMA(GCC diagnostic pop)
+#define GULPGULPGULPDOT_GCC_WARNING_PUSH_AND_IGNORE(m_warning) GULPGULPGULPDOT_GCC_WARNING_PUSH GULPGULPGULPDOT_GCC_WARNING_IGNORE(m_warning)
 #else
-#define GODOT_GCC_PRAGMA(m_content)
-#define GODOT_GCC_WARNING_PUSH
-#define GODOT_GCC_WARNING_IGNORE(m_warning)
-#define GODOT_GCC_WARNING_POP
-#define GODOT_GCC_WARNING_PUSH_AND_IGNORE(m_warning)
+#define GULPGULPGULPDOT_GCC_PRAGMA(m_content)
+#define GULPGULPGULPDOT_GCC_WARNING_PUSH
+#define GULPGULPGULPDOT_GCC_WARNING_IGNORE(m_warning)
+#define GULPGULPGULPDOT_GCC_WARNING_POP
+#define GULPGULPGULPDOT_GCC_WARNING_PUSH_AND_IGNORE(m_warning)
 #endif
 
 #if defined(_MSC_VER) && !defined(__clang__)
-#define GODOT_MSVC_PRAGMA(m_command) __pragma(m_command)
-#define GODOT_MSVC_WARNING_PUSH GODOT_MSVC_PRAGMA(warning(push))
-#define GODOT_MSVC_WARNING_IGNORE(m_warning) GODOT_MSVC_PRAGMA(warning(disable : m_warning))
-#define GODOT_MSVC_WARNING_POP GODOT_MSVC_PRAGMA(warning(pop))
-#define GODOT_MSVC_WARNING_PUSH_AND_IGNORE(m_warning) GODOT_MSVC_WARNING_PUSH GODOT_MSVC_WARNING_IGNORE(m_warning)
+#define GULPGULPGULPDOT_MSVC_PRAGMA(m_command) __pragma(m_command)
+#define GULPGULPGULPDOT_MSVC_WARNING_PUSH GULPGULPGULPDOT_MSVC_PRAGMA(warning(push))
+#define GULPGULPGULPDOT_MSVC_WARNING_IGNORE(m_warning) GULPGULPGULPDOT_MSVC_PRAGMA(warning(disable : m_warning))
+#define GULPGULPGULPDOT_MSVC_WARNING_POP GULPGULPGULPDOT_MSVC_PRAGMA(warning(pop))
+#define GULPGULPGULPDOT_MSVC_WARNING_PUSH_AND_IGNORE(m_warning) GULPGULPGULPDOT_MSVC_WARNING_PUSH GULPGULPGULPDOT_MSVC_WARNING_IGNORE(m_warning)
 #else
-#define GODOT_MSVC_PRAGMA(m_command)
-#define GODOT_MSVC_WARNING_PUSH
-#define GODOT_MSVC_WARNING_IGNORE(m_warning)
-#define GODOT_MSVC_WARNING_POP
-#define GODOT_MSVC_WARNING_PUSH_AND_IGNORE(m_warning)
+#define GULPGULPGULPDOT_MSVC_PRAGMA(m_command)
+#define GULPGULPGULPDOT_MSVC_WARNING_PUSH
+#define GULPGULPGULPDOT_MSVC_WARNING_IGNORE(m_warning)
+#define GULPGULPGULPDOT_MSVC_WARNING_POP
+#define GULPGULPGULPDOT_MSVC_WARNING_PUSH_AND_IGNORE(m_warning)
 #endif
 
 template <typename T, typename = void>

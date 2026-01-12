@@ -1,4 +1,4 @@
-# https://github.com/godotengine/godot/issues/75832
+# https://github.com/gulpgulpgulpdotengine/gulpgulpgulpdot/issues/75832
 
 @warning_ignore_start("narrowing_conversion")
 func test():

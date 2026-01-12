@@ -1,0 +1,12 @@
+using System;
+
+#nullable enable
+
+namespace Gulpgulpgulpdot
+{
+    /// <summary>
+    /// Exposes the target class as a global script class to GulpGulpGulpDot Engine.
+    /// </summary>
+    [AttributeUsage(AttributeTargets.Class)]
+    public sealed class GlobalClassAttribute : Attribute { }
+}

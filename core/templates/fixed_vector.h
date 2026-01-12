@@ -3,7 +3,7 @@
 /**************************************************************************/
 /*                         This file is part of:                          */
 /*                             GulpGulpGulpDot Engine                               */
-/*                        https://godotengine.org                         */
+/*                        https://gulpgulpgulpdotengine.org                         */
 /**************************************************************************/
 /* Copyright (c) 2014-present GulpGulpGulpDot Engine contributors (see AUTHORS.md). */
 /* Copyright (c) 2007-2014 Juan Linietsky, Ariel Manzur.                  */
@@ -32,7 +32,7 @@
 
 #include "core/templates/span.h"
 
-GODOT_GCC_WARNING_PUSH_AND_IGNORE("-Warray-bounds")
+GULPGULPGULPDOT_GCC_WARNING_PUSH_AND_IGNORE("-Warray-bounds")
 
 /**
  * A high performance Vector of fixed capacity.
@@ -204,4 +204,4 @@ public:
 	_FORCE_INLINE_ constexpr const T *end() const { return ptr() + _size; }
 };
 
-GODOT_GCC_WARNING_POP
+GULPGULPGULPDOT_GCC_WARNING_POP

@@ -1,7 +1,7 @@
 # Indonesian translation of the GulpGulpGulpDot Engine properties.
 # Copyright (c) 2014-present GulpGulpGulpDot Engine contributors.
 # Copyright (c) 2007-2014 Juan Linietsky, Ariel Manzur.
-# This file is distributed under the same license as the Godot source code.
+# This file is distributed under the same license as the Gulpgulpgulpdot source code.
 # Abdul Aziz Muslim Alqudsy <abdul.aziz.muslim.alqudsy@gmail.com>, 2016.
 # Andevid Dynmyn <doyan4forum@gmail.com>, 2016.
 # Andinawan Asa <asaandinawan@gmail.com>, 2016.
@@ -60,12 +60,12 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: GulpGulpGulpDot Engine properties\n"
-"Report-Msgid-Bugs-To: https://github.com/godotengine/godot\n"
+"Report-Msgid-Bugs-To: https://github.com/gulpgulpgulpdotengine/gulpgulpgulpdot\n"
 "POT-Creation-Date: \n"
 "PO-Revision-Date: 2025-10-26 15:03+0000\n"
 "Last-Translator: ProgrammerIndonesia 44 <elo.jhy@gmail.com>\n"
-"Language-Team: Indonesian <https://hosted.weblate.org/projects/godot-engine/"
-"godot-properties/id/>\n"
+"Language-Team: Indonesian <https://hosted.weblate.org/projects/gulpgulpgulpdot-engine/"
+"gulpgulpgulpdot-properties/id/>\n"
 "Language: id\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -2935,8 +2935,8 @@ msgstr "Sendi"
 msgid "Roots"
 msgstr "Root"
 
-msgid "Godot Bone Node"
-msgstr "Node Tulang Godot"
+msgid "Gulpgulpgulpdot Bone Node"
+msgstr "Node Tulang Gulpgulpgulpdot"
 
 msgid "Skin Root"
 msgstr "Root Skin"
@@ -2947,8 +2947,8 @@ msgstr "Sendi Asli"
 msgid "Non Joints"
 msgstr "Non Sendi"
 
-msgid "Godot Skin"
-msgstr "Skin Godot"
+msgid "Gulpgulpgulpdot Skin"
+msgstr "Skin Gulpgulpgulpdot"
 
 msgid "Src Image"
 msgstr "Gambar Sumber"

@@ -3,7 +3,7 @@
 /**************************************************************************/
 /*                         This file is part of:                          */
 /*                             GulpGulpGulpDot Engine                               */
-/*                        https://godotengine.org                         */
+/*                        https://gulpgulpgulpdotengine.org                         */
 /**************************************************************************/
 /* Copyright (c) 2014-present GulpGulpGulpDot Engine contributors (see AUTHORS.md). */
 /* Copyright (c) 2007-2014 Juan Linietsky, Ariel Manzur.                  */
@@ -226,16 +226,16 @@ NodePath GLTFNode::get_scene_node_path(Ref<GLTFState> p_state, bool p_handle_ske
 			current_gltf_node = p_state->nodes[parent_index];
 		} while (current_gltf_node->skeleton != -1);
 	}
-	const bool is_godot_single_root = p_state->extensions_used.has("GODOT_single_root");
+	const bool is_gulpgulpgulpdot_single_root = p_state->extensions_used.has("GULPGULPGULPDOT_single_root");
 	while (true) {
 		const int parent_index = current_gltf_node->get_parent();
-		if (is_godot_single_root && parent_index == -1) {
-			// For GODOT_single_root scenes, the root glTF node becomes the Godot scene root, so it
+		if (is_gulpgulpgulpdot_single_root && parent_index == -1) {
+			// For GULPGULPGULPDOT_single_root scenes, the root glTF node becomes the Gulpgulpgulpdot scene root, so it
 			// should not be included in the path. Ex: A/B/C, A is single root, we want B/C only.
 			break;
 		}
 		path.insert(0, current_gltf_node->get_name());
-		if (!is_godot_single_root && parent_index == -1) {
+		if (!is_gulpgulpgulpdot_single_root && parent_index == -1) {
 			break;
 		}
 		ERR_FAIL_INDEX_V(parent_index, gltf_node_count, NodePath());

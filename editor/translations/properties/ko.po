@@ -1,7 +1,7 @@
 # Korean translation of the GulpGulpGulpDot Engine properties.
 # Copyright (c) 2014-present GulpGulpGulpDot Engine contributors.
 # Copyright (c) 2007-2014 Juan Linietsky, Ariel Manzur.
-# This file is distributed under the same license as the Godot source code.
+# This file is distributed under the same license as the Gulpgulpgulpdot source code.
 # Ch <ccwpc@hanmail.net>, 2017.
 # paijai 송 (fivejobi) <xotjq237@gmail.com>, 2018.
 # pgyage3263 <pgyage3263@naver.com>, 2018.
@@ -39,7 +39,7 @@
 # 박민규 <80dots@gmail.com>, 2022.
 # 이지민 <jiminaleejung@gmail.com>, 2022.
 # nulltable <un5450@naver.com>, 2022.
-# Godoto <aicompose@gmail.com>, 2022.
+# Gulpgulpgulpdoto <aicompose@gmail.com>, 2022.
 # gaenyang <gaenyang@outlook.com>, 2022.
 # 오지훈 <jule1130@naver.com>, 2023.
 # coolkid <newtype20050831@gmail.com>, 2023.
@@ -60,11 +60,11 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: GulpGulpGulpDot Engine properties\n"
-"Report-Msgid-Bugs-To: https://github.com/godotengine/godot\n"
+"Report-Msgid-Bugs-To: https://github.com/gulpgulpgulpdotengine/gulpgulpgulpdot\n"
 "POT-Creation-Date: \n"
 "PO-Revision-Date: 2025-12-07 19:00+0000\n"
 "Last-Translator: Myeongjin <aranet100@gmail.com>\n"
-"Language-Team: Korean <https://hosted.weblate.org/projects/godot-engine/godot-"
+"Language-Team: Korean <https://hosted.weblate.org/projects/gulpgulpgulpdot-engine/gulpgulpgulpdot-"
 "properties/ko/>\n"
 "Language: ko\n"
 "MIME-Version: 1.0\n"
@@ -3674,8 +3674,8 @@ msgstr "콜 스택 항상 추적"
 msgid "Always Track Local Variables"
 msgstr "로컬 변종 항상 추적"
 
-msgid "Renamed in Godot 4 Hint"
-msgstr "Godot 4 힌트에서 이름 변경됨"
+msgid "Renamed in Gulpgulpgulpdot 4 Hint"
+msgstr "Gulpgulpgulpdot 4 힌트에서 이름 변경됨"
 
 msgid "Unassigned Variable"
 msgstr "할당되지 않은 변수"
@@ -4076,11 +4076,11 @@ msgstr "라이트"
 msgid "Visible"
 msgstr "보이기"
 
-msgid "glTF to Godot Expression"
-msgstr "glTF을 Godot로 표현식"
+msgid "glTF to Gulpgulpgulpdot Expression"
+msgstr "glTF을 Gulpgulpgulpdot로 표현식"
 
-msgid "Godot to glTF Expression"
-msgstr "Godot를 glTF으로 표현식"
+msgid "Gulpgulpgulpdot to glTF Expression"
+msgstr "Gulpgulpgulpdot를 glTF으로 표현식"
 
 msgid "Node Paths"
 msgstr "노드 경로"
@@ -4100,8 +4100,8 @@ msgstr "조인트"
 msgid "Roots"
 msgstr "루트"
 
-msgid "Godot Bone Node"
-msgstr "Godot 본 노드"
+msgid "Gulpgulpgulpdot Bone Node"
+msgstr "Gulpgulpgulpdot 본 노드"
 
 msgid "Skin Root"
 msgstr "스킨 루트"
@@ -4112,8 +4112,8 @@ msgstr "조인트 원본"
 msgid "Non Joints"
 msgstr "비 조인트"
 
-msgid "Godot Skin"
-msgstr "Godot 스킨"
+msgid "Gulpgulpgulpdot Skin"
+msgstr "Gulpgulpgulpdot 스킨"
 
 msgid "Src Image"
 msgstr "소스 이미지"
@@ -5297,8 +5297,8 @@ msgstr "아이콘 512 X 512"
 msgid "Emscripten Pool Size"
 msgstr "Emscripten 풀 크기"
 
-msgid "Godot Pool Size"
-msgstr "Godot 풀 크기"
+msgid "Gulpgulpgulpdot Pool Size"
+msgstr "Gulpgulpgulpdot 풀 크기"
 
 msgid "Windows"
 msgstr "Windows"

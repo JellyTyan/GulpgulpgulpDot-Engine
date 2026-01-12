@@ -3,7 +3,7 @@
 /**************************************************************************/
 /*                         This file is part of:                          */
 /*                             GulpGulpGulpDot Engine                               */
-/*                        https://godotengine.org                         */
+/*                        https://gulpgulpgulpdotengine.org                         */
 /**************************************************************************/
 /* Copyright (c) 2014-present GulpGulpGulpDot Engine contributors (see AUTHORS.md). */
 /* Copyright (c) 2007-2014 Juan Linietsky, Ariel Manzur.                  */
@@ -87,7 +87,7 @@ static String get_property_info_type_name(const PropertyInfo &p_info) {
 	return get_builtin_or_variant_type_name(p_info.type);
 }
 
-static String get_type_meta_name(const GodotTypeInfo::Metadata metadata) {
+static String get_type_meta_name(const GulpgulpgulpdotTypeInfo::Metadata metadata) {
 	static const char *argmeta[14] = { "none", "int8", "int16", "int32", "int64", "uint8", "uint16", "uint32", "uint64", "float", "double", "char16", "char32", "required" };
 	return argmeta[metadata];
 }
@@ -106,16 +106,16 @@ Dictionary GDExtensionAPIDump::generate_extension_api(bool p_include_docs) {
 	{
 		//header
 		Dictionary header;
-		header["version_major"] = GODOT_VERSION_MAJOR;
-		header["version_minor"] = GODOT_VERSION_MINOR;
-#if GODOT_VERSION_PATCH
-		header["version_patch"] = GODOT_VERSION_PATCH;
+		header["version_major"] = GULPGULPGULPDOT_VERSION_MAJOR;
+		header["version_minor"] = GULPGULPGULPDOT_VERSION_MINOR;
+#if GULPGULPGULPDOT_VERSION_PATCH
+		header["version_patch"] = GULPGULPGULPDOT_VERSION_PATCH;
 #else
 		header["version_patch"] = 0;
 #endif
-		header["version_status"] = GODOT_VERSION_STATUS;
-		header["version_build"] = GODOT_VERSION_BUILD;
-		header["version_full_name"] = GODOT_VERSION_FULL_NAME;
+		header["version_status"] = GULPGULPGULPDOT_VERSION_STATUS;
+		header["version_build"] = GULPGULPGULPDOT_VERSION_BUILD;
+		header["version_full_name"] = GULPGULPGULPDOT_VERSION_FULL_NAME;
 
 #if REAL_T_IS_DOUBLE
 		header["precision"] = "double";
@@ -1055,7 +1055,7 @@ Dictionary GDExtensionAPIDump::generate_extension_api(bool p_include_docs) {
 							d3["type"] = get_property_info_type_name(pinfo);
 
 							if (mi.get_argument_meta(-1) > 0) {
-								d3["meta"] = get_type_meta_name((GodotTypeInfo::Metadata)mi.get_argument_meta(-1));
+								d3["meta"] = get_type_meta_name((GulpgulpgulpdotTypeInfo::Metadata)mi.get_argument_meta(-1));
 							}
 
 							d2["return_value"] = d3;
@@ -1071,7 +1071,7 @@ Dictionary GDExtensionAPIDump::generate_extension_api(bool p_include_docs) {
 							d3["type"] = get_property_info_type_name(pinfo);
 
 							if (mi.get_argument_meta(i) > 0) {
-								d3["meta"] = get_type_meta_name((GodotTypeInfo::Metadata)mi.get_argument_meta(i));
+								d3["meta"] = get_type_meta_name((GulpgulpgulpdotTypeInfo::Metadata)mi.get_argument_meta(i));
 							}
 
 							arguments.push_back(d3);
@@ -1193,7 +1193,7 @@ Dictionary GDExtensionAPIDump::generate_extension_api(bool p_include_docs) {
 						d3["name"] = F.arguments[i].name;
 						d3["type"] = get_property_info_type_name(F.arguments[i]);
 						if (F.get_argument_meta(i) > 0) {
-							d3["meta"] = get_type_meta_name((GodotTypeInfo::Metadata)F.get_argument_meta(i));
+							d3["meta"] = get_type_meta_name((GulpgulpgulpdotTypeInfo::Metadata)F.get_argument_meta(i));
 						}
 						arguments.push_back(d3);
 					}
@@ -1610,8 +1610,8 @@ Error GDExtensionAPIDump::validate_extension_json_file(const String &p_path) {
 		int major = header["version_major"];
 		int minor = header["version_minor"];
 
-		ERR_FAIL_COND_V_MSG(major != GODOT_VERSION_MAJOR, ERR_INVALID_DATA, vformat("JSON API dump is for a different engine version (%d) than this one (%d)", major, GODOT_VERSION_MAJOR));
-		ERR_FAIL_COND_V_MSG(minor > GODOT_VERSION_MINOR, ERR_INVALID_DATA, vformat("JSON API dump is for a newer version of the engine: %d.%d", major, minor));
+		ERR_FAIL_COND_V_MSG(major != GULPGULPGULPDOT_VERSION_MAJOR, ERR_INVALID_DATA, vformat("JSON API dump is for a different engine version (%d) than this one (%d)", major, GULPGULPGULPDOT_VERSION_MAJOR));
+		ERR_FAIL_COND_V_MSG(minor > GULPGULPGULPDOT_VERSION_MINOR, ERR_INVALID_DATA, vformat("JSON API dump is for a newer version of the engine: %d.%d", major, minor));
 	}
 
 	bool failed = false;

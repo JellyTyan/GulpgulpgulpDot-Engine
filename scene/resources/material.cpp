@@ -3,7 +3,7 @@
 /**************************************************************************/
 /*                         This file is part of:                          */
 /*                             GulpGulpGulpDot Engine                               */
-/*                        https://godotengine.org                         */
+/*                        https://gulpgulpgulpdotengine.org                         */
 /**************************************************************************/
 /* Copyright (c) 2014-present GulpGulpGulpDot Engine contributors (see AUTHORS.md). */
 /* Copyright (c) 2007-2014 Juan Linietsky, Ariel Manzur.                  */
@@ -767,7 +767,7 @@ void BaseMaterial3D::_update_shader() {
 
 	// Add a comment to describe the shader origin (useful when converting to ShaderMaterial).
 	String code = vformat(
-			"// NOTE: Shader automatically converted from " GODOT_VERSION_NAME " " GODOT_VERSION_FULL_CONFIG "'s %s.\n\n",
+			"// NOTE: Shader automatically converted from " GULPGULPGULPDOT_VERSION_NAME " " GULPGULPGULPDOT_VERSION_FULL_CONFIG "'s %s.\n\n",
 			orm ? "ORMMaterial3D" : "StandardMaterial3D");
 
 	// Define shader type and render mode based on property values.
@@ -4113,7 +4113,7 @@ bool StandardMaterial3D::_set(const StringName &p_name, const Variant &p_value) 
 			idx++;
 		}
 
-		WARN_PRINT("Godot 3.x SpatialMaterial remapped parameter not found: " + String(p_name));
+		WARN_PRINT("Gulpgulpgulpdot 3.x SpatialMaterial remapped parameter not found: " + String(p_name));
 		return true;
 	}
 }

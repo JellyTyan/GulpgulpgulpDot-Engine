@@ -68,8 +68,8 @@ def get_build_version(short):
         v += ".%d" % version.patch
     status = version.status
     if not short:
-        if os.getenv("GODOT_VERSION_STATUS") is not None:
-            status = str(os.getenv("GODOT_VERSION_STATUS"))
+        if os.getenv("GULPGULPGULPDOT_VERSION_STATUS") is not None:
+            status = str(os.getenv("GULPGULPGULPDOT_VERSION_STATUS"))
         v += ".%s.%s" % (status, name)
     return v
 
@@ -176,9 +176,9 @@ def generate_bundle_apple_embedded(platform, framework_dir, framework_dir_sim, u
     bin_dir = env.Dir("#bin").abspath
 
     # Template bundle.
-    app_prefix = "godot." + platform
-    rel_prefix = "libgodot." + platform + "." + "template_release"
-    dbg_prefix = "libgodot." + platform + "." + "template_debug"
+    app_prefix = "gulpgulpgulpdot." + platform
+    rel_prefix = "libgulpgulpgulpdot." + platform + "." + "template_release"
+    dbg_prefix = "libgulpgulpgulpdot." + platform + "." + "template_debug"
     if env.dev_build:
         app_prefix += ".dev"
         rel_prefix += ".dev"
@@ -206,29 +206,29 @@ def generate_bundle_apple_embedded(platform, framework_dir, framework_dir_sim, u
     if rel_target_bin != "":
         print(f' Copying "{platform}" release framework')
         shutil.copy(
-            rel_target_bin, app_dir + "/libgodot." + platform + ".release.xcframework/" + framework_dir + "/libgodot.a"
+            rel_target_bin, app_dir + "/libgulpgulpgulpdot." + platform + ".release.xcframework/" + framework_dir + "/libgulpgulpgulpdot.a"
         )
     if dbg_target_bin != "":
         print(f' Copying "{platform}" debug framework')
         shutil.copy(
-            dbg_target_bin, app_dir + "/libgodot." + platform + ".debug.xcframework/" + framework_dir + "/libgodot.a"
+            dbg_target_bin, app_dir + "/libgulpgulpgulpdot." + platform + ".debug.xcframework/" + framework_dir + "/libgulpgulpgulpdot.a"
         )
     if rel_target_bin_sim != "":
         print(f' Copying "{platform}" (simulator) release framework')
         shutil.copy(
             rel_target_bin_sim,
-            app_dir + "/libgodot." + platform + ".release.xcframework/" + framework_dir_sim + "/libgodot.a",
+            app_dir + "/libgulpgulpgulpdot." + platform + ".release.xcframework/" + framework_dir_sim + "/libgulpgulpgulpdot.a",
         )
     if dbg_target_bin_sim != "":
         print(f' Copying "{platform}" (simulator) debug framework')
         shutil.copy(
             dbg_target_bin_sim,
-            app_dir + "/libgodot." + platform + ".debug.xcframework/" + framework_dir_sim + "/libgodot.a",
+            app_dir + "/libgulpgulpgulpdot." + platform + ".debug.xcframework/" + framework_dir_sim + "/libgulpgulpgulpdot.a",
         )
 
     # Remove other platform xcframeworks
     for entry in os.listdir(app_dir):
-        if entry.startswith("libgodot.") and entry.endswith(".xcframework"):
+        if entry.startswith("libgulpgulpgulpdot.") and entry.endswith(".xcframework"):
             parts = entry.split(".")
             if len(parts) >= 3 and parts[1] != platform:
                 full_path = os.path.join(app_dir, entry)
@@ -295,7 +295,7 @@ def setup_swift_builder(env, apple_platform, sdk_path, current_path, bridging_he
         "6",
         "-parse-as-library",
         "-module-name",
-        "godot_swift_module",
+        "gulpgulpgulpdot_swift_module",
         "-I./",  # Pass the current directory as the header root so bridging headers can include files from any point of the hierarchy
     ]
 

@@ -3,7 +3,7 @@
 /**************************************************************************/
 /*                         This file is part of:                          */
 /*                             GulpGulpGulpDot Engine                               */
-/*                        https://godotengine.org                         */
+/*                        https://gulpgulpgulpdotengine.org                         */
 /**************************************************************************/
 /* Copyright (c) 2014-present GulpGulpGulpDot Engine contributors (see AUTHORS.md). */
 /* Copyright (c) 2007-2014 Juan Linietsky, Ariel Manzur.                  */
@@ -501,7 +501,7 @@ void JoypadApple::add_joypad(GCController *p_controller) {
 		p_controller.playerIndex = get_free_player_index();
 	}
 
-	// Tell Godot about our new controller.
+	// Tell Gulpgulpgulpdot about our new controller.
 	char const *device_name;
 	if (@available(macOS 10.15, iOS 13.0, tvOS 13.0, *)) {
 		device_name = p_controller.productCategory.UTF8String;
@@ -523,7 +523,7 @@ void JoypadApple::remove_joypad(GCController *p_controller) {
 	int joy_id = controller_to_joy_id[p_controller];
 	controller_to_joy_id.erase(p_controller);
 
-	// Tell Godot this joystick is no longer there.
+	// Tell Gulpgulpgulpdot this joystick is no longer there.
 	Input::get_singleton()->joy_connection_changed(joy_id, false, "");
 
 	// And remove it from our dictionary.

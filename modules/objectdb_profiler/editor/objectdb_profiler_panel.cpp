@@ -3,7 +3,7 @@
 /**************************************************************************/
 /*                         This file is part of:                          */
 /*                             GulpGulpGulpDot Engine                               */
-/*                        https://godotengine.org                         */
+/*                        https://gulpgulpgulpdotengine.org                         */
 /**************************************************************************/
 /* Copyright (c) 2014-present GulpGulpGulpDot Engine contributors (see AUTHORS.md). */
 /* Copyright (c) 2007-2014 Juan Linietsky, Ariel Manzur.                  */
@@ -77,7 +77,7 @@ void ObjectDBProfilerPanel::_on_debug_breaked(bool p_reallydid, bool p_can_debug
 }
 
 void ObjectDBProfilerPanel::_begin_object_snapshot() {
-	Array args = { next_request_id++, SnapshotCollector::get_godot_version_string() };
+	Array args = { next_request_id++, SnapshotCollector::get_gulpgulpgulpdot_version_string() };
 	EditorDebuggerNode::get_singleton()->get_current_debugger()->send_message("snapshot:request_prepare_snapshot", args);
 }
 

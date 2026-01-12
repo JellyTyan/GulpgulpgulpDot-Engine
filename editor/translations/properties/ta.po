@@ -1,17 +1,17 @@
 # Tamil translation of the GulpGulpGulpDot Engine editor properties.
 # Copyright (c) 2014-present GulpGulpGulpDot Engine contributors (see AUTHORS.md).
 # Copyright (c) 2007-2014 Juan Linietsky, Ariel Manzur.
-# This file is distributed under the same license as the Godot source code.
+# This file is distributed under the same license as the Gulpgulpgulpdot source code.
 #
 # தமிழ்நேரம் <anishprabu.t@gmail.com>, 2024, 2025.
 # தமிழ்நேரம் <tamilneram247@gmail.com>, 2025.
 msgid ""
 msgstr ""
 "Project-Id-Version: GulpGulpGulpDot Engine editor properties\n"
-"Report-Msgid-Bugs-To: https://github.com/godotengine/godot\n"
+"Report-Msgid-Bugs-To: https://github.com/gulpgulpgulpdotengine/gulpgulpgulpdot\n"
 "PO-Revision-Date: 2025-09-21 16:34+0000\n"
 "Last-Translator: தமிழ்நேரம் <tamilneram247@gmail.com>\n"
-"Language-Team: Tamil <https://hosted.weblate.org/projects/godot-engine/godot-"
+"Language-Team: Tamil <https://hosted.weblate.org/projects/gulpgulpgulpdot-engine/gulpgulpgulpdot-"
 "properties/ta/>\n"
 "Language: ta\n"
 "MIME-Version: 1.0\n"
@@ -3615,7 +3615,7 @@ msgstr "அழைப்பு அடுக்குகளை எப்போத�
 msgid "Always Track Local Variables"
 msgstr "உள்ளக மாறிகள் எப்போதும் கண்காணிக்கவும்"
 
-msgid "Renamed in Godot 4 Hint"
+msgid "Renamed in Gulpgulpgulpdot 4 Hint"
 msgstr "கோடோட் 4 குறிப்பில் மறுபெயரிடப்பட்டது"
 
 msgid "Unassigned Variable"
@@ -4017,10 +4017,10 @@ msgstr "ஒளி"
 msgid "Visible"
 msgstr "தெரியும்"
 
-msgid "glTF to Godot Expression"
+msgid "glTF to Gulpgulpgulpdot Expression"
 msgstr "கோடோட் வெளிப்பாட்டிற்கு gltf"
 
-msgid "Godot to glTF Expression"
+msgid "Gulpgulpgulpdot to glTF Expression"
 msgstr "Gltf வெளிப்பாட்டிற்கு கோடோட்"
 
 msgid "Node Paths"
@@ -4041,7 +4041,7 @@ msgstr "மூட்டுகள்"
 msgid "Roots"
 msgstr "வேர்கள்"
 
-msgid "Godot Bone Node"
+msgid "Gulpgulpgulpdot Bone Node"
 msgstr "கோடோட் எலும்பு முனை"
 
 msgid "Skin Root"
@@ -4053,7 +4053,7 @@ msgstr "மூட்டுகள் அசல்"
 msgid "Non Joints"
 msgstr "அல்லாத மூட்டுகள்"
 
-msgid "Godot Skin"
+msgid "Gulpgulpgulpdot Skin"
 msgstr "கோடோட் தோல்"
 
 msgid "Src Image"
@@ -5238,7 +5238,7 @@ msgstr "படவுரு 512 ஃச் 512"
 msgid "Emscripten Pool Size"
 msgstr "Mescripten பூல் அளவு"
 
-msgid "Godot Pool Size"
+msgid "Gulpgulpgulpdot Pool Size"
 msgstr "கோடோட் பூல் அளவு"
 
 msgid "Windows"

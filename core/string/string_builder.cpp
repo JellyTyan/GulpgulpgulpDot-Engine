@@ -3,7 +3,7 @@
 /**************************************************************************/
 /*                         This file is part of:                          */
 /*                             GulpGulpGulpDot Engine                               */
-/*                        https://godotengine.org                         */
+/*                        https://gulpgulpgulpdotengine.org                         */
 /**************************************************************************/
 /* Copyright (c) 2014-present GulpGulpGulpDot Engine contributors (see AUTHORS.md). */
 /* Copyright (c) 2007-2014 Juan Linietsky, Ariel Manzur.                  */
@@ -65,21 +65,21 @@ String StringBuilder::as_string() const {
 
 	int current_position = 0;
 
-	int godot_string_elem = 0;
+	int gulpgulpgulpdot_string_elem = 0;
 	int c_string_elem = 0;
 
 	for (uint32_t i = 0; i < appended_strings.size(); i++) {
 		const int32_t str_len = appended_strings[i];
 
 		if (str_len == -1) {
-			// Godot string
-			const String &s = strings[godot_string_elem];
+			// Gulpgulpgulpdot string
+			const String &s = strings[gulpgulpgulpdot_string_elem];
 
 			memcpy(buffer + current_position, s.ptr(), s.length() * sizeof(char32_t));
 
 			current_position += s.length();
 
-			godot_string_elem++;
+			gulpgulpgulpdot_string_elem++;
 		} else {
 			const char *s = c_strings[c_string_elem];
 

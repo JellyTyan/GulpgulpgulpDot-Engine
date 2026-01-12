@@ -49,46 +49,46 @@ jobs:
           distribution: temurin
           java-version: 17
 
-      - name: Restore Godot build cache
-        uses: ./.github/actions/godot-cache-restore
+      - name: Restore Gulpgulpgulpdot build cache
+        uses: ./.github/actions/gulpgulpgulpdot-cache-restore
         with:
           cache-name: ${{ matrix.cache-name }}
         continue-on-error: true
 
       - name: Setup Python and SCons
-        uses: ./.github/actions/godot-deps
+        uses: ./.github/actions/gulpgulpgulpdot-deps
 
       - name: Download Swappy
         run: python ./misc/scripts/install_swappy_android.py
 
       - name: Compilation
-        uses: ./.github/actions/godot-build
+        uses: ./.github/actions/gulpgulpgulpdot-build
         with:
           scons-flags: ${{ env.SCONS_FLAGS }} ${{ matrix.scons-flags }}
           platform: android
           target: ${{ matrix.target }}
 
-      - name: Save Godot build cache
-        uses: ./.github/actions/godot-cache-save
+      - name: Save Gulpgulpgulpdot build cache
+        uses: ./.github/actions/gulpgulpgulpdot-cache-save
         with:
           cache-name: ${{ matrix.cache-name }}
         continue-on-error: true
 
-      - name: Generate Godot templates
+      - name: Generate Gulpgulpgulpdot templates
         if: matrix.target == 'template_debug'
         run: |
           cd platform/android/java
-          ./gradlew generateGodotTemplates
+          ./gradlew generateGulpgulpgulpdotTemplates
           cd ../../..
           ls -l bin/
 
-      - name: Generate Godot editor
+      - name: Generate Gulpgulpgulpdot editor
         if: matrix.target == 'editor'
         run: |
           cd platform/android/java
-          ./gradlew generateGodotEditor
-          ./gradlew generateGodotHorizonOSEditor
-          ./gradlew generateGodotPicoOSEditor
+          ./gradlew generateGulpgulpgulpdotEditor
+          ./gradlew generateGulpgulpgulpdotHorizonOSEditor
+          ./gradlew generateGulpgulpgulpdotPicoOSEditor
           cd ../../..
           ls -l bin/android_editor_builds/
 

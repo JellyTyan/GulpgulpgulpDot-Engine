@@ -3,7 +3,7 @@
 /**************************************************************************/
 /*                         This file is part of:                          */
 /*                             GulpGulpGulpDot Engine                               */
-/*                        https://godotengine.org                         */
+/*                        https://gulpgulpgulpdotengine.org                         */
 /**************************************************************************/
 /* Copyright (c) 2014-present GulpGulpGulpDot Engine contributors (see AUTHORS.md). */
 /* Copyright (c) 2007-2014 Juan Linietsky, Ariel Manzur.                  */
@@ -38,7 +38,7 @@ CSharpLanguage *script_language_cs = nullptr;
 Ref<ResourceFormatLoaderCSharpScript> resource_loader_cs;
 Ref<ResourceFormatSaverCSharpScript> resource_saver_cs;
 
-MonoBind::GodotSharp *_godotsharp = nullptr;
+MonoBind::GulpgulpgulpdotSharp *_gulpgulpgulpdotsharp = nullptr;
 
 void initialize_mono_module(ModuleInitializationLevel p_level) {
 	if (p_level != MODULE_INITIALIZATION_LEVEL_SCENE) {
@@ -47,7 +47,7 @@ void initialize_mono_module(ModuleInitializationLevel p_level) {
 
 	GDREGISTER_CLASS(CSharpScript);
 
-	_godotsharp = memnew(MonoBind::GodotSharp);
+	_gulpgulpgulpdotsharp = memnew(MonoBind::GulpgulpgulpdotSharp);
 
 	script_language_cs = memnew(CSharpLanguage);
 	script_language_cs->set_language_index(ScriptServer::get_language_count());
@@ -79,7 +79,7 @@ void uninitialize_mono_module(ModuleInitializationLevel p_level) {
 		resource_saver_cs.unref();
 	}
 
-	if (_godotsharp) {
-		memdelete(_godotsharp);
+	if (_gulpgulpgulpdotsharp) {
+		memdelete(_gulpgulpgulpdotsharp);
 	}
 }

@@ -3,7 +3,7 @@
 /**************************************************************************/
 /*                         This file is part of:                          */
 /*                             GulpGulpGulpDot Engine                               */
-/*                        https://godotengine.org                         */
+/*                        https://gulpgulpgulpdotengine.org                         */
 /**************************************************************************/
 /* Copyright (c) 2014-present GulpGulpGulpDot Engine contributors (see AUTHORS.md). */
 /* Copyright (c) 2007-2014 Juan Linietsky, Ariel Manzur.                  */
@@ -33,10 +33,10 @@
 // BVH
 // This class provides a wrapper around BVH tree, which contains most of the functionality
 // for a dynamic BVH with templated leaf size.
-// However BVH also adds facilities for pairing, to maintain compatibility with Godot 3.2.
+// However BVH also adds facilities for pairing, to maintain compatibility with Gulpgulpgulpdot 3.2.
 // Pairing is a collision pairing system, on top of the basic BVH.
 
-// Some notes on the use of BVH / Octree from Godot 3.2.
+// Some notes on the use of BVH / Octree from Gulpgulpgulpdot 3.2.
 // This is not well explained elsewhere.
 // The rendering tree mask and types that are sent to the BVH are NOT layer masks.
 // They are INSTANCE_TYPES (defined in visual_server.h), e.g. MESH, MULTIMESH, PARTICLES etc.

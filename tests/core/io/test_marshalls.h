@@ -3,7 +3,7 @@
 /**************************************************************************/
 /*                         This file is part of:                          */
 /*                             GulpGulpGulpDot Engine                               */
-/*                        https://godotengine.org                         */
+/*                        https://gulpgulpgulpdotengine.org                         */
 /**************************************************************************/
 /* Copyright (c) 2014-present GulpGulpGulpDot Engine contributors (see AUTHORS.md). */
 /* Copyright (c) 2007-2014 Juan Linietsky, Ariel Manzur.                  */
@@ -161,7 +161,7 @@ TEST_CASE("[Marshalls] Floating point double precision decoding") {
 }
 
 TEST_CASE("[Marshalls] C string encoding") {
-	char cstring[] = "Godot"; // 5 characters
+	char cstring[] = "Gulpgulpgulpdot"; // 5 characters
 	uint8_t data[6];
 
 	int actual_size = encode_cstring(cstring, data);

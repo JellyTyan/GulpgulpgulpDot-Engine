@@ -3,7 +3,7 @@
 /**************************************************************************/
 /*                         This file is part of:                          */
 /*                             GulpGulpGulpDot Engine                               */
-/*                        https://godotengine.org                         */
+/*                        https://gulpgulpgulpdotengine.org                         */
 /**************************************************************************/
 /* Copyright (c) 2014-present GulpGulpGulpDot Engine contributors (see AUTHORS.md). */
 /* Copyright (c) 2007-2014 Juan Linietsky, Ariel Manzur.                  */
@@ -61,9 +61,9 @@ public:
 	};
 
 #if defined(__cpp_lib_hardware_interference_size)
-	GODOT_GCC_WARNING_PUSH_AND_IGNORE("-Winterference-size")
+	GULPGULPGULPDOT_GCC_WARNING_PUSH_AND_IGNORE("-Winterference-size")
 	static constexpr size_t CACHE_LINE_BYTES = std::hardware_destructive_interference_size;
-	GODOT_GCC_WARNING_POP
+	GULPGULPGULPDOT_GCC_WARNING_POP
 #else
 	// At a negligible memory cost, we use a conservatively high value.
 	static constexpr size_t CACHE_LINE_BYTES = 128;

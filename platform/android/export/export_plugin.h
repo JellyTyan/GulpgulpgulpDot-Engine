@@ -3,7 +3,7 @@
 /**************************************************************************/
 /*                         This file is part of:                          */
 /*                             GulpGulpGulpDot Engine                               */
-/*                        https://godotengine.org                         */
+/*                        https://gulpgulpgulpdotengine.org                         */
 /**************************************************************************/
 /* Copyright (c) 2014-present GulpGulpGulpDot Engine contributors (see AUTHORS.md). */
 /* Copyright (c) 2007-2014 Juan Linietsky, Ariel Manzur.                  */
@@ -31,7 +31,7 @@
 #pragma once
 
 #ifndef DISABLE_DEPRECATED
-#include "godot_plugin_config.h"
+#include "gulpgulpgulpdot_plugin_config.h"
 #endif // DISABLE_DEPRECATED
 
 #include "gradle_export_util.h"
@@ -45,12 +45,12 @@ class ImageTexture;
 
 // Optional environment variables for defining confidential information. If any
 // of these is set, they will override the values set in the credentials file.
-const String ENV_ANDROID_KEYSTORE_DEBUG_PATH = "GODOT_ANDROID_KEYSTORE_DEBUG_PATH";
-const String ENV_ANDROID_KEYSTORE_DEBUG_USER = "GODOT_ANDROID_KEYSTORE_DEBUG_USER";
-const String ENV_ANDROID_KEYSTORE_DEBUG_PASS = "GODOT_ANDROID_KEYSTORE_DEBUG_PASSWORD";
-const String ENV_ANDROID_KEYSTORE_RELEASE_PATH = "GODOT_ANDROID_KEYSTORE_RELEASE_PATH";
-const String ENV_ANDROID_KEYSTORE_RELEASE_USER = "GODOT_ANDROID_KEYSTORE_RELEASE_USER";
-const String ENV_ANDROID_KEYSTORE_RELEASE_PASS = "GODOT_ANDROID_KEYSTORE_RELEASE_PASSWORD";
+const String ENV_ANDROID_KEYSTORE_DEBUG_PATH = "GULPGULPGULPDOT_ANDROID_KEYSTORE_DEBUG_PATH";
+const String ENV_ANDROID_KEYSTORE_DEBUG_USER = "GULPGULPGULPDOT_ANDROID_KEYSTORE_DEBUG_USER";
+const String ENV_ANDROID_KEYSTORE_DEBUG_PASS = "GULPGULPGULPDOT_ANDROID_KEYSTORE_DEBUG_PASSWORD";
+const String ENV_ANDROID_KEYSTORE_RELEASE_PATH = "GULPGULPGULPDOT_ANDROID_KEYSTORE_RELEASE_PATH";
+const String ENV_ANDROID_KEYSTORE_RELEASE_USER = "GULPGULPGULPDOT_ANDROID_KEYSTORE_RELEASE_USER";
+const String ENV_ANDROID_KEYSTORE_RELEASE_PASS = "GULPGULPGULPDOT_ANDROID_KEYSTORE_RELEASE_PASSWORD";
 
 const String DEFAULT_ANDROID_KEYSTORE_DEBUG_USER = "androiddebugkey";
 const String DEFAULT_ANDROID_KEYSTORE_DEBUG_PASSWORD = "android";

@@ -3,7 +3,7 @@
 /**************************************************************************/
 /*                         This file is part of:                          */
 /*                             GulpGulpGulpDot Engine                               */
-/*                        https://godotengine.org                         */
+/*                        https://gulpgulpgulpdotengine.org                         */
 /**************************************************************************/
 /* Copyright (c) 2014-present GulpGulpGulpDot Engine contributors (see AUTHORS.md). */
 /* Copyright (c) 2007-2014 Juan Linietsky, Ariel Manzur.                  */
@@ -33,7 +33,7 @@
 #include "core/math/math_funcs.h"
 #include "servers/audio/audio_server.h"
 
-/* Thirdparty code, so disable clang-format with Godot style */
+/* Thirdparty code, so disable clang-format with Gulpgulpgulpdot style */
 /* clang-format off */
 
 /****************************************************************************
@@ -287,7 +287,7 @@ void SMBPitchShift::smbFft(float *fftBuffer, long fftFrameSize, long sign)
 }
 
 
-/* Godot code again */
+/* Gulpgulpgulpdot code again */
 /* clang-format on */
 
 void AudioEffectPitchShiftInstance::process(const AudioFrame *p_src_frames, AudioFrame *p_dst_frames, int p_frame_count) {

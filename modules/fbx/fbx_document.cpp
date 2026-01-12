@@ -3,7 +3,7 @@
 /**************************************************************************/
 /*                         This file is part of:                          */
 /*                             GulpGulpGulpDot Engine                               */
-/*                        https://godotengine.org                         */
+/*                        https://gulpgulpgulpdotengine.org                         */
 /**************************************************************************/
 /* Copyright (c) 2014-present GulpGulpGulpDot Engine contributors (see AUTHORS.md). */
 /* Copyright (c) 2007-2014 Juan Linietsky, Ariel Manzur.                  */
@@ -416,11 +416,11 @@ Error FBXDocument::_parse_nodes(Ref<FBXState> p_state) {
 				}
 			}
 
-			Transform3D godot_rest_xform = node->transform;
+			Transform3D gulpgulpgulpdot_rest_xform = node->transform;
 			if (found_rest_xform && !bad_rest_xform) {
-				godot_rest_xform = candidate_rest_xform;
+				gulpgulpgulpdot_rest_xform = candidate_rest_xform;
 			}
-			node->set_additional_data("GODOT_rest_transform", godot_rest_xform);
+			node->set_additional_data("GULPGULPGULPDOT_rest_transform", gulpgulpgulpdot_rest_xform);
 		}
 
 		for (const ufbx_node *child : fbx_node->children) {
@@ -567,7 +567,7 @@ Error FBXDocument::_parse_meshes(Ref<FBXState> p_state) {
 								uint32_t num_triangles = ufbx_triangulate_face(dst, space, fbx_mesh, face);
 								offset += num_triangles * 3;
 
-								// Godot uses clockwise winding order!
+								// Gulpgulpgulpdot uses clockwise winding order!
 								for (uint32_t i = 0; i < num_triangles; i++) {
 									SWAP(dst[i * 3 + 0], dst[i * 3 + 2]);
 								}
@@ -899,7 +899,7 @@ Error FBXDocument::_parse_meshes(Ref<FBXState> p_state) {
 		mesh.instantiate();
 		Dictionary additional_data;
 		additional_data["blend_channels"] = blend_channels;
-		mesh->set_additional_data("GODOT_mesh_blend_channels", additional_data);
+		mesh->set_additional_data("GULPGULPGULPDOT_mesh_blend_channels", additional_data);
 		mesh->set_blend_weights(blend_weights);
 		mesh->set_mesh(import_mesh);
 		mesh->set_name(import_mesh->get_name());
@@ -1375,7 +1375,7 @@ Error FBXDocument::_parse_animations(Ref<FBXState> p_state) {
 		Dictionary additional_data;
 		additional_data["time_begin"] = fbx_anim_stack->time_begin;
 		additional_data["time_end"] = fbx_anim_stack->time_end;
-		animation->set_additional_data("GODOT_animation_time_begin_time_end", additional_data);
+		animation->set_additional_data("GULPGULPGULPDOT_animation_time_begin_time_end", additional_data);
 		ufbx_bake_opts opts = {};
 		opts.resample_rate = p_state->get_bake_fps();
 		opts.minimum_sample_rate = p_state->get_bake_fps();
@@ -1437,7 +1437,7 @@ Error FBXDocument::_parse_animations(Ref<FBXState> p_state) {
 			}
 		}
 
-		animation->set_additional_data("GODOT_blend_shape_animations", blend_shape_animations);
+		animation->set_additional_data("GULPGULPGULPDOT_blend_shape_animations", blend_shape_animations);
 
 		p_state->animations.push_back(animation);
 	}
@@ -1539,7 +1539,7 @@ Light3D *FBXDocument::_generate_light(Ref<FBXState> p_state, const GLTFNodeIndex
 		light->set_name(l->get_name());
 		light->set_color(l->get_color());
 		light->set_param(Light3D::PARAM_ENERGY, l->get_intensity());
-		Dictionary additional_data = l->get_additional_data("GODOT_fbx_light");
+		Dictionary additional_data = l->get_additional_data("GULPGULPGULPDOT_fbx_light");
 		if (additional_data.has("castShadows")) {
 			light->set_shadow(additional_data["castShadows"]);
 		}
@@ -1673,7 +1673,7 @@ void FBXDocument::_generate_skeleton_bone_node(Ref<FBXState> p_state, const GLTF
 
 	Node3D *current_node = nullptr;
 
-	Skeleton3D *skeleton = p_state->skeletons[fbx_node->skeleton]->godot_skeleton;
+	Skeleton3D *skeleton = p_state->skeletons[fbx_node->skeleton]->gulpgulpgulpdot_skeleton;
 	// In this case, this node is already a bone in skeleton.
 	const bool is_skinned_mesh = (fbx_node->skin >= 0 && fbx_node->mesh >= 0);
 	const bool requires_extra_node = (fbx_node->mesh >= 0 || fbx_node->camera >= 0 || fbx_node->light >= 0);
@@ -1775,7 +1775,7 @@ void FBXDocument::_import_animation(Ref<FBXState> p_state, AnimationPlayer *p_an
 		animation->set_loop_mode(Animation::LOOP_LINEAR);
 	}
 
-	Dictionary additional_animation_data = anim->get_additional_data("GODOT_animation_time_begin_time_end");
+	Dictionary additional_animation_data = anim->get_additional_data("GULPGULPGULPDOT_animation_time_begin_time_end");
 
 	double anim_start_offset = p_trimming ? double(additional_animation_data["time_begin"]) : 0.0;
 
@@ -1795,7 +1795,7 @@ void FBXDocument::_import_animation(Ref<FBXState> p_state, AnimationPlayer *p_an
 		const Ref<GLTFNode> fbx_node = p_state->nodes[track_i.key];
 
 		if (fbx_node->skeleton >= 0) {
-			const Skeleton3D *sk = p_state->skeletons[fbx_node->skeleton]->godot_skeleton;
+			const Skeleton3D *sk = p_state->skeletons[fbx_node->skeleton]->gulpgulpgulpdot_skeleton;
 			ERR_FAIL_NULL(sk);
 
 			const String path = String(p_animation_player->get_parent()->get_path_to(sk));
@@ -1904,7 +1904,7 @@ void FBXDocument::_import_animation(Ref<FBXState> p_state, AnimationPlayer *p_an
 		}
 	}
 
-	Dictionary blend_shape_animations = anim->get_additional_data("GODOT_blend_shape_animations");
+	Dictionary blend_shape_animations = anim->get_additional_data("GULPGULPGULPDOT_blend_shape_animations");
 
 	for (GLTFNodeIndex node_index = 0; node_index < p_state->nodes.size(); node_index++) {
 		Ref<GLTFNode> node = p_state->nodes[node_index];
@@ -1932,7 +1932,7 @@ void FBXDocument::_import_animation(Ref<FBXState> p_state, AnimationPlayer *p_an
 		ERR_CONTINUE(mesh->get_mesh().is_null());
 		ERR_CONTINUE(mesh->get_mesh()->get_mesh().is_null());
 
-		Dictionary mesh_additional_data = mesh->get_additional_data("GODOT_mesh_blend_channels");
+		Dictionary mesh_additional_data = mesh->get_additional_data("GULPGULPGULPDOT_mesh_blend_channels");
 		Vector<int> blend_channels = mesh_additional_data["blend_channels"];
 
 		for (int i = 0; i < blend_channels.size(); i++) {
@@ -2007,7 +2007,7 @@ void FBXDocument::_process_mesh_instances(Ref<FBXState> p_state, Node *p_scene_r
 
 		const GLTFSkeletonIndex skel_i = p_state->skins.write[node->skin]->skeleton;
 		Ref<GLTFSkeleton> fbx_skeleton = p_state->skeletons.write[skel_i];
-		Skeleton3D *skeleton = fbx_skeleton->godot_skeleton;
+		Skeleton3D *skeleton = fbx_skeleton->gulpgulpgulpdot_skeleton;
 		ERR_CONTINUE_MSG(skeleton == nullptr, vformat("Unable to find Skeleton for node %d skin %d", node_i, skin_i));
 
 		mi->get_parent()->remove_child(mi);
@@ -2015,7 +2015,7 @@ void FBXDocument::_process_mesh_instances(Ref<FBXState> p_state, Node *p_scene_r
 		skeleton->add_child(mi, true);
 		mi->set_owner(skeleton->get_owner());
 
-		mi->set_skin(p_state->skins.write[skin_i]->godot_skin);
+		mi->set_skin(p_state->skins.write[skin_i]->gulpgulpgulpdot_skin);
 		mi->set_skeleton_path(mi->get_path_to(skeleton));
 		mi->set_transform(Transform3D());
 	}
@@ -2361,7 +2361,7 @@ Error FBXDocument::_parse_lights(Ref<FBXState> p_state) {
 
 		additional_data["castLight"] = fbx_light->cast_light;
 		additional_data["castShadows"] = fbx_light->cast_shadows;
-		light->set_additional_data("GODOT_fbx_light", additional_data);
+		light->set_additional_data("GULPGULPGULPDOT_fbx_light", additional_data);
 		p_state->lights.push_back(light);
 	}
 	print_verbose("FBX: Total lights: " + itos(p_state->lights.size()));

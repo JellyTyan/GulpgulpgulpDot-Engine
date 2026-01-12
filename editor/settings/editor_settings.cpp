@@ -3,7 +3,7 @@
 /**************************************************************************/
 /*                         This file is part of:                          */
 /*                             GulpGulpGulpDot Engine                               */
-/*                        https://godotengine.org                         */
+/*                        https://gulpgulpgulpdotengine.org                         */
 /**************************************************************************/
 /* Copyright (c) 2014-present GulpGulpGulpDot Engine contributors (see AUTHORS.md). */
 /* Copyright (c) 2007-2014 Juan Linietsky, Ariel Manzur.                  */
@@ -481,7 +481,7 @@ void EditorSettings::_load_defaults(Ref<ConfigFile> p_extra_config) {
 
 	{
 		EngineUpdateLabel::UpdateMode default_update_mode = EngineUpdateLabel::UpdateMode::NEWEST_UNSTABLE;
-		if (String(GODOT_VERSION_STATUS) == String("stable")) {
+		if (String(GULPGULPGULPDOT_VERSION_STATUS) == String("stable")) {
 			default_update_mode = EngineUpdateLabel::UpdateMode::NEWEST_STABLE;
 		}
 		EDITOR_SETTING_BASIC(Variant::INT, PROPERTY_HINT_ENUM, "network/connection/check_for_updates", int(default_update_mode), "Disable Update Checks,Check Newest Preview,Check Newest Stable,Check Newest Patch"); // Uses EngineUpdateLabel::UpdateMode.
@@ -588,7 +588,7 @@ void EditorSettings::_load_defaults(Ref<ConfigFile> p_extra_config) {
 	// Theme
 	EDITOR_SETTING_BASIC(Variant::BOOL, PROPERTY_HINT_ENUM, "interface/theme/follow_system_theme", false, "")
 	EDITOR_SETTING_BASIC(Variant::STRING, PROPERTY_HINT_ENUM, "interface/theme/style", "Modern", "Modern,Classic")
-	EDITOR_SETTING_BASIC(Variant::STRING, PROPERTY_HINT_ENUM, "interface/theme/color_preset", "Default", "Default,Breeze Dark,Godot 2,Godot 3,Gray,Light,Solarized (Dark),Solarized (Light),Black (OLED),Custom")
+	EDITOR_SETTING_BASIC(Variant::STRING, PROPERTY_HINT_ENUM, "interface/theme/color_preset", "Default", "Default,Breeze Dark,Gulpgulpgulpdot 2,Gulpgulpgulpdot 3,Gray,Light,Solarized (Dark),Solarized (Light),Black (OLED),Custom")
 	EDITOR_SETTING_BASIC(Variant::STRING, PROPERTY_HINT_ENUM, "interface/theme/spacing_preset", "Default", "Compact,Default,Spacious,Custom")
 	EDITOR_SETTING(Variant::INT, PROPERTY_HINT_ENUM, "interface/theme/icon_and_font_color", 0, "Auto,Dark,Light")
 	EDITOR_SETTING_BASIC(Variant::COLOR, PROPERTY_HINT_NONE, "interface/theme/base_color", Color(0.14, 0.14, 0.14), "")
@@ -707,7 +707,7 @@ void EditorSettings::_load_defaults(Ref<ConfigFile> p_extra_config) {
 	/* Text editor */
 
 	// Theme
-	EDITOR_SETTING_BASIC(Variant::STRING, PROPERTY_HINT_ENUM, "text_editor/theme/color_theme", "Default", "Default,Godot 2,Custom")
+	EDITOR_SETTING_BASIC(Variant::STRING, PROPERTY_HINT_ENUM, "text_editor/theme/color_theme", "Default", "Default,Gulpgulpgulpdot 2,Custom")
 
 	// Theme: Highlighting
 	const LocalVector<StringName> basic_text_editor_settings = {
@@ -739,7 +739,7 @@ void EditorSettings::_load_defaults(Ref<ConfigFile> p_extra_config) {
 		"text_editor/theme/highlighting/mark_color",
 	};
 	// These values will be overwritten by EditorThemeManager, but can still be seen in some edge cases.
-	const HashMap<StringName, Color> text_colors = get_godot2_text_editor_theme();
+	const HashMap<StringName, Color> text_colors = get_gulpgulpgulpdot2_text_editor_theme();
 	for (const KeyValue<StringName, Color> &text_color : text_colors) {
 		if (basic_text_editor_settings.has(text_color.key)) {
 			EDITOR_SETTING_BASIC(Variant::COLOR, PROPERTY_HINT_NONE, text_color.key, text_color.value, "")
@@ -934,7 +934,7 @@ void EditorSettings::_load_defaults(Ref<ConfigFile> p_extra_config) {
 	// 3D: Navigation
 	_initial_set("editors/3d/navigation/invert_x_axis", false, true);
 	_initial_set("editors/3d/navigation/invert_y_axis", false, true);
-	EDITOR_SETTING_BASIC(Variant::INT, PROPERTY_HINT_ENUM, "editors/3d/navigation/navigation_scheme", 0, "Godot:0,Maya:1,Modo:2,Tablet/Trackpad:4,Custom:3")
+	EDITOR_SETTING_BASIC(Variant::INT, PROPERTY_HINT_ENUM, "editors/3d/navigation/navigation_scheme", 0, "Gulpgulpgulpdot:0,Maya:1,Modo:2,Tablet/Trackpad:4,Custom:3")
 	EDITOR_SETTING_BASIC(Variant::INT, PROPERTY_HINT_ENUM, "editors/3d/navigation/orbit_mouse_button", 1, "Left Mouse,Middle Mouse,Right Mouse,Mouse Button 4,Mouse Button 5")
 	EDITOR_SETTING_BASIC(Variant::INT, PROPERTY_HINT_ENUM, "editors/3d/navigation/pan_mouse_button", 1, "Left Mouse,Middle Mouse,Right Mouse,Mouse Button 4,Mouse Button 5")
 	EDITOR_SETTING_BASIC(Variant::INT, PROPERTY_HINT_ENUM, "editors/3d/navigation/zoom_mouse_button", 1, "Left Mouse,Middle Mouse,Right Mouse,Mouse Button 4,Mouse Button 5")
@@ -1052,7 +1052,7 @@ void EditorSettings::_load_defaults(Ref<ConfigFile> p_extra_config) {
 	_initial_set("run/window_placement/rect_custom_position", Vector2());
 	EDITOR_SETTING_BASIC(Variant::INT, PROPERTY_HINT_ENUM, "run/window_placement/screen", -5, screen_hints)
 #endif
-	// Should match the ANDROID_WINDOW_* constants in 'platform/android/java/editor/src/main/java/org/godotengine/editor/BaseGodotEditor.kt'.
+	// Should match the ANDROID_WINDOW_* constants in 'platform/android/java/editor/src/main/java/org/gulpgulpgulpdotengine/editor/BaseGulpgulpgulpdotEditor.kt'.
 	String android_window_hints = "Auto (based on screen size):0,Same as Editor:1,Side-by-side with Editor:2";
 	EDITOR_SETTING_BASIC(Variant::INT, PROPERTY_HINT_ENUM, "run/window_placement/android_window", 0, android_window_hints)
 
@@ -1123,7 +1123,7 @@ void EditorSettings::_load_defaults(Ref<ConfigFile> p_extra_config) {
 	EDITOR_SETTING_USAGE(Variant::BOOL, PROPERTY_HINT_NONE, "input/buffering/agile_event_flushing", false, "", PROPERTY_USAGE_DEFAULT | PROPERTY_USAGE_RESTART_IF_CHANGED | PROPERTY_USAGE_EDITOR_BASIC_SETTING)
 	EDITOR_SETTING_USAGE(Variant::BOOL, PROPERTY_HINT_NONE, "input/buffering/use_accumulated_input", true, "", PROPERTY_USAGE_DEFAULT | PROPERTY_USAGE_RESTART_IF_CHANGED | PROPERTY_USAGE_EDITOR_BASIC_SETTING)
 
-	// TRANSLATORS: Project Manager here refers to the tool used to create/manage Godot projects.
+	// TRANSLATORS: Project Manager here refers to the tool used to create/manage Gulpgulpgulpdot projects.
 	EDITOR_SETTING(Variant::INT, PROPERTY_HINT_ENUM, "project_manager/sorting_order", 0, "Last Edited,Name,Path")
 	EDITOR_SETTING_BASIC(Variant::INT, PROPERTY_HINT_ENUM, "project_manager/directory_naming_convention", 1, "No Convention,kebab-case,snake_case,camelCase,PascalCase,Title Case")
 
@@ -1238,16 +1238,16 @@ EditorSettings *EditorSettings::get_singleton() {
 
 String EditorSettings::get_existing_settings_path() {
 	const String config_dir = EditorPaths::get_singleton()->get_config_dir();
-	int minor = GODOT_VERSION_MINOR;
+	int minor = GULPGULPGULPDOT_VERSION_MINOR;
 	String filename;
 
 	do {
-		if (GODOT_VERSION_MAJOR == 4 && minor < 3) {
+		if (GULPGULPGULPDOT_VERSION_MAJOR == 4 && minor < 3) {
 			// Minor version is used since 4.3, so special case to load older settings.
-			filename = vformat("editor_settings-%d.tres", GODOT_VERSION_MAJOR);
+			filename = vformat("editor_settings-%d.tres", GULPGULPGULPDOT_VERSION_MAJOR);
 			minor = -1;
 		} else {
-			filename = vformat("editor_settings-%d.%d.tres", GODOT_VERSION_MAJOR, minor);
+			filename = vformat("editor_settings-%d.%d.tres", GULPGULPGULPDOT_VERSION_MAJOR, minor);
 			minor--;
 		}
 	} while (minor >= 0 && !FileAccess::exists(config_dir.path_join(filename)));
@@ -1255,7 +1255,7 @@ String EditorSettings::get_existing_settings_path() {
 }
 
 String EditorSettings::get_newest_settings_path() {
-	const String config_file_name = vformat("editor_settings-%d.%d.tres", GODOT_VERSION_MAJOR, GODOT_VERSION_MINOR);
+	const String config_file_name = vformat("editor_settings-%d.%d.tres", GULPGULPGULPDOT_VERSION_MAJOR, GULPGULPGULPDOT_VERSION_MINOR);
 	return EditorPaths::get_singleton()->get_config_dir().path_join(config_file_name);
 }
 
@@ -1728,8 +1728,8 @@ void EditorSettings::load_favorites_and_recent_dirs() {
 	FileDialog::set_recent_list(recent_dirs);
 }
 
-HashMap<StringName, Color> EditorSettings::get_godot2_text_editor_theme() {
-	// Godot 2 is only a dark theme; it doesn't have a light theme counterpart.
+HashMap<StringName, Color> EditorSettings::get_gulpgulpgulpdot2_text_editor_theme() {
+	// Gulpgulpgulpdot 2 is only a dark theme; it doesn't have a light theme counterpart.
 	HashMap<StringName, Color> colors;
 	colors["text_editor/theme/highlighting/symbol_color"] = Color(0.73, 0.87, 1.0);
 	colors["text_editor/theme/highlighting/keyword_color"] = Color(1.0, 1.0, 0.7);
@@ -1785,11 +1785,11 @@ HashMap<StringName, Color> EditorSettings::get_godot2_text_editor_theme() {
 }
 
 bool EditorSettings::is_default_text_editor_theme(const String &p_theme_name) {
-	return p_theme_name == "default" || p_theme_name == "godot 2" || p_theme_name == "custom";
+	return p_theme_name == "default" || p_theme_name == "gulpgulpgulpdot 2" || p_theme_name == "custom";
 }
 
 void EditorSettings::update_text_editor_themes_list() {
-	String themes = "Default,Godot 2,Custom";
+	String themes = "Default,Gulpgulpgulpdot 2,Custom";
 
 	Ref<DirAccess> d = DirAccess::open(EditorPaths::get_singleton()->get_text_editor_themes_dir());
 	if (d.is_null()) {

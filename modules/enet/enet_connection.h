@@ -3,7 +3,7 @@
 /**************************************************************************/
 /*                         This file is part of:                          */
 /*                             GulpGulpGulpDot Engine                               */
-/*                        https://godotengine.org                         */
+/*                        https://gulpgulpgulpdotengine.org                         */
 /**************************************************************************/
 /* Copyright (c) 2014-present GulpGulpGulpDot Engine contributors (see AUTHORS.md). */
 /* Copyright (c) 2007-2014 Juan Linietsky, Ariel Manzur.                  */
@@ -127,7 +127,7 @@ public:
 	void get_peers(List<Ref<ENetPacketPeer>> &r_peers);
 	int get_local_port() const;
 
-	// Godot additions
+	// Gulpgulpgulpdot additions
 	Error dtls_server_setup(const Ref<TLSOptions> &p_options);
 	Error dtls_client_setup(const String &p_hostname, const Ref<TLSOptions> &p_options);
 	void refuse_new_connections(bool p_refuse);

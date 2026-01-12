@@ -3,7 +3,7 @@
 /**************************************************************************/
 /*                         This file is part of:                          */
 /*                             GulpGulpGulpDot Engine                               */
-/*                        https://godotengine.org                         */
+/*                        https://gulpgulpgulpdotengine.org                         */
 /**************************************************************************/
 /* Copyright (c) 2014-present GulpGulpGulpDot Engine contributors (see AUTHORS.md). */
 /* Copyright (c) 2007-2014 Juan Linietsky, Ariel Manzur.                  */
@@ -39,7 +39,7 @@
 class Array;
 
 // Note: In most situations, compatibility methods should be registered via ClassDB::bind_compatibility_method().
-//       This class is only meant to be used in exceptional circumstances, for example, when Godot's hashing
+//       This class is only meant to be used in exceptional circumstances, for example, when Gulpgulpgulpdot's hashing
 //       algorithm changes and registering compatibility methods for all affect methods would be onerous.
 
 class GDExtensionSpecialCompatHashes {

@@ -3,7 +3,7 @@
 /**************************************************************************/
 /*                         This file is part of:                          */
 /*                             GulpGulpGulpDot Engine                               */
-/*                        https://godotengine.org                         */
+/*                        https://gulpgulpgulpdotengine.org                         */
 /**************************************************************************/
 /* Copyright (c) 2014-present GulpGulpGulpDot Engine contributors (see AUTHORS.md). */
 /* Copyright (c) 2007-2014 Juan Linietsky, Ariel Manzur.                  */
@@ -45,14 +45,14 @@ HashMap<String, String> _create_hashmap_from_vector(Vector<Pair<String, String>>
 const HashMap<String, String> pascal_case_name_overrides = _create_hashmap_from_vector({
 		{ "BitMap", "Bitmap" },
 		{ "JSONRPC", "JsonRpc" },
-		{ "Object", "GodotObject" },
+		{ "Object", "GulpgulpgulpdotObject" },
 		{ "OpenXRIPBinding", "OpenXRIPBinding" },
 		{ "SkeletonModification2DCCDIK", "SkeletonModification2DCcdik" },
 		{ "SkeletonModification2DFABRIK", "SkeletonModification2DFabrik" },
 		{ "SkeletonModification3DCCDIK", "SkeletonModification3DCcdik" },
 		{ "SkeletonModification3DFABRIK", "SkeletonModification3DFabrik" },
 		{ "System", "System_" },
-		{ "Thread", "GodotThread" },
+		{ "Thread", "GulpgulpgulpdotThread" },
 });
 
 // Hardcoded collection of PascalCase part conversions.

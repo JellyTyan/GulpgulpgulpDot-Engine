@@ -3,7 +3,7 @@
 /**************************************************************************/
 /*                         This file is part of:                          */
 /*                             GulpGulpGulpDot Engine                               */
-/*                        https://godotengine.org                         */
+/*                        https://gulpgulpgulpdotengine.org                         */
 /**************************************************************************/
 /* Copyright (c) 2014-present GulpGulpGulpDot Engine contributors (see AUTHORS.md). */
 /* Copyright (c) 2007-2014 Juan Linietsky, Ariel Manzur.                  */
@@ -38,7 +38,7 @@
 // even detrimental to performance. However, there are currently some known
 // cases where using them can solve problems that using singular memory
 // barriers does not, probably due to driver issues (see comment on PR #84976
-// https://github.com/godotengine/godot/pull/84976#issuecomment-1878566830).
+// https://github.com/gulpgulpgulpdotengine/gulpgulpgulpdot/pull/84976#issuecomment-1878566830).
 
 #define USE_BUFFER_BARRIERS 1
 

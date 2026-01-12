@@ -3,7 +3,7 @@
 /**************************************************************************/
 /*                         This file is part of:                          */
 /*                             GulpGulpGulpDot Engine                               */
-/*                        https://godotengine.org                         */
+/*                        https://gulpgulpgulpdotengine.org                         */
 /**************************************************************************/
 /* Copyright (c) 2014-present GulpGulpGulpDot Engine contributors (see AUTHORS.md). */
 /* Copyright (c) 2007-2014 Juan Linietsky, Ariel Manzur.                  */
@@ -43,7 +43,7 @@ class DisplayServerAndroid : public DisplayServer {
 	String rendering_driver;
 
 	// https://developer.android.com/reference/android/view/PointerIcon
-	// mapping between Godot's cursor shape to Android's'
+	// mapping between Gulpgulpgulpdot's cursor shape to Android's'
 	int android_cursors[CURSOR_MAX] = {
 		1000, //CURSOR_ARROW
 		1008, //CURSOR_IBEAM

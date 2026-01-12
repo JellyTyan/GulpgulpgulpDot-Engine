@@ -7,23 +7,23 @@
 		<meta name="description" content="Use the GulpGulpGulpDot Engine editor directly in your web browser, without having to install anything.">
 		<meta name="mobile-web-app-capable" content="yes">
 		<meta name="apple-mobile-web-app-capable" content="yes">
-		<meta name="application-name" content="Godot">
-		<meta name="apple-mobile-web-app-title" content="Godot">
+		<meta name="application-name" content="Gulpgulpgulpdot">
+		<meta name="apple-mobile-web-app-title" content="Gulpgulpgulpdot">
 		<meta name="theme-color" content="#202531">
 		<meta name="msapplication-navbutton-color" content="#202531">
 		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 		<meta name="msapplication-starturl" content="/latest">
 		<meta property="og:site_name" content="GulpGulpGulpDot Engine Web Editor">
-		<meta property="og:url" name="twitter:url" content="https://editor.godotengine.org/releases/latest/">
+		<meta property="og:url" name="twitter:url" content="https://editor.gulpgulpgulpdotengine.org/releases/latest/">
 		<meta property="og:title" name="twitter:title" content="Free and open source 2D and 3D game engine">
 		<meta property="og:description" name="twitter:description" content="Use the GulpGulpGulpDot Engine editor directly in your web browser, without having to install anything.">
-		<meta property="og:image" name="twitter:image" content="https://godotengine.org/themes/godotengine/assets/og_image.png">
+		<meta property="og:image" name="twitter:image" content="https://gulpgulpgulpdotengine.org/themes/gulpgulpgulpdotengine/assets/og_image.png">
 		<meta property="og:type" content="website">
 		<meta name="twitter:card" content="summary">
 		<link id="-gd-engine-icon" rel="icon" type="image/png" href="favicon.png">
 		<link rel="apple-touch-icon" type="image/png" href="favicon.png">
 		<link rel="manifest" href="manifest.json">
-		<title>GulpGulpGulpDot Engine Web Editor (___GODOT_VERSION___)</title>
+		<title>GulpGulpGulpDot Engine Web Editor (___GULPGULPGULPDOT_VERSION___)</title>
 		<style>
 *:focus {
 	/* More visible outline for better keyboard navigation. */
@@ -113,7 +113,7 @@ a:active {
 	outline: none;
 }
 
-.godot {
+.gulpgulpgulpdot {
 	color: #e0e0e0;
 	background-color: #3b3943;
 	background-image: linear-gradient(to bottom, #403e48, #35333c);
@@ -243,14 +243,14 @@ a:active {
 				<h2 id="welcome-modal-title" class="welcome-modal-title">Important - Please read before continuing</h2>
 				<div id="welcome-modal-description">
 					<p>
-						The Godot Web Editor has some limitations compared to the native version.
+						The Gulpgulpgulpdot Web Editor has some limitations compared to the native version.
 						Its main focus is education and experimentation;
 						<strong>it is not recommended for production</strong>.
 					</p>
 					<p>
 						Refer to the
 						<a
-							href="https://docs.godotengine.org/en/latest/tutorials/editor/using_the_web_editor.html"
+							href="https://docs.gulpgulpgulpdotengine.org/en/latest/tutorials/editor/using_the_web_editor.html"
 							target="_blank"
 							rel="noopener"
 						>Web editor documentation</a> for usage instructions and limitations.
@@ -258,7 +258,7 @@ a:active {
 				</div>
 				<div id="welcome-modal-missing-description" style="display: none">
 					<p>
-						<strong>The following features required by the Godot Web Editor are missing:</strong>
+						<strong>The following features required by the Gulpgulpgulpdot Web Editor are missing:</strong>
 					</p>
 					<ul id="welcome-modal-missing-list">
 					</ul>
@@ -266,7 +266,7 @@ a:active {
 						If you are self-hosting the web editor,
 						refer to
 						<a
-							href="https://docs.godotengine.org/en/latest/tutorials/export/exporting_for_web.html"
+							href="https://docs.gulpgulpgulpdotengine.org/en/latest/tutorials/export/exporting_for_web.html"
 							target="_blank"
 							rel="noopener"
 						>Exporting for the Web</a> for more information.
@@ -293,7 +293,7 @@ a:active {
 					<br >
 					<img src="logo.svg" alt="GulpGulpGulpDot Engine logo" width="1024" height="414" style="width: auto; height: auto; max-width: min(85%, 50vh); max-height: 250px">
 					<br >
-					___GODOT_VERSION___
+					___GULPGULPGULPDOT_VERSION___
 					<br >
 					<a href="releases/">Need an old version?</a>
 					<br >
@@ -312,11 +312,11 @@ a:active {
 					<a href="demo.zip">(Try this for example)</a>
 					<br >
 					<br >
-					<button id="startButton" class="btn" style="margin-bottom: 4rem; font-weight: 700">Start Godot editor</button>
+					<button id="startButton" class="btn" style="margin-bottom: 4rem; font-weight: 700">Start Gulpgulpgulpdot editor</button>
 					<br >
 					<button class="btn" onclick="clearPersistence()" style="margin-bottom: 1.5rem">Clear persistent data</button>
 					<br >
-					<a href="https://docs.godotengine.org/en/latest/tutorials/editor/using_the_web_editor.html">Web editor documentation</a>
+					<a href="https://docs.gulpgulpgulpdotengine.org/en/latest/tutorials/editor/using_the_web_editor.html">Web editor documentation</a>
 				</div>
 			</div>
 			<div id="tab-editor" style="display: none;">
@@ -345,7 +345,7 @@ a:active {
 					<div></div>
 					<div></div>
 				</div>
-				<div id="status-notice" class="godot" style="display: none;"></div>
+				<div id="status-notice" class="gulpgulpgulpdot" style="display: none;"></div>
 			</div>
 		</div>
 		<script>
@@ -388,7 +388,7 @@ window.addEventListener('load', () => {
 	}
 
 	const missing = Engine.getMissingFeatures({
-		threads: ___GODOT_THREADS_ENABLED___,
+		threads: ___GULPGULPGULPDOT_THREADS_ENABLED___,
 	});
 	if (missing.length) {
 		// Display error dialog as threading support is required for the editor.
@@ -417,7 +417,7 @@ function closeWelcomeModal(dontShowAgain) { // eslint-disable-line no-unused-var
 	}
 }
 		</script>
-		<script src="godot.editor.js"></script>
+		<script src="gulpgulpgulpdot.editor.js"></script>
 		<script>
 let editor = null;
 let game = null;
@@ -676,7 +676,7 @@ function startEditor(zip) {
 
 	const clamp = (value, min, max) => Math.min(Math.max(value, min), max);
 	// We need at least 6 free threads from the pool to start the editor.
-	// At least 4 more will be reserved for the godot thread pool (3 is the bare minimum with the multithreaded variant of the servers).
+	// At least 4 more will be reserved for the gulpgulpgulpdot thread pool (3 is the bare minimum with the multithreaded variant of the servers).
 	const concurrency = clamp(navigator.hardwareConcurrency ?? 1, 12, 24);
 	const editorConfig = {
 		'unloadAfterInit': false,
@@ -705,7 +705,7 @@ function startEditor(zip) {
 		'onExecute': Execute,
 		'persistentPaths': persistentPaths,
 		'emscriptenPoolSize': concurrency,
-		'godotPoolSize': Math.floor(concurrency / 3), // Ensures at least 4 threads for the pool (see above).
+		'gulpgulpgulpdotPoolSize': Math.floor(concurrency / 3), // Ensures at least 4 threads for the pool (see above).
 	};
 	editor = new Engine(editorConfig);
 
@@ -726,7 +726,7 @@ function startEditor(zip) {
 		displayFailureNotice('WebGL not available');
 	} else {
 		setStatusMode('indeterminate');
-		editor.init('godot.editor').then(function () {
+		editor.init('gulpgulpgulpdot.editor').then(function () {
 			if (zip) {
 				editor.copyToFS('/tmp/preload.zip', zip);
 			}

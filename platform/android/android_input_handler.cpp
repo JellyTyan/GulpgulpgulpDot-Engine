@@ -3,7 +3,7 @@
 /**************************************************************************/
 /*                         This file is part of:                          */
 /*                             GulpGulpGulpDot Engine                               */
-/*                        https://godotengine.org                         */
+/*                        https://gulpgulpgulpdotengine.org                         */
 /**************************************************************************/
 /* Copyright (c) 2014-present GulpGulpGulpDot Engine contributors (see AUTHORS.md). */
 /* Copyright (c) 2007-2014 Juan Linietsky, Ariel Manzur.                  */
@@ -87,7 +87,7 @@ void AndroidInputHandler::process_key_event(int p_physical_keycode, int p_unicod
 	Ref<InputEventKey> ev;
 	ev.instantiate();
 
-	Key physical_keycode = godot_code_from_android_code(p_physical_keycode);
+	Key physical_keycode = gulpgulpgulpdot_code_from_android_code(p_physical_keycode);
 	Key keycode;
 	if (unicode == '\b') { // 0x08
 		keycode = Key::BACKSPACE;
@@ -124,7 +124,7 @@ void AndroidInputHandler::process_key_event(int p_physical_keycode, int p_unicod
 	ev->set_physical_keycode(physical_keycode);
 	ev->set_key_label(fix_key_label(p_key_label, keycode));
 	ev->set_unicode(fix_unicode(unicode));
-	ev->set_location(godot_location_from_android_code(p_physical_keycode));
+	ev->set_location(gulpgulpgulpdot_location_from_android_code(p_physical_keycode));
 	ev->set_pressed(p_pressed);
 	ev->set_echo(p_echo);
 
@@ -299,7 +299,7 @@ void AndroidInputHandler::_release_mouse_event_info(bool p_source_mouse_relative
 }
 
 void AndroidInputHandler::process_mouse_event(int p_event_action, int p_event_android_buttons_mask, Point2 p_event_pos, Vector2 p_delta, bool p_double_click, bool p_source_mouse_relative, float p_pressure, Vector2 p_tilt) {
-	BitField<MouseButtonMask> event_buttons_mask = _android_button_mask_to_godot_button_mask(p_event_android_buttons_mask);
+	BitField<MouseButtonMask> event_buttons_mask = _android_button_mask_to_gulpgulpgulpdot_button_mask(p_event_android_buttons_mask);
 	switch (p_event_action) {
 		case AMOTION_EVENT_ACTION_HOVER_MOVE: // hover move
 		case AMOTION_EVENT_ACTION_HOVER_ENTER: // hover enter
@@ -439,23 +439,23 @@ MouseButton AndroidInputHandler::_button_index_from_mask(BitField<MouseButtonMas
 	}
 }
 
-BitField<MouseButtonMask> AndroidInputHandler::_android_button_mask_to_godot_button_mask(int android_button_mask) {
-	BitField<MouseButtonMask> godot_button_mask = MouseButtonMask::NONE;
+BitField<MouseButtonMask> AndroidInputHandler::_android_button_mask_to_gulpgulpgulpdot_button_mask(int android_button_mask) {
+	BitField<MouseButtonMask> gulpgulpgulpdot_button_mask = MouseButtonMask::NONE;
 	if (android_button_mask & AMOTION_EVENT_BUTTON_PRIMARY) {
-		godot_button_mask.set_flag(MouseButtonMask::LEFT);
+		gulpgulpgulpdot_button_mask.set_flag(MouseButtonMask::LEFT);
 	}
 	if (android_button_mask & AMOTION_EVENT_BUTTON_SECONDARY) {
-		godot_button_mask.set_flag(MouseButtonMask::RIGHT);
+		gulpgulpgulpdot_button_mask.set_flag(MouseButtonMask::RIGHT);
 	}
 	if (android_button_mask & AMOTION_EVENT_BUTTON_TERTIARY) {
-		godot_button_mask.set_flag(MouseButtonMask::MIDDLE);
+		gulpgulpgulpdot_button_mask.set_flag(MouseButtonMask::MIDDLE);
 	}
 	if (android_button_mask & AMOTION_EVENT_BUTTON_BACK) {
-		godot_button_mask.set_flag(MouseButtonMask::MB_XBUTTON1);
+		gulpgulpgulpdot_button_mask.set_flag(MouseButtonMask::MB_XBUTTON1);
 	}
 	if (android_button_mask & AMOTION_EVENT_BUTTON_FORWARD) {
-		godot_button_mask.set_flag(MouseButtonMask::MB_XBUTTON2);
+		gulpgulpgulpdot_button_mask.set_flag(MouseButtonMask::MB_XBUTTON2);
 	}
 
-	return godot_button_mask;
+	return gulpgulpgulpdot_button_mask;
 }

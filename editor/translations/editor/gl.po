@@ -1,7 +1,7 @@
 # Galician translation of the GulpGulpGulpDot Engine editor interface.
 # Copyright (c) 2014-present GulpGulpGulpDot Engine contributors.
 # Copyright (c) 2007-2014 Juan Linietsky, Ariel Manzur.
-# This file is distributed under the same license as the Godot source code.
+# This file is distributed under the same license as the Gulpgulpgulpdot source code.
 #
 # Andy Barcia <andybarcia4@gmail.com>, 2021.
 # PokeGalaico <abloodyfreaks@gmail.com>, 2021.
@@ -24,11 +24,11 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: GulpGulpGulpDot Engine editor interface\n"
-"Report-Msgid-Bugs-To: https://github.com/godotengine/godot\n"
+"Report-Msgid-Bugs-To: https://github.com/gulpgulpgulpdotengine/gulpgulpgulpdot\n"
 "PO-Revision-Date: 2025-11-20 13:51+0000\n"
 "Last-Translator: Sergio Souto Mourelle <sergiosoutomourelle@gmail.com>\n"
-"Language-Team: Galician <https://hosted.weblate.org/projects/godot-engine/"
-"godot/gl/>\n"
+"Language-Team: Galician <https://hosted.weblate.org/projects/gulpgulpgulpdot-engine/"
+"gulpgulpgulpdot/gl/>\n"
 "Language: gl\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8-bit\n"
@@ -3296,8 +3296,8 @@ msgstr "Colaboradores de GulpGulpGulpDot Engine"
 msgid "Double-click to open in browser."
 msgstr "Dobre-clic para abrir no navegador."
 
-msgid "Thanks from the Godot community!"
-msgstr "Moitas grazas de parte da comunidade de Godot!"
+msgid "Thanks from the Gulpgulpgulpdot community!"
+msgstr "Moitas grazas de parte da comunidade de Gulpgulpgulpdot!"
 
 msgid "Authors"
 msgstr "Autores"
@@ -3480,16 +3480,16 @@ msgid "It would be a good idea to name your project."
 msgstr "Sería unha boa idea nomear o teu proxecto."
 
 msgid ""
-"Invalid \".zip\" project file; it doesn't contain a \"project.godot\" file."
+"Invalid \".zip\" project file; it doesn't contain a \"project.gulpgulpgulpdot\" file."
 msgstr ""
 "O arquivo de proxecto '.zip' non é válido; non conteñe ningún arquivo de "
-"configuración 'project.godot'."
+"configuración 'project.gulpgulpgulpdot'."
 
 msgid "New Game Project"
 msgstr "Novo Proxecto de Xogo"
 
-msgid "Couldn't create project.godot in project path."
-msgstr "Non se pudo crear o arquivo 'project.godot' na ruta do proxecto."
+msgid "Couldn't create project.gulpgulpgulpdot in project path."
+msgstr "Non se pudo crear o arquivo 'project.gulpgulpgulpdot' na ruta do proxecto."
 
 msgid "Error opening package file, not in ZIP format."
 msgstr "Erro ao abrir o arquivo comprimido, non está en formato ZIP."
@@ -3544,24 +3544,24 @@ msgstr ""
 "Non se puido iniciar o editor."
 
 msgid ""
-"The selected project \"%s\" does not specify its supported Godot version in "
-"its configuration file (\"project.godot\").\n"
+"The selected project \"%s\" does not specify its supported Gulpgulpgulpdot version in "
+"its configuration file (\"project.gulpgulpgulpdot\").\n"
 "\n"
 "Project path: %s\n"
 "\n"
-"If you proceed with opening it, it will be converted to Godot's current "
+"If you proceed with opening it, it will be converted to Gulpgulpgulpdot's current "
 "configuration file format.\n"
 "\n"
 "Warning: You won't be able to open the project with previous versions of the "
 "engine anymore."
 msgstr ""
-"O proxecto seleccionado \"%s\" non especifica a súa versión de Godot "
-"compatible no seu ficheiro de configuración (\"project.godot\").\n"
+"O proxecto seleccionado \"%s\" non especifica a súa versión de Gulpgulpgulpdot "
+"compatible no seu ficheiro de configuración (\"project.gulpgulpgulpdot\").\n"
 "\n"
 "Ruta do proxecto: %s\n"
 "\n"
 "Se continúa coa súa apertura, converterase ao formato de ficheiro de "
-"configuración actual de Godot.\n"
+"configuración actual de Gulpgulpgulpdot.\n"
 "\n"
 "Aviso: xa non poderás abrir o proxecto con versións anteriores do motor."
 
@@ -4648,8 +4648,8 @@ msgstr "Importar Tema"
 msgid "Online Docs"
 msgstr "Documentación En Liña"
 
-msgid "Open Godot online documentation."
-msgstr "Abrir a documentación en liña de Godot."
+msgid "Open Gulpgulpgulpdot online documentation."
+msgstr "Abrir a documentación en liña de Gulpgulpgulpdot."
 
 msgid "Find Next"
 msgstr "Atopar Seguinte"
@@ -5039,14 +5039,14 @@ msgstr "Opcions adicionais:"
 msgid "New profile name:"
 msgstr "Novo nome de perfil:"
 
-msgid "Godot Feature Profile"
-msgstr "Perfil de Características de Godot"
+msgid "Gulpgulpgulpdot Feature Profile"
+msgstr "Perfil de Características de Gulpgulpgulpdot"
 
 msgid "Import Profile(s)"
 msgstr "Importar Perf(il/ís)"
 
 msgid "Manage Editor Feature Profiles"
-msgstr "Administrar Perfils de Características de Godot"
+msgstr "Administrar Perfils de Características de Gulpgulpgulpdot"
 
 msgid "General"
 msgstr "Xeral"
@@ -5075,8 +5075,8 @@ msgstr "Engadir Acción de Entrada"
 msgid "Erase Input Action"
 msgstr "Eliminar Acción de Entrada"
 
-msgid "Project Settings (project.godot)"
-msgstr "Configuración do Proxecto (project.godot)"
+msgid "Project Settings (project.gulpgulpgulpdot)"
+msgstr "Configuración do Proxecto (project.gulpgulpgulpdot)"
 
 msgid "Input Map"
 msgstr "Mapeado de Entradas"

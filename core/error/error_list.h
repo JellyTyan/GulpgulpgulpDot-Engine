@@ -3,7 +3,7 @@
 /**************************************************************************/
 /*                         This file is part of:                          */
 /*                             GulpGulpGulpDot Engine                               */
-/*                        https://godotengine.org                         */
+/*                        https://gulpgulpgulpdotengine.org                         */
 /**************************************************************************/
 /* Copyright (c) 2014-present GulpGulpGulpDot Engine contributors (see AUTHORS.md). */
 /* Copyright (c) 2007-2014 Juan Linietsky, Ariel Manzur.                  */
@@ -40,7 +40,7 @@
  * - Are added to the Error enum in core/error/error_list.h
  * - Have a description added to error_names in core/error/error_list.cpp
  * - Are bound with BIND_CORE_ENUM_CONSTANT() in core/core_constants.cpp
- * - Have a matching Android version in platform/android/java/lib/src/main/java/org/godotengine/godot/error/Error.kt
+ * - Have a matching Android version in platform/android/java/lib/src/main/java/org/gulpgulpgulpdotengine/gulpgulpgulpdot/error/Error.kt
  */
 
 enum Error {

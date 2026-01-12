@@ -3,7 +3,7 @@
 /**************************************************************************/
 /*                         This file is part of:                          */
 /*                             GulpGulpGulpDot Engine                               */
-/*                        https://godotengine.org                         */
+/*                        https://gulpgulpgulpdotengine.org                         */
 /**************************************************************************/
 /* Copyright (c) 2014-present GulpGulpGulpDot Engine contributors (see AUTHORS.md). */
 /* Copyright (c) 2007-2014 Juan Linietsky, Ariel Manzur.                  */
@@ -383,7 +383,7 @@ Error DisplayServerWindows::file_dialog_with_options_show(const String &p_title,
 	return _file_dialog_with_options_show(p_title, p_current_directory, p_root, p_filename, p_show_hidden, p_mode, p_filters, p_options, p_callback, true, p_window_id);
 }
 
-GODOT_GCC_WARNING_PUSH_AND_IGNORE("-Wnon-virtual-dtor") // Silence warning due to a COM API weirdness.
+GULPGULPGULPDOT_GCC_WARNING_PUSH_AND_IGNORE("-Wnon-virtual-dtor") // Silence warning due to a COM API weirdness.
 
 class FileDialogEventHandler : public IFileDialogEvents, public IFileDialogControlEvents {
 	LONG ref_count = 1;
@@ -502,7 +502,7 @@ public:
 	virtual ~FileDialogEventHandler() {}
 };
 
-GODOT_GCC_WARNING_POP
+GULPGULPGULPDOT_GCC_WARNING_POP
 
 LRESULT CALLBACK WndProcFileDialog(HWND hWnd, UINT uMsg, WPARAM wParam, LPARAM lParam) {
 	DisplayServerWindows *ds_win = static_cast<DisplayServerWindows *>(DisplayServer::get_singleton());
@@ -807,7 +807,7 @@ Error DisplayServerWindows::_file_dialog_with_options_show(const String &p_title
 
 	String appname;
 	if (Engine::get_singleton()->is_editor_hint()) {
-		appname = "Godot.GodotEditor." + String(GODOT_VERSION_BRANCH);
+		appname = "Gulpgulpgulpdot.GulpgulpgulpdotEditor." + String(GULPGULPGULPDOT_VERSION_BRANCH);
 	} else {
 		String name = GLOBAL_GET("application/config/name");
 		String version = GLOBAL_GET("application/config/version");
@@ -821,7 +821,7 @@ Error DisplayServerWindows::_file_dialog_with_options_show(const String &p_title
 			}
 		}
 		clean_app_name = clean_app_name.substr(0, 120 - version.length()).trim_suffix(".");
-		appname = "Godot." + clean_app_name + "." + version;
+		appname = "Gulpgulpgulpdot." + clean_app_name + "." + version;
 	}
 
 	FileDialogData *fd = memnew(FileDialogData);
@@ -3226,7 +3226,7 @@ Error DisplayServerWindows::embed_process(WindowID p_window, OS::ProcessID p_pid
 		p_visible = false;
 	}
 
-	// In Godot, the window position is offset by the screen's origin coordinates.
+	// In Gulpgulpgulpdot, the window position is offset by the screen's origin coordinates.
 	// We need to adjust for this when a screen is positioned in the negative space
 	// (e.g., a screen to the left of the main screen).
 	const Rect2i adjusted_rect = Rect2i(p_rect.position + _get_screens_origin(), p_rect.size);
@@ -3702,7 +3702,7 @@ Key DisplayServerWindows::keyboard_get_keycode_from_physical(Key p_keycode) cons
 	// Unlike a similar Linux/BSD check which matches full Latin-1 range,
 	// we limit these to ASCII to fix some layouts, including Arabic ones
 	if (char_code >= 32 && char_code <= 127) {
-		// Godot uses 'braces' instead of 'brackets'
+		// Gulpgulpgulpdot uses 'braces' instead of 'brackets'
 		if (char_code == (unsigned int)Key::BRACKETLEFT || char_code == (unsigned int)Key::BRACKETRIGHT) {
 			char_code += 32;
 		}
@@ -6596,7 +6596,7 @@ Error DisplayServerWindows::_create_window(WindowID p_window_id, WindowMode p_mo
 			PROPVARIANT val;
 			String appname;
 			if (Engine::get_singleton()->is_editor_hint()) {
-				appname = "Godot.GodotEditor." + String(GODOT_VERSION_FULL_CONFIG);
+				appname = "Gulpgulpgulpdot.GulpgulpgulpdotEditor." + String(GULPGULPGULPDOT_VERSION_FULL_CONFIG);
 			} else {
 				String name = GLOBAL_GET("application/config/name");
 				String version = GLOBAL_GET("application/config/version");
@@ -6610,7 +6610,7 @@ Error DisplayServerWindows::_create_window(WindowID p_window_id, WindowMode p_mo
 					}
 				}
 				clean_app_name = clean_app_name.substr(0, 120 - version.length()).trim_suffix(".");
-				appname = "Godot." + clean_app_name + "." + version;
+				appname = "Gulpgulpgulpdot." + clean_app_name + "." + version;
 			}
 			InitPropVariantFromString((PCWSTR)appname.utf16().get_data(), &val);
 			prop_store->SetValue(PKEY_AppUserModel_ID, val);
@@ -7175,7 +7175,7 @@ DisplayServerWindows::DisplayServerWindows(const String &p_rendering_driver, Win
 
 	String appname;
 	if (Engine::get_singleton()->is_editor_hint()) {
-		appname = "Godot.GodotEditor." + String(GODOT_VERSION_FULL_CONFIG);
+		appname = "Gulpgulpgulpdot.GulpgulpgulpdotEditor." + String(GULPGULPGULPDOT_VERSION_FULL_CONFIG);
 	} else {
 		String name = GLOBAL_GET("application/config/name");
 		String version = GLOBAL_GET("application/config/version");
@@ -7189,7 +7189,7 @@ DisplayServerWindows::DisplayServerWindows(const String &p_rendering_driver, Win
 			}
 		}
 		clean_app_name = clean_app_name.substr(0, 120 - version.length()).trim_suffix(".");
-		appname = "Godot." + clean_app_name + "." + version;
+		appname = "Gulpgulpgulpdot." + clean_app_name + "." + version;
 
 #ifndef TOOLS_ENABLED
 		// Set for exported projects only.

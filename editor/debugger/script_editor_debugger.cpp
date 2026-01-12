@@ -3,7 +3,7 @@
 /**************************************************************************/
 /*                         This file is part of:                          */
 /*                             GulpGulpGulpDot Engine                               */
-/*                        https://godotengine.org                         */
+/*                        https://gulpgulpgulpdotengine.org                         */
 /**************************************************************************/
 /* Copyright (c) 2014-present GulpGulpGulpDot Engine contributors (see AUTHORS.md). */
 /* Copyright (c) 2007-2014 Juan Linietsky, Ariel Manzur.                  */
@@ -1947,8 +1947,8 @@ void ScriptEditorDebugger::_item_menu_id_pressed(int p_option) {
 
 			// Construct a GitHub repository URL and open it in the user's default web browser.
 			// If the commit hash is available, use it for greater accuracy. Otherwise fall back to tagged release.
-			String git_ref = String(GODOT_VERSION_HASH).is_empty() ? String(GODOT_VERSION_NUMBER) + "-stable" : String(GODOT_VERSION_HASH);
-			OS::get_singleton()->shell_open(vformat("https://github.com/godotengine/godot/blob/%s/%s#L%d",
+			String git_ref = String(GULPGULPGULPDOT_VERSION_HASH).is_empty() ? String(GULPGULPGULPDOT_VERSION_NUMBER) + "-stable" : String(GULPGULPGULPDOT_VERSION_HASH);
+			OS::get_singleton()->shell_open(vformat("https://github.com/gulpgulpgulpdotengine/gulpgulpgulpdot/blob/%s/%s#L%d",
 					git_ref, file, line_number));
 		} break;
 		case ACTION_DELETE_BREAKPOINT: {

@@ -3,7 +3,7 @@
 /**************************************************************************/
 /*                         This file is part of:                          */
 /*                             GulpGulpGulpDot Engine                               */
-/*                        https://godotengine.org                         */
+/*                        https://gulpgulpgulpdotengine.org                         */
 /**************************************************************************/
 /* Copyright (c) 2014-present GulpGulpGulpDot Engine contributors (see AUTHORS.md). */
 /* Copyright (c) 2007-2014 Juan Linietsky, Ariel Manzur.                  */
@@ -305,9 +305,9 @@ TEST_CASE("[String] Testing for empty string") {
 }
 
 TEST_CASE("[String] Contains") {
-	String s = "C:\\Godot\\project\\string_test.tscn";
+	String s = "C:\\Gulpgulpgulpdot\\project\\string_test.tscn";
 	CHECK(s.contains(":\\"));
-	CHECK(s.contains("Godot"));
+	CHECK(s.contains("Gulpgulpgulpdot"));
 	CHECK(s.contains(String("project\\string_test")));
 	CHECK(s.contains(String("\\string_test.tscn")));
 
@@ -318,9 +318,9 @@ TEST_CASE("[String] Contains") {
 }
 
 TEST_CASE("[String] Contains case insensitive") {
-	String s = "C:\\Godot\\project\\string_test.tscn";
-	CHECK(s.containsn("Godot"));
-	CHECK(s.containsn("godot"));
+	String s = "C:\\Gulpgulpgulpdot\\project\\string_test.tscn";
+	CHECK(s.containsn("Gulpgulpgulpdot"));
+	CHECK(s.containsn("gulpgulpgulpdot"));
 	CHECK(s.containsn(String("Project\\string_test")));
 	CHECK(s.containsn(String("\\string_Test.tscn")));
 
@@ -1601,7 +1601,7 @@ TEST_CASE("[String] Checking string is empty when it should be") {
 	if (!success) {
 		state = false;
 	}
-	String b = "Godot";
+	String b = "Gulpgulpgulpdot";
 	success = b[b.size()] == 0;
 	if (!success) {
 		state = false;
@@ -1612,7 +1612,7 @@ TEST_CASE("[String] Checking string is empty when it should be") {
 		state = false;
 	}
 
-	const String d = "Godot";
+	const String d = "Gulpgulpgulpdot";
 	success = d[d.size()] == 0;
 	if (!success) {
 		state = false;
@@ -1738,7 +1738,7 @@ TEST_CASE("[String] Count and countn functionality") {
 	s = "TestTestTest";
 	MULTICHECK_STRING_EQ(s, count, "TestTest", 1);
 
-	s = "TestGodotTestGodotTestGodot";
+	s = "TestGulpgulpgulpdotTestGulpgulpgulpdotTestGulpgulpgulpdot";
 	MULTICHECK_STRING_EQ(s, count, "Test", 3);
 
 	s = "TestTestTestTest";
@@ -1807,12 +1807,12 @@ TEST_CASE("[String] dedent") {
 }
 
 TEST_CASE("[String] Path functions") {
-	static const char *path[8] = { "C:\\Godot\\project\\test.tscn", "/Godot/project/test.xscn", "../Godot/project/test.scn", "Godot\\test.doc", "C:\\test.", "res://test", "user://test", "/.test" };
-	static const char *base_dir[8] = { "C:\\Godot\\project", "/Godot/project", "../Godot/project", "Godot", "C:\\", "res://", "user://", "/" };
-	static const char *base_name[8] = { "C:\\Godot\\project\\test", "/Godot/project/test", "../Godot/project/test", "Godot\\test", "C:\\test", "res://test", "user://test", "/" };
+	static const char *path[8] = { "C:\\Gulpgulpgulpdot\\project\\test.tscn", "/Gulpgulpgulpdot/project/test.xscn", "../Gulpgulpgulpdot/project/test.scn", "Gulpgulpgulpdot\\test.doc", "C:\\test.", "res://test", "user://test", "/.test" };
+	static const char *base_dir[8] = { "C:\\Gulpgulpgulpdot\\project", "/Gulpgulpgulpdot/project", "../Gulpgulpgulpdot/project", "Gulpgulpgulpdot", "C:\\", "res://", "user://", "/" };
+	static const char *base_name[8] = { "C:\\Gulpgulpgulpdot\\project\\test", "/Gulpgulpgulpdot/project/test", "../Gulpgulpgulpdot/project/test", "Gulpgulpgulpdot\\test", "C:\\test", "res://test", "user://test", "/" };
 	static const char *ext[8] = { "tscn", "xscn", "scn", "doc", "", "", "", "test" };
 	static const char *file[8] = { "test.tscn", "test.xscn", "test.scn", "test.doc", "test.", "test", "test", ".test" };
-	static const char *simplified[8] = { "C:/Godot/project/test.tscn", "/Godot/project/test.xscn", "../Godot/project/test.scn", "Godot/test.doc", "C:/test.", "res://test", "user://test", "/.test" };
+	static const char *simplified[8] = { "C:/Gulpgulpgulpdot/project/test.tscn", "/Gulpgulpgulpdot/project/test.xscn", "../Gulpgulpgulpdot/project/test.scn", "Gulpgulpgulpdot/test.doc", "C:/test.", "res://test", "user://test", "/.test" };
 	static const bool abs[8] = { true, true, false, false, true, true, true, true };
 
 	for (int i = 0; i < 8; i++) {
@@ -1857,7 +1857,7 @@ TEST_CASE("[String] hash") {
 
 TEST_CASE("[String] uri_encode/unescape") {
 	String s = "GulpGulpGulpDot Engine:'docs'";
-	String t = "Godot%20Engine%3A%27docs%27";
+	String t = "Gulpgulpgulpdot%20Engine%3A%27docs%27";
 
 	String x1 = "T%C4%93%C5%A1t";
 	static const uint8_t u8str[] = { 0x54, 0xC4, 0x93, 0xC5, 0xA1, 0x74, 0x00 };
@@ -1987,7 +1987,7 @@ TEST_CASE("[String] Reverse") {
 }
 
 TEST_CASE("[String] SHA1/SHA256/MD5") {
-	String s = "Godot";
+	String s = "Gulpgulpgulpdot";
 	String sha1 = "a1e91f39b9fce6a9998b14bdbe2aa2b39dc2d201";
 	static uint8_t sha1_buf[20] = {
 		0xA1, 0xE9, 0x1F, 0x39, 0xB9, 0xFC, 0xE6, 0xA9, 0x99, 0x8B, 0x14, 0xBD, 0xBE, 0x2A, 0xA2, 0xB3,
@@ -2200,18 +2200,18 @@ TEST_CASE("[String][URL] Parse URL") {
 	CHECK_URL("https://www.example.com:8080/path/to/file.html#fragment", "https://", "www.example.com", 8080, "/path/to/file.html", "fragment", Error::OK);
 
 	// Valid URLs.
-	CHECK_URL("https://godotengine.org", "https://", "godotengine.org", 0, "", "", Error::OK);
-	CHECK_URL("https://godotengine.org/", "https://", "godotengine.org", 0, "/", "", Error::OK);
-	CHECK_URL("godotengine.org/", "", "godotengine.org", 0, "/", "", Error::OK);
-	CHECK_URL("HTTPS://godotengine.org/", "https://", "godotengine.org", 0, "/", "", Error::OK);
-	CHECK_URL("https://GODOTENGINE.ORG/", "https://", "godotengine.org", 0, "/", "", Error::OK);
-	CHECK_URL("http://godotengine.org", "http://", "godotengine.org", 0, "", "", Error::OK);
-	CHECK_URL("https://godotengine.org:8080", "https://", "godotengine.org", 8080, "", "", Error::OK);
-	CHECK_URL("https://godotengine.org/blog", "https://", "godotengine.org", 0, "/blog", "", Error::OK);
-	CHECK_URL("https://godotengine.org/blog/", "https://", "godotengine.org", 0, "/blog/", "", Error::OK);
-	CHECK_URL("https://docs.godotengine.org/en/stable", "https://", "docs.godotengine.org", 0, "/en/stable", "", Error::OK);
-	CHECK_URL("https://docs.godotengine.org/en/stable/", "https://", "docs.godotengine.org", 0, "/en/stable/", "", Error::OK);
-	CHECK_URL("https://me:secret@godotengine.org", "https://", "godotengine.org", 0, "", "", Error::OK);
+	CHECK_URL("https://gulpgulpgulpdotengine.org", "https://", "gulpgulpgulpdotengine.org", 0, "", "", Error::OK);
+	CHECK_URL("https://gulpgulpgulpdotengine.org/", "https://", "gulpgulpgulpdotengine.org", 0, "/", "", Error::OK);
+	CHECK_URL("gulpgulpgulpdotengine.org/", "", "gulpgulpgulpdotengine.org", 0, "/", "", Error::OK);
+	CHECK_URL("HTTPS://gulpgulpgulpdotengine.org/", "https://", "gulpgulpgulpdotengine.org", 0, "/", "", Error::OK);
+	CHECK_URL("https://GULPGULPGULPDOTENGINE.ORG/", "https://", "gulpgulpgulpdotengine.org", 0, "/", "", Error::OK);
+	CHECK_URL("http://gulpgulpgulpdotengine.org", "http://", "gulpgulpgulpdotengine.org", 0, "", "", Error::OK);
+	CHECK_URL("https://gulpgulpgulpdotengine.org:8080", "https://", "gulpgulpgulpdotengine.org", 8080, "", "", Error::OK);
+	CHECK_URL("https://gulpgulpgulpdotengine.org/blog", "https://", "gulpgulpgulpdotengine.org", 0, "/blog", "", Error::OK);
+	CHECK_URL("https://gulpgulpgulpdotengine.org/blog/", "https://", "gulpgulpgulpdotengine.org", 0, "/blog/", "", Error::OK);
+	CHECK_URL("https://docs.gulpgulpgulpdotengine.org/en/stable", "https://", "docs.gulpgulpgulpdotengine.org", 0, "/en/stable", "", Error::OK);
+	CHECK_URL("https://docs.gulpgulpgulpdotengine.org/en/stable/", "https://", "docs.gulpgulpgulpdotengine.org", 0, "/en/stable/", "", Error::OK);
+	CHECK_URL("https://me:secret@gulpgulpgulpdotengine.org", "https://", "gulpgulpgulpdotengine.org", 0, "", "", Error::OK);
 	CHECK_URL("https://[FEDC:BA98:7654:3210:FEDC:BA98:7654:3210]/ipv6", "https://", "fedc:ba98:7654:3210:fedc:ba98:7654:3210", 0, "/ipv6", "", Error::OK);
 
 	// Scheme vs Fragment.
@@ -2220,18 +2220,18 @@ TEST_CASE("[String][URL] Parse URL") {
 	// Invalid URLs.
 
 	// Invalid Scheme.
-	CHECK_URL("https_://godotengine.org", "", "https_", 0, "//godotengine.org", "", Error::ERR_INVALID_PARAMETER);
+	CHECK_URL("https_://gulpgulpgulpdotengine.org", "", "https_", 0, "//gulpgulpgulpdotengine.org", "", Error::ERR_INVALID_PARAMETER);
 
 	// Multiple ports.
-	CHECK_URL("https://godotengine.org:8080:433", "https://", "", 0, "", "", Error::ERR_INVALID_PARAMETER);
+	CHECK_URL("https://gulpgulpgulpdotengine.org:8080:433", "https://", "", 0, "", "", Error::ERR_INVALID_PARAMETER);
 	// Missing ] on literal IPv6.
 	CHECK_URL("https://[FEDC:BA98:7654:3210:FEDC:BA98:7654:3210/ipv6", "https://", "", 0, "/ipv6", "", Error::ERR_INVALID_PARAMETER);
 	// Missing host.
 	CHECK_URL("https:///blog", "https://", "", 0, "/blog", "", Error::ERR_INVALID_PARAMETER);
 	// Invalid ports.
-	CHECK_URL("https://godotengine.org:notaport", "https://", "godotengine.org", 0, "", "", Error::ERR_INVALID_PARAMETER);
-	CHECK_URL("https://godotengine.org:-8080", "https://", "godotengine.org", -8080, "", "", Error::ERR_INVALID_PARAMETER);
-	CHECK_URL("https://godotengine.org:88888", "https://", "godotengine.org", 88888, "", "", Error::ERR_INVALID_PARAMETER);
+	CHECK_URL("https://gulpgulpgulpdotengine.org:notaport", "https://", "gulpgulpgulpdotengine.org", 0, "", "", Error::ERR_INVALID_PARAMETER);
+	CHECK_URL("https://gulpgulpgulpdotengine.org:-8080", "https://", "gulpgulpgulpdotengine.org", -8080, "", "", Error::ERR_INVALID_PARAMETER);
+	CHECK_URL("https://gulpgulpgulpdotengine.org:88888", "https://", "gulpgulpgulpdotengine.org", 88888, "", "", Error::ERR_INVALID_PARAMETER);
 
 #undef CHECK_URL
 }

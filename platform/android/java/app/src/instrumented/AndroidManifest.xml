@@ -2,8 +2,8 @@
 
     <application>
         <meta-data
-            android:name="org.godotengine.plugin.v2.GodotAppInstrumentedTestPlugin"
-            android:value="com.godot.game.test.GodotAppInstrumentedTestPlugin"/>
+            android:name="org.gulpgulpgulpdotengine.plugin.v2.GulpgulpgulpdotAppInstrumentedTestPlugin"
+            android:value="com.gulpgulpgulpdot.game.test.GulpgulpgulpdotAppInstrumentedTestPlugin"/>
     </application>
 
 </manifest>

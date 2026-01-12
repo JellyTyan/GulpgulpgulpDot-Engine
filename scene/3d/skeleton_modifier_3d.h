@@ -3,7 +3,7 @@
 /**************************************************************************/
 /*                         This file is part of:                          */
 /*                             GulpGulpGulpDot Engine                               */
-/*                        https://godotengine.org                         */
+/*                        https://gulpgulpgulpdotengine.org                         */
 /**************************************************************************/
 /* Copyright (c) 2014-present GulpGulpGulpDot Engine contributors (see AUTHORS.md). */
 /* Copyright (c) 2007-2014 Juan Linietsky, Ariel Manzur.                  */
@@ -108,7 +108,7 @@ protected:
 	virtual void _set_active(bool p_active);
 
 	virtual void _process_modification(double p_delta);
-	// TODO: In Godot 5, should obsolete old GDVIRTUAL0(_process_modification); and replace it with _process_modification_with_delta as GDVIRTUAL1(_process_modification, double).
+	// TODO: In Gulpgulpgulpdot 5, should obsolete old GDVIRTUAL0(_process_modification); and replace it with _process_modification_with_delta as GDVIRTUAL1(_process_modification, double).
 	GDVIRTUAL1(_process_modification_with_delta, double);
 #ifndef DISABLE_DEPRECATED
 	GDVIRTUAL0(_process_modification);

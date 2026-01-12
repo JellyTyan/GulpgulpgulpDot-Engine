@@ -3,7 +3,7 @@
 /**************************************************************************/
 /*                         This file is part of:                          */
 /*                             GulpGulpGulpDot Engine                               */
-/*                        https://godotengine.org                         */
+/*                        https://gulpgulpgulpdotengine.org                         */
 /**************************************************************************/
 /* Copyright (c) 2014-present GulpGulpGulpDot Engine contributors (see AUTHORS.md). */
 /* Copyright (c) 2007-2014 Juan Linietsky, Ariel Manzur.                  */
@@ -32,7 +32,7 @@
 
 #include "../csharp_script.h"
 #include "../glue/runtime_interop.h"
-#include "../godotsharp_dirs.h"
+#include "../gulpgulpgulpdotsharp_dirs.h"
 #include "../thirdparty/coreclr_delegates.h"
 #include "../thirdparty/hostfxr.h"
 #include "../utils/path_utils.h"
@@ -120,9 +120,9 @@ bool try_get_dotnet_root_from_command_line(String &r_dotnet_root) {
 
 	Vector<String> sdks = pipe.strip_edges().replace("\r\n", "\n").split("\n", false);
 
-	godotsharp::SemVerParser sem_ver_parser;
+	gulpgulpgulpdotsharp::SemVerParser sem_ver_parser;
 
-	godotsharp::SemVer latest_sdk_version;
+	gulpgulpgulpdotsharp::SemVer latest_sdk_version;
 	String latest_sdk_path;
 
 	for (const String &sdk : sdks) {
@@ -132,7 +132,7 @@ bool try_get_dotnet_root_from_command_line(String &r_dotnet_root) {
 		String path = sdk.get_slice(" ", 1);
 		path = path.substr(1, path.length() - 2);
 
-		godotsharp::SemVer version;
+		gulpgulpgulpdotsharp::SemVer version;
 		if (!sem_ver_parser.parse(version_string, version)) {
 			WARN_PRINT("Unable to parse .NET SDK version '" + version_string + "'.");
 			continue;
@@ -164,14 +164,14 @@ String find_hostfxr() {
 #ifdef TOOLS_ENABLED
 	String dotnet_root;
 	String fxr_path;
-	if (godotsharp::hostfxr_resolver::try_get_path(dotnet_root, fxr_path)) {
+	if (gulpgulpgulpdotsharp::hostfxr_resolver::try_get_path(dotnet_root, fxr_path)) {
 		return fxr_path;
 	}
 
 	// hostfxr_resolver doesn't look for dotnet in `PATH`. If it fails, we try to use the dotnet
 	// executable in `PATH` to find the `dotnet_root` and get the `hostfxr_path` from there.
 	if (try_get_dotnet_root_from_command_line(dotnet_root)) {
-		if (godotsharp::hostfxr_resolver::try_get_path_from_dotnet_root(dotnet_root, fxr_path)) {
+		if (gulpgulpgulpdotsharp::hostfxr_resolver::try_get_path_from_dotnet_root(dotnet_root, fxr_path)) {
 			return fxr_path;
 		}
 	}
@@ -184,13 +184,13 @@ String find_hostfxr() {
 #else
 
 #if defined(WINDOWS_ENABLED)
-	String probe_path = GodotSharpDirs::get_api_assemblies_dir()
+	String probe_path = GulpgulpgulpdotSharpDirs::get_api_assemblies_dir()
 								.path_join("hostfxr.dll");
 #elif defined(MACOS_ENABLED)
-	String probe_path = GodotSharpDirs::get_api_assemblies_dir()
+	String probe_path = GulpgulpgulpdotSharpDirs::get_api_assemblies_dir()
 								.path_join("libhostfxr.dylib");
 #elif defined(UNIX_ENABLED)
-	String probe_path = GodotSharpDirs::get_api_assemblies_dir()
+	String probe_path = GulpgulpgulpdotSharpDirs::get_api_assemblies_dir()
 								.path_join("libhostfxr.so");
 #else
 #error "Platform not supported (yet?)"
@@ -213,13 +213,13 @@ String find_monosgen() {
 	return "libmonosgen-2.0.so";
 #else
 #if defined(WINDOWS_ENABLED)
-	String probe_path = GodotSharpDirs::get_api_assemblies_dir()
+	String probe_path = GulpgulpgulpdotSharpDirs::get_api_assemblies_dir()
 								.path_join("monosgen-2.0.dll");
 #elif defined(MACOS_ENABLED)
-	String probe_path = GodotSharpDirs::get_api_assemblies_dir()
+	String probe_path = GulpgulpgulpdotSharpDirs::get_api_assemblies_dir()
 								.path_join("libmonosgen-2.0.dylib");
 #elif defined(UNIX_ENABLED)
-	String probe_path = GodotSharpDirs::get_api_assemblies_dir()
+	String probe_path = GulpgulpgulpdotSharpDirs::get_api_assemblies_dir()
 								.path_join("libmonosgen-2.0.so");
 #else
 #error "Platform not supported (yet?)"
@@ -235,13 +235,13 @@ String find_monosgen() {
 
 String find_coreclr() {
 #if defined(WINDOWS_ENABLED)
-	String probe_path = GodotSharpDirs::get_api_assemblies_dir()
+	String probe_path = GulpgulpgulpdotSharpDirs::get_api_assemblies_dir()
 								.path_join("coreclr.dll");
 #elif defined(MACOS_ENABLED)
-	String probe_path = GodotSharpDirs::get_api_assemblies_dir()
+	String probe_path = GulpgulpgulpdotSharpDirs::get_api_assemblies_dir()
 								.path_join("libcoreclr.dylib");
 #elif defined(UNIX_ENABLED)
-	String probe_path = GodotSharpDirs::get_api_assemblies_dir()
+	String probe_path = GulpgulpgulpdotSharpDirs::get_api_assemblies_dir()
 								.path_join("libcoreclr.so");
 #else
 #error "Platform not supported (yet?)"
@@ -420,27 +420,27 @@ load_assembly_and_get_function_pointer_fn initialize_hostfxr_self_contained(
 #endif
 
 #ifdef TOOLS_ENABLED
-using godot_plugins_initialize_fn = bool (*)(void *, bool, gdmono::PluginCallbacks *, GDMonoCache::ManagedCallbacks *, const void **, int32_t);
+using gulpgulpgulpdot_plugins_initialize_fn = bool (*)(void *, bool, gdmono::PluginCallbacks *, GDMonoCache::ManagedCallbacks *, const void **, int32_t);
 #else
-using godot_plugins_initialize_fn = bool (*)(void *, GDMonoCache::ManagedCallbacks *, const void **, int32_t);
+using gulpgulpgulpdot_plugins_initialize_fn = bool (*)(void *, GDMonoCache::ManagedCallbacks *, const void **, int32_t);
 #endif
 
 #ifdef TOOLS_ENABLED
-godot_plugins_initialize_fn initialize_hostfxr_and_godot_plugins(bool &r_runtime_initialized) {
-	godot_plugins_initialize_fn godot_plugins_initialize = nullptr;
+gulpgulpgulpdot_plugins_initialize_fn initialize_hostfxr_and_gulpgulpgulpdot_plugins(bool &r_runtime_initialized) {
+	gulpgulpgulpdot_plugins_initialize_fn gulpgulpgulpdot_plugins_initialize = nullptr;
 
-	HostFxrCharString godot_plugins_path = str_to_hostfxr(
-			GodotSharpDirs::get_api_assemblies_dir().path_join("GodotPlugins.dll"));
+	HostFxrCharString gulpgulpgulpdot_plugins_path = str_to_hostfxr(
+			GulpgulpgulpdotSharpDirs::get_api_assemblies_dir().path_join("GulpgulpgulpdotPlugins.dll"));
 
 	HostFxrCharString config_path = str_to_hostfxr(
-			GodotSharpDirs::get_api_assemblies_dir().path_join("GodotPlugins.runtimeconfig.json"));
+			GulpgulpgulpdotSharpDirs::get_api_assemblies_dir().path_join("GulpgulpgulpdotPlugins.runtimeconfig.json"));
 
 	load_assembly_and_get_function_pointer_fn load_assembly_and_get_function_pointer =
 			initialize_hostfxr_for_config(get_data(config_path));
 
 	if (load_assembly_and_get_function_pointer == nullptr) {
 		// Show a message box to the user to make the problem explicit (and explain a potential crash).
-		OS::get_singleton()->alert(TTR("Unable to load .NET runtime, no compatible version was found.\nAttempting to create/edit a project will lead to a crash.\n\nPlease install the .NET SDK 8.0 or later from https://get.dot.net and restart Godot."), TTR("Failed to load .NET runtime"));
+		OS::get_singleton()->alert(TTR("Unable to load .NET runtime, no compatible version was found.\nAttempting to create/edit a project will lead to a crash.\n\nPlease install the .NET SDK 8.0 or later from https://get.dot.net and restart Gulpgulpgulpdot."), TTR("Failed to load .NET runtime"));
 		ERR_FAIL_V_MSG(nullptr, ".NET: Failed to load compatible .NET runtime");
 	}
 
@@ -448,23 +448,23 @@ godot_plugins_initialize_fn initialize_hostfxr_and_godot_plugins(bool &r_runtime
 
 	print_verbose(".NET: hostfxr initialized");
 
-	int rc = load_assembly_and_get_function_pointer(get_data(godot_plugins_path),
-			HOSTFXR_STR("GodotPlugins.Main, GodotPlugins"),
+	int rc = load_assembly_and_get_function_pointer(get_data(gulpgulpgulpdot_plugins_path),
+			HOSTFXR_STR("GulpgulpgulpdotPlugins.Main, GulpgulpgulpdotPlugins"),
 			HOSTFXR_STR("InitializeFromEngine"),
 			UNMANAGEDCALLERSONLY_METHOD,
 			nullptr,
-			(void **)&godot_plugins_initialize);
-	ERR_FAIL_COND_V_MSG(rc != 0, nullptr, ".NET: Failed to get GodotPlugins initialization function pointer");
+			(void **)&gulpgulpgulpdot_plugins_initialize);
+	ERR_FAIL_COND_V_MSG(rc != 0, nullptr, ".NET: Failed to get GulpgulpgulpdotPlugins initialization function pointer");
 
-	return godot_plugins_initialize;
+	return gulpgulpgulpdot_plugins_initialize;
 }
 #else
-godot_plugins_initialize_fn initialize_hostfxr_and_godot_plugins(bool &r_runtime_initialized) {
-	godot_plugins_initialize_fn godot_plugins_initialize = nullptr;
+gulpgulpgulpdot_plugins_initialize_fn initialize_hostfxr_and_gulpgulpgulpdot_plugins(bool &r_runtime_initialized) {
+	gulpgulpgulpdot_plugins_initialize_fn gulpgulpgulpdot_plugins_initialize = nullptr;
 
 	String assembly_name = Path::get_csharp_project_name();
 
-	HostFxrCharString assembly_path = str_to_hostfxr(GodotSharpDirs::get_api_assemblies_dir()
+	HostFxrCharString assembly_path = str_to_hostfxr(GulpgulpgulpdotSharpDirs::get_api_assemblies_dir()
 					.path_join(assembly_name + ".dll"));
 
 	load_assembly_and_get_function_pointer_fn load_assembly_and_get_function_pointer =
@@ -476,27 +476,27 @@ godot_plugins_initialize_fn initialize_hostfxr_and_godot_plugins(bool &r_runtime
 	print_verbose(".NET: hostfxr initialized");
 
 	int rc = load_assembly_and_get_function_pointer(get_data(assembly_path),
-			get_data(str_to_hostfxr("GodotPlugins.Game.Main, " + assembly_name)),
+			get_data(str_to_hostfxr("GulpgulpgulpdotPlugins.Game.Main, " + assembly_name)),
 			HOSTFXR_STR("InitializeFromGameProject"),
 			UNMANAGEDCALLERSONLY_METHOD,
 			nullptr,
-			(void **)&godot_plugins_initialize);
-	ERR_FAIL_COND_V_MSG(rc != 0, nullptr, ".NET: Failed to get GodotPlugins initialization function pointer");
+			(void **)&gulpgulpgulpdot_plugins_initialize);
+	ERR_FAIL_COND_V_MSG(rc != 0, nullptr, ".NET: Failed to get GulpgulpgulpdotPlugins initialization function pointer");
 
-	return godot_plugins_initialize;
+	return gulpgulpgulpdot_plugins_initialize;
 }
 
-godot_plugins_initialize_fn try_load_native_aot_library(void *&r_aot_dll_handle) {
+gulpgulpgulpdot_plugins_initialize_fn try_load_native_aot_library(void *&r_aot_dll_handle) {
 	String assembly_name = Path::get_csharp_project_name();
 
 #if defined(WINDOWS_ENABLED)
-	String native_aot_so_path = GodotSharpDirs::get_api_assemblies_dir().path_join(assembly_name + ".dll");
+	String native_aot_so_path = GulpgulpgulpdotSharpDirs::get_api_assemblies_dir().path_join(assembly_name + ".dll");
 #elif defined(MACOS_ENABLED) || defined(APPLE_EMBEDDED_ENABLED)
-	String native_aot_so_path = GodotSharpDirs::get_api_assemblies_dir().path_join(assembly_name + ".dylib");
+	String native_aot_so_path = GulpgulpgulpdotSharpDirs::get_api_assemblies_dir().path_join(assembly_name + ".dylib");
 #elif defined(ANDROID_ENABLED)
 	String native_aot_so_path = "lib" + assembly_name + ".so";
 #elif defined(UNIX_ENABLED)
-	String native_aot_so_path = GodotSharpDirs::get_api_assemblies_dir().path_join(assembly_name + ".so");
+	String native_aot_so_path = GulpgulpgulpdotSharpDirs::get_api_assemblies_dir().path_join(assembly_name + ".so");
 #else
 #error "Platform not supported (yet?)"
 #endif
@@ -511,9 +511,9 @@ godot_plugins_initialize_fn try_load_native_aot_library(void *&r_aot_dll_handle)
 
 	void *symbol = nullptr;
 
-	err = OS::get_singleton()->get_dynamic_library_symbol_handle(lib, "godotsharp_game_main_init", symbol);
+	err = OS::get_singleton()->get_dynamic_library_symbol_handle(lib, "gulpgulpgulpdotsharp_game_main_init", symbol);
 	ERR_FAIL_COND_V(err != OK, nullptr);
-	return (godot_plugins_initialize_fn)symbol;
+	return (gulpgulpgulpdot_plugins_initialize_fn)symbol;
 }
 #endif
 
@@ -535,7 +535,7 @@ MonoAssembly *load_assembly_from_pck(MonoAssemblyName *p_assembly_name, char **p
 		assembly_name += ".dll";
 	}
 
-	String path = GodotSharpDirs::get_api_assemblies_dir();
+	String path = GulpgulpgulpdotSharpDirs::get_api_assemblies_dir();
 	path = path.path_join(assembly_name);
 
 	print_verbose(".NET: Loading assembly '" + assembly_name + "' from '" + path + "'.");
@@ -572,8 +572,8 @@ MonoAssembly *load_assembly_from_pck(MonoAssemblyName *p_assembly_name, char **p
 }
 #endif
 
-godot_plugins_initialize_fn initialize_coreclr_and_godot_plugins(bool &r_runtime_initialized) {
-	godot_plugins_initialize_fn godot_plugins_initialize = nullptr;
+gulpgulpgulpdot_plugins_initialize_fn initialize_coreclr_and_gulpgulpgulpdot_plugins(bool &r_runtime_initialized) {
+	gulpgulpgulpdot_plugins_initialize_fn gulpgulpgulpdot_plugins_initialize = nullptr;
 
 	String assembly_name = Path::get_csharp_project_name();
 
@@ -596,12 +596,12 @@ godot_plugins_initialize_fn initialize_coreclr_and_godot_plugins(bool &r_runtime
 
 	coreclr_create_delegate(coreclr_handle, domain_id,
 			assembly_name.utf8().get_data(),
-			"GodotPlugins.Game.Main",
+			"GulpgulpgulpdotPlugins.Game.Main",
 			"InitializeFromGameProject",
-			(void **)&godot_plugins_initialize);
-	ERR_FAIL_NULL_V_MSG(godot_plugins_initialize, nullptr, ".NET: Failed to get GodotPlugins initialization function pointer");
+			(void **)&gulpgulpgulpdot_plugins_initialize);
+	ERR_FAIL_NULL_V_MSG(gulpgulpgulpdot_plugins_initialize, nullptr, ".NET: Failed to get GulpgulpgulpdotPlugins initialization function pointer");
 
-	return godot_plugins_initialize;
+	return gulpgulpgulpdot_plugins_initialize;
 }
 #endif
 
@@ -617,7 +617,7 @@ bool GDMono::should_initialize() {
 }
 
 static bool _on_core_api_assembly_loaded() {
-	if (!GDMonoCache::godot_api_cache_updated) {
+	if (!GDMonoCache::gulpgulpgulpdot_api_cache_updated) {
 		return false;
 	}
 
@@ -636,74 +636,74 @@ static bool _on_core_api_assembly_loaded() {
 void GDMono::initialize() {
 	print_verbose(".NET: Initializing module...");
 
-	_init_godot_api_hashes();
+	_init_gulpgulpgulpdot_api_hashes();
 
-	godot_plugins_initialize_fn godot_plugins_initialize = nullptr;
+	gulpgulpgulpdot_plugins_initialize_fn gulpgulpgulpdot_plugins_initialize = nullptr;
 
 #if !defined(APPLE_EMBEDDED_ENABLED)
 	// Check that the .NET assemblies directory exists before trying to use it.
-	if (!DirAccess::exists(GodotSharpDirs::get_api_assemblies_dir())) {
-		OS::get_singleton()->alert(vformat(RTR("Unable to find the .NET assemblies directory.\nMake sure the '%s' directory exists and contains the .NET assemblies."), GodotSharpDirs::get_api_assemblies_dir()), RTR(".NET assemblies not found"));
+	if (!DirAccess::exists(GulpgulpgulpdotSharpDirs::get_api_assemblies_dir())) {
+		OS::get_singleton()->alert(vformat(RTR("Unable to find the .NET assemblies directory.\nMake sure the '%s' directory exists and contains the .NET assemblies."), GulpgulpgulpdotSharpDirs::get_api_assemblies_dir()), RTR(".NET assemblies not found"));
 		ERR_FAIL_MSG(".NET: Assemblies not found");
 	}
 #endif
 
 	if (load_hostfxr(hostfxr_dll_handle)) {
-		godot_plugins_initialize = initialize_hostfxr_and_godot_plugins(runtime_initialized);
-		ERR_FAIL_NULL(godot_plugins_initialize);
+		gulpgulpgulpdot_plugins_initialize = initialize_hostfxr_and_gulpgulpgulpdot_plugins(runtime_initialized);
+		ERR_FAIL_NULL(gulpgulpgulpdot_plugins_initialize);
 	} else {
 #if !defined(TOOLS_ENABLED)
 		if (load_coreclr(coreclr_dll_handle)) {
-			godot_plugins_initialize = initialize_coreclr_and_godot_plugins(runtime_initialized);
+			gulpgulpgulpdot_plugins_initialize = initialize_coreclr_and_gulpgulpgulpdot_plugins(runtime_initialized);
 		} else {
 			void *dll_handle = nullptr;
-			godot_plugins_initialize = try_load_native_aot_library(dll_handle);
-			if (godot_plugins_initialize != nullptr) {
+			gulpgulpgulpdot_plugins_initialize = try_load_native_aot_library(dll_handle);
+			if (gulpgulpgulpdot_plugins_initialize != nullptr) {
 				runtime_initialized = true;
 			}
 		}
 
-		if (godot_plugins_initialize == nullptr) {
+		if (gulpgulpgulpdot_plugins_initialize == nullptr) {
 			ERR_FAIL_MSG(".NET: Failed to load hostfxr");
 		}
 #else
 
 		// Show a message box to the user to make the problem explicit (and explain a potential crash).
-		OS::get_singleton()->alert(TTR("Unable to load .NET runtime, specifically hostfxr.\nAttempting to create/edit a project will lead to a crash.\n\nPlease install the .NET SDK 8.0 or later from https://get.dot.net and restart Godot."), TTR("Failed to load .NET runtime"));
+		OS::get_singleton()->alert(TTR("Unable to load .NET runtime, specifically hostfxr.\nAttempting to create/edit a project will lead to a crash.\n\nPlease install the .NET SDK 8.0 or later from https://get.dot.net and restart Gulpgulpgulpdot."), TTR("Failed to load .NET runtime"));
 		ERR_FAIL_MSG(".NET: Failed to load hostfxr");
 #endif
 	}
 
 	int32_t interop_funcs_size = 0;
-	const void **interop_funcs = godotsharp::get_runtime_interop_funcs(interop_funcs_size);
+	const void **interop_funcs = gulpgulpgulpdotsharp::get_runtime_interop_funcs(interop_funcs_size);
 
 	GDMonoCache::ManagedCallbacks managed_callbacks{};
 
-	void *godot_dll_handle = nullptr;
+	void *gulpgulpgulpdot_dll_handle = nullptr;
 
 #if defined(UNIX_ENABLED) && !defined(MACOS_ENABLED) && !defined(APPLE_EMBEDDED_ENABLED)
 	// Managed code can access it on its own on other platforms
-	godot_dll_handle = dlopen(nullptr, RTLD_NOW);
+	gulpgulpgulpdot_dll_handle = dlopen(nullptr, RTLD_NOW);
 #endif
 
 #ifdef TOOLS_ENABLED
 	gdmono::PluginCallbacks plugin_callbacks_res;
-	bool init_ok = godot_plugins_initialize(godot_dll_handle,
+	bool init_ok = gulpgulpgulpdot_plugins_initialize(gulpgulpgulpdot_dll_handle,
 			Engine::get_singleton()->is_editor_hint(),
 			&plugin_callbacks_res, &managed_callbacks,
 			interop_funcs, interop_funcs_size);
-	ERR_FAIL_COND_MSG(!init_ok, ".NET: GodotPlugins initialization failed");
+	ERR_FAIL_COND_MSG(!init_ok, ".NET: GulpgulpgulpdotPlugins initialization failed");
 
 	plugin_callbacks = plugin_callbacks_res;
 #else
-	bool init_ok = godot_plugins_initialize(godot_dll_handle, &managed_callbacks,
+	bool init_ok = gulpgulpgulpdot_plugins_initialize(gulpgulpgulpdot_dll_handle, &managed_callbacks,
 			interop_funcs, interop_funcs_size);
-	ERR_FAIL_COND_MSG(!init_ok, ".NET: GodotPlugins initialization failed");
+	ERR_FAIL_COND_MSG(!init_ok, ".NET: GulpgulpgulpdotPlugins initialization failed");
 #endif
 
-	GDMonoCache::update_godot_api_cache(managed_callbacks);
+	GDMonoCache::update_gulpgulpgulpdot_api_cache(managed_callbacks);
 
-	print_verbose(".NET: GodotPlugins initialized");
+	print_verbose(".NET: GulpgulpgulpdotPlugins initialized");
 
 	_on_core_api_assembly_loaded();
 
@@ -731,7 +731,7 @@ void GDMono::_try_load_project_assembly() {
 }
 #endif
 
-void GDMono::_init_godot_api_hashes() {
+void GDMono::_init_gulpgulpgulpdot_api_hashes() {
 #ifdef DEBUG_ENABLED
 	get_api_core_hash();
 
@@ -745,7 +745,7 @@ void GDMono::_init_godot_api_hashes() {
 bool GDMono::_load_project_assembly() {
 	String assembly_name = Path::get_csharp_project_name();
 
-	String assembly_path = GodotSharpDirs::get_res_temp_assemblies_dir()
+	String assembly_path = GulpgulpgulpdotSharpDirs::get_res_temp_assemblies_dir()
 								   .path_join(assembly_name + ".dll");
 	assembly_path = ProjectSettings::get_singleton()->globalize_path(assembly_path);
 
@@ -775,7 +775,7 @@ void GDMono::reload_failure() {
 		ERR_PRINT_ED(".NET: Giving up on assembly reloading. Please restart the editor if unloading was failing.");
 
 		String assembly_name = Path::get_csharp_project_name();
-		String assembly_path = GodotSharpDirs::get_res_temp_assemblies_dir().path_join(assembly_name + ".dll");
+		String assembly_path = GulpgulpgulpdotSharpDirs::get_res_temp_assemblies_dir().path_join(assembly_name + ".dll");
 		assembly_path = ProjectSettings::get_singleton()->globalize_path(assembly_path);
 		project_assembly_path = assembly_path.simplify_path();
 		project_assembly_modified_time = FileAccess::get_modified_time(assembly_path);
@@ -788,7 +788,7 @@ Error GDMono::reload_project_assemblies() {
 	finalizing_scripts_domain = true;
 
 	if (!get_plugin_callbacks().UnloadProjectPluginCallback()) {
-		ERR_PRINT_ED(".NET: Failed to unload assemblies. Please check https://github.com/godotengine/godot/issues/78513 for more information.");
+		ERR_PRINT_ED(".NET: Failed to unload assemblies. Please check https://github.com/gulpgulpgulpdotengine/gulpgulpgulpdot/issues/78513 for more information.");
 		reload_failure();
 		return FAILED;
 	}
@@ -834,9 +834,9 @@ GDMono::~GDMono() {
 
 namespace MonoBind {
 
-GodotSharp *GodotSharp::singleton = nullptr;
+GulpgulpgulpdotSharp *GulpgulpgulpdotSharp::singleton = nullptr;
 
-void GodotSharp::reload_assemblies(bool p_soft_reload) {
+void GulpgulpgulpdotSharp::reload_assemblies(bool p_soft_reload) {
 #ifdef GD_MONO_HOT_RELOAD
 	CRASH_COND(CSharpLanguage::get_singleton() == nullptr);
 	// This method may be called more than once with `call_deferred`, so we need to check
@@ -847,11 +847,11 @@ void GodotSharp::reload_assemblies(bool p_soft_reload) {
 #endif
 }
 
-GodotSharp::GodotSharp() {
+GulpgulpgulpdotSharp::GulpgulpgulpdotSharp() {
 	singleton = this;
 }
 
-GodotSharp::~GodotSharp() {
+GulpgulpgulpdotSharp::~GulpgulpgulpdotSharp() {
 	singleton = nullptr;
 }
 

@@ -3,7 +3,7 @@
 /**************************************************************************/
 /*                         This file is part of:                          */
 /*                             GulpGulpGulpDot Engine                               */
-/*                        https://godotengine.org                         */
+/*                        https://gulpgulpgulpdotengine.org                         */
 /**************************************************************************/
 /* Copyright (c) 2014-present GulpGulpGulpDot Engine contributors (see AUTHORS.md). */
 /* Copyright (c) 2007-2014 Juan Linietsky, Ariel Manzur.                  */
@@ -39,7 +39,7 @@
 #include "core/debugger/engine_profiler.h"
 #include "core/extension/gdextension.h"
 #include "core/extension/gdextension_manager.h"
-#include "core/extension/godot_instance.h"
+#include "core/extension/gulpgulpgulpdot_instance.h"
 #include "core/input/input.h"
 #include "core/input/input_map.h"
 #include "core/input/shortcut.h"
@@ -287,7 +287,7 @@ void register_core_types() {
 
 	GDREGISTER_CLASS(GDExtension);
 
-	GDREGISTER_ABSTRACT_CLASS(GodotInstance);
+	GDREGISTER_ABSTRACT_CLASS(GulpgulpgulpdotInstance);
 
 	GDREGISTER_ABSTRACT_CLASS(GDExtensionManager);
 

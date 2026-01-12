@@ -3,7 +3,7 @@
 /**************************************************************************/
 /*                         This file is part of:                          */
 /*                             GulpGulpGulpDot Engine                               */
-/*                        https://godotengine.org                         */
+/*                        https://gulpgulpgulpdotengine.org                         */
 /**************************************************************************/
 /* Copyright (c) 2014-present GulpGulpGulpDot Engine contributors (see AUTHORS.md). */
 /* Copyright (c) 2007-2014 Juan Linietsky, Ariel Manzur.                  */
@@ -55,7 +55,7 @@ TEST_CASE("[FileAccess] CSV read") {
 	CHECK(row2[0] == "GOOD_EVENING");
 	CHECK(row2[1] == "Good Evening");
 	CHECK(row2[2].is_empty()); // Use case: not yet translated!
-	// https://github.com/godotengine/godot/issues/44269
+	// https://github.com/gulpgulpgulpdotengine/gulpgulpgulpdot/issues/44269
 	CHECK_MESSAGE(row2[2] != "\"", "Should not parse empty string as a single double quote.");
 	CHECK(row2[3] == "\"\""); // Intentionally testing only escaped double quotes.
 

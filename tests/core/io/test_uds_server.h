@@ -3,7 +3,7 @@
 /**************************************************************************/
 /*                         This file is part of:                          */
 /*                             GulpGulpGulpDot Engine                               */
-/*                        https://godotengine.org                         */
+/*                        https://gulpgulpgulpdotengine.org                         */
 /**************************************************************************/
 /* Copyright (c) 2014-present GulpGulpGulpDot Engine contributors (see AUTHORS.md). */
 /* Copyright (c) 2007-2014 Juan Linietsky, Ariel Manzur.                  */
@@ -41,7 +41,7 @@ namespace TestUDSServer {
 
 #ifdef UNIX_ENABLED
 
-const String SOCKET_PATH = "/tmp/godot_test_uds_socket";
+const String SOCKET_PATH = "/tmp/gulpgulpgulpdot_test_uds_socket";
 const uint32_t SLEEP_DURATION = 1000;
 const uint64_t MAX_WAIT_USEC = 2000000;
 
@@ -266,7 +266,7 @@ TEST_CASE("[UDSServer] Should disconnect client") {
 
 TEST_CASE("[UDSServer] Test with different socket paths") {
 	// Test with a different socket path
-	const String alt_socket_path = "/tmp/godot_test_uds_socket_alt";
+	const String alt_socket_path = "/tmp/gulpgulpgulpdot_test_uds_socket_alt";
 
 	// Clean up before test
 	if (FileAccess::exists(alt_socket_path)) {

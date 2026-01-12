@@ -3,7 +3,7 @@
 /**************************************************************************/
 /*                         This file is part of:                          */
 /*                             GulpGulpGulpDot Engine                               */
-/*                        https://godotengine.org                         */
+/*                        https://gulpgulpgulpdotengine.org                         */
 /**************************************************************************/
 /* Copyright (c) 2014-present GulpGulpGulpDot Engine contributors (see AUTHORS.md). */
 /* Copyright (c) 2007-2014 Juan Linietsky, Ariel Manzur.                  */
@@ -149,7 +149,7 @@ EditorDebuggerServer *EditorDebuggerServerUDS::create(const String &p_protocol) 
 }
 
 Error EditorDebuggerServerUDS::start(const String &p_uri) {
-	String bind_path = p_uri.is_empty() ? String("/tmp/godot_debugger.sock") : p_uri.replace("unix://", "");
+	String bind_path = p_uri.is_empty() ? String("/tmp/gulpgulpgulpdot_debugger.sock") : p_uri.replace("unix://", "");
 
 	const Error err = server->listen(bind_path);
 	if (err != OK) {

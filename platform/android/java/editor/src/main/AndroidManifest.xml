@@ -4,7 +4,7 @@
     android:installLocation="auto">
 
     <queries>
-        <package android:name="org.godotengine.godot_gradle_build_environment" />
+        <package android:name="org.gulpgulpgulpdotengine.gulpgulpgulpdot_gradle_build_environment" />
     </queries>
 
     <supports-screens
@@ -40,7 +40,7 @@
         android:icon="@mipmap/themed_icon"
         android:label="${editorAppName}${editorBuildSuffix}"
         android:requestLegacyExternalStorage="true"
-        android:theme="@style/GodotEditorSplashScreenTheme"
+        android:theme="@style/GulpgulpgulpdotEditorSplashScreenTheme"
         tools:ignore="GoogleAppIndexingWarning">
         <profileable
             android:shell="true"
@@ -48,7 +48,7 @@
             tools:targetApi="29" />
 
         <activity
-            android:name=".GodotEditor"
+            android:name=".GulpgulpgulpdotEditor"
             android:configChanges="layoutDirection|locale|orientation|keyboardHidden|screenSize|smallestScreenSize|density|keyboard|navigation|screenLayout|uiMode"
             android:exported="false"
             android:icon="@mipmap/themed_icon"
@@ -63,7 +63,7 @@
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.DEFAULT" />
-                <category android:name="org.godotengine.xr.hybrid.PANEL" />
+                <category android:name="org.gulpgulpgulpdotengine.xr.hybrid.PANEL" />
             </intent-filter>
 
             <!-- Intent filter used to intercept hybrid IMMERSIVE launch for the current editor project, and route it
@@ -71,14 +71,14 @@
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.DEFAULT" />
-                <category android:name="org.godotengine.xr.hybrid.IMMERSIVE" />
+                <category android:name="org.gulpgulpgulpdotengine.xr.hybrid.IMMERSIVE" />
             </intent-filter>
         </activity>
         <activity-alias
             android:name=".ProjectManager"
             android:exported="true"
             android:icon="@mipmap/themed_icon"
-            android:targetActivity=".GodotEditor">
+            android:targetActivity=".GulpgulpgulpdotEditor">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -87,15 +87,15 @@
             </intent-filter>
         </activity-alias>
         <activity
-            android:name=".GodotGame"
+            android:name=".GulpgulpgulpdotGame"
             android:configChanges="layoutDirection|locale|orientation|keyboardHidden|screenSize|smallestScreenSize|density|keyboard|navigation|screenLayout|uiMode"
             android:exported="false"
             android:icon="@mipmap/ic_play_window"
-            android:label="@string/godot_game_activity_name"
+            android:label="@string/gulpgulpgulpdot_game_activity_name"
             android:launchMode="singleTask"
-            android:process=":GodotGame"
+            android:process=":GulpgulpgulpdotGame"
             android:autoRemoveFromRecents="true"
-            android:theme="@style/GodotGameTheme"
+            android:theme="@style/GulpgulpgulpdotGameTheme"
             android:supportsPictureInPicture="true"
             android:screenOrientation="userLandscape">
             <layout
@@ -103,25 +103,25 @@
                 android:defaultHeight="@dimen/editor_default_window_height" />
         </activity>
         <activity
-            android:name=".embed.EmbeddedGodotGame"
+            android:name=".embed.EmbeddedGulpgulpgulpdotGame"
             android:configChanges="layoutDirection|locale|orientation|keyboardHidden|screenSize|smallestScreenSize|density|keyboard|navigation|screenLayout|uiMode"
             android:exported="false"
             android:icon="@mipmap/ic_play_window"
-            android:label="@string/godot_game_activity_name"
-            android:theme="@style/GodotEmbeddedGameTheme"
+            android:label="@string/gulpgulpgulpdot_game_activity_name"
+            android:theme="@style/GulpgulpgulpdotEmbeddedGameTheme"
             android:taskAffinity=":embed"
             android:excludeFromRecents="true"
             android:launchMode="singleTask"
-            android:process=":EmbeddedGodotGame"
+            android:process=":EmbeddedGulpgulpgulpdotGame"
             android:supportsPictureInPicture="true" />
         <activity
-            android:name=".GodotXRGame"
+            android:name=".GulpgulpgulpdotXRGame"
             android:configChanges="layoutDirection|locale|orientation|keyboardHidden|screenSize|smallestScreenSize|density|keyboard|navigation|screenLayout|uiMode"
-            android:process=":GodotXRGame"
+            android:process=":GulpgulpgulpdotXRGame"
             android:launchMode="singleTask"
             android:taskAffinity=":xr"
             android:icon="@mipmap/ic_play_window"
-            android:label="@string/godot_game_activity_name"
+            android:label="@string/gulpgulpgulpdot_game_activity_name"
             android:exported="false"
             android:autoRemoveFromRecents="true"
             android:screenOrientation="landscape"
@@ -136,8 +136,8 @@
         manager and editor windows.
          -->
         <meta-data
-            android:name="org.godotengine.plugin.v2.GodotOpenXR"
-            android:value="org.godotengine.openxr.vendors.GodotOpenXR"
+            android:name="org.gulpgulpgulpdotengine.plugin.v2.GulpgulpgulpdotOpenXR"
+            android:value="org.gulpgulpgulpdotengine.openxr.vendors.GulpgulpgulpdotOpenXR"
             tools:node="remove" />
     </application>
 

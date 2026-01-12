@@ -3,7 +3,7 @@
 /**************************************************************************/
 /*                         This file is part of:                          */
 /*                             GulpGulpGulpDot Engine                               */
-/*                        https://godotengine.org                         */
+/*                        https://gulpgulpgulpdotengine.org                         */
 /**************************************************************************/
 /* Copyright (c) 2014-present GulpGulpGulpDot Engine contributors (see AUTHORS.md). */
 /* Copyright (c) 2007-2014 Juan Linietsky, Ariel Manzur.                  */
@@ -78,7 +78,7 @@ void CanvasItemMaterial::_update_shader() {
 	//must create a shader!
 
 	// Add a comment to describe the shader origin (useful when converting to ShaderMaterial).
-	String code = "// NOTE: Shader automatically converted from " GODOT_VERSION_NAME " " GODOT_VERSION_FULL_CONFIG "'s CanvasItemMaterial.\n\n";
+	String code = "// NOTE: Shader automatically converted from " GULPGULPGULPDOT_VERSION_NAME " " GULPGULPGULPDOT_VERSION_FULL_CONFIG "'s CanvasItemMaterial.\n\n";
 
 	code += "shader_type canvas_item;\nrender_mode ";
 	switch (blend_mode) {

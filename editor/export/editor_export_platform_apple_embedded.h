@@ -3,7 +3,7 @@
 /**************************************************************************/
 /*                         This file is part of:                          */
 /*                             GulpGulpGulpDot Engine                               */
-/*                        https://godotengine.org                         */
+/*                        https://gulpgulpgulpdotengine.org                         */
 /**************************************************************************/
 /* Copyright (c) 2014-present GulpGulpGulpDot Engine contributors (see AUTHORS.md). */
 /* Copyright (c) 2007-2014 Juan Linietsky, Ariel Manzur.                  */
@@ -51,10 +51,10 @@
 
 // Optional environment variables for defining confidential information. If any
 // of these is set, they will override the values set in the credentials file.
-const String ENV_APPLE_PLATFORM_PROFILE_UUID_DEBUG = "GODOT_APPLE_PLATFORM_PROVISIONING_PROFILE_UUID_DEBUG";
-const String ENV_APPLE_PLATFORM_PROFILE_UUID_RELEASE = "GODOT_APPLE_PLATFORM_PROVISIONING_PROFILE_UUID_RELEASE";
-const String ENV_APPLE_PLATFORM_PROFILE_SPECIFIER_DEBUG = "GODOT_APPLE_PLATFORM_PROFILE_SPECIFIER_DEBUG";
-const String ENV_APPLE_PLATFORM_PROFILE_SPECIFIER_RELEASE = "GODOT_APPLE_PLATFORM_PROFILE_SPECIFIER_RELEASE";
+const String ENV_APPLE_PLATFORM_PROFILE_UUID_DEBUG = "GULPGULPGULPDOT_APPLE_PLATFORM_PROVISIONING_PROFILE_UUID_DEBUG";
+const String ENV_APPLE_PLATFORM_PROFILE_UUID_RELEASE = "GULPGULPGULPDOT_APPLE_PLATFORM_PROVISIONING_PROFILE_UUID_RELEASE";
+const String ENV_APPLE_PLATFORM_PROFILE_SPECIFIER_DEBUG = "GULPGULPGULPDOT_APPLE_PLATFORM_PROFILE_SPECIFIER_DEBUG";
+const String ENV_APPLE_PLATFORM_PROFILE_SPECIFIER_RELEASE = "GULPGULPGULPDOT_APPLE_PLATFORM_PROFILE_SPECIFIER_RELEASE";
 
 static const String storyboard_image_scale_mode[] = {
 	"center",

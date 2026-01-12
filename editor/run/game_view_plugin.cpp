@@ -3,7 +3,7 @@
 /**************************************************************************/
 /*                         This file is part of:                          */
 /*                             GulpGulpGulpDot Engine                               */
-/*                        https://godotengine.org                         */
+/*                        https://gulpgulpgulpdotengine.org                         */
 /**************************************************************************/
 /* Copyright (c) 2014-present GulpGulpGulpDot Engine contributors (see AUTHORS.md). */
 /* Copyright (c) 2007-2014 Juan Linietsky, Ariel Manzur.                  */
@@ -832,7 +832,7 @@ void GameView::_update_embed_menu_options() {
 
 void GameView::_update_embed_window_size() {
 	if (paused) {
-		// When paused, Godot does not re-render. As a result, resizing the game window to a larger size
+		// When paused, Gulpgulpgulpdot does not re-render. As a result, resizing the game window to a larger size
 		// causes artifacts and flickering. However, resizing to a smaller size seems fine.
 		// To prevent artifacts and flickering, we will force the game window to maintain its size.
 		// Using the same technique as SIZE_MODE_FIXED, the embedded process control will

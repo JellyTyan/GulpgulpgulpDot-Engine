@@ -3,7 +3,7 @@
 /**************************************************************************/
 /*                         This file is part of:                          */
 /*                             GulpGulpGulpDot Engine                               */
-/*                        https://godotengine.org                         */
+/*                        https://gulpgulpgulpdotengine.org                         */
 /**************************************************************************/
 /* Copyright (c) 2014-present GulpGulpGulpDot Engine contributors (see AUTHORS.md). */
 /* Copyright (c) 2007-2014 Juan Linietsky, Ariel Manzur.                  */
@@ -148,10 +148,10 @@ DWORD CrashHandlerException(EXCEPTION_POINTERS *ep) {
 	print_error(vformat("%s: Program crashed", __FUNCTION__));
 
 	// Print the engine version just before, so that people are reminded to include the version in backtrace reports.
-	if (String(GODOT_VERSION_HASH).is_empty()) {
-		print_error(vformat("Engine version: %s", GODOT_VERSION_FULL_NAME));
+	if (String(GULPGULPGULPDOT_VERSION_HASH).is_empty()) {
+		print_error(vformat("Engine version: %s", GULPGULPGULPDOT_VERSION_FULL_NAME));
 	} else {
-		print_error(vformat("Engine version: %s (%s)", GODOT_VERSION_FULL_NAME, GODOT_VERSION_HASH));
+		print_error(vformat("Engine version: %s (%s)", GULPGULPGULPDOT_VERSION_FULL_NAME, GULPGULPGULPDOT_VERSION_HASH));
 	}
 	print_error(vformat("Dumping the backtrace. %s", msg));
 

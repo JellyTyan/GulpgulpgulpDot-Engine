@@ -4,9 +4,9 @@ plugins {
 }
 
 ext {
-    DEBUG_PUBLISH_ARTIFACT_ID = 'godot-debug'
-    PUBLISH_ARTIFACT_ID = 'godot'
-    TOOLS_PUBLISH_ARTIFACT_ID = 'godot-tools'
+    DEBUG_PUBLISH_ARTIFACT_ID = 'gulpgulpgulpdot-debug'
+    PUBLISH_ARTIFACT_ID = 'gulpgulpgulpdot'
+    TOOLS_PUBLISH_ARTIFACT_ID = 'gulpgulpgulpdot-tools'
 }
 
 apply from: "../scripts/publish-module.gradle"
@@ -29,10 +29,10 @@ android {
         minSdkVersion versions.minSdk
         targetSdkVersion versions.targetSdk
 
-        manifestPlaceholders = [godotLibraryVersion: getGodotLibraryVersionName()]
+        manifestPlaceholders = [gulpgulpgulpdotLibraryVersion: getGulpgulpgulpdotLibraryVersionName()]
     }
 
-    namespace = "org.godotengine.godot"
+    namespace = "org.gulpgulpgulpdotengine.gulpgulpgulpdot"
 
     compileOptions {
         sourceCompatibility versions.javaVersion
@@ -127,7 +127,7 @@ android {
             outputSuffix = "${outputSuffix}.dev"
         }
         variant.outputs.all { output ->
-            output.outputFileName = "godot-lib.${outputSuffix}.aar"
+            output.outputFileName = "gulpgulpgulpdot-lib.${outputSuffix}.aar"
         }
 
         // Find scons' executable path

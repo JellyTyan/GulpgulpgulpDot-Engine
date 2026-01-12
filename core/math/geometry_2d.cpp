@@ -3,7 +3,7 @@
 /**************************************************************************/
 /*                         This file is part of:                          */
 /*                             GulpGulpGulpDot Engine                               */
-/*                        https://godotengine.org                         */
+/*                        https://gulpgulpgulpdotengine.org                         */
 /**************************************************************************/
 /* Copyright (c) 2014-present GulpGulpGulpDot Engine contributors (see AUTHORS.md). */
 /* Copyright (c) 2007-2014 Juan Linietsky, Ariel Manzur.                  */
@@ -30,9 +30,9 @@
 
 #include "geometry_2d.h"
 
-GODOT_GCC_WARNING_PUSH_AND_IGNORE("-Walloc-zero")
+GULPGULPGULPDOT_GCC_WARNING_PUSH_AND_IGNORE("-Walloc-zero")
 #include "thirdparty/clipper2/include/clipper2/clipper.h"
-GODOT_GCC_WARNING_POP
+GULPGULPGULPDOT_GCC_WARNING_POP
 #include "thirdparty/misc/polypartition.h"
 #define STB_RECT_PACK_IMPLEMENTATION
 #include "thirdparty/misc/stb_rect_pack.h"

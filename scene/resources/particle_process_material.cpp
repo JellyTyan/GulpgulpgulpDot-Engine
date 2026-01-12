@@ -3,7 +3,7 @@
 /**************************************************************************/
 /*                         This file is part of:                          */
 /*                             GulpGulpGulpDot Engine                               */
-/*                        https://godotengine.org                         */
+/*                        https://gulpgulpgulpdotengine.org                         */
 /**************************************************************************/
 /* Copyright (c) 2014-present GulpGulpGulpDot Engine contributors (see AUTHORS.md). */
 /* Copyright (c) 2007-2014 Juan Linietsky, Ariel Manzur.                  */
@@ -184,7 +184,7 @@ void ParticleProcessMaterial::_update_shader() {
 	// No pre-existing shader, create one.
 
 	// Add a comment to describe the shader origin (useful when converting to ShaderMaterial).
-	String code = "// NOTE: Shader automatically converted from " GODOT_VERSION_NAME " " GODOT_VERSION_FULL_CONFIG "'s ParticleProcessMaterial.\n\n";
+	String code = "// NOTE: Shader automatically converted from " GULPGULPGULPDOT_VERSION_NAME " " GULPGULPGULPDOT_VERSION_FULL_CONFIG "'s ParticleProcessMaterial.\n\n";
 
 	code += "shader_type particles;\n";
 	code += "render_mode disable_velocity;\n";
@@ -1045,7 +1045,7 @@ void ParticleProcessMaterial::_update_shader() {
 		code += "\n";
 		code += "	vec3 noise_direction = get_noise_direction(TRANSFORM[3].xyz);\n";
 
-		// Godot detects when the COLLIDED keyword is used. If it's used anywhere in the shader then Godot will generate the screen space SDF for collisions.
+		// Gulpgulpgulpdot detects when the COLLIDED keyword is used. If it's used anywhere in the shader then Gulpgulpgulpdot will generate the screen space SDF for collisions.
 		// We don't need it as long as collision is disabled. Refer to GH-83744 for more info.
 		if (collision_mode == COLLISION_RIGID) {
 			code += "	if (!COLLIDED) {\n";

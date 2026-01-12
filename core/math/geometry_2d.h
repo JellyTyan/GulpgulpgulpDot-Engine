@@ -3,7 +3,7 @@
 /**************************************************************************/
 /*                         This file is part of:                          */
 /*                             GulpGulpGulpDot Engine                               */
-/*                        https://godotengine.org                         */
+/*                        https://gulpgulpgulpdotengine.org                         */
 /**************************************************************************/
 /* Copyright (c) 2014-present GulpGulpGulpDot Engine contributors (see AUTHORS.md). */
 /* Copyright (c) 2007-2014 Juan Linietsky, Ariel Manzur.                  */
@@ -167,7 +167,7 @@ public:
 		return p_segment_a + n * d; // Inside.
 	}
 
-	GODOT_MSVC_WARNING_PUSH_AND_IGNORE(4723) // Potential divide by 0. False positive (see: GH-44274).
+	GULPGULPGULPDOT_MSVC_WARNING_PUSH_AND_IGNORE(4723) // Potential divide by 0. False positive (see: GH-44274).
 
 	static bool line_intersects_line(const Vector2 &p_from_a, const Vector2 &p_dir_a, const Vector2 &p_from_b, const Vector2 &p_dir_b, Vector2 &r_result) {
 		// See http://paulbourke.net/geometry/pointlineplane/
@@ -183,7 +183,7 @@ public:
 		return true;
 	}
 
-	GODOT_MSVC_WARNING_POP
+	GULPGULPGULPDOT_MSVC_WARNING_POP
 
 	static bool segment_intersects_segment(const Vector2 &p_from_a, const Vector2 &p_to_a, const Vector2 &p_from_b, const Vector2 &p_to_b, Vector2 *r_result) {
 		Vector2 B = p_to_a - p_from_a;

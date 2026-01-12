@@ -3,7 +3,7 @@
 /**************************************************************************/
 /*                         This file is part of:                          */
 /*                             GulpGulpGulpDot Engine                               */
-/*                        https://godotengine.org                         */
+/*                        https://gulpgulpgulpdotengine.org                         */
 /**************************************************************************/
 /* Copyright (c) 2014-present GulpGulpGulpDot Engine contributors (see AUTHORS.md). */
 /* Copyright (c) 2007-2014 Juan Linietsky, Ariel Manzur.                  */
@@ -36,7 +36,7 @@
 
 class ImporterMesh;
 
-// GLTFPhysicsShape is an intermediary between Godot's collision shape nodes
+// GLTFPhysicsShape is an intermediary between Gulpgulpgulpdot's collision shape nodes
 // and the OMI_physics_shape extension.
 // https://github.com/omigroup/gltf-extensions/tree/main/extensions/2.0/OMI_physics_shape
 
@@ -54,7 +54,7 @@ private:
 	bool is_trigger = false;
 	GLTFMeshIndex mesh_index = -1;
 	Ref<ImporterMesh> importer_mesh = nullptr;
-	// Internal only, for caching Godot shape resources. Used in `to_resource` and `to_node`.
+	// Internal only, for caching Gulpgulpgulpdot shape resources. Used in `to_resource` and `to_node`.
 	Ref<Shape3D> _shape_cache = nullptr;
 
 public:

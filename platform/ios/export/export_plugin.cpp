@@ -3,7 +3,7 @@
 /**************************************************************************/
 /*                         This file is part of:                          */
 /*                             GulpGulpGulpDot Engine                               */
-/*                        https://godotengine.org                         */
+/*                        https://gulpgulpgulpdotengine.org                         */
 /**************************************************************************/
 /* Copyright (c) 2014-present GulpGulpGulpDot Engine contributors (see AUTHORS.md). */
 /* Copyright (c) 2007-2014 Juan Linietsky, Ariel Manzur.                  */
@@ -99,7 +99,7 @@ HashMap<String, Variant> EditorExportPlatformIOS::get_custom_project_settings(co
 		case 0: {
 			String logo_path = get_project_setting(p_preset, "application/boot_splash/image");
 			RenderingServer::SplashStretchMode stretch_mode = get_project_setting(p_preset, "application/boot_splash/stretch_mode");
-			// If custom logo is not specified, Godot does not scale default one, so we should do the same.
+			// If custom logo is not specified, Gulpgulpgulpdot does not scale default one, so we should do the same.
 			if (logo_path.is_empty()) {
 				value = "center";
 			} else {
@@ -175,7 +175,7 @@ Error EditorExportPlatformIOS::_export_loading_screen_file(const Ref<EditorExpor
 		}
 
 		// Using same image for both @2x and @3x
-		// because Godot's own boot logo uses single image for all resolutions.
+		// because Gulpgulpgulpdot's own boot logo uses single image for all resolutions.
 		// Also not using @1x image, because devices using this image variant
 		// are not supported by iOS 9, which is minimal target.
 		const String splash_png_path_2x = p_dest_dir.path_join("splash@2x.png");
@@ -447,7 +447,7 @@ String EditorExportPlatformIOS::_process_config_file_line(const Ref<EditorExport
 			case 0: {
 				String logo_path = get_project_setting(p_preset, "application/boot_splash/image");
 				bool is_on = get_project_setting(p_preset, "application/boot_splash/fullsize");
-				// If custom logo is not specified, Godot does not scale default one, so we should do the same.
+				// If custom logo is not specified, Gulpgulpgulpdot does not scale default one, so we should do the same.
 				value = (is_on && logo_path.length() > 0) ? "scaleAspectFit" : "center";
 			} break;
 			default: {

@@ -17,12 +17,12 @@ def generate_android_binaries(target, source, env):
         gradle_process = ["./gradlew"]
 
     if env["target"] == "editor":
-        gradle_process += ["generateGodotEditor", "generateGodotHorizonOSEditor", "generateGodotPicoOSEditor"]
+        gradle_process += ["generateGulpgulpgulpdotEditor", "generateGulpgulpgulpdotHorizonOSEditor", "generateGulpgulpgulpdotPicoOSEditor"]
     else:
         if env["module_mono_enabled"]:
-            gradle_process += ["generateGodotMonoTemplates"]
+            gradle_process += ["generateGulpgulpgulpdotMonoTemplates"]
         else:
-            gradle_process += ["generateGodotTemplates"]
+            gradle_process += ["generateGulpgulpgulpdotTemplates"]
     gradle_process += ["--quiet"]
 
     if env["debug_symbols"] and not env["separate_debug_symbols"]:

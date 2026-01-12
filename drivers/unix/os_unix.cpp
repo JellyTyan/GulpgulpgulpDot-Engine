@@ -3,7 +3,7 @@
 /**************************************************************************/
 /*                         This file is part of:                          */
 /*                             GulpGulpGulpDot Engine                               */
-/*                        https://godotengine.org                         */
+/*                        https://gulpgulpgulpdotengine.org                         */
 /**************************************************************************/
 /* Copyright (c) 2014-present GulpGulpGulpDot Engine contributors (see AUTHORS.md). */
 /* Copyright (c) 2007-2014 Juan Linietsky, Ariel Manzur.                  */
@@ -88,9 +88,9 @@
 #endif
 
 #ifndef SANITIZERS_ENABLED
-#define GODOT_DLOPEN_MODE RTLD_NOW | RTLD_DEEPBIND
+#define GULPGULPGULPDOT_DLOPEN_MODE RTLD_NOW | RTLD_DEEPBIND
 #else
-#define GODOT_DLOPEN_MODE RTLD_NOW
+#define GULPGULPGULPDOT_DLOPEN_MODE RTLD_NOW
 #endif
 
 #if defined(MACOS_ENABLED) || (defined(__ANDROID_API__) && __ANDROID_API__ >= 28)
@@ -121,13 +121,13 @@ static void _setup_clock() {
 }
 #else
 #if defined(CLOCK_MONOTONIC_RAW) && !defined(WEB_ENABLED) // This is a better clock on Linux.
-#define GODOT_CLOCK CLOCK_MONOTONIC_RAW
+#define GULPGULPGULPDOT_CLOCK CLOCK_MONOTONIC_RAW
 #else
-#define GODOT_CLOCK CLOCK_MONOTONIC
+#define GULPGULPGULPDOT_CLOCK CLOCK_MONOTONIC
 #endif
 static void _setup_clock() {
 	struct timespec tv_now = { 0, 0 };
-	ERR_FAIL_COND_MSG(clock_gettime(GODOT_CLOCK, &tv_now) != 0, "OS CLOCK IS NOT WORKING!");
+	ERR_FAIL_COND_MSG(clock_gettime(GULPGULPGULPDOT_CLOCK, &tv_now) != 0, "OS CLOCK IS NOT WORKING!");
 	_clock_start = ((uint64_t)tv_now.tv_nsec / 1000L) + (uint64_t)tv_now.tv_sec * 1000000L;
 }
 #endif
@@ -393,7 +393,7 @@ uint64_t OS_Unix::get_ticks_usec() const {
 	// Unchecked return. Static analyzers might complain.
 	// If _setup_clock() succeeded, we assume clock_gettime() works.
 	struct timespec tv_now = { 0, 0 };
-	clock_gettime(GODOT_CLOCK, &tv_now);
+	clock_gettime(GULPGULPGULPDOT_CLOCK, &tv_now);
 	uint64_t longtime = ((uint64_t)tv_now.tv_nsec / 1000L) + (uint64_t)tv_now.tv_sec * 1000000L;
 #endif
 	longtime -= _clock_start;
@@ -1060,7 +1060,7 @@ Error OS_Unix::open_dynamic_library(const String &p_path, void *&p_library_handl
 
 	ERR_FAIL_COND_V(!FileAccess::exists(path), ERR_FILE_NOT_FOUND);
 
-	p_library_handle = dlopen(path.utf8().get_data(), GODOT_DLOPEN_MODE);
+	p_library_handle = dlopen(path.utf8().get_data(), GULPGULPGULPDOT_DLOPEN_MODE);
 	ERR_FAIL_NULL_V_MSG(p_library_handle, ERR_CANT_OPEN, vformat("Can't open dynamic library: %s. Error: %s.", p_path, dlerror()));
 
 	if (p_data != nullptr && p_data->r_resolved_path != nullptr) {
@@ -1221,7 +1221,7 @@ void UnixTerminalLogger::log_error(const char *p_function, const char *p_file, i
 	}
 
 	// Disable color codes if stdout is not a TTY.
-	// This prevents Godot from writing ANSI escape codes when redirecting
+	// This prevents Gulpgulpgulpdot from writing ANSI escape codes when redirecting
 	// stdout and stderr to a file.
 	const bool tty = isatty(fileno(stdout));
 	const char *gray = tty ? "\E[0;90m" : "";

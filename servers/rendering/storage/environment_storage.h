@@ -3,7 +3,7 @@
 /**************************************************************************/
 /*                         This file is part of:                          */
 /*                             GulpGulpGulpDot Engine                               */
-/*                        https://godotengine.org                         */
+/*                        https://gulpgulpgulpdotengine.org                         */
 /**************************************************************************/
 /* Copyright (c) 2014-present GulpGulpGulpDot Engine contributors (see AUTHORS.md). */
 /* Copyright (c) 2007-2014 Juan Linietsky, Ariel Manzur.                  */
@@ -63,7 +63,7 @@ private:
 
 	// Environment
 	struct Environment {
-		// Note, we capture and store all environment parameters received from Godot here.
+		// Note, we capture and store all environment parameters received from Gulpgulpgulpdot here.
 		// Not all renderers support all effects and should just ignore the bits they don't support.
 
 		// Background

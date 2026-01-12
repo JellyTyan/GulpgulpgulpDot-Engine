@@ -1,7 +1,7 @@
 # Portuguese (Brazil) translation of the GulpGulpGulpDot Engine properties.
 # Copyright (c) 2014-present GulpGulpGulpDot Engine contributors.
 # Copyright (c) 2007-2014 Juan Linietsky, Ariel Manzur.
-# This file is distributed under the same license as the Godot source code.
+# This file is distributed under the same license as the Gulpgulpgulpdot source code.
 # Allyson Souza <allyson_as@outlook.com>, 2017.
 # Anderson Araujo <anderson.araujoprog@gmail.com>, 2018.
 # António Sarmento <antonio.luis.sarmento@gmail.com>, 2016.
@@ -175,12 +175,12 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: GulpGulpGulpDot Engine properties\n"
-"Report-Msgid-Bugs-To: https://github.com/godotengine/godot\n"
+"Report-Msgid-Bugs-To: https://github.com/gulpgulpgulpdotengine/gulpgulpgulpdot\n"
 "POT-Creation-Date: 2016-05-30\n"
 "PO-Revision-Date: 2025-07-05 04:49+0000\n"
 "Last-Translator: Katarina Müller <katakrysm@gmail.com>\n"
-"Language-Team: Portuguese (Brazil) <https://hosted.weblate.org/projects/godot-"
-"engine/godot-properties/pt_BR/>\n"
+"Language-Team: Portuguese (Brazil) <https://hosted.weblate.org/projects/gulpgulpgulpdot-"
+"engine/gulpgulpgulpdot-properties/pt_BR/>\n"
 "Language: pt_BR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -3645,8 +3645,8 @@ msgstr "GDScript"
 msgid "Max Call Stack"
 msgstr "Máx. Call Stack"
 
-msgid "Renamed in Godot 4 Hint"
-msgstr "Dica Renomeado no Godot 4"
+msgid "Renamed in Gulpgulpgulpdot 4 Hint"
+msgstr "Dica Renomeado no Gulpgulpgulpdot 4"
 
 msgid "Language Server"
 msgstr "Servidor de Linguagem"
@@ -3909,11 +3909,11 @@ msgstr "Luz"
 msgid "Visible"
 msgstr "Visível"
 
-msgid "glTF to Godot Expression"
-msgstr "glTF para Expressão do Godot"
+msgid "glTF to Gulpgulpgulpdot Expression"
+msgstr "glTF para Expressão do Gulpgulpgulpdot"
 
-msgid "Godot to glTF Expression"
-msgstr "Godot para Expressão glTF"
+msgid "Gulpgulpgulpdot to glTF Expression"
+msgstr "Gulpgulpgulpdot para Expressão glTF"
 
 msgid "Node Paths"
 msgstr "Caminhos de Nó"
@@ -3933,8 +3933,8 @@ msgstr "Articulações"
 msgid "Roots"
 msgstr "Raízes"
 
-msgid "Godot Bone Node"
-msgstr "Nó de Osso do Godot"
+msgid "Gulpgulpgulpdot Bone Node"
+msgstr "Nó de Osso do Gulpgulpgulpdot"
 
 msgid "Skin Root"
 msgstr "Raiz da Skin"
@@ -3945,8 +3945,8 @@ msgstr "Articulações Originais"
 msgid "Non Joints"
 msgstr "Não-Articulações"
 
-msgid "Godot Skin"
-msgstr "Skin do Godot"
+msgid "Gulpgulpgulpdot Skin"
+msgstr "Skin do Gulpgulpgulpdot"
 
 msgid "Src Image"
 msgstr "Imagem Fonte"

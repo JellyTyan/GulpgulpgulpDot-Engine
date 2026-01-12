@@ -3,7 +3,7 @@
 /**************************************************************************/
 /*                         This file is part of:                          */
 /*                             GulpGulpGulpDot Engine                               */
-/*                        https://godotengine.org                         */
+/*                        https://gulpgulpgulpdotengine.org                         */
 /**************************************************************************/
 /* Copyright (c) 2014-present GulpGulpGulpDot Engine contributors (see AUTHORS.md). */
 /* Copyright (c) 2007-2014 Juan Linietsky, Ariel Manzur.                  */
@@ -170,7 +170,7 @@ void GLManagerNative_Windows::_nvapi_setup_profile() {
 	// We need a name anyways, so let's use the engine name if an application name is not available
 	// (this is used mostly by the Project Manager)
 	if (app_profile_name.is_empty()) {
-		app_profile_name = GODOT_VERSION_NAME;
+		app_profile_name = GULPGULPGULPDOT_VERSION_NAME;
 	}
 	String old_profile_name = app_profile_name + " Nvidia Profile";
 	Char16String app_profile_name_u16 = app_profile_name.utf16();

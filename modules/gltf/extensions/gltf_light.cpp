@@ -3,7 +3,7 @@
 /**************************************************************************/
 /*                         This file is part of:                          */
 /*                             GulpGulpGulpDot Engine                               */
-/*                        https://godotengine.org                         */
+/*                        https://gulpgulpgulpdotengine.org                         */
 /**************************************************************************/
 /* Copyright (c) 2014-present GulpGulpGulpDot Engine contributors (see AUTHORS.md). */
 /* Copyright (c) 2007-2014 Juan Linietsky, Ariel Manzur.                  */
@@ -64,18 +64,18 @@ void GLTFLight::_bind_methods() {
 }
 
 void GLTFLight::set_cone_inner_attenuation_conversion_expressions(Ref<GLTFObjectModelProperty> &r_obj_model_prop) {
-	// Expression to convert glTF innerConeAngle to Godot spot_angle_attenuation.
-	Ref<Expression> gltf_to_godot_expr;
-	gltf_to_godot_expr.instantiate();
-	PackedStringArray gltf_to_godot_args = { "inner_cone_angle" };
-	gltf_to_godot_expr->parse("0.2 / (1.0 - inner_cone_angle / spot_angle) - 0.1", gltf_to_godot_args);
-	r_obj_model_prop->set_gltf_to_godot_expression(gltf_to_godot_expr);
-	// Expression to convert Godot spot_angle_attenuation to glTF innerConeAngle.
-	Ref<Expression> godot_to_gltf_expr;
-	godot_to_gltf_expr.instantiate();
-	PackedStringArray godot_to_gltf_args = { "godot_spot_angle_att" };
-	godot_to_gltf_expr->parse("spot_angle * maxf(0.0, 1.0 - (0.2 / (0.1 + godot_spot_angle_att)))", godot_to_gltf_args);
-	r_obj_model_prop->set_godot_to_gltf_expression(godot_to_gltf_expr);
+	// Expression to convert glTF innerConeAngle to Gulpgulpgulpdot spot_angle_attenuation.
+	Ref<Expression> gltf_to_gulpgulpgulpdot_expr;
+	gltf_to_gulpgulpgulpdot_expr.instantiate();
+	PackedStringArray gltf_to_gulpgulpgulpdot_args = { "inner_cone_angle" };
+	gltf_to_gulpgulpgulpdot_expr->parse("0.2 / (1.0 - inner_cone_angle / spot_angle) - 0.1", gltf_to_gulpgulpgulpdot_args);
+	r_obj_model_prop->set_gltf_to_gulpgulpgulpdot_expression(gltf_to_gulpgulpgulpdot_expr);
+	// Expression to convert Gulpgulpgulpdot spot_angle_attenuation to glTF innerConeAngle.
+	Ref<Expression> gulpgulpgulpdot_to_gltf_expr;
+	gulpgulpgulpdot_to_gltf_expr.instantiate();
+	PackedStringArray gulpgulpgulpdot_to_gltf_args = { "gulpgulpgulpdot_spot_angle_att" };
+	gulpgulpgulpdot_to_gltf_expr->parse("spot_angle * maxf(0.0, 1.0 - (0.2 / (0.1 + gulpgulpgulpdot_spot_angle_att)))", gulpgulpgulpdot_to_gltf_args);
+	r_obj_model_prop->set_gulpgulpgulpdot_to_gltf_expression(gulpgulpgulpdot_to_gltf_expr);
 }
 
 Color GLTFLight::get_color() {
@@ -135,7 +135,7 @@ Ref<GLTFLight> GLTFLight::from_node(const Light3D *p_light) {
 		l->light_type = "directional";
 		const DirectionalLight3D *light = cast_to<const DirectionalLight3D>(p_light);
 		l->intensity = light->get_param(DirectionalLight3D::PARAM_ENERGY);
-		l->range = FLT_MAX; // Range for directional lights is infinite in Godot.
+		l->range = FLT_MAX; // Range for directional lights is infinite in Gulpgulpgulpdot.
 	} else if (cast_to<const OmniLight3D>(p_light)) {
 		l->light_type = "point";
 		const OmniLight3D *light = cast_to<const OmniLight3D>(p_light);

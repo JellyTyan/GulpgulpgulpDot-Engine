@@ -3,7 +3,7 @@
 /**************************************************************************/
 /*                         This file is part of:                          */
 /*                             GulpGulpGulpDot Engine                               */
-/*                        https://godotengine.org                         */
+/*                        https://gulpgulpgulpdotengine.org                         */
 /**************************************************************************/
 /* Copyright (c) 2014-present GulpGulpGulpDot Engine contributors (see AUTHORS.md). */
 /* Copyright (c) 2007-2014 Juan Linietsky, Ariel Manzur.                  */
@@ -37,19 +37,19 @@ extern "C" {
 #endif
 
 typedef enum {
-	GODOT_JS_FETCH_STATE_REQUESTING = 0,
-	GODOT_JS_FETCH_STATE_BODY = 1,
-	GODOT_JS_FETCH_STATE_DONE = 2,
-	GODOT_JS_FETCH_STATE_ERROR = -1,
-} godot_js_fetch_state_t;
+	GULPGULPGULPDOT_JS_FETCH_STATE_REQUESTING = 0,
+	GULPGULPGULPDOT_JS_FETCH_STATE_BODY = 1,
+	GULPGULPGULPDOT_JS_FETCH_STATE_DONE = 2,
+	GULPGULPGULPDOT_JS_FETCH_STATE_ERROR = -1,
+} gulpgulpgulpdot_js_fetch_state_t;
 
-extern int godot_js_fetch_create(const char *p_method, const char *p_url, const char **p_headers, int p_headers_len, const uint8_t *p_body, int p_body_len);
-extern int godot_js_fetch_read_headers(int p_id, void (*parse_callback)(int p_size, const char **p_headers, void *p_ref), void *p_ref);
-extern int godot_js_fetch_read_chunk(int p_id, uint8_t *p_buf, int p_buf_size);
-extern void godot_js_fetch_free(int p_id);
-extern godot_js_fetch_state_t godot_js_fetch_state_get(int p_id);
-extern int godot_js_fetch_http_status_get(int p_id);
-extern int godot_js_fetch_is_chunked(int p_id);
+extern int gulpgulpgulpdot_js_fetch_create(const char *p_method, const char *p_url, const char **p_headers, int p_headers_len, const uint8_t *p_body, int p_body_len);
+extern int gulpgulpgulpdot_js_fetch_read_headers(int p_id, void (*parse_callback)(int p_size, const char **p_headers, void *p_ref), void *p_ref);
+extern int gulpgulpgulpdot_js_fetch_read_chunk(int p_id, uint8_t *p_buf, int p_buf_size);
+extern void gulpgulpgulpdot_js_fetch_free(int p_id);
+extern gulpgulpgulpdot_js_fetch_state_t gulpgulpgulpdot_js_fetch_state_get(int p_id);
+extern int gulpgulpgulpdot_js_fetch_http_status_get(int p_id);
+extern int gulpgulpgulpdot_js_fetch_is_chunked(int p_id);
 
 #ifdef __cplusplus
 }

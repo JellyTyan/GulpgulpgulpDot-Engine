@@ -3,7 +3,7 @@
 /**************************************************************************/
 /*                         This file is part of:                          */
 /*                             GulpGulpGulpDot Engine                               */
-/*                        https://godotengine.org                         */
+/*                        https://gulpgulpgulpdotengine.org                         */
 /**************************************************************************/
 /* Copyright (c) 2014-present GulpGulpGulpDot Engine contributors (see AUTHORS.md). */
 /* Copyright (c) 2007-2014 Juan Linietsky, Ariel Manzur.                  */
@@ -115,7 +115,7 @@ bool JavaClass::_call_method(JavaObject *p_instance, const StringName &p_method,
 					if (cn.begins_with("L") && cn.ends_with(";")) {
 						cn = cn.substr(1, cn.length() - 2);
 					}
-					if (cn == "org/godotengine/godot/Dictionary") {
+					if (cn == "org/gulpgulpgulpdotengine/gulpgulpgulpdot/Dictionary") {
 						if (p_args[i]->get_type() != Variant::DICTIONARY) {
 							arg_expected = Variant::DICTIONARY;
 						}
@@ -571,7 +571,7 @@ bool JavaClass::_call_method(JavaObject *p_instance, const StringName &p_method,
 			} break;
 			case ARG_ARRAY_BIT | ARG_TYPE_CALLABLE: {
 				Array arr = *p_args[i];
-				jobjectArray jarr = env->NewObjectArray(arr.size(), jni_find_class(env, "org/godotengine/godot/variant/Callable"), nullptr);
+				jobjectArray jarr = env->NewObjectArray(arr.size(), jni_find_class(env, "org/gulpgulpgulpdotengine/gulpgulpgulpdot/variant/Callable"), nullptr);
 				for (int j = 0; j < arr.size(); j++) {
 					Variant callable = arr[j];
 					jobject jcallable = callable_to_jcallable(env, callable);
@@ -724,7 +724,7 @@ bool JavaClass::_get(const StringName &p_name, Variant &r_ret) const {
 }
 
 Variant JavaClass::callp(const StringName &p_method, const Variant **p_args, int p_argcount, Callable::CallError &r_error) {
-	// Godot methods take precedence.
+	// Gulpgulpgulpdot methods take precedence.
 	Variant ret = RefCounted::callp(p_method, p_args, p_argcount, r_error);
 	if (r_error.error == Callable::CallError::CALL_OK) {
 		return ret;
@@ -850,7 +850,7 @@ JavaClass::~JavaClass() {
 /////////////////////
 
 Variant JavaObject::callp(const StringName &p_method, const Variant **p_args, int p_argcount, Callable::CallError &r_error) {
-	// Godot methods take precedence.
+	// Gulpgulpgulpdot methods take precedence.
 	Variant ret = RefCounted::callp(p_method, p_args, p_argcount, r_error);
 	if (r_error.error == Callable::CallError::CALL_OK) {
 		return ret;
@@ -968,9 +968,9 @@ bool JavaClassWrapper::_get_type_sig(JNIEnv *env, jobject obj, uint32_t &sig, St
 	} else if (str_type == "java.lang.CharSequence") {
 		t |= JavaClass::ARG_TYPE_CHARSEQUENCE;
 		strsig += "Ljava/lang/CharSequence;";
-	} else if (str_type == "org.godotengine.godot.variant.Callable") {
+	} else if (str_type == "org.gulpgulpgulpdotengine.gulpgulpgulpdot.variant.Callable") {
 		t |= JavaClass::ARG_TYPE_CALLABLE;
-		strsig += "Lorg/godotengine/godot/variant/Callable;";
+		strsig += "Lorg/gulpgulpgulpdotengine/gulpgulpgulpdot/variant/Callable;";
 	} else if (str_type == "java.lang.Boolean") {
 		t |= JavaClass::ARG_TYPE_BOOLEAN | JavaClass::ARG_NUMBER_CLASS_BIT;
 		strsig += "Ljava/lang/Boolean;";
@@ -1073,7 +1073,7 @@ bool JavaClass::_convert_object_to_variant(JNIEnv *env, jobject obj, Variant &va
 
 			if (java_class_wrapped.is_valid()) {
 				String cn = java_class_wrapped->get_java_class_name();
-				if (cn == "org.godotengine.godot.Dictionary" || cn == "java.util.HashMap") {
+				if (cn == "org.gulpgulpgulpdotengine.gulpgulpgulpdot.Dictionary" || cn == "java.util.HashMap") {
 					var = _jobject_to_variant(env, obj);
 				} else {
 					Ref<JavaObject> ret = Ref<JavaObject>(memnew(JavaObject(java_class_wrapped, obj)));
@@ -1437,7 +1437,7 @@ bool JavaClass::_convert_object_to_variant(JNIEnv *env, jobject obj, Variant &va
 
 					if (java_class_wrapped.is_valid()) {
 						String cn = java_class_wrapped->get_java_class_name();
-						if (cn == "org.godotengine.godot.Dictionary" || cn == "java.util.HashMap") {
+						if (cn == "org.gulpgulpgulpdotengine.gulpgulpgulpdot.Dictionary" || cn == "java.util.HashMap") {
 							ret[i] = _jobject_to_variant(env, obj);
 						} else {
 							Ref<JavaObject> java_obj_wrapped = Ref<JavaObject>(memnew(JavaObject(java_class_wrapped, obj)));

@@ -3,7 +3,7 @@
 /**************************************************************************/
 /*                         This file is part of:                          */
 /*                             GulpGulpGulpDot Engine                               */
-/*                        https://godotengine.org                         */
+/*                        https://gulpgulpgulpdotengine.org                         */
 /**************************************************************************/
 /* Copyright (c) 2014-present GulpGulpGulpDot Engine contributors (see AUTHORS.md). */
 /* Copyright (c) 2007-2014 Juan Linietsky, Ariel Manzur.                  */
@@ -573,7 +573,7 @@ void SceneTree::set_group(const StringName &p_group, const String &p_name, const
 }
 
 void SceneTree::initialize() {
-	GodotProfileZone("SceneTree::initialize");
+	GulpgulpgulpdotProfileZone("SceneTree::initialize");
 	ERR_FAIL_NULL(root);
 	MainLoop::initialize();
 	root->_set_tree(this);

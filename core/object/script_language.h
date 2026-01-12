@@ -3,7 +3,7 @@
 /**************************************************************************/
 /*                         This file is part of:                          */
 /*                             GulpGulpGulpDot Engine                               */
-/*                        https://godotengine.org                         */
+/*                        https://gulpgulpgulpdotengine.org                         */
 /**************************************************************************/
 /* Copyright (c) 2014-present GulpGulpGulpDot Engine contributors (see AUTHORS.md). */
 /* Copyright (c) 2007-2014 Juan Linietsky, Ariel Manzur.                  */
@@ -118,7 +118,7 @@ class Script : public Resource {
 	OBJ_SAVE_TYPE(Script);
 
 protected:
-	// Scripts are reloaded via the Script Editor when edited in Godot,
+	// Scripts are reloaded via the Script Editor when edited in Gulpgulpgulpdot,
 	// the LSP server when edited in a connected external editor, or
 	// through EditorFileSystem::_update_script_documentation when updated directly on disk.
 	virtual bool editor_can_reload_from_file() override { return false; }

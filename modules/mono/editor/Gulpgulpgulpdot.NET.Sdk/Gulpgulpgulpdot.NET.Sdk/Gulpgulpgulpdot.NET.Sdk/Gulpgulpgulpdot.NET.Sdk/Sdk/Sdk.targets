@@ -1,0 +1,40 @@
+<Project>
+  <Import Sdk="Microsoft.NET.Sdk" Project="Sdk.targets" Condition=" '$(GulpgulpgulpdotSdkImportsMicrosoftNetSdk)' == 'true' " />
+
+  <PropertyGroup>
+    <!--
+    Define constant to determine whether the real_t type in Gulpgulpgulpdot is double precision or not.
+    By default this is false, like the official Gulpgulpgulpdot builds. If someone is using a custom
+    Gulpgulpgulpdot build where real_t is double, they can override the GulpgulpgulpdotFloat64 property.
+    -->
+    <DefineConstants Condition=" '$(GulpgulpgulpdotFloat64)' == 'true' ">GULPGULPGULPDOT_REAL_T_IS_DOUBLE;$(DefineConstants)</DefineConstants>
+  </PropertyGroup>
+
+  <!--
+  We are defining ExportDebug and Debug in Sdk.targets to ensure that the user cannot
+  override the DefineConstants property in their csproj file and break the editor functionality.
+  -->
+  <PropertyGroup>
+    <!-- ExportDebug also defines DEBUG like Debug does. -->
+    <DefineConstants Condition=" '$(Configuration)' == 'ExportDebug' ">$(DefineConstants);DEBUG</DefineConstants>
+    <!-- Debug defines TOOLS to differentiate between Debug and ExportDebug configurations. -->
+    <DefineConstants Condition=" '$(Configuration)' == 'Debug' ">$(DefineConstants);TOOLS</DefineConstants>
+
+    <DefineConstants>$(GulpgulpgulpdotDefineConstants);$(DefineConstants)</DefineConstants>
+  </PropertyGroup>
+
+  <!-- C# source generators -->
+  <ItemGroup Condition=" '$(DisableImplicitGulpgulpgulpdotGeneratorReferences)' != 'true' ">
+    <PackageReference Include="Gulpgulpgulpdot.SourceGenerators" IsImplicitlyDefined="true" Version="$(PackageVersion_Gulpgulpgulpdot_SourceGenerators)" />
+  </ItemGroup>
+
+  <!-- Gulpgulpgulpdot API references -->
+  <ItemGroup Condition=" '$(DisableImplicitGulpgulpgulpdotSharpReferences)' != 'true' ">
+    <PackageReference Include="GulpgulpgulpdotSharp" IsImplicitlyDefined="true" Version="$(PackageVersion_GulpgulpgulpdotSharp)" />
+    <PackageReference Include="GulpgulpgulpdotSharpEditor" IsImplicitlyDefined="true" Version="$(PackageVersion_GulpgulpgulpdotSharp)" Condition=" '$(Configuration)' == 'Debug' " />
+  </ItemGroup>
+
+  <!-- iOS-specific build targets -->
+  <Import Project="$(MSBuildThisFileDirectory)\iOSNativeAOT.targets" Condition=" '$(GulpgulpgulpdotTargetPlatform)' == 'ios' " />
+
+</Project>

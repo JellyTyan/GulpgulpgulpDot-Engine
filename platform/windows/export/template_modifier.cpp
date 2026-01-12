@@ -3,7 +3,7 @@
 /**************************************************************************/
 /*                         This file is part of:                          */
 /*                             GulpGulpGulpDot Engine                               */
-/*                        https://godotengine.org                         */
+/*                        https://gulpgulpgulpdotengine.org                         */
 /**************************************************************************/
 /* Copyright (c) 2014-present GulpGulpGulpDot Engine contributors (see AUTHORS.md). */
 /* Copyright (c) 2007-2014 Juan Linietsky, Ariel Manzur.                  */
@@ -282,7 +282,7 @@ void TemplateModifier::GroupIcon::load(Ref<FileAccess> p_icon_file) {
 	}
 }
 
-void TemplateModifier::GroupIcon::fill_with_godot_blue() {
+void TemplateModifier::GroupIcon::fill_with_gulpgulpgulpdot_blue() {
 	uint32_t id = 1;
 	for (uint8_t size : SIZES) {
 		Ref<Image> image = Image::create_empty(size ? size : 256, size ? size : 256, false, Image::FORMAT_RGB8);
@@ -553,7 +553,7 @@ TemplateModifier::GroupIcon TemplateModifier::_create_group_icon(const String &p
 
 	Ref<FileAccess> icon_file = FileAccess::open(p_icon_path, FileAccess::READ);
 	if (icon_file.is_null()) {
-		group_icon.fill_with_godot_blue();
+		group_icon.fill_with_gulpgulpgulpdot_blue();
 		return group_icon;
 	}
 

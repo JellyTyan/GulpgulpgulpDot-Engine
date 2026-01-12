@@ -3,7 +3,7 @@
 /**************************************************************************/
 /*                         This file is part of:                          */
 /*                             GulpGulpGulpDot Engine                               */
-/*                        https://godotengine.org                         */
+/*                        https://gulpgulpgulpdotengine.org                         */
 /**************************************************************************/
 /* Copyright (c) 2014-present GulpGulpGulpDot Engine contributors (see AUTHORS.md). */
 /* Copyright (c) 2007-2014 Juan Linietsky, Ariel Manzur.                  */
@@ -42,7 +42,7 @@ static JavaClassWrapper *java_class_wrapper = nullptr;
 void register_android_api() {
 #if !defined(ANDROID_ENABLED)
 	// On Android platforms, the `java_class_wrapper` instantiation occurs in
-	// `platform/android/java_godot_lib_jni.cpp#Java_org_godotengine_godot_GodotLib_setup`
+	// `platform/android/java_gulpgulpgulpdot_lib_jni.cpp#Java_org_gulpgulpgulpdotengine_gulpgulpgulpdot_GulpgulpgulpdotLib_setup`
 	java_class_wrapper = memnew(JavaClassWrapper);
 #endif
 	GDREGISTER_CLASS(JNISingleton);

@@ -169,7 +169,7 @@ def get_opts():
     # Direct3D 12 SDK dependencies folder.
     d3d12_deps_folder = os.getenv("LOCALAPPDATA")
     if d3d12_deps_folder:
-        d3d12_deps_folder = os.path.join(d3d12_deps_folder, "Godot", "build_deps")
+        d3d12_deps_folder = os.path.join(d3d12_deps_folder, "Gulpgulpgulpdot", "build_deps")
     else:
         # Cross-compiling, the deps install script puts things in `bin`.
         # Getting an absolute path to it is a bit hacky in Python.
@@ -510,7 +510,7 @@ def configure_msvc(env: "SConsEnvironment"):
             env.AppendUnique(LINKFLAGS=["/LTCG"])
         env.AppendUnique(ARFLAGS=["/LTCG"])
 
-    env.Append(LINKFLAGS=["/NATVIS:platform\\windows\\godot.natvis"])
+    env.Append(LINKFLAGS=["/NATVIS:platform\\windows\\gulpgulpgulpdot.natvis"])
 
     if env["use_asan"]:
         env.AppendUnique(LINKFLAGS=["/STACK:" + str(STACK_SIZE_SANITIZERS)])
@@ -927,7 +927,7 @@ def check_d3d12_installed(env, suffix):
             "The Direct3D 12 rendering driver requires dependencies to be installed.\n"
             "You can install them by running `python misc\\scripts\\install_d3d12_sdk_windows.py`.\n"
             "See the documentation for more information:\n"
-            "\thttps://docs.godotengine.org/en/latest/engine_details/development/compiling/compiling_for_windows.html\n"
+            "\thttps://docs.gulpgulpgulpdotengine.org/en/latest/engine_details/development/compiling/compiling_for_windows.html\n"
             "Alternatively, disable this driver by compiling with `d3d12=no` explicitly."
         )
         sys.exit(255)

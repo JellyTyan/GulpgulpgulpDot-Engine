@@ -1,9 +1,9 @@
 /**************************************************************************/
-/*  godot.audio.position.worklet.js                                                      */
+/*  gulpgulpgulpdot.audio.position.worklet.js                                                      */
 /**************************************************************************/
 /*                         This file is part of:                          */
 /*                             GulpGulpGulpDot Engine                               */
-/*                        https://godotengine.org                         */
+/*                        https://gulpgulpgulpdotengine.org                         */
 /**************************************************************************/
 /* Copyright (c) 2014-present GulpGulpGulpDot Engine contributors (see AUTHORS.md). */
 /* Copyright (c) 2007-2014 Juan Linietsky, Ariel Manzur.                  */
@@ -28,7 +28,7 @@
 /* SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.                 */
 /**************************************************************************/
 
-class GodotPositionReportingProcessor extends AudioWorkletProcessor {
+class GulpgulpgulpdotPositionReportingProcessor extends AudioWorkletProcessor {
 	static get parameterDescriptors() {
 		return [
 			{
@@ -63,4 +63,4 @@ class GodotPositionReportingProcessor extends AudioWorkletProcessor {
 	}
 }
 
-registerProcessor('godot-position-reporting-processor', GodotPositionReportingProcessor);
+registerProcessor('gulpgulpgulpdot-position-reporting-processor', GulpgulpgulpdotPositionReportingProcessor);

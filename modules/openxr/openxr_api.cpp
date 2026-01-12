@@ -3,7 +3,7 @@
 /**************************************************************************/
 /*                         This file is part of:                          */
 /*                             GulpGulpGulpDot Engine                               */
-/*                        https://godotengine.org                         */
+/*                        https://gulpgulpgulpdotengine.org                         */
 /**************************************************************************/
 /* Copyright (c) 2014-present GulpGulpGulpDot Engine contributors (see AUTHORS.md). */
 /* Copyright (c) 2007-2014 Juan Linietsky, Ariel Manzur.                  */
@@ -171,7 +171,7 @@ void OpenXRAPI::OpenXRSwapChainInfo::free() {
 }
 
 bool OpenXRAPI::OpenXRSwapChainInfo::acquire(bool &p_should_render) {
-	GodotProfileZone("OpenXR: acquire swapchain");
+	GulpgulpgulpdotProfileZone("OpenXR: acquire swapchain");
 	ERR_FAIL_COND_V(image_acquired, true); // This was not released when it should be, error out and reuse...
 
 	OpenXRAPI *openxr_api = OpenXRAPI::get_singleton();
@@ -608,7 +608,7 @@ XrResult OpenXRAPI::attempt_create_instance(XrVersion p_version) {
 		"GulpGulpGulpDot Engine", // applicationName, if we're running a game we'll update this down below.
 		1, // applicationVersion, we don't currently have this
 		"GulpGulpGulpDot Engine", // engineName
-		GODOT_VERSION_MAJOR * 10000 + GODOT_VERSION_MINOR * 100 + GODOT_VERSION_PATCH, // engineVersion 4.0 -> 40000, 4.0.1 -> 40001, 4.1 -> 40100, etc.
+		GULPGULPGULPDOT_VERSION_MAJOR * 10000 + GULPGULPGULPDOT_VERSION_MINOR * 100 + GULPGULPGULPDOT_VERSION_PATCH, // engineVersion 4.0 -> 40000, 4.0.1 -> 40001, 4.1 -> 40100, etc.
 		p_version // apiVersion
 	};
 
@@ -938,9 +938,9 @@ bool OpenXRAPI::create_session() {
 		return false;
 	}
 
-	set_object_name(XR_OBJECT_TYPE_SESSION, uint64_t(session), "Main Godot OpenXR Session");
+	set_object_name(XR_OBJECT_TYPE_SESSION, uint64_t(session), "Main Gulpgulpgulpdot OpenXR Session");
 
-	begin_debug_label_region("Godot session active");
+	begin_debug_label_region("Gulpgulpgulpdot session active");
 
 	for (OpenXRExtensionWrapper *wrapper : registered_extension_wrappers) {
 		wrapper->on_session_created(session);
@@ -1293,11 +1293,11 @@ bool OpenXRAPI::create_main_swapchains(const Size2i &p_size) {
 
 	/*
 		TODO: We need to improve on this, for now we're taking our old approach of creating our main swapchains and substituting
-		those for the ones Godot normally creates.
+		those for the ones Gulpgulpgulpdot normally creates.
 		This however means we can only use swapchains for our main XR view.
 
-		It would have been nicer if we could override the swapchain creation in Godot with ours but we have a timing issue here.
-		We can't create XR swapchains until after our XR session is fully instantiated, yet Godot creates its swapchain much earlier.
+		It would have been nicer if we could override the swapchain creation in Gulpgulpgulpdot with ours but we have a timing issue here.
+		We can't create XR swapchains until after our XR session is fully instantiated, yet Gulpgulpgulpdot creates its swapchain much earlier.
 
 		We only creates a swapchain for the main output here.
 		Additional swapchains may be created through our composition layer extension.
@@ -2073,7 +2073,7 @@ bool OpenXRAPI::poll_events() {
 				XrEventDataInstanceLossPending *event = (XrEventDataInstanceLossPending *)&runtimeEvent;
 
 				// TODO We get this event if we're about to loose our OpenXR instance.
-				// We should queue exiting Godot at this point.
+				// We should queue exiting Gulpgulpgulpdot at this point.
 
 				print_verbose(String("OpenXR EVENT: instance loss pending at ") + itos(event->lossTime));
 				return false;
@@ -2289,8 +2289,8 @@ bool OpenXRAPI::process() {
 		return false;
 	}
 
-	GodotProfileZone("OpenXRAPI::process");
-	GodotProfileZoneGroupedFirst(_profile_zone, "xrWaitFrame");
+	GulpgulpgulpdotProfileZone("OpenXRAPI::process");
+	GulpgulpgulpdotProfileZoneGroupedFirst(_profile_zone, "xrWaitFrame");
 
 	// We call xrWaitFrame as early as possible, this will allow OpenXR to get
 	// proper timing info between this point, and when we're ready to start rendering.
@@ -2331,24 +2331,24 @@ bool OpenXRAPI::process() {
 		frame_state.predictedDisplayPeriod = 0;
 	}
 
-	GodotProfileZoneGrouped(_profile_zone, "set_render_display_info");
+	GulpgulpgulpdotProfileZoneGrouped(_profile_zone, "set_render_display_info");
 	set_render_display_info(frame_state.predictedDisplayTime, frame_state.shouldRender);
 
 	// This is before setup_play_space() to ensure that it happens on the frame after
 	// the play space has been created.
 	if (unlikely(local_floor_emulation.should_reset_floor_height && !play_space_is_dirty)) {
-		GodotProfileZoneGrouped(_profile_zone, "reset_emulated_floor_height");
+		GulpgulpgulpdotProfileZoneGrouped(_profile_zone, "reset_emulated_floor_height");
 		reset_emulated_floor_height();
 		local_floor_emulation.should_reset_floor_height = false;
 	}
 
 	if (unlikely(play_space_is_dirty)) {
-		GodotProfileZoneGrouped(_profile_zone, "setup_play_space");
+		GulpgulpgulpdotProfileZoneGrouped(_profile_zone, "setup_play_space");
 		setup_play_space();
 		play_space_is_dirty = false;
 	}
 
-	GodotProfileZoneGrouped(_profile_zone, "extension wrappers on_process");
+	GulpgulpgulpdotProfileZoneGrouped(_profile_zone, "extension wrappers on_process");
 	for (OpenXRExtensionWrapper *wrapper : registered_extension_wrappers) {
 		wrapper->on_process();
 	}

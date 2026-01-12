@@ -3,7 +3,7 @@
 /**************************************************************************/
 /*                         This file is part of:                          */
 /*                             GulpGulpGulpDot Engine                               */
-/*                        https://godotengine.org                         */
+/*                        https://gulpgulpgulpdotengine.org                         */
 /**************************************************************************/
 /* Copyright (c) 2014-present GulpGulpGulpDot Engine contributors (see AUTHORS.md). */
 /* Copyright (c) 2007-2014 Juan Linietsky, Ariel Manzur.                  */
@@ -40,7 +40,7 @@ class SceneTreeFTITests;
 
 #ifdef DEV_ENABLED
 // Uncomment this to verify traversal method results.
-// #define GODOT_SCENE_TREE_FTI_VERIFY
+// #define GULPGULPGULPDOT_SCENE_TREE_FTI_VERIFY
 #endif
 
 #ifdef _3D_DISABLED
@@ -119,7 +119,7 @@ class SceneTreeFTI {
 
 	} data;
 
-#ifdef GODOT_SCENE_TREE_FTI_VERIFY
+#ifdef GULPGULPGULPDOT_SCENE_TREE_FTI_VERIFY
 	SceneTreeFTITests *_tests = nullptr;
 #endif
 

@@ -20,11 +20,11 @@ afterEvaluate {
                 pom {
                     name = DEBUG_PUBLISH_ARTIFACT_ID
                     description = 'GulpGulpGulpDot Engine Android Library - (Debug) Template Build'
-                    url = 'https://godotengine.org/'
+                    url = 'https://gulpgulpgulpdotengine.org/'
                     licenses {
                         license {
                             name = 'MIT License'
-                            url = 'https://github.com/godotengine/godot/blob/master/LICENSE.txt'
+                            url = 'https://github.com/gulpgulpgulpdotengine/gulpgulpgulpdot/blob/master/LICENSE.txt'
                         }
                     }
                     developers {
@@ -44,18 +44,18 @@ afterEvaluate {
                             email = 'rverschelde@gmail.com'
                         }
                         developer {
-                            id = 'godotengine'
+                            id = 'gulpgulpgulpdotengine'
                             name = 'GulpGulpGulpDot Engine contributors'
-                            email = 'contact@godotengine.org'
+                            email = 'contact@gulpgulpgulpdotengine.org'
                         }
                     }
 
                     // Version control info - if you're using GitHub, follow the
                     // format as seen here
                     scm {
-                        connection = 'scm:git:github.com/godotengine/godot.git'
-                        developerConnection = 'scm:git:ssh://github.com/godotengine/godot.git'
-                        url = 'https://github.com/godotengine/godot/tree/master'
+                        connection = 'scm:git:github.com/gulpgulpgulpdotengine/gulpgulpgulpdot.git'
+                        developerConnection = 'scm:git:ssh://github.com/gulpgulpgulpdotengine/gulpgulpgulpdot.git'
+                        url = 'https://github.com/gulpgulpgulpdotengine/gulpgulpgulpdot/tree/master'
                     }
                 }
             }
@@ -72,11 +72,11 @@ afterEvaluate {
                 pom {
                     name = PUBLISH_ARTIFACT_ID
                     description = 'GulpGulpGulpDot Engine Android Library - Template Build'
-                    url = 'https://godotengine.org/'
+                    url = 'https://gulpgulpgulpdotengine.org/'
                     licenses {
                         license {
                             name = 'MIT License'
-                            url = 'https://github.com/godotengine/godot/blob/master/LICENSE.txt'
+                            url = 'https://github.com/gulpgulpgulpdotengine/gulpgulpgulpdot/blob/master/LICENSE.txt'
                         }
                     }
                     developers {
@@ -96,18 +96,18 @@ afterEvaluate {
                             email = 'rverschelde@gmail.com'
                         }
                         developer {
-                            id = 'godotengine'
+                            id = 'gulpgulpgulpdotengine'
                             name = 'GulpGulpGulpDot Engine contributors'
-                            email = 'contact@godotengine.org'
+                            email = 'contact@gulpgulpgulpdotengine.org'
                         }
                     }
 
                     // Version control info - if you're using GitHub, follow the
                     // format as seen here
                     scm {
-                        connection = 'scm:git:github.com/godotengine/godot.git'
-                        developerConnection = 'scm:git:ssh://github.com/godotengine/godot.git'
-                        url = 'https://github.com/godotengine/godot/tree/master'
+                        connection = 'scm:git:github.com/gulpgulpgulpdotengine/gulpgulpgulpdot.git'
+                        developerConnection = 'scm:git:ssh://github.com/gulpgulpgulpdotengine/gulpgulpgulpdot.git'
+                        url = 'https://github.com/gulpgulpgulpdotengine/gulpgulpgulpdot/tree/master'
                     }
                 }
             }
@@ -124,11 +124,11 @@ afterEvaluate {
                 pom {
                     name = TOOLS_PUBLISH_ARTIFACT_ID
                     description = 'GulpGulpGulpDot Engine Tools Android Library - Editor Build'
-                    url = 'https://godotengine.org/'
+                    url = 'https://gulpgulpgulpdotengine.org/'
                     licenses {
                         license {
                             name = 'MIT License'
-                            url = 'https://github.com/godotengine/godot/blob/master/LICENSE.txt'
+                            url = 'https://github.com/gulpgulpgulpdotengine/gulpgulpgulpdot/blob/master/LICENSE.txt'
                         }
                     }
                     developers {
@@ -148,18 +148,18 @@ afterEvaluate {
                             email = 'rverschelde@gmail.com'
                         }
                         developer {
-                            id = 'godotengine'
+                            id = 'gulpgulpgulpdotengine'
                             name = 'GulpGulpGulpDot Engine contributors'
-                            email = 'contact@godotengine.org'
+                            email = 'contact@gulpgulpgulpdotengine.org'
                         }
                     }
 
                     // Version control info - if you're using GitHub, follow the
                     // format as seen here
                     scm {
-                        connection = 'scm:git:github.com/godotengine/godot.git'
-                        developerConnection = 'scm:git:ssh://github.com/godotengine/godot.git'
-                        url = 'https://github.com/godotengine/godot/tree/master'
+                        connection = 'scm:git:github.com/gulpgulpgulpdotengine/gulpgulpgulpdot.git'
+                        developerConnection = 'scm:git:ssh://github.com/gulpgulpgulpdotengine/gulpgulpgulpdot.git'
+                        url = 'https://github.com/gulpgulpgulpdotengine/gulpgulpgulpdot/tree/master'
                     }
                 }
             }

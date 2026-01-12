@@ -3,7 +3,7 @@
 /**************************************************************************/
 /*                         This file is part of:                          */
 /*                             GulpGulpGulpDot Engine                               */
-/*                        https://godotengine.org                         */
+/*                        https://gulpgulpgulpdotengine.org                         */
 /**************************************************************************/
 /* Copyright (c) 2014-present GulpGulpGulpDot Engine contributors (see AUTHORS.md). */
 /* Copyright (c) 2007-2014 Juan Linietsky, Ariel Manzur.                  */
@@ -734,7 +734,7 @@ void RendererViewport::_draw_viewport(Viewport *p_viewport) {
 }
 
 void RendererViewport::draw_viewports(bool p_swap_buffers) {
-	GodotProfileZoneGroupedFirst(_profile_zone, "prepare viewports");
+	GulpgulpgulpdotProfileZoneGroupedFirst(_profile_zone, "prepare viewports");
 	timestamp_vp_map.clear();
 
 #ifndef XR_DISABLED
@@ -752,7 +752,7 @@ void RendererViewport::draw_viewports(bool p_swap_buffers) {
 	}
 
 	if (sorted_active_viewports_dirty) {
-		GodotProfileZoneGrouped(_profile_zone, "_sort_active_viewports");
+		GulpgulpgulpdotProfileZoneGrouped(_profile_zone, "_sort_active_viewports");
 		sorted_active_viewports = _sort_active_viewports();
 		sorted_active_viewports_dirty = false;
 	}
@@ -761,7 +761,7 @@ void RendererViewport::draw_viewports(bool p_swap_buffers) {
 	//draw viewports
 	RENDER_TIMESTAMP("> Render Viewports");
 
-	GodotProfileZoneGrouped(_profile_zone, "render viewports");
+	GulpgulpgulpdotProfileZoneGrouped(_profile_zone, "render viewports");
 
 	//determine what is visible
 	draw_viewports_pass++;
@@ -826,7 +826,7 @@ void RendererViewport::draw_viewports(bool p_swap_buffers) {
 
 	for (int i = 0; i < sorted_active_viewports.size(); i++) {
 		// TODO Somehow print the index
-		GodotProfileZone("render viewport");
+		GulpgulpgulpdotProfileZone("render viewport");
 
 		Viewport *vp = sorted_active_viewports[i];
 
@@ -941,7 +941,7 @@ void RendererViewport::draw_viewports(bool p_swap_buffers) {
 
 	RENDER_TIMESTAMP("< Render Viewports");
 
-	GodotProfileZoneGrouped(_profile_zone, "rasterizer->blit_render_targets_to_screen");
+	GulpgulpgulpdotProfileZoneGrouped(_profile_zone, "rasterizer->blit_render_targets_to_screen");
 	if (p_swap_buffers && !blit_to_screen_list.is_empty()) {
 		for (const KeyValue<int, Vector<BlitToScreen>> &E : blit_to_screen_list) {
 			RSG::rasterizer->blit_render_targets_to_screen(E.key, E.value.ptr(), E.value.size());

@@ -3,7 +3,7 @@
 /**************************************************************************/
 /*                         This file is part of:                          */
 /*                             GulpGulpGulpDot Engine                               */
-/*                        https://godotengine.org                         */
+/*                        https://gulpgulpgulpdotengine.org                         */
 /**************************************************************************/
 /* Copyright (c) 2014-present GulpGulpGulpDot Engine contributors (see AUTHORS.md). */
 /* Copyright (c) 2007-2014 Juan Linietsky, Ariel Manzur.                  */
@@ -150,10 +150,10 @@ public:
 	RegEx joypad_button_index = RegEx("\\b,\"button_index\":(\\d+),(\"pressure\":\\d+\\.\\d+,\"pressed\":(false|true))\\b");
 	RegEx joypad_axis = RegEx("\\b,\"axis\":(\\d+)\\b");
 
-	// Index represents Godot 3's value, entry represents Godot 4 value equivalency.
-	// i.e: Button4(L1 - Godot3) -> joypad_button_mappings[4]=9 -> Button9(L1 - Godot4).
+	// Index represents Gulpgulpgulpdot 3's value, entry represents Gulpgulpgulpdot 4 value equivalency.
+	// i.e: Button4(L1 - Gulpgulpgulpdot3) -> joypad_button_mappings[4]=9 -> Button9(L1 - Gulpgulpgulpdot4).
 	int joypad_button_mappings[23] = { 0, 1, 2, 3, 9, 10, -1 /*L2*/, -1 /*R2*/, 7, 8, 4, 6, 11, 12, 13, 14, 5, 15, 16, 17, 18, 19, 20 };
-	// Entries for L2 and R2 are -1 since they match to joypad axes and no longer to joypad buttons in Godot 4.
+	// Entries for L2 and R2 are -1 since they match to joypad axes and no longer to joypad buttons in Gulpgulpgulpdot 4.
 
 	// Animation suffixes.
 	RegEx animation_suffix = RegEx("([\"'])([a-zA-Z0-9_-]+)(-(?:loop|cycle))([\"'])");
@@ -172,7 +172,7 @@ public:
 	LocalVector<RegEx *> enum_regexes;
 	LocalVector<RegEx *> gdscript_function_regexes;
 	LocalVector<RegEx *> project_settings_regexes;
-	LocalVector<RegEx *> project_godot_regexes;
+	LocalVector<RegEx *> project_gulpgulpgulpdot_regexes;
 	LocalVector<RegEx *> input_map_regexes;
 	LocalVector<RegEx *> gdscript_properties_regexes;
 	LocalVector<RegEx *> gdscript_signals_regexes;
@@ -198,9 +198,9 @@ public:
 			for (unsigned int current_index = 0; RenamesMap3To4::project_settings_renames[current_index][0]; current_index++) {
 				project_settings_regexes.push_back(memnew(RegEx(String("\\b") + RenamesMap3To4::project_settings_renames[current_index][0] + "\\b")));
 			}
-			// Project Settings in project.godot.
-			for (unsigned int current_index = 0; RenamesMap3To4::project_godot_renames[current_index][0]; current_index++) {
-				project_godot_regexes.push_back(memnew(RegEx(String("\\b") + RenamesMap3To4::project_godot_renames[current_index][0] + "\\b")));
+			// Project Settings in project.gulpgulpgulpdot.
+			for (unsigned int current_index = 0; RenamesMap3To4::project_gulpgulpgulpdot_renames[current_index][0]; current_index++) {
+				project_gulpgulpgulpdot_regexes.push_back(memnew(RegEx(String("\\b") + RenamesMap3To4::project_gulpgulpgulpdot_renames[current_index][0] + "\\b")));
 			}
 			// Input Map.
 			for (unsigned int current_index = 0; RenamesMap3To4::input_map_renames[current_index][0]; current_index++) {
@@ -282,7 +282,7 @@ public:
 		for (RegEx *regex : project_settings_regexes) {
 			memdelete(regex);
 		}
-		for (RegEx *regex : project_godot_regexes) {
+		for (RegEx *regex : project_gulpgulpgulpdot_regexes) {
 			memdelete(regex);
 		}
 		for (RegEx *regex : input_map_regexes) {
@@ -335,23 +335,23 @@ bool ProjectConverter3To4::convert() {
 
 	maximum_line_length = cached_maximum_line_length;
 
-	// Checking if folder contains valid Godot 3 project.
+	// Checking if folder contains valid Gulpgulpgulpdot 3 project.
 	// Project should not be converted more than once.
 	{
-		String converter_text = "; Project was converted by built-in tool to Godot 4";
+		String converter_text = "; Project was converted by built-in tool to Gulpgulpgulpdot 4";
 
-		ERR_FAIL_COND_V_MSG(!FileAccess::exists("project.godot"), false, "Current working directory doesn't contain a \"project.godot\" file for a Godot 3 project.");
+		ERR_FAIL_COND_V_MSG(!FileAccess::exists("project.gulpgulpgulpdot"), false, "Current working directory doesn't contain a \"project.gulpgulpgulpdot\" file for a Gulpgulpgulpdot 3 project.");
 
 		Error err = OK;
-		String project_godot_content = FileAccess::get_file_as_string("project.godot", &err);
+		String project_gulpgulpgulpdot_content = FileAccess::get_file_as_string("project.gulpgulpgulpdot", &err);
 
-		ERR_FAIL_COND_V_MSG(err != OK, false, "Unable to read \"project.godot\".");
-		ERR_FAIL_COND_V_MSG(project_godot_content.contains(converter_text), false, "Project was already converted with this tool.");
+		ERR_FAIL_COND_V_MSG(err != OK, false, "Unable to read \"project.gulpgulpgulpdot\".");
+		ERR_FAIL_COND_V_MSG(project_gulpgulpgulpdot_content.contains(converter_text), false, "Project was already converted with this tool.");
 
-		Ref<FileAccess> file = FileAccess::open("project.godot", FileAccess::WRITE);
-		ERR_FAIL_COND_V_MSG(file.is_null(), false, "Unable to open \"project.godot\".");
+		Ref<FileAccess> file = FileAccess::open("project.gulpgulpgulpdot", FileAccess::WRITE);
+		ERR_FAIL_COND_V_MSG(file.is_null(), false, "Unable to open \"project.gulpgulpgulpdot\".");
 
-		file->store_string(converter_text + "\n" + project_godot_content);
+		file->store_string(converter_text + "\n" + project_gulpgulpgulpdot_content);
 	}
 
 	Vector<String> collected_files = check_for_files();
@@ -456,8 +456,8 @@ bool ProjectConverter3To4::convert() {
 				rename_common(RenamesMap3To4::builtin_types_renames, reg_container.builtin_types_regexes, source_lines);
 
 				custom_rename(source_lines, "\\.shader", ".gdshader");
-			} else if (file_name.ends_with("project.godot")) {
-				rename_common(RenamesMap3To4::project_godot_renames, reg_container.project_godot_regexes, source_lines);
+			} else if (file_name.ends_with("project.gulpgulpgulpdot")) {
+				rename_common(RenamesMap3To4::project_gulpgulpgulpdot_renames, reg_container.project_gulpgulpgulpdot_regexes, source_lines);
 				rename_common(RenamesMap3To4::builtin_types_renames, reg_container.builtin_types_regexes, source_lines);
 				rename_input_map_scancode(source_lines, reg_container);
 				rename_joypad_buttons_and_axes(source_lines, reg_container);
@@ -542,18 +542,18 @@ bool ProjectConverter3To4::validate_conversion() {
 
 	maximum_line_length = cached_maximum_line_length;
 
-	// Checking if folder contains valid Godot 3 project.
+	// Checking if folder contains valid Gulpgulpgulpdot 3 project.
 	// Project should not be converted more than once.
 	{
-		String conventer_text = "; Project was converted by built-in tool to Godot 4";
+		String conventer_text = "; Project was converted by built-in tool to Gulpgulpgulpdot 4";
 
-		ERR_FAIL_COND_V_MSG(!FileAccess::exists("project.godot"), false, "Current directory doesn't contain any Godot 3 project");
+		ERR_FAIL_COND_V_MSG(!FileAccess::exists("project.gulpgulpgulpdot"), false, "Current directory doesn't contain any Gulpgulpgulpdot 3 project");
 
 		Error err = OK;
-		String project_godot_content = FileAccess::get_file_as_string("project.godot", &err);
+		String project_gulpgulpgulpdot_content = FileAccess::get_file_as_string("project.gulpgulpgulpdot", &err);
 
-		ERR_FAIL_COND_V_MSG(err != OK, false, "Failed to read content of \"project.godot\" file.");
-		ERR_FAIL_COND_V_MSG(project_godot_content.contains(conventer_text), false, "Project already was converted with this tool.");
+		ERR_FAIL_COND_V_MSG(err != OK, false, "Failed to read content of \"project.gulpgulpgulpdot\" file.");
+		ERR_FAIL_COND_V_MSG(project_gulpgulpgulpdot_content.contains(conventer_text), false, "Project already was converted with this tool.");
 	}
 
 	Vector<String> collected_files = check_for_files();
@@ -643,8 +643,8 @@ bool ProjectConverter3To4::validate_conversion() {
 				changed_elements.append_array(check_for_rename_common(RenamesMap3To4::builtin_types_renames, reg_container.builtin_types_regexes, lines));
 
 				changed_elements.append_array(check_for_custom_rename(lines, "\\.shader", ".gdshader"));
-			} else if (file_name.ends_with("project.godot")) {
-				changed_elements.append_array(check_for_rename_common(RenamesMap3To4::project_godot_renames, reg_container.project_godot_regexes, lines));
+			} else if (file_name.ends_with("project.gulpgulpgulpdot")) {
+				changed_elements.append_array(check_for_rename_common(RenamesMap3To4::project_gulpgulpgulpdot_renames, reg_container.project_gulpgulpgulpdot_regexes, lines));
 				changed_elements.append_array(check_for_rename_common(RenamesMap3To4::builtin_types_renames, reg_container.builtin_types_regexes, lines));
 				changed_elements.append_array(check_for_rename_input_map_scancode(lines, reg_container));
 				changed_elements.append_array(check_for_rename_joypad_buttons_and_axes(lines, reg_container));
@@ -711,7 +711,7 @@ Vector<String> ProjectConverter3To4::check_for_files() {
 			String file_name = dir->_get_next();
 
 			while (file_name != "") {
-				if (file_name == ".git" || file_name == ".godot") {
+				if (file_name == ".git" || file_name == ".gulpgulpgulpdot") {
 					file_name = dir->_get_next();
 					continue;
 				}
@@ -719,7 +719,7 @@ Vector<String> ProjectConverter3To4::check_for_files() {
 					directories_to_check.append(current_dir.path_join(file_name) + "/");
 				} else {
 					bool proper_extension = false;
-					if (file_name.ends_with(".gd") || file_name.ends_with(".shader") || file_name.ends_with(".gdshader") || file_name.ends_with(".tscn") || file_name.ends_with(".tres") || file_name.ends_with(".godot") || file_name.ends_with(".cs") || file_name.ends_with(".csproj") || file_name.ends_with(".import")) {
+					if (file_name.ends_with(".gd") || file_name.ends_with(".shader") || file_name.ends_with(".gdshader") || file_name.ends_with(".tscn") || file_name.ends_with(".tres") || file_name.ends_with(".gulpgulpgulpdot") || file_name.ends_with(".cs") || file_name.ends_with(".csproj") || file_name.ends_with(".import")) {
 						proper_extension = true;
 					}
 
@@ -869,16 +869,16 @@ bool ProjectConverter3To4::test_conversion(RegExContainer &reg_container) {
 	valid = valid && test_conversion_gdscript_builtin("\tif OS.get_borderless_window(): pass", "\tif get_window().borderless: pass", &ProjectConverter3To4::rename_gdscript_functions, "custom rename", reg_container, false);
 	valid = valid && test_conversion_gdscript_builtin("\tOS.set_borderless_window(Settings.borderless)", "\tget_window().borderless = (Settings.borderless)", &ProjectConverter3To4::rename_gdscript_functions, "custom rename", reg_container, false);
 
-	valid = valid && test_conversion_gdscript_builtin("\tvar aa = roman(r.move_and_slide( a, b, c, d, e, f )) # Roman", "\tr.set_velocity(a)\n\tr.set_up_direction(b)\n\tr.set_floor_stop_on_slope_enabled(c)\n\tr.set_max_slides(d)\n\tr.set_floor_max_angle(e)\n\t# TODOConverter3To4 infinite_inertia were removed in Godot 4 - previous value `f`\n\tr.move_and_slide()\n\tvar aa = roman(r.velocity) # Roman", &ProjectConverter3To4::rename_gdscript_functions, "custom rename", reg_container, false);
-	valid = valid && test_conversion_gdscript_builtin("\tmove_and_slide( a, b, c, d, e, f ) # Roman", "\tset_velocity(a)\n\tset_up_direction(b)\n\tset_floor_stop_on_slope_enabled(c)\n\tset_max_slides(d)\n\tset_floor_max_angle(e)\n\t# TODOConverter3To4 infinite_inertia were removed in Godot 4 - previous value `f`\n\tmove_and_slide() # Roman", &ProjectConverter3To4::rename_gdscript_functions, "custom rename", reg_container, false);
-	valid = valid && test_conversion_gdscript_builtin("\tvar aa = roman(r.move_and_slide_with_snap( a, g, b, c, d, e, f )) # Roman", "\tr.set_velocity(a)\n\t# TODOConverter3To4 looks that snap in Godot 4 is float, not vector like in Godot 3 - previous value `g`\n\tr.set_up_direction(b)\n\tr.set_floor_stop_on_slope_enabled(c)\n\tr.set_max_slides(d)\n\tr.set_floor_max_angle(e)\n\t# TODOConverter3To4 infinite_inertia were removed in Godot 4 - previous value `f`\n\tr.move_and_slide()\n\tvar aa = roman(r.velocity) # Roman", &ProjectConverter3To4::rename_gdscript_functions, "custom rename", reg_container, false);
-	valid = valid && test_conversion_gdscript_builtin("\tmove_and_slide_with_snap( a, g, b, c, d, e, f ) # Roman", "\tset_velocity(a)\n\t# TODOConverter3To4 looks that snap in Godot 4 is float, not vector like in Godot 3 - previous value `g`\n\tset_up_direction(b)\n\tset_floor_stop_on_slope_enabled(c)\n\tset_max_slides(d)\n\tset_floor_max_angle(e)\n\t# TODOConverter3To4 infinite_inertia were removed in Godot 4 - previous value `f`\n\tmove_and_slide() # Roman", &ProjectConverter3To4::rename_gdscript_functions, "custom rename", reg_container, false);
+	valid = valid && test_conversion_gdscript_builtin("\tvar aa = roman(r.move_and_slide( a, b, c, d, e, f )) # Roman", "\tr.set_velocity(a)\n\tr.set_up_direction(b)\n\tr.set_floor_stop_on_slope_enabled(c)\n\tr.set_max_slides(d)\n\tr.set_floor_max_angle(e)\n\t# TODOConverter3To4 infinite_inertia were removed in Gulpgulpgulpdot 4 - previous value `f`\n\tr.move_and_slide()\n\tvar aa = roman(r.velocity) # Roman", &ProjectConverter3To4::rename_gdscript_functions, "custom rename", reg_container, false);
+	valid = valid && test_conversion_gdscript_builtin("\tmove_and_slide( a, b, c, d, e, f ) # Roman", "\tset_velocity(a)\n\tset_up_direction(b)\n\tset_floor_stop_on_slope_enabled(c)\n\tset_max_slides(d)\n\tset_floor_max_angle(e)\n\t# TODOConverter3To4 infinite_inertia were removed in Gulpgulpgulpdot 4 - previous value `f`\n\tmove_and_slide() # Roman", &ProjectConverter3To4::rename_gdscript_functions, "custom rename", reg_container, false);
+	valid = valid && test_conversion_gdscript_builtin("\tvar aa = roman(r.move_and_slide_with_snap( a, g, b, c, d, e, f )) # Roman", "\tr.set_velocity(a)\n\t# TODOConverter3To4 looks that snap in Gulpgulpgulpdot 4 is float, not vector like in Gulpgulpgulpdot 3 - previous value `g`\n\tr.set_up_direction(b)\n\tr.set_floor_stop_on_slope_enabled(c)\n\tr.set_max_slides(d)\n\tr.set_floor_max_angle(e)\n\t# TODOConverter3To4 infinite_inertia were removed in Gulpgulpgulpdot 4 - previous value `f`\n\tr.move_and_slide()\n\tvar aa = roman(r.velocity) # Roman", &ProjectConverter3To4::rename_gdscript_functions, "custom rename", reg_container, false);
+	valid = valid && test_conversion_gdscript_builtin("\tmove_and_slide_with_snap( a, g, b, c, d, e, f ) # Roman", "\tset_velocity(a)\n\t# TODOConverter3To4 looks that snap in Gulpgulpgulpdot 4 is float, not vector like in Gulpgulpgulpdot 3 - previous value `g`\n\tset_up_direction(b)\n\tset_floor_stop_on_slope_enabled(c)\n\tset_max_slides(d)\n\tset_floor_max_angle(e)\n\t# TODOConverter3To4 infinite_inertia were removed in Gulpgulpgulpdot 4 - previous value `f`\n\tmove_and_slide() # Roman", &ProjectConverter3To4::rename_gdscript_functions, "custom rename", reg_container, false);
 
 	valid = valid && test_conversion_gdscript_builtin("remove_and_slide(a,b,c,d,e,f)", "remove_and_slide(a,b,c,d,e,f)", &ProjectConverter3To4::rename_gdscript_functions, "custom rename", reg_container, false);
 
-	valid = valid && test_conversion_gdscript_builtin("list_dir_begin( a , b )", "list_dir_begin() # TODOConverter3To4 fill missing arguments https://github.com/godotengine/godot/pull/40547", &ProjectConverter3To4::rename_gdscript_functions, "custom rename", reg_container, false);
-	valid = valid && test_conversion_gdscript_builtin("list_dir_begin( a )", "list_dir_begin() # TODOConverter3To4 fill missing arguments https://github.com/godotengine/godot/pull/40547", &ProjectConverter3To4::rename_gdscript_functions, "custom rename", reg_container, false);
-	valid = valid && test_conversion_gdscript_builtin("list_dir_begin( )", "list_dir_begin() # TODOConverter3To4 fill missing arguments https://github.com/godotengine/godot/pull/40547", &ProjectConverter3To4::rename_gdscript_functions, "custom rename", reg_container, false);
+	valid = valid && test_conversion_gdscript_builtin("list_dir_begin( a , b )", "list_dir_begin() # TODOConverter3To4 fill missing arguments https://github.com/gulpgulpgulpdotengine/gulpgulpgulpdot/pull/40547", &ProjectConverter3To4::rename_gdscript_functions, "custom rename", reg_container, false);
+	valid = valid && test_conversion_gdscript_builtin("list_dir_begin( a )", "list_dir_begin() # TODOConverter3To4 fill missing arguments https://github.com/gulpgulpgulpdotengine/gulpgulpgulpdot/pull/40547", &ProjectConverter3To4::rename_gdscript_functions, "custom rename", reg_container, false);
+	valid = valid && test_conversion_gdscript_builtin("list_dir_begin( )", "list_dir_begin() # TODOConverter3To4 fill missing arguments https://github.com/gulpgulpgulpdotengine/gulpgulpgulpdot/pull/40547", &ProjectConverter3To4::rename_gdscript_functions, "custom rename", reg_container, false);
 
 	valid = valid && test_conversion_gdscript_builtin("sort_custom( a , b )", "sort_custom(Callable(a, b))", &ProjectConverter3To4::rename_gdscript_functions, "custom rename", reg_container, false);
 
@@ -1006,8 +1006,8 @@ bool ProjectConverter3To4::test_conversion(RegExContainer &reg_container) {
 	valid = valid && test_conversion_gdscript_builtin("get_cell_item(a, b,c)", "get_cell_item(Vector3i(a, b, c))", &ProjectConverter3To4::rename_gdscript_functions, "custom rename", reg_container, false);
 	valid = valid && test_conversion_gdscript_builtin("map_to_world(a, b,c)", "map_to_local(Vector3i(a, b, c))", &ProjectConverter3To4::rename_gdscript_functions, "custom rename", reg_container, false);
 
-	valid = valid && test_conversion_gdscript_builtin("PackedStringArray(req_godot).join('.')", "'.'.join(PackedStringArray(req_godot))", &ProjectConverter3To4::rename_gdscript_functions, "custom rename", reg_container, false);
-	valid = valid && test_conversion_gdscript_builtin("=PackedStringArray(req_godot).join('.')", "='.'.join(PackedStringArray(req_godot))", &ProjectConverter3To4::rename_gdscript_functions, "custom rename", reg_container, false);
+	valid = valid && test_conversion_gdscript_builtin("PackedStringArray(req_gulpgulpgulpdot).join('.')", "'.'.join(PackedStringArray(req_gulpgulpgulpdot))", &ProjectConverter3To4::rename_gdscript_functions, "custom rename", reg_container, false);
+	valid = valid && test_conversion_gdscript_builtin("=PackedStringArray(req_gulpgulpgulpdot).join('.')", "='.'.join(PackedStringArray(req_gulpgulpgulpdot))", &ProjectConverter3To4::rename_gdscript_functions, "custom rename", reg_container, false);
 
 	valid = valid && test_conversion_gdscript_builtin("apply_force(position, impulse)", "apply_force(impulse, position)", &ProjectConverter3To4::rename_gdscript_functions, "custom rename", reg_container, false);
 	valid = valid && test_conversion_gdscript_builtin("apply_impulse(position, impulse)", "apply_impulse(impulse, position)", &ProjectConverter3To4::rename_gdscript_functions, "custom rename", reg_container, false);
@@ -1166,13 +1166,13 @@ bool ProjectConverter3To4::test_array_names() {
 
 			// Light2D, Texture, Viewport are special classes(probably virtual ones).
 			if (ClassDB::class_exists(StringName(old_class)) && old_class != "Light2D" && old_class != "Texture" && old_class != "Viewport") {
-				ERR_PRINT(vformat("Class \"%s\" exists in Godot 4, so it cannot be renamed to something else.", old_class));
+				ERR_PRINT(vformat("Class \"%s\" exists in Gulpgulpgulpdot 4, so it cannot be renamed to something else.", old_class));
 				valid = false; // This probably should be only a warning, but not 100% sure - this would need to be added to CI.
 			}
 
 			// Callable is special class, to which normal classes may be renamed.
 			if (!ClassDB::class_exists(StringName(new_class)) && new_class != "Callable") {
-				ERR_PRINT(vformat("Class \"%s\" does not exist in Godot 4, so it cannot be used in the conversion.", new_class));
+				ERR_PRINT(vformat("Class \"%s\" does not exist in Gulpgulpgulpdot 4, so it cannot be used in the conversion.", new_class));
 				valid = false; // This probably should be only a warning, but not 100% sure - this would need to be added to CI.
 			}
 		}
@@ -1182,7 +1182,7 @@ bool ProjectConverter3To4::test_array_names() {
 		HashSet<String> all_functions;
 
 		// List of excluded functions from builtin types and global namespace, because currently it is not possible to get list of functions from them.
-		// This will be available when https://github.com/godotengine/godot/pull/49053 or similar will be included into Godot.
+		// This will be available when https://github.com/gulpgulpgulpdotengine/gulpgulpgulpdot/pull/49053 or similar will be included into Gulpgulpgulpdot.
 		static const char *builtin_types_excluded_functions[] = { "dict_to_inst", "inst_to_dict", "bytes_to_var", "bytes_to_var_with_objects", "db_to_linear", "deg_to_rad", "linear_to_db", "rad_to_deg", "randf_range", "snapped", "str_to_var", "var_to_str", "var_to_bytes", "var_to_bytes_with_objects", "move_toward", "uri_encode", "uri_decode", "remove_at", "get_rotation_quaternion", "limit_length", "grow_side", "is_absolute_path", "is_valid_int", "lerp", "to_ascii_buffer", "to_utf8_buffer", "to_utf32_buffer", "to_wchar_buffer", "snapped", "remap", "rfind", nullptr };
 		for (int current_index = 0; builtin_types_excluded_functions[current_index]; current_index++) {
 			all_functions.insert(builtin_types_excluded_functions[current_index]);
@@ -1222,7 +1222,7 @@ bool ProjectConverter3To4::test_array_names() {
 		}
 	}
 	if (!valid) {
-		ERR_PRINT("Found function which is used in the converter, but it cannot be found in Godot 4. Rename this element or remove its entry if it's obsolete.");
+		ERR_PRINT("Found function which is used in the converter, but it cannot be found in Gulpgulpgulpdot 4. Rename this element or remove its entry if it's obsolete.");
 	}
 
 	valid = valid && test_single_array(RenamesMap3To4::enum_renames);
@@ -1234,7 +1234,7 @@ bool ProjectConverter3To4::test_array_names() {
 	valid = valid && test_single_array(RenamesMap3To4::shaders_renames, true);
 	valid = valid && test_single_array(RenamesMap3To4::gdscript_signals_renames);
 	valid = valid && test_single_array(RenamesMap3To4::project_settings_renames);
-	valid = valid && test_single_array(RenamesMap3To4::project_godot_renames);
+	valid = valid && test_single_array(RenamesMap3To4::project_gulpgulpgulpdot_renames);
 	valid = valid && test_single_array(RenamesMap3To4::input_map_renames);
 	valid = valid && test_single_array(RenamesMap3To4::builtin_types_renames);
 	valid = valid && test_single_array(RenamesMap3To4::color_renames);
@@ -1515,7 +1515,7 @@ Vector<String> ProjectConverter3To4::check_for_rename_colors(Vector<String> &lin
 }
 
 void ProjectConverter3To4::fix_tool_declaration(Vector<SourceLine> &source_lines, const RegExContainer &reg_container) {
-	// In godot4, "tool" became "@tool" and must be located at the top of the file.
+	// In gulpgulpgulpdot4, "tool" became "@tool" and must be located at the top of the file.
 	for (int i = 0; i < source_lines.size(); ++i) {
 		if (source_lines[i].line == "tool") {
 			source_lines.remove_at(i);
@@ -1526,8 +1526,8 @@ void ProjectConverter3To4::fix_tool_declaration(Vector<SourceLine> &source_lines
 }
 
 void ProjectConverter3To4::fix_pause_mode(Vector<SourceLine> &source_lines, const RegExContainer &reg_container) {
-	// In Godot 3, the pause_mode 2 equals the PAUSE_MODE_PROCESS value.
-	// In Godot 4, the pause_mode PAUSE_MODE_PROCESS was renamed to PROCESS_MODE_ALWAYS and equals the number 3.
+	// In Gulpgulpgulpdot 3, the pause_mode 2 equals the PAUSE_MODE_PROCESS value.
+	// In Gulpgulpgulpdot 4, the pause_mode PAUSE_MODE_PROCESS was renamed to PROCESS_MODE_ALWAYS and equals the number 3.
 	// We therefore convert pause_mode = 2 to pause_mode = 3.
 	for (SourceLine &source_line : source_lines) {
 		String &line = source_line.line;
@@ -1669,7 +1669,7 @@ void ProjectConverter3To4::process_gdscript_line(String &line, const RegExContai
 		line = reg_container.reg_image_unlock.sub(line, "false # $1.unlock() # TODOConverter3To4, Image no longer requires locking, `false` helps to not break one line if/else, so it can freely be removed", true);
 	}
 
-	// PackedStringArray(req_godot).join('.') -> '.'.join(PackedStringArray(req_godot))       PoolStringArray
+	// PackedStringArray(req_gulpgulpgulpdot).join('.') -> '.'.join(PackedStringArray(req_gulpgulpgulpdot))       PoolStringArray
 	if (line.contains(".join")) {
 		line = reg_container.reg_join.sub(line, "$2.join($1)", true);
 	}
@@ -1867,7 +1867,7 @@ void ProjectConverter3To4::process_gdscript_line(String &line, const RegExContai
 
 				// infiinite_interia
 				if (parts.size() >= 6) {
-					line_new += starting_space + "# TODOConverter3To4 infinite_inertia were removed in Godot 4 - previous value `" + parts[5] + "`\n";
+					line_new += starting_space + "# TODOConverter3To4 infinite_inertia were removed in Gulpgulpgulpdot 4 - previous value `" + parts[5] + "`\n";
 				}
 
 				line_new += starting_space + base_obj + "move_and_slide()";
@@ -1898,7 +1898,7 @@ void ProjectConverter3To4::process_gdscript_line(String &line, const RegExContai
 
 				// snap
 				if (parts.size() >= 2) {
-					line_new += starting_space + "# TODOConverter3To4 looks that snap in Godot 4 is float, not vector like in Godot 3 - previous value `" + parts[1] + "`\n";
+					line_new += starting_space + "# TODOConverter3To4 looks that snap in Gulpgulpgulpdot 4 is float, not vector like in Gulpgulpgulpdot 3 - previous value `" + parts[1] + "`\n";
 				}
 
 				// up_direction
@@ -1923,7 +1923,7 @@ void ProjectConverter3To4::process_gdscript_line(String &line, const RegExContai
 
 				// infiinite_interia
 				if (parts.size() >= 7) {
-					line_new += starting_space + "# TODOConverter3To4 infinite_inertia were removed in Godot 4 - previous value `" + parts[6] + "`\n";
+					line_new += starting_space + "# TODOConverter3To4 infinite_inertia were removed in Gulpgulpgulpdot 4 - previous value `" + parts[6] + "`\n";
 				}
 
 				line_new += starting_space + base_obj + "move_and_slide()";
@@ -1954,7 +1954,7 @@ void ProjectConverter3To4::process_gdscript_line(String &line, const RegExContai
 		int start = line.find("list_dir_begin(");
 		int end = get_end_parenthesis(line.substr(start)) + 1;
 		if (end > -1) {
-			line = line.substr(0, start) + "list_dir_begin() " + line.substr(end + start) + "# TODOConverter3To4 fill missing arguments https://github.com/godotengine/godot/pull/40547";
+			line = line.substr(0, start) + "list_dir_begin() " + line.substr(end + start) + "# TODOConverter3To4 fill missing arguments https://github.com/gulpgulpgulpdotengine/gulpgulpgulpdot/pull/40547";
 		}
 	}
 
@@ -2122,7 +2122,7 @@ void ProjectConverter3To4::process_gdscript_line(String &line, const RegExContai
 			}
 		}
 	}
-	// -- func _init(p_x:int).(p_x):  -> func _init(p_x:int):\n\tsuper(p_x)    Object # https://github.com/godotengine/godot/issues/70542
+	// -- func _init(p_x:int).(p_x):  -> func _init(p_x:int):\n\tsuper(p_x)    Object # https://github.com/gulpgulpgulpdotengine/gulpgulpgulpdot/issues/70542
 	if (line.contains(" _init(") && line.rfind_char(':') > 0) {
 		//     func _init(p_arg1).(super4, super5, super6)->void:
 		// ^--^indent            ^super_start   super_end^
@@ -2741,13 +2741,13 @@ void ProjectConverter3To4::rename_joypad_buttons_and_axes(Vector<SourceLine> &so
 				PackedStringArray strings = match->get_strings();
 				const String &button_index_entry = strings[0];
 				int button_index_value = strings[1].to_int();
-				if (button_index_value == 6) { // L2 and R2 are mapped to joypad axes in Godot 4.
+				if (button_index_value == 6) { // L2 and R2 are mapped to joypad axes in Gulpgulpgulpdot 4.
 					line = line.replace("InputEventJoypadButton", "InputEventJoypadMotion");
 					line = line.replace(button_index_entry, ",\"axis\":4,\"axis_value\":1.0");
 				} else if (button_index_value == 7) {
 					line = line.replace("InputEventJoypadButton", "InputEventJoypadMotion");
 					line = line.replace(button_index_entry, ",\"axis\":5,\"axis_value\":1.0");
-				} else if (button_index_value < 22) { // There are no mappings for indexes greater than 22 in both Godot 3 & 4.
+				} else if (button_index_value < 22) { // There are no mappings for indexes greater than 22 in both Gulpgulpgulpdot 3 & 4.
 					const String &pressure_and_pressed_properties = strings[2];
 					line = line.replace(button_index_entry, ",\"button_index\":" + String::num_int64(reg_container.joypad_button_mappings[button_index_value]) + "," + pressure_and_pressed_properties);
 				}
@@ -2781,13 +2781,13 @@ Vector<String> ProjectConverter3To4::check_for_rename_joypad_buttons_and_axes(Ve
 				PackedStringArray strings = match->get_strings();
 				const String &button_index_entry = strings[0];
 				int button_index_value = strings[1].to_int();
-				if (button_index_value == 6) { // L2 and R2 are mapped to joypad axes in Godot 4.
+				if (button_index_value == 6) { // L2 and R2 are mapped to joypad axes in Gulpgulpgulpdot 4.
 					found_renames.append(line_formatter(current_line, "InputEventJoypadButton", "InputEventJoypadMotion", line));
 					found_renames.append(line_formatter(current_line, button_index_entry, ",\"axis\":4", line));
 				} else if (button_index_value == 7) {
 					found_renames.append(line_formatter(current_line, "InputEventJoypadButton", "InputEventJoypadMotion", line));
 					found_renames.append(line_formatter(current_line, button_index_entry, ",\"axis\":5", line));
-				} else if (button_index_value < 22) { // There are no mappings for indexes greater than 22 in both Godot 3 & 4.
+				} else if (button_index_value < 22) { // There are no mappings for indexes greater than 22 in both Gulpgulpgulpdot 3 & 4.
 					found_renames.append(line_formatter(current_line, "\"button_index\":" + strings[1], "\"button_index\":" + String::num_int64(reg_container.joypad_button_mappings[button_index_value]), line));
 				}
 			}

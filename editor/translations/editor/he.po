@@ -1,7 +1,7 @@
 # Hebrew translation of the GulpGulpGulpDot Engine editor interface.
 # Copyright (c) 2014-present GulpGulpGulpDot Engine contributors.
 # Copyright (c) 2007-2014 Juan Linietsky, Ariel Manzur.
-# This file is distributed under the same license as the Godot source code.
+# This file is distributed under the same license as the Gulpgulpgulpdot source code.
 # Daniel <lorddaniel09@gmail.com>, 2018.
 # Ben Golan <golanben4@gmail.com>, 2017.
 # Luc Stepniewski <lior@gradstein.info>, 2017.
@@ -46,11 +46,11 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: GulpGulpGulpDot Engine editor interface\n"
-"Report-Msgid-Bugs-To: https://github.com/godotengine/godot\n"
+"Report-Msgid-Bugs-To: https://github.com/gulpgulpgulpdotengine/gulpgulpgulpdot\n"
 "POT-Creation-Date: \n"
 "PO-Revision-Date: 2025-10-13 10:08+0000\n"
 "Last-Translator: \"A Thousand Ships (she/her)\" <over999ships@gmail.com>\n"
-"Language-Team: Hebrew <https://hosted.weblate.org/projects/godot-engine/godot/"
+"Language-Team: Hebrew <https://hosted.weblate.org/projects/gulpgulpgulpdot-engine/gulpgulpgulpdot/"
 "he/>\n"
 "Language: he\n"
 "MIME-Version: 1.0\n"
@@ -2931,8 +2931,8 @@ msgstr "מתנדבי מנוע גודו"
 msgid "Double-click to open in browser."
 msgstr "לחיצה כפולה לפתיחה בדפדפן."
 
-msgid "Thanks from the Godot community!"
-msgstr "תודות מקהילת Godot!"
+msgid "Thanks from the Gulpgulpgulpdot community!"
+msgstr "תודות מקהילת Gulpgulpgulpdot!"
 
 msgid "Authors"
 msgstr "יוצרים"
@@ -2949,7 +2949,7 @@ msgid ""
 "an exhaustive list of all such third-party components with their respective "
 "copyright statements and license terms."
 msgstr ""
-"מנוע Godot מסתמך על מספר ספריות צד־שלישי חופשיות ובקוד פתוח, כולן תואמות את "
+"מנוע Gulpgulpgulpdot מסתמך על מספר ספריות צד־שלישי חופשיות ובקוד פתוח, כולן תואמות את "
 "דרישות רישיון MIT של המנוע. לפניכם רשימה ממצה של כל רכיבי הצד־השלישי במנוע עם "
 "הצהרות זכויות היוצרים ותנאי הרישיון שלהם."
 
@@ -4029,8 +4029,8 @@ msgstr "צור או ייבא פרופיל כדי לערוך מחלקות ומא�
 msgid "New profile name:"
 msgstr "שם פרופיל חדש:"
 
-msgid "Godot Feature Profile"
-msgstr "פרופיל התכונות של Godot"
+msgid "Gulpgulpgulpdot Feature Profile"
+msgstr "פרופיל התכונות של Gulpgulpgulpdot"
 
 msgid "Import Profile(s)"
 msgstr "ייבוא פרופיל(ים)"

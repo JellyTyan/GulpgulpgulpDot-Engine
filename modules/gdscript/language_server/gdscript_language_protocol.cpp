@@ -3,7 +3,7 @@
 /**************************************************************************/
 /*                         This file is part of:                          */
 /*                             GulpGulpGulpDot Engine                               */
-/*                        https://godotengine.org                         */
+/*                        https://gulpgulpgulpdotengine.org                         */
 /**************************************************************************/
 /* Copyright (c) 2014-present GulpGulpGulpDot Engine contributors (see AUTHORS.md). */
 /* Copyright (c) 2007-2014 Juan Linietsky, Ariel Manzur.                  */
@@ -36,7 +36,7 @@
 #include "editor/editor_log.h"
 #include "editor/editor_node.h"
 #include "editor/settings/editor_settings.h"
-#include "modules/gdscript/language_server/godot_lsp.h"
+#include "modules/gdscript/language_server/gulpgulpgulpdot_lsp.h"
 
 #define LSP_CLIENT_V(m_ret_val)                                    \
 	ERR_FAIL_COND_V(latest_client_id == LSP_NO_CLIENT, m_ret_val); \
@@ -186,7 +186,7 @@ Dictionary GDScriptLanguageProtocol::initialize(const Dictionary &p_params) {
 	LSP::InitializeResult ret;
 
 	{
-		// Warn if the workspace root does not match with the project that is currently open in Godot,
+		// Warn if the workspace root does not match with the project that is currently open in Gulpgulpgulpdot,
 		// since it might lead to unexpected behavior, like wrong warnings about duplicate class names.
 
 		String root;
@@ -201,7 +201,7 @@ Dictionary GDScriptLanguageProtocol::initialize(const Dictionary &p_params) {
 		if (ProjectSettings::get_singleton()->localize_path(root) != "res://") {
 			LSP::ShowMessageParams params{
 				LSP::MessageType::Warning,
-				"The GDScript Language Server might not work correctly with other projects than the one opened in Godot."
+				"The GDScript Language Server might not work correctly with other projects than the one opened in Gulpgulpgulpdot."
 			};
 			notify_client("window/showMessage", params.to_json());
 		}
@@ -247,11 +247,11 @@ Dictionary GDScriptLanguageProtocol::initialize(const Dictionary &p_params) {
 }
 
 void GDScriptLanguageProtocol::initialized(const Variant &p_params) {
-	LSP::GodotCapabilities capabilities;
+	LSP::GulpgulpgulpdotCapabilities capabilities;
 
 	DocTools *doc = EditorHelp::get_doc_data();
 	for (const KeyValue<String, DocData::ClassDoc> &E : doc->class_list) {
-		LSP::GodotNativeClassInfo gdclass;
+		LSP::GulpgulpgulpdotNativeClassInfo gdclass;
 		gdclass.name = E.value.name;
 		gdclass.class_doc = &(E.value);
 		if (ClassDB::ClassInfo *ptr = ClassDB::classes.getptr(StringName(E.value.name))) {

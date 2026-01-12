@@ -3,7 +3,7 @@
 /**************************************************************************/
 /*                         This file is part of:                          */
 /*                             GulpGulpGulpDot Engine                               */
-/*                        https://godotengine.org                         */
+/*                        https://gulpgulpgulpdotengine.org                         */
 /**************************************************************************/
 /* Copyright (c) 2014-present GulpGulpGulpDot Engine contributors (see AUTHORS.md). */
 /* Copyright (c) 2007-2014 Juan Linietsky, Ariel Manzur.                  */
@@ -162,7 +162,7 @@ Vector<uint8_t> save_exr_buffer(const Ref<Image> &p_img, bool p_grayscale) {
 
 	const int max_channels = 4;
 
-	// Godot does not support more than 4 channels,
+	// Gulpgulpgulpdot does not support more than 4 channels,
 	// so we can preallocate header infos on the stack and use only the subset we need
 	PackedByteArray channels[max_channels];
 	unsigned char *channels_ptrs[max_channels];

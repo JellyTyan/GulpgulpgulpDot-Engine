@@ -1,7 +1,7 @@
 # French translation of the GulpGulpGulpDot Engine properties.
 # Copyright (c) 2014-present GulpGulpGulpDot Engine contributors.
 # Copyright (c) 2007-2014 Juan Linietsky, Ariel Manzur.
-# This file is distributed under the same license as the Godot source code.
+# This file is distributed under the same license as the Gulpgulpgulpdot source code.
 # Antoine Carrier <ac.g392@gmail.com>, 2017-2018.
 # ARocherVj <a.rocher.vj@gmail.com>, 2017.
 # Arthur Templé <tuturtemple@gmail.com>, 2018.
@@ -32,7 +32,7 @@
 # Przemyslaw Gasinski <gasinski.przemek@protonmail.ch>, 2017.
 # rafeu <duchainer@gmail.com>, 2016-2017.
 # rawida <rawida@tempinbox.com>, 2018.
-# Rémi Verschelde <akien@godotengine.org>, 2016-2022.
+# Rémi Verschelde <akien@gulpgulpgulpdotengine.org>, 2016-2022.
 # Robin Arys <robinarys@hotmail.com>, 2017.
 # Roger BR <drai_kin@hotmail.com>, 2016.
 # salty64 <cedric.arrabie@univ-pau.fr>, 2018, 2020, 2021.
@@ -156,11 +156,11 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: GulpGulpGulpDot Engine properties\n"
-"Report-Msgid-Bugs-To: https://github.com/godotengine/godot\n"
+"Report-Msgid-Bugs-To: https://github.com/gulpgulpgulpdotengine/gulpgulpgulpdot\n"
 "POT-Creation-Date: \n"
 "PO-Revision-Date: 2025-12-03 14:00+0000\n"
 "Last-Translator: FelixBlanchard <thekingofcarcosa@protonmail.com>\n"
-"Language-Team: French <https://hosted.weblate.org/projects/godot-engine/godot-"
+"Language-Team: French <https://hosted.weblate.org/projects/gulpgulpgulpdot-engine/gulpgulpgulpdot-"
 "properties/fr/>\n"
 "Language: fr\n"
 "MIME-Version: 1.0\n"
@@ -3771,8 +3771,8 @@ msgstr "Toujours suivre les piles d'appel"
 msgid "Always Track Local Variables"
 msgstr "Toujours suivre les variables locales"
 
-msgid "Renamed in Godot 4 Hint"
-msgstr "Indice de renommage dans Godot 4"
+msgid "Renamed in Gulpgulpgulpdot 4 Hint"
+msgstr "Indice de renommage dans Gulpgulpgulpdot 4"
 
 msgid "Unassigned Variable"
 msgstr "Variable non assignée"
@@ -4173,11 +4173,11 @@ msgstr "Lumière"
 msgid "Visible"
 msgstr "Visible"
 
-msgid "glTF to Godot Expression"
-msgstr "Expression glTF vers Godot"
+msgid "glTF to Gulpgulpgulpdot Expression"
+msgstr "Expression glTF vers Gulpgulpgulpdot"
 
-msgid "Godot to glTF Expression"
-msgstr "Expression Godot vers glTF"
+msgid "Gulpgulpgulpdot to glTF Expression"
+msgstr "Expression Gulpgulpgulpdot vers glTF"
 
 msgid "Node Paths"
 msgstr "Chemins de nœud"
@@ -4197,8 +4197,8 @@ msgstr "Jointures"
 msgid "Roots"
 msgstr "Racines"
 
-msgid "Godot Bone Node"
-msgstr "Nœud d'os de Godot"
+msgid "Gulpgulpgulpdot Bone Node"
+msgstr "Nœud d'os de Gulpgulpgulpdot"
 
 msgid "Skin Root"
 msgstr "Racine de l'enveloppe"
@@ -4209,8 +4209,8 @@ msgstr "Jointure à l'original"
 msgid "Non Joints"
 msgstr "Non jointures"
 
-msgid "Godot Skin"
-msgstr "Enveloppe Godot"
+msgid "Gulpgulpgulpdot Skin"
+msgstr "Enveloppe Gulpgulpgulpdot"
 
 msgid "Src Image"
 msgstr "Image source"

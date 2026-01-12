@@ -3,7 +3,7 @@
 /**************************************************************************/
 /*                         This file is part of:                          */
 /*                             GulpGulpGulpDot Engine                               */
-/*                        https://godotengine.org                         */
+/*                        https://gulpgulpgulpdotengine.org                         */
 /**************************************************************************/
 /* Copyright (c) 2014-present GulpGulpGulpDot Engine contributors (see AUTHORS.md). */
 /* Copyright (c) 2007-2014 Juan Linietsky, Ariel Manzur.                  */
@@ -36,12 +36,12 @@
 
 #define AKEYCODE_MAX 0xFFFF
 
-struct AndroidGodotCodePair {
+struct AndroidGulpgulpgulpdotCodePair {
 	unsigned int android_code = 0;
-	Key godot_code = Key::NONE;
+	Key gulpgulpgulpdot_code = Key::NONE;
 };
 
-static AndroidGodotCodePair android_godot_code_pairs[] = {
+static AndroidGulpgulpgulpdotCodePair android_gulpgulpgulpdot_code_pairs[] = {
 	{ AKEYCODE_UNKNOWN, Key::UNKNOWN }, // (0) Unknown key code.
 	{ AKEYCODE_BACK, Key::BACK }, // (4) Back key.
 	{ AKEYCODE_0, Key::KEY_0 }, // (7) '0' key.
@@ -174,15 +174,15 @@ static AndroidGodotCodePair android_godot_code_pairs[] = {
 	{ AKEYCODE_MAX, Key::UNKNOWN }
 };
 
-Key godot_code_from_android_code(unsigned int p_code);
+Key gulpgulpgulpdot_code_from_android_code(unsigned int p_code);
 
 // Key location determination.
-struct AndroidGodotLocationPair {
+struct AndroidGulpgulpgulpdotLocationPair {
 	unsigned int android_code = 0;
-	KeyLocation godot_code = KeyLocation::UNSPECIFIED;
+	KeyLocation gulpgulpgulpdot_code = KeyLocation::UNSPECIFIED;
 };
 
-static AndroidGodotLocationPair android_godot_location_pairs[] = {
+static AndroidGulpgulpgulpdotLocationPair android_gulpgulpgulpdot_location_pairs[] = {
 	{ AKEYCODE_ALT_LEFT, KeyLocation::LEFT },
 	{ AKEYCODE_ALT_RIGHT, KeyLocation::RIGHT },
 	{ AKEYCODE_SHIFT_LEFT, KeyLocation::LEFT },
@@ -194,4 +194,4 @@ static AndroidGodotLocationPair android_godot_location_pairs[] = {
 	{ AKEYCODE_MAX, KeyLocation::UNSPECIFIED }
 };
 
-KeyLocation godot_location_from_android_code(unsigned int p_code);
+KeyLocation gulpgulpgulpdot_location_from_android_code(unsigned int p_code);

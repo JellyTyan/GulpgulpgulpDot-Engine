@@ -3,7 +3,7 @@
 /**************************************************************************/
 /*                         This file is part of:                          */
 /*                             GulpGulpGulpDot Engine                               */
-/*                        https://godotengine.org                         */
+/*                        https://gulpgulpgulpdotengine.org                         */
 /**************************************************************************/
 /* Copyright (c) 2014-present GulpGulpGulpDot Engine contributors (see AUTHORS.md). */
 /* Copyright (c) 2007-2014 Juan Linietsky, Ariel Manzur.                  */
@@ -30,7 +30,7 @@
 
 #pragma once
 
-#include "../godotsharp_defs.h"
+#include "../gulpgulpgulpdotsharp_defs.h"
 
 #include "core/io/config_file.h"
 
@@ -82,7 +82,7 @@ class GDMono {
 #ifdef TOOLS_ENABLED
 	uint64_t api_editor_hash = 0;
 #endif
-	void _init_godot_api_hashes();
+	void _init_gulpgulpgulpdot_api_hashes();
 
 #ifdef TOOLS_ENABLED
 	gdmono::PluginCallbacks plugin_callbacks;
@@ -163,19 +163,19 @@ public:
 
 namespace MonoBind {
 
-class GodotSharp : public Object {
-	GDCLASS(GodotSharp, Object);
+class GulpgulpgulpdotSharp : public Object {
+	GDCLASS(GulpgulpgulpdotSharp, Object);
 
 protected:
-	static GodotSharp *singleton;
+	static GulpgulpgulpdotSharp *singleton;
 
 public:
-	static GodotSharp *get_singleton() { return singleton; }
+	static GulpgulpgulpdotSharp *get_singleton() { return singleton; }
 
 	void reload_assemblies(bool p_soft_reload);
 
-	GodotSharp();
-	~GodotSharp();
+	GulpgulpgulpdotSharp();
+	~GulpgulpgulpdotSharp();
 };
 
 } // namespace MonoBind

@@ -3,7 +3,7 @@
 /**************************************************************************/
 /*                         This file is part of:                          */
 /*                             GulpGulpGulpDot Engine                               */
-/*                        https://godotengine.org                         */
+/*                        https://gulpgulpgulpdotengine.org                         */
 /**************************************************************************/
 /* Copyright (c) 2014-present GulpGulpGulpDot Engine contributors (see AUTHORS.md). */
 /* Copyright (c) 2007-2014 Juan Linietsky, Ariel Manzur.                  */
@@ -53,18 +53,18 @@ namespace GDMonoCache {
 #endif
 #endif
 
-struct godotsharp_property_info {
-	godot_string_name name; // Not owned
-	godot_string hint_string;
+struct gulpgulpgulpdotsharp_property_info {
+	gulpgulpgulpdot_string_name name; // Not owned
+	gulpgulpgulpdot_string hint_string;
 	Variant::Type type;
 	PropertyHint hint;
 	PropertyUsageFlags usage;
 	bool exported;
 };
 
-struct godotsharp_property_def_val_pair {
-	godot_string_name name; // Not owned
-	godot_variant value;
+struct gulpgulpgulpdotsharp_property_def_val_pair {
+	gulpgulpgulpdot_string_name name; // Not owned
+	gulpgulpgulpdot_variant value;
 };
 
 struct ManagedCallbacks {
@@ -79,11 +79,11 @@ struct ManagedCallbacks {
 	using FuncDelegateUtils_TrySerializeDelegateWithGCHandle = bool(GD_CLR_STDCALL *)(GCHandleIntPtr, const Array *);
 	using FuncDelegateUtils_TryDeserializeDelegateWithGCHandle = bool(GD_CLR_STDCALL *)(const Array *, GCHandleIntPtr *);
 	using FuncScriptManagerBridge_FrameCallback = void(GD_CLR_STDCALL *)();
-	using FuncScriptManagerBridge_CreateManagedForGodotObjectBinding = GCHandleIntPtr(GD_CLR_STDCALL *)(const StringName *, Object *);
-	using FuncScriptManagerBridge_CreateManagedForGodotObjectScriptInstance = bool(GD_CLR_STDCALL *)(const CSharpScript *, Object *, const Variant **, int32_t);
+	using FuncScriptManagerBridge_CreateManagedForGulpgulpgulpdotObjectBinding = GCHandleIntPtr(GD_CLR_STDCALL *)(const StringName *, Object *);
+	using FuncScriptManagerBridge_CreateManagedForGulpgulpgulpdotObjectScriptInstance = bool(GD_CLR_STDCALL *)(const CSharpScript *, Object *, const Variant **, int32_t);
 	using FuncScriptManagerBridge_GetScriptNativeName = void(GD_CLR_STDCALL *)(const CSharpScript *, StringName *);
 	using FuncScriptManagerBridge_GetGlobalClassName = void(GD_CLR_STDCALL *)(const String *, String *, String *, bool *, bool *, String *);
-	using FuncScriptManagerBridge_SetGodotObjectPtr = void(GD_CLR_STDCALL *)(GCHandleIntPtr, Object *);
+	using FuncScriptManagerBridge_SetGulpgulpgulpdotObjectPtr = void(GD_CLR_STDCALL *)(GCHandleIntPtr, Object *);
 	using FuncScriptManagerBridge_RaiseEventSignal = void(GD_CLR_STDCALL *)(GCHandleIntPtr, const StringName *, const Variant **, int32_t, bool *);
 	using FuncScriptManagerBridge_ScriptIsOrInherits = bool(GD_CLR_STDCALL *)(const CSharpScript *, const CSharpScript *);
 	using FuncScriptManagerBridge_AddScriptBridge = bool(GD_CLR_STDCALL *)(const CSharpScript *, const String *);
@@ -106,7 +106,7 @@ struct ManagedCallbacks {
 	using FuncGCHandleBridge_FreeGCHandle = void(GD_CLR_STDCALL *)(GCHandleIntPtr);
 	using FuncGCHandleBridge_GCHandleIsTargetCollectible = bool(GD_CLR_STDCALL *)(GCHandleIntPtr);
 	using FuncDebuggingUtils_GetCurrentStackInfo = void(GD_CLR_STDCALL *)(Vector<ScriptLanguage::StackInfo> *);
-	using FuncDisposablesTracker_OnGodotShuttingDown = void(GD_CLR_STDCALL *)();
+	using FuncDisposablesTracker_OnGulpgulpgulpdotShuttingDown = void(GD_CLR_STDCALL *)();
 	using FuncGD_OnCoreApiAssemblyLoaded = void(GD_CLR_STDCALL *)(bool);
 
 	FuncSignalAwaiter_SignalCallback SignalAwaiter_SignalCallback;
@@ -117,11 +117,11 @@ struct ManagedCallbacks {
 	FuncDelegateUtils_TrySerializeDelegateWithGCHandle DelegateUtils_TrySerializeDelegateWithGCHandle;
 	FuncDelegateUtils_TryDeserializeDelegateWithGCHandle DelegateUtils_TryDeserializeDelegateWithGCHandle;
 	FuncScriptManagerBridge_FrameCallback ScriptManagerBridge_FrameCallback;
-	FuncScriptManagerBridge_CreateManagedForGodotObjectBinding ScriptManagerBridge_CreateManagedForGodotObjectBinding;
-	FuncScriptManagerBridge_CreateManagedForGodotObjectScriptInstance ScriptManagerBridge_CreateManagedForGodotObjectScriptInstance;
+	FuncScriptManagerBridge_CreateManagedForGulpgulpgulpdotObjectBinding ScriptManagerBridge_CreateManagedForGulpgulpgulpdotObjectBinding;
+	FuncScriptManagerBridge_CreateManagedForGulpgulpgulpdotObjectScriptInstance ScriptManagerBridge_CreateManagedForGulpgulpgulpdotObjectScriptInstance;
 	FuncScriptManagerBridge_GetScriptNativeName ScriptManagerBridge_GetScriptNativeName;
 	FuncScriptManagerBridge_GetGlobalClassName ScriptManagerBridge_GetGlobalClassName;
-	FuncScriptManagerBridge_SetGodotObjectPtr ScriptManagerBridge_SetGodotObjectPtr;
+	FuncScriptManagerBridge_SetGulpgulpgulpdotObjectPtr ScriptManagerBridge_SetGulpgulpgulpdotObjectPtr;
 	FuncScriptManagerBridge_RaiseEventSignal ScriptManagerBridge_RaiseEventSignal;
 	FuncScriptManagerBridge_ScriptIsOrInherits ScriptManagerBridge_ScriptIsOrInherits;
 	FuncScriptManagerBridge_AddScriptBridge ScriptManagerBridge_AddScriptBridge;
@@ -144,13 +144,13 @@ struct ManagedCallbacks {
 	FuncGCHandleBridge_FreeGCHandle GCHandleBridge_FreeGCHandle;
 	FuncGCHandleBridge_GCHandleIsTargetCollectible GCHandleBridge_GCHandleIsTargetCollectible;
 	FuncDebuggingUtils_GetCurrentStackInfo DebuggingUtils_GetCurrentStackInfo;
-	FuncDisposablesTracker_OnGodotShuttingDown DisposablesTracker_OnGodotShuttingDown;
+	FuncDisposablesTracker_OnGulpgulpgulpdotShuttingDown DisposablesTracker_OnGulpgulpgulpdotShuttingDown;
 	FuncGD_OnCoreApiAssemblyLoaded GD_OnCoreApiAssemblyLoaded;
 };
 
 extern ManagedCallbacks managed_callbacks;
-extern bool godot_api_cache_updated;
+extern bool gulpgulpgulpdot_api_cache_updated;
 
-void update_godot_api_cache(const ManagedCallbacks &p_managed_callbacks);
+void update_gulpgulpgulpdot_api_cache(const ManagedCallbacks &p_managed_callbacks);
 
 } // namespace GDMonoCache

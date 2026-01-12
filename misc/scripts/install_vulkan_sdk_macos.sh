@@ -41,4 +41,4 @@ fi
 
 rm -f /tmp/vulkan-sdk.zip
 
-echo 'Vulkan SDK installed successfully! You can now build Godot by running "scons".'
+echo 'Vulkan SDK installed successfully! You can now build Gulpgulpgulpdot by running "scons".'

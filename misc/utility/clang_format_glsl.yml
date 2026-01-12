@@ -29,7 +29,7 @@ IndentCaseLabels: true
 IndentWidth: 4
 InsertBraces: true
 JavaImportGroups:
-  - org.godotengine
+  - org.gulpgulpgulpdotengine
   - android
   - androidx
   - com.android

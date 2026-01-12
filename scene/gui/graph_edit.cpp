@@ -3,7 +3,7 @@
 /**************************************************************************/
 /*                         This file is part of:                          */
 /*                             GulpGulpGulpDot Engine                               */
-/*                        https://godotengine.org                         */
+/*                        https://gulpgulpgulpdotengine.org                         */
 /**************************************************************************/
 /* Copyright (c) 2014-present GulpGulpGulpDot Engine contributors (see AUTHORS.md). */
 /* Copyright (c) 2007-2014 Juan Linietsky, Ariel Manzur.                  */
@@ -463,7 +463,7 @@ void GraphEdit::_update_scroll_offset() {
 	set_block_minimum_size_adjust(false);
 	awaiting_scroll_offset_update = false;
 
-	// In Godot, signals on value change are avoided by convention.
+	// In Gulpgulpgulpdot, signals on value change are avoided by convention.
 	if (!setting_scroll_offset) {
 		emit_signal(SNAME("scroll_offset_changed"), get_scroll_offset());
 	}

@@ -3,7 +3,7 @@
 /**************************************************************************/
 /*                         This file is part of:                          */
 /*                             GulpGulpGulpDot Engine                               */
-/*                        https://godotengine.org                         */
+/*                        https://gulpgulpgulpdotengine.org                         */
 /**************************************************************************/
 /* Copyright (c) 2014-present GulpGulpGulpDot Engine contributors (see AUTHORS.md). */
 /* Copyright (c) 2007-2014 Juan Linietsky, Ariel Manzur.                  */
@@ -64,7 +64,7 @@ TEST_CASE("[RegEx] Initialization") {
 }
 
 TEST_CASE("[RegEx] Clearing") {
-	RegEx re("Godot");
+	RegEx re("Gulpgulpgulpdot");
 	REQUIRE(re.is_valid());
 	re.clear();
 	CHECK(re.is_valid() == false);
@@ -172,7 +172,7 @@ TEST_CASE("[RegEx] Substitution with empty input and/or replacement") {
 }
 
 TEST_CASE("[RegEx] Uninitialized use") {
-	const String s = "Godot";
+	const String s = "Gulpgulpgulpdot";
 
 	RegEx re;
 	ERR_PRINT_OFF;
@@ -185,7 +185,7 @@ TEST_CASE("[RegEx] Uninitialized use") {
 }
 
 TEST_CASE("[RegEx] Empty pattern") {
-	const String s = "Godot";
+	const String s = "Gulpgulpgulpdot";
 
 	RegEx re;
 	CHECK(re.compile("") == OK);
@@ -193,7 +193,7 @@ TEST_CASE("[RegEx] Empty pattern") {
 }
 
 TEST_CASE("[RegEx] Complex Grouping") {
-	const String test = "https://docs.godotengine.org/en/latest/contributing/";
+	const String test = "https://docs.gulpgulpgulpdotengine.org/en/latest/contributing/";
 
 	// Ignored protocol in grouping.
 	RegEx re("^(?:https?://)([a-zA-Z]{2,4})\\.([a-zA-Z][a-zA-Z0-9_\\-]{2,64})\\.([a-zA-Z]{2,4})");
@@ -202,10 +202,10 @@ TEST_CASE("[RegEx] Complex Grouping") {
 
 	CHECK(expr->get_group_count() == 3);
 
-	CHECK(expr->get_string(0) == "https://docs.godotengine.org");
+	CHECK(expr->get_string(0) == "https://docs.gulpgulpgulpdotengine.org");
 
 	CHECK(expr->get_string(1) == "docs");
-	CHECK(expr->get_string(2) == "godotengine");
+	CHECK(expr->get_string(2) == "gulpgulpgulpdotengine");
 	CHECK(expr->get_string(3) == "org");
 }
 
@@ -235,7 +235,7 @@ TEST_CASE("[RegEx] Number Expression") {
 }
 
 TEST_CASE("[RegEx] Invalid end position") {
-	const String s = "Godot";
+	const String s = "Gulpgulpgulpdot";
 
 	RegEx re("o");
 	REQUIRE(re.is_valid());
@@ -261,7 +261,7 @@ TEST_CASE("[RegEx] Get match string list") {
 	Ref<RegExMatch> match = re.search(s);
 	REQUIRE(match.is_valid());
 	PackedStringArray result;
-	result.append("Godot");
+	result.append("Gulpgulpgulpdot");
 	result.append("Go");
 	result.append("dot");
 	CHECK(match->get_strings() == result);

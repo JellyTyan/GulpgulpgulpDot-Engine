@@ -17,7 +17,7 @@ import version
 from misc.utility.color import Ansi, force_stderr_color, force_stdout_color
 
 # $DOCS_URL/path/to/page.html(#fragment-tag)
-GODOT_DOCS_PATTERN = re.compile(r"^\$DOCS_URL/(.*)\.html(#.*)?$")
+GULPGULPGULPDOT_DOCS_PATTERN = re.compile(r"^\$DOCS_URL/(.*)\.html(#.*)?$")
 
 # Based on reStructuredText inline markup recognition rules
 # https://docutils.sourceforge.io/docs/ref/rst/restructuredtext.html#inline-markup-recognition-rules
@@ -27,7 +27,7 @@ MARKUP_ALLOWED_SUBSEQUENT = " -.,:;!?\\/'\")]}>"
 # Used to translate section headings and other hardcoded strings when required with
 # the --lang argument. The BASE_STRINGS list should be synced with what we actually
 # write in this script (check `translate()` uses), and also hardcoded in
-# `scripts/extract_classes.py` (godotengine/godot-editor-l10n repo) to include them in the source POT file.
+# `scripts/extract_classes.py` (gulpgulpgulpdotengine/gulpgulpgulpdot-editor-l10n repo) to include them in the source POT file.
 BASE_STRINGS = [
     "All classes",
     "Globals",
@@ -68,16 +68,16 @@ BASE_STRINGS = [
     "This method describes a valid operator to use with this type as left-hand operand.",
     "This value is an integer composed as a bitmask of the following flags.",
     "No return value.",
-    "There is currently no description for this class. Please help us by `contributing one <https://contributing.godotengine.org/en/latest/documentation/class_reference.html>`__!",
-    "There is currently no description for this signal. Please help us by `contributing one <https://contributing.godotengine.org/en/latest/documentation/class_reference.html>`__!",
-    "There is currently no description for this enum. Please help us by `contributing one <https://contributing.godotengine.org/en/latest/documentation/class_reference.html>`__!",
-    "There is currently no description for this constant. Please help us by `contributing one <https://contributing.godotengine.org/en/latest/documentation/class_reference.html>`__!",
-    "There is currently no description for this annotation. Please help us by `contributing one <https://contributing.godotengine.org/en/latest/documentation/class_reference.html>`__!",
-    "There is currently no description for this property. Please help us by `contributing one <https://contributing.godotengine.org/en/latest/documentation/class_reference.html>`__!",
-    "There is currently no description for this constructor. Please help us by `contributing one <https://contributing.godotengine.org/en/latest/documentation/class_reference.html>`__!",
-    "There is currently no description for this method. Please help us by `contributing one <https://contributing.godotengine.org/en/latest/documentation/class_reference.html>`__!",
-    "There is currently no description for this operator. Please help us by `contributing one <https://contributing.godotengine.org/en/latest/documentation/class_reference.html>`__!",
-    "There is currently no description for this theme property. Please help us by `contributing one <https://contributing.godotengine.org/en/latest/documentation/class_reference.html>`__!",
+    "There is currently no description for this class. Please help us by `contributing one <https://contributing.gulpgulpgulpdotengine.org/en/latest/documentation/class_reference.html>`__!",
+    "There is currently no description for this signal. Please help us by `contributing one <https://contributing.gulpgulpgulpdotengine.org/en/latest/documentation/class_reference.html>`__!",
+    "There is currently no description for this enum. Please help us by `contributing one <https://contributing.gulpgulpgulpdotengine.org/en/latest/documentation/class_reference.html>`__!",
+    "There is currently no description for this constant. Please help us by `contributing one <https://contributing.gulpgulpgulpdotengine.org/en/latest/documentation/class_reference.html>`__!",
+    "There is currently no description for this annotation. Please help us by `contributing one <https://contributing.gulpgulpgulpdotengine.org/en/latest/documentation/class_reference.html>`__!",
+    "There is currently no description for this property. Please help us by `contributing one <https://contributing.gulpgulpgulpdotengine.org/en/latest/documentation/class_reference.html>`__!",
+    "There is currently no description for this constructor. Please help us by `contributing one <https://contributing.gulpgulpgulpdotengine.org/en/latest/documentation/class_reference.html>`__!",
+    "There is currently no description for this method. Please help us by `contributing one <https://contributing.gulpgulpgulpdotengine.org/en/latest/documentation/class_reference.html>`__!",
+    "There is currently no description for this operator. Please help us by `contributing one <https://contributing.gulpgulpgulpdotengine.org/en/latest/documentation/class_reference.html>`__!",
+    "There is currently no description for this theme property. Please help us by `contributing one <https://contributing.gulpgulpgulpdotengine.org/en/latest/documentation/class_reference.html>`__!",
     "There are notable differences when using this API with C#. See :ref:`doc_c_sharp_differences` for more information.",
     "Deprecated:",
     "Experimental:",
@@ -115,7 +115,7 @@ EDITOR_CLASSES: list[str] = [
     "ScriptEditor",
     "ScriptEditorBase",
 ]
-# Sync with the types mentioned in https://docs.godotengine.org/en/stable/tutorials/scripting/c_sharp/c_sharp_differences.html
+# Sync with the types mentioned in https://docs.gulpgulpgulpdotengine.org/en/stable/tutorials/scripting/c_sharp/c_sharp_differences.html
 CLASSES_WITH_CSHARP_DIFFERENCES: list[str] = [
     "@GlobalScope",
     "String",
@@ -908,8 +908,8 @@ def make_rst_class(class_def: ClassDef, state: State, dry_run: bool, output_dir:
             # Also provide links to the source files for reference.
             git_branch = get_git_branch()
             source_xml_path = os.path.relpath(class_def.filepath, root_directory).replace("\\", "/")
-            source_github_url = f"https://github.com/godotengine/godot/tree/{git_branch}/{source_xml_path}"
-            generator_github_url = f"https://github.com/godotengine/godot/tree/{git_branch}/doc/tools/make_rst.py"
+            source_github_url = f"https://github.com/gulpgulpgulpdotengine/gulpgulpgulpdot/tree/{git_branch}/{source_xml_path}"
+            generator_github_url = f"https://github.com/gulpgulpgulpdotengine/gulpgulpgulpdot/tree/{git_branch}/doc/tools/make_rst.py"
 
             f.write(".. DO NOT EDIT THIS FILE!!!\n")
             f.write(".. Generated automatically from GulpGulpGulpDot Engine sources.\n")
@@ -984,7 +984,7 @@ def make_rst_class(class_def: ClassDef, state: State, dry_run: bool, output_dir:
             f.write(".. container:: contribute\n\n\t")
             f.write(
                 translate(
-                    "There is currently no description for this class. Please help us by `contributing one <https://contributing.godotengine.org/en/latest/documentation/class_reference.html>`__!"
+                    "There is currently no description for this class. Please help us by `contributing one <https://contributing.gulpgulpgulpdotengine.org/en/latest/documentation/class_reference.html>`__!"
                 )
                 + "\n\n"
             )
@@ -1110,7 +1110,7 @@ def make_rst_class(class_def: ClassDef, state: State, dry_run: bool, output_dir:
                     f.write(".. container:: contribute\n\n\t")
                     f.write(
                         translate(
-                            "There is currently no description for this signal. Please help us by `contributing one <https://contributing.godotengine.org/en/latest/documentation/class_reference.html>`__!"
+                            "There is currently no description for this signal. Please help us by `contributing one <https://contributing.gulpgulpgulpdotengine.org/en/latest/documentation/class_reference.html>`__!"
                         )
                         + "\n\n"
                     )
@@ -1159,7 +1159,7 @@ def make_rst_class(class_def: ClassDef, state: State, dry_run: bool, output_dir:
                         f.write(".. container:: contribute\n\n\t")
                         f.write(
                             translate(
-                                "There is currently no description for this enum. Please help us by `contributing one <https://contributing.godotengine.org/en/latest/documentation/class_reference.html>`__!"
+                                "There is currently no description for this enum. Please help us by `contributing one <https://contributing.gulpgulpgulpdotengine.org/en/latest/documentation/class_reference.html>`__!"
                             )
                             + "\n\n"
                         )
@@ -1194,7 +1194,7 @@ def make_rst_class(class_def: ClassDef, state: State, dry_run: bool, output_dir:
                     f.write(".. container:: contribute\n\n\t")
                     f.write(
                         translate(
-                            "There is currently no description for this constant. Please help us by `contributing one <https://contributing.godotengine.org/en/latest/documentation/class_reference.html>`__!"
+                            "There is currently no description for this constant. Please help us by `contributing one <https://contributing.gulpgulpgulpdotengine.org/en/latest/documentation/class_reference.html>`__!"
                         )
                         + "\n\n"
                     )
@@ -1235,7 +1235,7 @@ def make_rst_class(class_def: ClassDef, state: State, dry_run: bool, output_dir:
                         f.write(".. container:: contribute\n\n\t")
                         f.write(
                             translate(
-                                "There is currently no description for this annotation. Please help us by `contributing one <https://contributing.godotengine.org/en/latest/documentation/class_reference.html>`__!"
+                                "There is currently no description for this annotation. Please help us by `contributing one <https://contributing.gulpgulpgulpdotengine.org/en/latest/documentation/class_reference.html>`__!"
                             )
                             + "\n\n"
                         )
@@ -1298,7 +1298,7 @@ def make_rst_class(class_def: ClassDef, state: State, dry_run: bool, output_dir:
                     f.write(".. container:: contribute\n\n\t")
                     f.write(
                         translate(
-                            "There is currently no description for this property. Please help us by `contributing one <https://contributing.godotengine.org/en/latest/documentation/class_reference.html>`__!"
+                            "There is currently no description for this property. Please help us by `contributing one <https://contributing.gulpgulpgulpdotengine.org/en/latest/documentation/class_reference.html>`__!"
                         )
                         + "\n\n"
                     )
@@ -1347,7 +1347,7 @@ def make_rst_class(class_def: ClassDef, state: State, dry_run: bool, output_dir:
                         f.write(".. container:: contribute\n\n\t")
                         f.write(
                             translate(
-                                "There is currently no description for this constructor. Please help us by `contributing one <https://contributing.godotengine.org/en/latest/documentation/class_reference.html>`__!"
+                                "There is currently no description for this constructor. Please help us by `contributing one <https://contributing.gulpgulpgulpdotengine.org/en/latest/documentation/class_reference.html>`__!"
                             )
                             + "\n\n"
                         )
@@ -1394,7 +1394,7 @@ def make_rst_class(class_def: ClassDef, state: State, dry_run: bool, output_dir:
                         f.write(".. container:: contribute\n\n\t")
                         f.write(
                             translate(
-                                "There is currently no description for this method. Please help us by `contributing one <https://contributing.godotengine.org/en/latest/documentation/class_reference.html>`__!"
+                                "There is currently no description for this method. Please help us by `contributing one <https://contributing.gulpgulpgulpdotengine.org/en/latest/documentation/class_reference.html>`__!"
                             )
                             + "\n\n"
                         )
@@ -1438,7 +1438,7 @@ def make_rst_class(class_def: ClassDef, state: State, dry_run: bool, output_dir:
                         f.write(".. container:: contribute\n\n\t")
                         f.write(
                             translate(
-                                "There is currently no description for this operator. Please help us by `contributing one <https://contributing.godotengine.org/en/latest/documentation/class_reference.html>`__!"
+                                "There is currently no description for this operator. Please help us by `contributing one <https://contributing.gulpgulpgulpdotengine.org/en/latest/documentation/class_reference.html>`__!"
                             )
                             + "\n\n"
                         )
@@ -1483,7 +1483,7 @@ def make_rst_class(class_def: ClassDef, state: State, dry_run: bool, output_dir:
                     f.write(".. container:: contribute\n\n\t")
                     f.write(
                         translate(
-                            "There is currently no description for this theme property. Please help us by `contributing one <https://contributing.godotengine.org/en/latest/documentation/class_reference.html>`__!"
+                            "There is currently no description for this theme property. Please help us by `contributing one <https://contributing.gulpgulpgulpdotengine.org/en/latest/documentation/class_reference.html>`__!"
                         )
                         + "\n\n"
                     )
@@ -1704,7 +1704,7 @@ def make_separator(section_level: bool = False) -> str:
 
 
 def make_link(url: str, title: str) -> str:
-    match = GODOT_DOCS_PATTERN.search(url)
+    match = GULPGULPGULPDOT_DOCS_PATTERN.search(url)
     if match:
         groups = match.groups()
         if match.lastindex == 2:
@@ -1740,7 +1740,7 @@ def make_rst_index(grouped_classes: dict[str, list[str]], dry_run: bool, output_
         # Also provide links to the source files for reference.
 
         git_branch = get_git_branch()
-        generator_github_url = f"https://github.com/godotengine/godot/tree/{git_branch}/doc/tools/make_rst.py"
+        generator_github_url = f"https://github.com/gulpgulpgulpdotengine/gulpgulpgulpdot/tree/{git_branch}/doc/tools/make_rst.py"
 
         f.write(".. DO NOT EDIT THIS FILE!!!\n")
         f.write(".. Generated automatically from GulpGulpGulpDot Engine sources.\n")

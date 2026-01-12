@@ -3,7 +3,7 @@
 /**************************************************************************/
 /*                         This file is part of:                          */
 /*                             GulpGulpGulpDot Engine                               */
-/*                        https://godotengine.org                         */
+/*                        https://gulpgulpgulpdotengine.org                         */
 /**************************************************************************/
 /* Copyright (c) 2014-present GulpGulpGulpDot Engine contributors (see AUTHORS.md). */
 /* Copyright (c) 2007-2014 Juan Linietsky, Ariel Manzur.                  */
@@ -234,7 +234,7 @@ XrSpatialPersistenceStateEXT OpenXRSpatialComponentPersistenceList::get_persiste
 }
 
 uint64_t OpenXRSpatialComponentPersistenceList::_get_persistent_state(int64_t p_index) const {
-	// TODO make a Godot constant that mirrors XrSpatialPersistenceStateEXT and return that
+	// TODO make a Gulpgulpgulpdot constant that mirrors XrSpatialPersistenceStateEXT and return that
 	return (uint64_t)get_persistent_state(p_index);
 }
 

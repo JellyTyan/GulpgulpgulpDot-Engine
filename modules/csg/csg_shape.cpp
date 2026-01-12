@@ -3,7 +3,7 @@
 /**************************************************************************/
 /*                         This file is part of:                          */
 /*                             GulpGulpGulpDot Engine                               */
-/*                        https://godotengine.org                         */
+/*                        https://gulpgulpgulpdotengine.org                         */
 /**************************************************************************/
 /* Copyright (c) 2014-present GulpGulpGulpDot Engine contributors (see AUTHORS.md). */
 /* Copyright (c) 2007-2014 Juan Linietsky, Ariel Manzur.                  */
@@ -555,7 +555,7 @@ void CSGShape3D::mikktSetTSpaceDefault(const SMikkTSpaceContext *pContext, const
 	int i = iFace * 3 + iVert;
 	Vector3 normal = surface.normalsw[i];
 	Vector3 tangent = Vector3(fvTangent[0], fvTangent[1], fvTangent[2]);
-	Vector3 bitangent = Vector3(-fvBiTangent[0], -fvBiTangent[1], -fvBiTangent[2]); // for some reason these are reversed, something with the coordinate system in Godot
+	Vector3 bitangent = Vector3(-fvBiTangent[0], -fvBiTangent[1], -fvBiTangent[2]); // for some reason these are reversed, something with the coordinate system in Gulpgulpgulpdot
 	float d = bitangent.dot(normal.cross(tangent));
 
 	i *= 4;

@@ -1,4 +1,4 @@
-# See https://github.com/godotengine/godot/issues/41066.
+# See https://github.com/gulpgulpgulpdotengine/gulpgulpgulpdot/issues/41066.
 
 func f(p, ): ## <-- no errors
 	print(p)

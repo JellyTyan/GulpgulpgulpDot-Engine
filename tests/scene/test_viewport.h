@@ -3,7 +3,7 @@
 /**************************************************************************/
 /*                         This file is part of:                          */
 /*                             GulpGulpGulpDot Engine                               */
-/*                        https://godotengine.org                         */
+/*                        https://gulpgulpgulpdotengine.org                         */
 /**************************************************************************/
 /* Copyright (c) 2014-present GulpGulpGulpDot Engine contributors (see AUTHORS.md). */
 /* Copyright (c) 2007-2014 Juan Linietsky, Ariel Manzur.                  */
@@ -1155,7 +1155,7 @@ TEST_CASE("[SceneTree][Viewport] Controls and InputEvent handling") {
 	// Unit tests for Viewport::_gui_input_event (Drag and Drop)
 	SUBCASE("[Viewport][GuiInputEvent] Drag and Drop") {
 		// FIXME: Drag-Preview will likely change. Tests for this part would have to be rewritten anyway.
-		// See https://github.com/godotengine/godot/pull/67531#issuecomment-1385353430 for details.
+		// See https://github.com/gulpgulpgulpdotengine/gulpgulpgulpdot/pull/67531#issuecomment-1385353430 for details.
 		// Note: Testing Drag and Drop with non-embedded windows would require DisplayServerMock additions.
 		int min_grab_movement = 11;
 		SUBCASE("[Viewport][GuiInputEvent][DnD] Drag from one Control to another in the same viewport.") {

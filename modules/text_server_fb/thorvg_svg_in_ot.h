@@ -3,7 +3,7 @@
 /**************************************************************************/
 /*                         This file is part of:                          */
 /*                             GulpGulpGulpDot Engine                               */
-/*                        https://godotengine.org                         */
+/*                        https://gulpgulpgulpdotengine.org                         */
 /**************************************************************************/
 /* Copyright (c) 2014-present GulpGulpGulpDot Engine contributors (see AUTHORS.md). */
 /* Copyright (c) 2007-2014 Juan Linietsky, Ariel Manzur.                  */
@@ -33,13 +33,13 @@
 #ifdef GDEXTENSION
 // Headers for building as GDExtension plug-in.
 
-#include <godot_cpp/core/mutex_lock.hpp>
-#include <godot_cpp/godot.hpp>
-#include <godot_cpp/templates/hash_map.hpp>
+#include <gulpgulpgulpdot_cpp/core/mutex_lock.hpp>
+#include <gulpgulpgulpdot_cpp/gulpgulpgulpdot.hpp>
+#include <gulpgulpgulpdot_cpp/templates/hash_map.hpp>
 
-using namespace godot;
+using namespace gulpgulpgulpdot;
 
-#elif defined(GODOT_MODULE)
+#elif defined(GULPGULPGULPDOT_MODULE)
 // Headers for building as built-in module.
 
 #include "core/os/mutex.h"

@@ -3,7 +3,7 @@
 /**************************************************************************/
 /*                         This file is part of:                          */
 /*                             GulpGulpGulpDot Engine                               */
-/*                        https://godotengine.org                         */
+/*                        https://gulpgulpgulpdotengine.org                         */
 /**************************************************************************/
 /* Copyright (c) 2014-present GulpGulpGulpDot Engine contributors (see AUTHORS.md). */
 /* Copyright (c) 2007-2014 Juan Linietsky, Ariel Manzur.                  */
@@ -187,7 +187,7 @@ JPH::SoftBodySharedSettings *JoltSoftBody3D::_create_shared_settings() {
 	// of the constraints a bit.
 	pin_vertices(*this, pinned_vertices, mesh_to_physics, physics_vertices);
 
-	// Since Godot's stiffness is input as a coefficient between 0 and 1, and Jolt uses actual stiffness for its
+	// Since Gulpgulpgulpdot's stiffness is input as a coefficient between 0 and 1, and Jolt uses actual stiffness for its
 	// edge constraints, we crudely map one to the other with an arbitrary constant.
 	const float stiffness = MAX(Math::pow(stiffness_coefficient, 3.0f) * 100000.0f, 0.000001f);
 	const float inverse_stiffness = 1.0f / stiffness;
@@ -501,12 +501,12 @@ void JoltSoftBody3D::set_linear_damping(float p_damping) {
 }
 
 float JoltSoftBody3D::get_drag() const {
-	// Drag is not a thing in Jolt, and not supported by Godot Physics either.
+	// Drag is not a thing in Jolt, and not supported by Gulpgulpgulpdot Physics either.
 	return 0.0f;
 }
 
 void JoltSoftBody3D::set_drag(float p_drag) {
-	// Drag is not a thing in Jolt, and not supported by Godot Physics either.
+	// Drag is not a thing in Jolt, and not supported by Gulpgulpgulpdot Physics either.
 }
 
 Variant JoltSoftBody3D::get_state(PhysicsServer3D::BodyState p_state) const {
@@ -587,7 +587,7 @@ void JoltSoftBody3D::set_transform(const Transform3D &p_transform) {
 
 AABB JoltSoftBody3D::get_bounds() const {
 	ERR_FAIL_COND_V_MSG(!in_space(), AABB(), vformat("Failed to retrieve world bounds of '%s'. Doing so without a physics space is not supported when using Jolt Physics. If this relates to a node, try adding the node to a scene tree first.", to_string()));
-	return to_godot(jolt_body->GetWorldSpaceBounds());
+	return to_gulpgulpgulpdot(jolt_body->GetWorldSpaceBounds());
 }
 
 void JoltSoftBody3D::update_rendering_server(PhysicsServer3DRenderingServerHandler *p_rendering_server_handler) {
@@ -620,9 +620,9 @@ void JoltSoftBody3D::update_rendering_server(PhysicsServer3DRenderingServerHandl
 		const uint32_t i1 = physics_face.mVertex[1];
 		const uint32_t i2 = physics_face.mVertex[0];
 
-		const Vector3 v0 = to_godot(physics_vertices[i0].mPosition);
-		const Vector3 v1 = to_godot(physics_vertices[i1].mPosition);
-		const Vector3 v2 = to_godot(physics_vertices[i2].mPosition);
+		const Vector3 v0 = to_gulpgulpgulpdot(physics_vertices[i0].mPosition);
+		const Vector3 v1 = to_gulpgulpgulpdot(physics_vertices[i1].mPosition);
+		const Vector3 v2 = to_gulpgulpgulpdot(physics_vertices[i2].mPosition);
 
 		const Vector3 normal = (v2 - v0).cross(v1 - v0).normalized();
 
@@ -646,7 +646,7 @@ void JoltSoftBody3D::update_rendering_server(PhysicsServer3DRenderingServerHandl
 	for (int i = 0; i < mesh_vertex_count; ++i) {
 		const int physics_index = mesh_to_physics[i];
 		if (physics_index >= 0) {
-			const Vector3 vertex = to_godot(body_position + physics_vertices[(size_t)physics_index].mPosition);
+			const Vector3 vertex = to_gulpgulpgulpdot(body_position + physics_vertices[(size_t)physics_index].mPosition);
 			const Vector3 normal = normals[(uint32_t)physics_index];
 
 			p_rendering_server_handler->set_vertex(i, vertex);
@@ -668,7 +668,7 @@ Vector3 JoltSoftBody3D::get_vertex_position(int p_index) {
 	const JPH::Array<JPH::SoftBodyVertex> &physics_vertices = motion_properties.GetVertices();
 	const JPH::SoftBodyVertex &physics_vertex = physics_vertices[physics_index];
 
-	return to_godot(jolt_body->GetCenterOfMassPosition() + physics_vertex.mPosition);
+	return to_gulpgulpgulpdot(jolt_body->GetCenterOfMassPosition() + physics_vertex.mPosition);
 }
 
 void JoltSoftBody3D::set_vertex_position(int p_index, const Vector3 &p_position) {

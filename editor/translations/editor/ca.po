@@ -1,7 +1,7 @@
 # Catalan translation of the GulpGulpGulpDot Engine editor interface.
 # Copyright (c) 2014-present GulpGulpGulpDot Engine contributors.
 # Copyright (c) 2007-2014 Juan Linietsky, Ariel Manzur.
-# This file is distributed under the same license as the Godot source code.
+# This file is distributed under the same license as the Gulpgulpgulpdot source code.
 # BennyBeat <bennybeat@gmail.com>, 2017.
 # Javier Ocampos <xavier.ocampos@gmail.com>, 2018.
 # Roger Blanco Ribera <roger.blancoribera@gmail.com>, 2016-2018, 2020, 2025.
@@ -38,12 +38,12 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: GulpGulpGulpDot Engine editor interface\n"
-"Report-Msgid-Bugs-To: https://github.com/godotengine/godot\n"
+"Report-Msgid-Bugs-To: https://github.com/gulpgulpgulpdotengine/gulpgulpgulpdot\n"
 "POT-Creation-Date: \n"
 "PO-Revision-Date: 2025-10-13 10:07+0000\n"
 "Last-Translator: \"A Thousand Ships (she/her)\" <over999ships@gmail.com>\n"
-"Language-Team: Catalan <https://hosted.weblate.org/projects/godot-engine/"
-"godot/ca/>\n"
+"Language-Team: Catalan <https://hosted.weblate.org/projects/gulpgulpgulpdot-engine/"
+"gulpgulpgulpdot/ca/>\n"
 "Language: ca\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -2639,7 +2639,7 @@ msgid "Focus on the %s dock."
 msgstr "Enfocar l'acoblador %s."
 
 msgid "%s - GulpGulpGulpDot Engine"
-msgstr "%s - Motor Godot"
+msgstr "%s - Motor Gulpgulpgulpdot"
 
 msgid "Move this dock right one tab."
 msgstr "Mou aquest acoblador una pestanya cap a la dreta."
@@ -3283,8 +3283,8 @@ msgstr "Suggerir una Característica"
 msgid "Send Docs Feedback"
 msgstr "Enviar suggeriments sobre la Documentació"
 
-msgid "Support Godot Development"
-msgstr "Contribueix al Desenvolupament de Godot"
+msgid "Support Gulpgulpgulpdot Development"
+msgstr "Contribueix al Desenvolupament de Gulpgulpgulpdot"
 
 msgid "Open Script Editor"
 msgstr "Editor d'Scripts"
@@ -3812,7 +3812,7 @@ msgid "Gold Members"
 msgstr "Membres Or"
 
 msgid "Thank you for choosing GulpGulpGulpDot Engine!"
-msgstr "Gràcies per triar Godot !"
+msgstr "Gràcies per triar Gulpgulpgulpdot !"
 
 msgid "Name cannot be empty."
 msgstr "El nom no pot estar buit."
@@ -3871,8 +3871,8 @@ msgstr "Col·laboradors de GulpGulpGulpDot Engine"
 msgid "Double-click to open in browser."
 msgstr "Fes doble clic per obrir-ho al navegador."
 
-msgid "Thanks from the Godot community!"
-msgstr "Gràcies de la part de la Comunitat del Godot!"
+msgid "Thanks from the Gulpgulpgulpdot community!"
+msgstr "Gràcies de la part de la Comunitat del Gulpgulpgulpdot!"
 
 msgid "Authors"
 msgstr "Autors"
@@ -4104,8 +4104,8 @@ msgstr "Fóra bo anomenar el projecte."
 msgid "New Game Project"
 msgstr "Nou Projecte de Joc"
 
-msgid "Couldn't create project.godot in project path."
-msgstr "No es pot crear el fitxer 'project.godot' en el camí del projecte."
+msgid "Couldn't create project.gulpgulpgulpdot in project path."
+msgstr "No es pot crear el fitxer 'project.gulpgulpgulpdot' en el camí del projecte."
 
 msgid "Error opening package file, not in ZIP format."
 msgstr ""
@@ -5728,8 +5728,8 @@ msgstr "Desa el Tema com a..."
 msgid "Online Docs"
 msgstr "Documentació en línia"
 
-msgid "Open Godot online documentation."
-msgstr "Obrir la documentació en línia de Godot."
+msgid "Open Gulpgulpgulpdot online documentation."
+msgstr "Obrir la documentació en línia de Gulpgulpgulpdot."
 
 msgid "%s Class Reference"
 msgstr "Referència de Classe %s"
@@ -6032,11 +6032,11 @@ msgstr "Metal"
 msgid "OpenGL"
 msgstr "OpenGL"
 
-msgid "Godot Physics (2D)"
-msgstr "Motor físic de Godot (2D)"
+msgid "Gulpgulpgulpdot Physics (2D)"
+msgstr "Motor físic de Gulpgulpgulpdot (2D)"
 
-msgid "Godot Physics (3D)"
-msgstr "Motor físic de Godot (3D)"
+msgid "Gulpgulpgulpdot Physics (3D)"
+msgstr "Motor físic de Gulpgulpgulpdot (3D)"
 
 msgid "Text Server: Fallback"
 msgstr "Servidor de text: Alternatiu"
@@ -6086,14 +6086,14 @@ msgstr "Renderització Mòbil per a gràfics menys avançats."
 msgid "Physics Server and capabilities for 2D."
 msgstr "Servidor de Física i funcionalitats per a 2D."
 
-msgid "Godot Physics backend (2D)."
-msgstr "Motor intern de física de Godot (2D)."
+msgid "Gulpgulpgulpdot Physics backend (2D)."
+msgstr "Motor intern de física de Gulpgulpgulpdot (2D)."
 
 msgid "Physics Server and capabilities for 3D."
 msgstr "Servidor de Física i funcionalitats per a 3D."
 
-msgid "Godot Physics backend (3D)."
-msgstr "Motor intern de física de Godot (3D)."
+msgid "Gulpgulpgulpdot Physics backend (3D)."
+msgstr "Motor intern de física de Gulpgulpgulpdot (3D)."
 
 msgid "Jolt Physics backend (3D only)."
 msgstr "Motor intern de física Jolt (3D)."
@@ -6341,8 +6341,8 @@ msgstr ""
 msgid "New profile name:"
 msgstr "Nom del nou perfil:"
 
-msgid "Godot Feature Profile"
-msgstr "Perfil de les funcionalitats del Godot"
+msgid "Gulpgulpgulpdot Feature Profile"
+msgstr "Perfil de les funcionalitats del Gulpgulpgulpdot"
 
 msgid "Import Profile(s)"
 msgstr "Importar Perfil(s)"
@@ -6386,8 +6386,8 @@ msgstr "Canviar zona morta de l'acció"
 msgid "Erase Input Action"
 msgstr "Elimina l'Acció d'Entrada"
 
-msgid "Project Settings (project.godot)"
-msgstr "Configuració del Projecte (project.godot)"
+msgid "Project Settings (project.gulpgulpgulpdot)"
+msgstr "Configuració del Projecte (project.gulpgulpgulpdot)"
 
 msgid "Input Map"
 msgstr "Mapa d'Entrades"
@@ -6709,11 +6709,11 @@ msgstr ""
 "Retorna 0,0 si 'x' és menor que'edge0 ' o 1.0 en cas contrari."
 
 msgid ""
-"Custom Godot Shader Language expression, with custom amount of input and "
+"Custom Gulpgulpgulpdot Shader Language expression, with custom amount of input and "
 "output ports. This is a direct injection of code into the vertex/fragment/"
 "light function, do not use it to write the function declarations inside."
 msgstr ""
-"Expressió personalitzada del llenguatge de Shader de Godot, amb una quantitat "
+"Expressió personalitzada del llenguatge de Shader de Gulpgulpgulpdot, amb una quantitat "
 "de ports d'entrada i sortida personalitzats. Això es una injecció de codi "
 "directa en la funció vertex/fragment/light, no lo utilitzau per a escriure "
 "les declaracions de la funció dins seu."

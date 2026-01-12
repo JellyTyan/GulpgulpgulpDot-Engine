@@ -1,0 +1,38 @@
+name: Build gulpgulpgulpdot-cpp
+description: Build gulpgulpgulpdot-cpp with the provided options.
+
+inputs:
+  bin:
+    description: Path to the Gulpgulpgulpdot binary.
+    required: true
+    type: string
+  scons-flags:
+    description: Additional SCons flags.
+    type: string
+  scons-cache:
+    description: The SCons cache path.
+    default: ${{ github.workspace }}/.scons_cache/
+    type: string
+  gulpgulpgulpdot-cpp-branch:
+    description: The gulpgulpgulpdot-cpp branch.
+    default: master
+    type: string
+
+runs:
+  using: composite
+  steps:
+    - name: Checkout
+      uses: actions/checkout@v4
+      with:
+        submodules: recursive
+        repository: gulpgulpgulpdotengine/gulpgulpgulpdot-cpp
+        ref: ${{ inputs.gulpgulpgulpdot-cpp-branch }}
+        path: gulpgulpgulpdot-cpp
+
+    - name: Extract API
+      shell: sh
+      run: ${{ inputs.bin }} --headless --dump-gdextension-interface --dump-extension-api
+
+    - name: SCons Build
+      shell: sh
+      run: scons --directory=./gulpgulpgulpdot-cpp/test "gdextension_dir=${{ github.workspace }}" ${{ inputs.scons-flags }}

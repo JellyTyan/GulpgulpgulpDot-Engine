@@ -3,7 +3,7 @@
 /**************************************************************************/
 /*                         This file is part of:                          */
 /*                             GulpGulpGulpDot Engine                               */
-/*                        https://godotengine.org                         */
+/*                        https://gulpgulpgulpdotengine.org                         */
 /**************************************************************************/
 /* Copyright (c) 2014-present GulpGulpGulpDot Engine contributors (see AUTHORS.md). */
 /* Copyright (c) 2007-2014 Juan Linietsky, Ariel Manzur.                  */
@@ -39,22 +39,22 @@
 #include "core/version.h"
 #include "servers/rendering/rendering_device.h"
 
-GODOT_GCC_WARNING_PUSH
-GODOT_GCC_WARNING_IGNORE("-Wmissing-field-initializers")
-GODOT_GCC_WARNING_IGNORE("-Wnon-virtual-dtor")
-GODOT_GCC_WARNING_IGNORE("-Wshadow")
-GODOT_GCC_WARNING_IGNORE("-Wswitch")
-GODOT_CLANG_WARNING_PUSH
-GODOT_CLANG_WARNING_IGNORE("-Wmissing-field-initializers")
-GODOT_CLANG_WARNING_IGNORE("-Wnon-virtual-dtor")
-GODOT_CLANG_WARNING_IGNORE("-Wstring-plus-int")
-GODOT_CLANG_WARNING_IGNORE("-Wswitch")
+GULPGULPGULPDOT_GCC_WARNING_PUSH
+GULPGULPGULPDOT_GCC_WARNING_IGNORE("-Wmissing-field-initializers")
+GULPGULPGULPDOT_GCC_WARNING_IGNORE("-Wnon-virtual-dtor")
+GULPGULPGULPDOT_GCC_WARNING_IGNORE("-Wshadow")
+GULPGULPGULPDOT_GCC_WARNING_IGNORE("-Wswitch")
+GULPGULPGULPDOT_CLANG_WARNING_PUSH
+GULPGULPGULPDOT_CLANG_WARNING_IGNORE("-Wmissing-field-initializers")
+GULPGULPGULPDOT_CLANG_WARNING_IGNORE("-Wnon-virtual-dtor")
+GULPGULPGULPDOT_CLANG_WARNING_IGNORE("-Wstring-plus-int")
+GULPGULPGULPDOT_CLANG_WARNING_IGNORE("-Wswitch")
 
 #include <dxcapi.h>
 #include <dxgi1_6.h>
 
-GODOT_GCC_WARNING_POP
-GODOT_CLANG_WARNING_POP
+GULPGULPGULPDOT_GCC_WARNING_POP
+GULPGULPGULPDOT_CLANG_WARNING_POP
 
 #if !defined(_MSC_VER)
 #include <guiddef.h>
@@ -66,8 +66,8 @@ using Microsoft::WRL::ComPtr;
 
 // Note: symbols are not available in MinGW and old MSVC import libraries.
 // GUID values from https://github.com/microsoft/DirectX-Headers/blob/7a9f4d06911d30eecb56a4956dab29dcca2709ed/include/directx/d3d12.idl#L5877-L5881
-const GUID CLSID_D3D12DebugGodot = { 0xf2352aeb, 0xdd84, 0x49fe, { 0xb9, 0x7b, 0xa9, 0xdc, 0xfd, 0xcc, 0x1b, 0x4f } };
-const GUID CLSID_D3D12SDKConfigurationGodot = { 0x7cda6aca, 0xa03e, 0x49c8, { 0x94, 0x58, 0x03, 0x34, 0xd2, 0x0e, 0x07, 0xce } };
+const GUID CLSID_D3D12DebugGulpgulpgulpdot = { 0xf2352aeb, 0xdd84, 0x49fe, { 0xb9, 0x7b, 0xa9, 0xdc, 0xfd, 0xcc, 0x1b, 0x4f } };
+const GUID CLSID_D3D12SDKConfigurationGulpgulpgulpdot = { 0x7cda6aca, 0xa03e, 0x49c8, { 0x94, 0x58, 0x03, 0x34, 0xd2, 0x0e, 0x07, 0xce } };
 
 #ifdef PIX_ENABLED
 #if defined(__GNUC__)
@@ -123,7 +123,7 @@ Error RenderingContextDriverD3D12::_init_device_factory() {
 	}
 
 	ComPtr<ID3D12SDKConfiguration1> sdk_config;
-	HRESULT hr = d3d_D3D12GetInterface(CLSID_D3D12SDKConfigurationGodot, IID_PPV_ARGS(sdk_config.GetAddressOf()));
+	HRESULT hr = d3d_D3D12GetInterface(CLSID_D3D12SDKConfigurationGulpgulpgulpdot, IID_PPV_ARGS(sdk_config.GetAddressOf()));
 	if (SUCCEEDED(hr)) {
 		hr = sdk_config->CreateDeviceFactory(agility_sdk_version, agility_sdk_path.ascii().get_data(), IID_PPV_ARGS(device_factory.GetAddressOf()));
 		if (FAILED(hr)) {
@@ -139,7 +139,7 @@ Error RenderingContextDriverD3D12::_initialize_debug_layers() {
 	HRESULT res;
 
 	if (device_factory) {
-		res = device_factory->GetConfigurationInterface(CLSID_D3D12DebugGodot, IID_PPV_ARGS(&debug_controller));
+		res = device_factory->GetConfigurationInterface(CLSID_D3D12DebugGulpgulpgulpdot, IID_PPV_ARGS(&debug_controller));
 	} else {
 		PFN_D3D12_GET_DEBUG_INTERFACE d3d_D3D12GetDebugInterface = (PFN_D3D12_GET_DEBUG_INTERFACE)(void *)GetProcAddress(lib_d3d12, "D3D12GetDebugInterface");
 		ERR_FAIL_NULL_V(d3d_D3D12GetDebugInterface, ERR_CANT_CREATE);

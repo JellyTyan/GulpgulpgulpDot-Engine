@@ -3,7 +3,7 @@
 /**************************************************************************/
 /*                         This file is part of:                          */
 /*                             GulpGulpGulpDot Engine                               */
-/*                        https://godotengine.org                         */
+/*                        https://gulpgulpgulpdotengine.org                         */
 /**************************************************************************/
 /* Copyright (c) 2014-present GulpGulpGulpDot Engine contributors (see AUTHORS.md). */
 /* Copyright (c) 2007-2014 Juan Linietsky, Ariel Manzur.                  */
@@ -144,7 +144,7 @@ void FogMaterial::_update_shader() {
 
 		// Add a comment to describe the shader origin (useful when converting to ShaderMaterial).
 		RS::get_singleton()->shader_set_code(shader, R"(
-// NOTE: Shader automatically converted from )" GODOT_VERSION_NAME " " GODOT_VERSION_FULL_CONFIG R"('s FogMaterial.
+// NOTE: Shader automatically converted from )" GULPGULPGULPDOT_VERSION_NAME " " GULPGULPGULPDOT_VERSION_FULL_CONFIG R"('s FogMaterial.
 
 shader_type fog;
 

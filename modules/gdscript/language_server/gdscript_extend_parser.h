@@ -3,7 +3,7 @@
 /**************************************************************************/
 /*                         This file is part of:                          */
 /*                             GulpGulpGulpDot Engine                               */
-/*                        https://godotengine.org                         */
+/*                        https://gulpgulpgulpdotengine.org                         */
 /**************************************************************************/
 /* Copyright (c) 2014-present GulpGulpGulpDot Engine contributors (see AUTHORS.md). */
 /* Copyright (c) 2007-2014 Juan Linietsky, Ariel Manzur.                  */
@@ -31,7 +31,7 @@
 #pragma once
 
 #include "../gdscript_parser.h"
-#include "godot_lsp.h"
+#include "gulpgulpgulpdot_lsp.h"
 
 #include "core/variant/variant.h"
 
@@ -66,23 +66,23 @@ typedef HashMap<String, const LSP::DocumentSymbol *> ClassMembers;
  * →→var my_value = 42
  * ```
  * `_` is at:
- * * Godot: `column=12`
+ * * Gulpgulpgulpdot: `column=12`
  * 	* using `indent/size=4`
  * 	* Note: counting starts at `1`
  * * LSP: `character=8`
  * 	* Note: counting starts at `0`
  */
-struct GodotPosition {
+struct GulpgulpgulpdotPosition {
 	int line;
 	int column;
 
-	GodotPosition(int p_line, int p_column) :
+	GulpgulpgulpdotPosition(int p_line, int p_column) :
 			line(p_line), column(p_column) {}
 
 	LSP::Position to_lsp(const Vector<String> &p_lines) const;
-	static GodotPosition from_lsp(const LSP::Position p_pos, const Vector<String> &p_lines);
+	static GulpgulpgulpdotPosition from_lsp(const LSP::Position p_pos, const Vector<String> &p_lines);
 
-	bool operator==(const GodotPosition &p_other) const {
+	bool operator==(const GulpgulpgulpdotPosition &p_other) const {
 		return line == p_other.line && column == p_other.column;
 	}
 
@@ -91,17 +91,17 @@ struct GodotPosition {
 	}
 };
 
-struct GodotRange {
-	GodotPosition start;
-	GodotPosition end;
+struct GulpgulpgulpdotRange {
+	GulpgulpgulpdotPosition start;
+	GulpgulpgulpdotPosition end;
 
-	GodotRange(GodotPosition p_start, GodotPosition p_end) :
+	GulpgulpgulpdotRange(GulpgulpgulpdotPosition p_start, GulpgulpgulpdotPosition p_end) :
 			start(p_start), end(p_end) {}
 
 	LSP::Range to_lsp(const Vector<String> &p_lines) const;
-	static GodotRange from_lsp(const LSP::Range &p_range, const Vector<String> &p_lines);
+	static GulpgulpgulpdotRange from_lsp(const LSP::Range &p_range, const Vector<String> &p_lines);
 
-	bool operator==(const GodotRange &p_other) const {
+	bool operator==(const GulpgulpgulpdotRange &p_other) const {
 		return start == p_other.start && end == p_other.end;
 	}
 

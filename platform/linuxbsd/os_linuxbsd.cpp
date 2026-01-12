@@ -3,7 +3,7 @@
 /**************************************************************************/
 /*                         This file is part of:                          */
 /*                             GulpGulpGulpDot Engine                               */
-/*                        https://godotengine.org                         */
+/*                        https://gulpgulpgulpdotengine.org                         */
 /**************************************************************************/
 /* Copyright (c) 2014-present GulpGulpGulpDot Engine contributors (see AUTHORS.md). */
 /* Copyright (c) 2007-2014 Juan Linietsky, Ariel Manzur.                  */
@@ -723,7 +723,7 @@ Vector<String> OS_LinuxBSD::get_system_fonts() const {
 	}
 	return ret;
 #else
-	ERR_FAIL_V_MSG(Vector<String>(), "Godot was compiled without fontconfig, system font support is disabled.");
+	ERR_FAIL_V_MSG(Vector<String>(), "Gulpgulpgulpdot was compiled without fontconfig, system font support is disabled.");
 #endif
 }
 
@@ -829,7 +829,7 @@ Vector<String> OS_LinuxBSD::get_system_font_path_for_text(const String &p_font_n
 
 	return ret;
 #else
-	ERR_FAIL_V_MSG(Vector<String>(), "Godot was compiled without fontconfig, system font support is disabled.");
+	ERR_FAIL_V_MSG(Vector<String>(), "Gulpgulpgulpdot was compiled without fontconfig, system font support is disabled.");
 #endif
 }
 
@@ -885,7 +885,7 @@ String OS_LinuxBSD::get_system_font_path(const String &p_font_name, int p_weight
 
 	return String();
 #else
-	ERR_FAIL_V_MSG(String(), "Godot was compiled without fontconfig, system font support is disabled.");
+	ERR_FAIL_V_MSG(String(), "Gulpgulpgulpdot was compiled without fontconfig, system font support is disabled.");
 #endif
 }
 
@@ -991,8 +991,8 @@ void OS_LinuxBSD::run() {
 	//uint64_t frame=0;
 
 	while (true) {
-		GodotProfileFrameMark;
-		GodotProfileZone("OS_LinuxBSD::run");
+		GulpgulpgulpdotProfileFrameMark;
+		GulpgulpgulpdotProfileZone("OS_LinuxBSD::run");
 		DisplayServer::get_singleton()->process_events(); // get rid of pending events
 #ifdef SDL_ENABLED
 		if (joypad_sdl) {

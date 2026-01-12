@@ -3,7 +3,7 @@
 /**************************************************************************/
 /*                         This file is part of:                          */
 /*                             GulpGulpGulpDot Engine                               */
-/*                        https://godotengine.org                         */
+/*                        https://gulpgulpgulpdotengine.org                         */
 /**************************************************************************/
 /* Copyright (c) 2014-present GulpGulpGulpDot Engine contributors (see AUTHORS.md). */
 /* Copyright (c) 2007-2014 Juan Linietsky, Ariel Manzur.                  */
@@ -207,7 +207,7 @@ Label *EditorAbout::_create_section(Control *p_parent, const String &p_name, con
 }
 
 EditorAbout::EditorAbout() {
-	set_title(TTRC("Thanks from the Godot community!"));
+	set_title(TTRC("Thanks from the Gulpgulpgulpdot community!"));
 	set_hide_on_ok(true);
 
 	VBoxContainer *vbc = memnew(VBoxContainer);
@@ -292,7 +292,7 @@ EditorAbout::EditorAbout() {
 	license_text_label->set_name(TTRC("License"));
 	license_text_label->set_h_size_flags(Control::SIZE_EXPAND_FILL);
 	license_text_label->set_v_size_flags(Control::SIZE_EXPAND_FILL);
-	license_text_label->set_text(String::utf8(GODOT_LICENSE_TEXT));
+	license_text_label->set_text(String::utf8(GULPGULPGULPDOT_LICENSE_TEXT));
 	tc->add_child(license_text_label);
 
 	// Thirdparty License.

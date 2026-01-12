@@ -3,7 +3,7 @@
 /**************************************************************************/
 /*                         This file is part of:                          */
 /*                             GulpGulpGulpDot Engine                               */
-/*                        https://godotengine.org                         */
+/*                        https://gulpgulpgulpdotengine.org                         */
 /**************************************************************************/
 /* Copyright (c) 2014-present GulpGulpGulpDot Engine contributors (see AUTHORS.md). */
 /* Copyright (c) 2007-2014 Juan Linietsky, Ariel Manzur.                  */
@@ -99,7 +99,7 @@ void EditorSettingsDialog::update_navigation_preset() {
 	Ref<InputEventKey> zoom_mod_key_2;
 	bool set_preset = false;
 
-	if (nav_scheme == Node3DEditorViewport::NAVIGATION_GODOT) {
+	if (nav_scheme == Node3DEditorViewport::NAVIGATION_GULPGULPGULPDOT) {
 		set_preset = true;
 		set_orbit_mouse_button = Node3DEditorViewport::NAVIGATION_MIDDLE_MOUSE;
 		set_pan_mouse_button = Node3DEditorViewport::NAVIGATION_MIDDLE_MOUSE;

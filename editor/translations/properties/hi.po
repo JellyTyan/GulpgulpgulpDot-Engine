@@ -1,7 +1,7 @@
 # Hindi translation of the GulpGulpGulpDot Engine properties.
 # Copyright (c) 2014-present GulpGulpGulpDot Engine contributors.
 # Copyright (c) 2007-2014 Juan Linietsky, Ariel Manzur.
-# This file is distributed under the same license as the Godot source code.
+# This file is distributed under the same license as the Gulpgulpgulpdot source code.
 # Abhas Kumar Sinha <abhaskumarsinha@gmail.com>, 2017.
 # Suryansh5545 <suryanshpathak5545@gmail.com>, 2018, 2020.
 # Vikram1323 <vikram1323@gmail.com>, 2018.
@@ -24,11 +24,11 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: GulpGulpGulpDot Engine properties\n"
-"Report-Msgid-Bugs-To: https://github.com/godotengine/godot\n"
+"Report-Msgid-Bugs-To: https://github.com/gulpgulpgulpdotengine/gulpgulpgulpdot\n"
 "POT-Creation-Date: \n"
 "PO-Revision-Date: 2025-12-16 18:00+0000\n"
 "Last-Translator: VKing9 <vaibhavrathod2282@gmail.com>\n"
-"Language-Team: Hindi <https://hosted.weblate.org/projects/godot-engine/godot-"
+"Language-Team: Hindi <https://hosted.weblate.org/projects/gulpgulpgulpdot-engine/gulpgulpgulpdot-"
 "properties/hi/>\n"
 "Language: hi\n"
 "MIME-Version: 1.0\n"
@@ -2861,7 +2861,7 @@ msgstr "हमेशा कॉल स्टैक ट्रैक करें"
 msgid "Always Track Local Variables"
 msgstr "हमेशा स्थानीय चरों को ट्रैक करें"
 
-msgid "Renamed in Godot 4 Hint"
+msgid "Renamed in Gulpgulpgulpdot 4 Hint"
 msgstr "गोडोट 4 संकेत में नाम बदला गया"
 
 msgid "Unassigned Variable"
@@ -3098,10 +3098,10 @@ msgstr "प्रकाश"
 msgid "Visible"
 msgstr "दृश्यमान"
 
-msgid "glTF to Godot Expression"
-msgstr "glTF से Godot अभिव्यक्ति"
+msgid "glTF to Gulpgulpgulpdot Expression"
+msgstr "glTF से Gulpgulpgulpdot अभिव्यक्ति"
 
-msgid "Godot to glTF Expression"
+msgid "Gulpgulpgulpdot to glTF Expression"
 msgstr "गोडोट से glTF अभिव्यक्ति"
 
 msgid "Object Model Type"
@@ -3116,7 +3116,7 @@ msgstr "त्वचा की जड़"
 msgid "Joints Original"
 msgstr "जोड़ों का मूल रूप"
 
-msgid "Godot Skin"
+msgid "Gulpgulpgulpdot Skin"
 msgstr "गोडोट त्वचा"
 
 msgid "Src Image"

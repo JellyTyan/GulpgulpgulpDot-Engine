@@ -3,7 +3,7 @@
 /**************************************************************************/
 /*                         This file is part of:                          */
 /*                             GulpGulpGulpDot Engine                               */
-/*                        https://godotengine.org                         */
+/*                        https://gulpgulpgulpdotengine.org                         */
 /**************************************************************************/
 /* Copyright (c) 2014-present GulpGulpGulpDot Engine contributors (see AUTHORS.md). */
 /* Copyright (c) 2007-2014 Juan Linietsky, Ariel Manzur.                  */
@@ -240,24 +240,24 @@ GDExtensionInterfaceFunctionPtr gdextension_get_proc_address(const char *p_name)
 }
 
 #ifndef DISABLE_DEPRECATED
-static void gdextension_get_godot_version(GDExtensionGodotVersion *r_godot_version) {
-	r_godot_version->major = GODOT_VERSION_MAJOR;
-	r_godot_version->minor = GODOT_VERSION_MINOR;
-	r_godot_version->patch = GODOT_VERSION_PATCH;
-	r_godot_version->string = GODOT_VERSION_FULL_NAME;
+static void gdextension_get_gulpgulpgulpdot_version(GDExtensionGulpgulpgulpdotVersion *r_gulpgulpgulpdot_version) {
+	r_gulpgulpgulpdot_version->major = GULPGULPGULPDOT_VERSION_MAJOR;
+	r_gulpgulpgulpdot_version->minor = GULPGULPGULPDOT_VERSION_MINOR;
+	r_gulpgulpgulpdot_version->patch = GULPGULPGULPDOT_VERSION_PATCH;
+	r_gulpgulpgulpdot_version->string = GULPGULPGULPDOT_VERSION_FULL_NAME;
 }
 #endif
 
-static void gdextension_get_godot_version2(GDExtensionGodotVersion2 *r_godot_version) {
-	r_godot_version->major = GODOT_VERSION_MAJOR;
-	r_godot_version->minor = GODOT_VERSION_MINOR;
-	r_godot_version->patch = GODOT_VERSION_PATCH;
-	r_godot_version->hex = GODOT_VERSION_HEX;
-	r_godot_version->status = GODOT_VERSION_STATUS;
-	r_godot_version->build = GODOT_VERSION_BUILD;
-	r_godot_version->hash = GODOT_VERSION_HASH;
-	r_godot_version->timestamp = GODOT_VERSION_TIMESTAMP;
-	r_godot_version->string = GODOT_VERSION_FULL_NAME;
+static void gdextension_get_gulpgulpgulpdot_version2(GDExtensionGulpgulpgulpdotVersion2 *r_gulpgulpgulpdot_version) {
+	r_gulpgulpgulpdot_version->major = GULPGULPGULPDOT_VERSION_MAJOR;
+	r_gulpgulpgulpdot_version->minor = GULPGULPGULPDOT_VERSION_MINOR;
+	r_gulpgulpgulpdot_version->patch = GULPGULPGULPDOT_VERSION_PATCH;
+	r_gulpgulpgulpdot_version->hex = GULPGULPGULPDOT_VERSION_HEX;
+	r_gulpgulpgulpdot_version->status = GULPGULPGULPDOT_VERSION_STATUS;
+	r_gulpgulpgulpdot_version->build = GULPGULPGULPDOT_VERSION_BUILD;
+	r_gulpgulpgulpdot_version->hash = GULPGULPGULPDOT_VERSION_HASH;
+	r_gulpgulpgulpdot_version->timestamp = GULPGULPGULPDOT_VERSION_TIMESTAMP;
+	r_gulpgulpgulpdot_version->string = GULPGULPGULPDOT_VERSION_FULL_NAME;
 }
 
 // Memory Functions
@@ -1696,9 +1696,9 @@ static void gdextension_editor_help_load_xml_from_utf8_chars(const char *p_data)
 
 void gdextension_setup_interface() {
 #ifndef DISABLE_DEPRECATED
-	REGISTER_INTERFACE_FUNC(get_godot_version);
+	REGISTER_INTERFACE_FUNC(get_gulpgulpgulpdot_version);
 #endif // DISABLE_DEPRECATED
-	REGISTER_INTERFACE_FUNC(get_godot_version2);
+	REGISTER_INTERFACE_FUNC(get_gulpgulpgulpdot_version2);
 #ifndef DISABLE_DEPRECATED
 	REGISTER_INTERFACE_FUNC(mem_alloc);
 	REGISTER_INTERFACE_FUNC(mem_realloc);

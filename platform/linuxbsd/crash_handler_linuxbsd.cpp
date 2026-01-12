@@ -3,7 +3,7 @@
 /**************************************************************************/
 /*                         This file is part of:                          */
 /*                             GulpGulpGulpDot Engine                               */
-/*                        https://godotengine.org                         */
+/*                        https://gulpgulpgulpdotengine.org                         */
 /**************************************************************************/
 /* Copyright (c) 2014-present GulpGulpGulpDot Engine contributors (see AUTHORS.md). */
 /* Copyright (c) 2007-2014 Juan Linietsky, Ariel Manzur.                  */
@@ -82,10 +82,10 @@ static void handle_crash(int sig) {
 	print_error(vformat("%s: Program crashed with signal %d", __FUNCTION__, sig));
 
 	// Print the engine version just before, so that people are reminded to include the version in backtrace reports.
-	if (String(GODOT_VERSION_HASH).is_empty()) {
-		print_error(vformat("Engine version: %s", GODOT_VERSION_FULL_NAME));
+	if (String(GULPGULPGULPDOT_VERSION_HASH).is_empty()) {
+		print_error(vformat("Engine version: %s", GULPGULPGULPDOT_VERSION_FULL_NAME));
 	} else {
-		print_error(vformat("Engine version: %s (%s)", GODOT_VERSION_FULL_NAME, GODOT_VERSION_HASH));
+		print_error(vformat("Engine version: %s (%s)", GULPGULPGULPDOT_VERSION_FULL_NAME, GULPGULPGULPDOT_VERSION_HASH));
 	}
 	print_error(vformat("Dumping the backtrace. %s", msg));
 	char **strings = backtrace_symbols(bt_buffer, size);
@@ -138,7 +138,7 @@ static void handle_crash(int sig) {
 				}
 			}
 
-			// Simplify printed file paths to remove redundant `/./` sections (e.g. `/opt/godot/./core` -> `/opt/godot/core`).
+			// Simplify printed file paths to remove redundant `/./` sections (e.g. `/opt/gulpgulpgulpdot/./core` -> `/opt/gulpgulpgulpdot/core`).
 			print_error(vformat("[%d] %s (%s)", (int64_t)i, fname, err == OK ? addr2line_results[i].replace("/./", "/") : ""));
 		}
 

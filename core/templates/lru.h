@@ -3,7 +3,7 @@
 /**************************************************************************/
 /*                         This file is part of:                          */
 /*                             GulpGulpGulpDot Engine                               */
-/*                        https://godotengine.org                         */
+/*                        https://gulpgulpgulpdotengine.org                         */
 /**************************************************************************/
 /* Copyright (c) 2014-present GulpGulpGulpDot Engine contributors (see AUTHORS.md). */
 /* Copyright (c) 2007-2014 Juan Linietsky, Ariel Manzur.                  */
@@ -60,11 +60,11 @@ public:
 		Element n = _list.push_front(Pair(p_key, p_value));
 
 		if (e) {
-			GODOT_GCC_WARNING_PUSH_AND_IGNORE("-Waddress")
+			GULPGULPGULPDOT_GCC_WARNING_PUSH_AND_IGNORE("-Waddress")
 			if constexpr (BeforeEvict != nullptr) {
 				BeforeEvict((*e)->get().key, (*e)->get().data);
 			}
-			GODOT_GCC_WARNING_POP
+			GULPGULPGULPDOT_GCC_WARNING_POP
 			_list.erase(*e);
 			_map.erase(p_key);
 		}
@@ -72,11 +72,11 @@ public:
 
 		while (_map.size() > capacity) {
 			Element d = _list.back();
-			GODOT_GCC_WARNING_PUSH_AND_IGNORE("-Waddress")
+			GULPGULPGULPDOT_GCC_WARNING_PUSH_AND_IGNORE("-Waddress")
 			if constexpr (BeforeEvict != nullptr) {
 				BeforeEvict(d->get().key, d->get().data);
 			}
-			GODOT_GCC_WARNING_POP
+			GULPGULPGULPDOT_GCC_WARNING_POP
 			_map.erase(d->get().key);
 			_list.pop_back();
 		}
@@ -129,11 +129,11 @@ public:
 			capacity = p_capacity;
 			while (_map.size() > capacity) {
 				Element d = _list.back();
-				GODOT_GCC_WARNING_PUSH_AND_IGNORE("-Waddress")
+				GULPGULPGULPDOT_GCC_WARNING_PUSH_AND_IGNORE("-Waddress")
 				if constexpr (BeforeEvict != nullptr) {
 					BeforeEvict(d->get().key, d->get().data);
 				}
-				GODOT_GCC_WARNING_POP
+				GULPGULPGULPDOT_GCC_WARNING_POP
 				_map.erase(d->get().key);
 				_list.pop_back();
 			}

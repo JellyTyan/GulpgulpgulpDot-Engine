@@ -1,8 +1,8 @@
 {
-  "name": "godot",
+  "name": "gulpgulpgulpdot",
   "private": true,
   "version": "1.0.0",
-  "description": "Development and linting setup for Godot's Web platform code",
+  "description": "Development and linting setup for Gulpgulpgulpdot's Web platform code",
   "author": "GulpGulpGulpDot Engine contributors",
   "license": "MIT",
   "scripts": {

@@ -3,7 +3,7 @@
 /**************************************************************************/
 /*                         This file is part of:                          */
 /*                             GulpGulpGulpDot Engine                               */
-/*                        https://godotengine.org                         */
+/*                        https://gulpgulpgulpdotengine.org                         */
 /**************************************************************************/
 /* Copyright (c) 2014-present GulpGulpGulpDot Engine contributors (see AUTHORS.md). */
 /* Copyright (c) 2007-2014 Juan Linietsky, Ariel Manzur.                  */
@@ -45,27 +45,27 @@
 #include "tests/test_crypto_mbedtls.h"
 #endif
 
-#ifdef GODOT_MBEDTLS_THREADING_ALT
+#ifdef GULPGULPGULPDOT_MBEDTLS_THREADING_ALT
 extern "C" {
-void godot_mbedtls_mutex_init(mbedtls_threading_mutex_t *p_mutex) {
+void gulpgulpgulpdot_mbedtls_mutex_init(mbedtls_threading_mutex_t *p_mutex) {
 	ERR_FAIL_NULL(p_mutex);
 	p_mutex->mutex = memnew(Mutex);
 }
 
-void godot_mbedtls_mutex_free(mbedtls_threading_mutex_t *p_mutex) {
+void gulpgulpgulpdot_mbedtls_mutex_free(mbedtls_threading_mutex_t *p_mutex) {
 	ERR_FAIL_NULL(p_mutex);
 	ERR_FAIL_NULL(p_mutex->mutex);
 	memdelete((Mutex *)p_mutex->mutex);
 }
 
-int godot_mbedtls_mutex_lock(mbedtls_threading_mutex_t *p_mutex) {
+int gulpgulpgulpdot_mbedtls_mutex_lock(mbedtls_threading_mutex_t *p_mutex) {
 	ERR_FAIL_NULL_V(p_mutex, MBEDTLS_ERR_THREADING_BAD_INPUT_DATA);
 	ERR_FAIL_NULL_V(p_mutex->mutex, MBEDTLS_ERR_THREADING_BAD_INPUT_DATA);
 	((Mutex *)p_mutex->mutex)->lock();
 	return 0;
 }
 
-int godot_mbedtls_mutex_unlock(mbedtls_threading_mutex_t *p_mutex) {
+int gulpgulpgulpdot_mbedtls_mutex_unlock(mbedtls_threading_mutex_t *p_mutex) {
 	ERR_FAIL_NULL_V(p_mutex, MBEDTLS_ERR_THREADING_BAD_INPUT_DATA);
 	ERR_FAIL_NULL_V(p_mutex->mutex, MBEDTLS_ERR_THREADING_BAD_INPUT_DATA);
 	((Mutex *)p_mutex->mutex)->unlock();
@@ -74,7 +74,7 @@ int godot_mbedtls_mutex_unlock(mbedtls_threading_mutex_t *p_mutex) {
 };
 #endif
 
-static bool godot_mbedtls_initialized = false;
+static bool gulpgulpgulpdot_mbedtls_initialized = false;
 
 void initialize_mbedtls_module(ModuleInitializationLevel p_level) {
 	if (p_level != MODULE_INITIALIZATION_LEVEL_CORE) {
@@ -83,12 +83,12 @@ void initialize_mbedtls_module(ModuleInitializationLevel p_level) {
 
 	GLOBAL_DEF("network/tls/enable_tls_v1.3", true);
 
-#ifdef GODOT_MBEDTLS_THREADING_ALT
+#ifdef GULPGULPGULPDOT_MBEDTLS_THREADING_ALT
 	mbedtls_threading_set_alt(
-			godot_mbedtls_mutex_init,
-			godot_mbedtls_mutex_free,
-			godot_mbedtls_mutex_lock,
-			godot_mbedtls_mutex_unlock);
+			gulpgulpgulpdot_mbedtls_mutex_init,
+			gulpgulpgulpdot_mbedtls_mutex_free,
+			gulpgulpgulpdot_mbedtls_mutex_lock,
+			gulpgulpgulpdot_mbedtls_mutex_unlock);
 #endif
 
 #if MBEDTLS_VERSION_MAJOR >= 3
@@ -102,7 +102,7 @@ void initialize_mbedtls_module(ModuleInitializationLevel p_level) {
 	}
 #endif
 
-	godot_mbedtls_initialized = true;
+	gulpgulpgulpdot_mbedtls_initialized = true;
 
 	CryptoMbedTLS::initialize_crypto();
 	StreamPeerMbedTLS::initialize_tls();
@@ -115,7 +115,7 @@ void uninitialize_mbedtls_module(ModuleInitializationLevel p_level) {
 		return;
 	}
 
-	if (!godot_mbedtls_initialized) {
+	if (!gulpgulpgulpdot_mbedtls_initialized) {
 		return;
 	}
 
@@ -128,7 +128,7 @@ void uninitialize_mbedtls_module(ModuleInitializationLevel p_level) {
 	StreamPeerMbedTLS::finalize_tls();
 	CryptoMbedTLS::finalize_crypto();
 
-#ifdef GODOT_MBEDTLS_THREADING_ALT
+#ifdef GULPGULPGULPDOT_MBEDTLS_THREADING_ALT
 	mbedtls_threading_free_alt();
 #endif
 }

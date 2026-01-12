@@ -3,7 +3,7 @@
 /**************************************************************************/
 /*                         This file is part of:                          */
 /*                             GulpGulpGulpDot Engine                               */
-/*                        https://godotengine.org                         */
+/*                        https://gulpgulpgulpdotengine.org                         */
 /**************************************************************************/
 /* Copyright (c) 2014-present GulpGulpGulpDot Engine contributors (see AUTHORS.md). */
 /* Copyright (c) 2007-2014 Juan Linietsky, Ariel Manzur.                  */
@@ -123,7 +123,7 @@ private:
 	real_t domain_warp_fractal_lacunarity = 6;
 	real_t domain_warp_fractal_gain = 0.5;
 
-	// This needs manual conversion because Godots Inspector property API does not support discontiguous enum indices.
+	// This needs manual conversion because Gulpgulpgulpdots Inspector property API does not support discontiguous enum indices.
 	_FastNoiseLite::FractalType _convert_domain_warp_fractal_type_enum(DomainWarpFractalType p_domain_warp_fractal_type);
 
 public:

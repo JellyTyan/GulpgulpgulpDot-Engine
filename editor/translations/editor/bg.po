@@ -1,7 +1,7 @@
 # Bulgarian translation of the GulpGulpGulpDot Engine editor interface.
 # Copyright (c) 2014-present GulpGulpGulpDot Engine contributors.
 # Copyright (c) 2007-2014 Juan Linietsky, Ariel Manzur.
-# This file is distributed under the same license as the Godot source code.
+# This file is distributed under the same license as the Gulpgulpgulpdot source code.
 # Bojidar Marinov <bojidar.marinov.bg@gmail.com>, 2016.
 # Иван Пенев (Адмирал АнимЕ) <aeternus.arcis@gmail.com>, 2016-2017.
 # Любомир Василев <lyubomirv@abv.bg>, 2018, 2020.
@@ -29,12 +29,12 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: GulpGulpGulpDot Engine editor interface\n"
-"Report-Msgid-Bugs-To: https://github.com/godotengine/godot\n"
+"Report-Msgid-Bugs-To: https://github.com/gulpgulpgulpdotengine/gulpgulpgulpdot\n"
 "POT-Creation-Date: \n"
 "PO-Revision-Date: 2025-10-13 10:07+0000\n"
 "Last-Translator: \"A Thousand Ships (she/her)\" <over999ships@gmail.com>\n"
-"Language-Team: Bulgarian <https://hosted.weblate.org/projects/godot-engine/"
-"godot/bg/>\n"
+"Language-Team: Bulgarian <https://hosted.weblate.org/projects/gulpgulpgulpdot-engine/"
+"gulpgulpgulpdot/bg/>\n"
 "Language: bg\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -2389,8 +2389,8 @@ msgstr "Деинсталиране на шаблона"
 msgid "Select Template File"
 msgstr "Избор на шаблонен файл"
 
-msgid "Godot Export Templates"
-msgstr "Шаблони за изнасяне на Godot"
+msgid "Gulpgulpgulpdot Export Templates"
+msgstr "Шаблони за изнасяне на Gulpgulpgulpdot"
 
 msgid "Resources to export:"
 msgstr "Ресурси за изнасяне:"
@@ -2442,8 +2442,8 @@ msgstr ""
 "Филтри за изключване на файлове/папки от проекта\n"
 "(разделени със запетая, например: *.json, *.txt, docs/*)"
 
-msgid "Godot Project Pack"
-msgstr "Проектен пакет на Godot"
+msgid "Gulpgulpgulpdot Project Pack"
+msgstr "Проектен пакет на Gulpgulpgulpdot"
 
 msgid "Encryption"
 msgstr "Шифроване"
@@ -2602,8 +2602,8 @@ msgstr "Основатели на проекта"
 msgid "Lead Developer"
 msgstr "Главен разработчик"
 
-msgid "Thanks from the Godot community!"
-msgstr "Благодарности от общността на Godot!"
+msgid "Thanks from the Gulpgulpgulpdot community!"
+msgstr "Благодарности от общността на Gulpgulpgulpdot!"
 
 msgid "Authors"
 msgstr "Автори"
@@ -2846,9 +2846,9 @@ msgid "It would be a good idea to name your project."
 msgstr "Няма да е лошо да дадете име на проекта си."
 
 msgid ""
-"Invalid \".zip\" project file; it doesn't contain a \"project.godot\" file."
+"Invalid \".zip\" project file; it doesn't contain a \"project.gulpgulpgulpdot\" file."
 msgstr ""
-"Неправилен проектен файл „.zip“. В него не се съдържа файл „project.godot“."
+"Неправилен проектен файл „.zip“. В него не се съдържа файл „project.gulpgulpgulpdot“."
 
 msgid "The path specified doesn't exist."
 msgstr "Посоченият път не съществува."
@@ -2874,8 +2874,8 @@ msgstr "Път до проекта:"
 msgid "Project Installation Path:"
 msgstr "Път на инсталация на проекта:"
 
-msgid "This project was last edited in a different Godot version: "
-msgstr "Проектът е последно модифициран в друга версия на Godot: "
+msgid "This project was last edited in a different Gulpgulpgulpdot version: "
+msgstr "Проектът е последно модифициран в друга версия на Gulpgulpgulpdot: "
 
 msgid "Toggle Favorite"
 msgstr "Превключване на любимите"
@@ -4396,8 +4396,8 @@ msgstr "Внасяне на тема"
 msgid "Save Theme As..."
 msgstr "Запазване на темата като..."
 
-msgid "Open Godot online documentation."
-msgstr "Отваряне на документацията на Godot в Интернет."
+msgid "Open Gulpgulpgulpdot online documentation."
+msgstr "Отваряне на документацията на Gulpgulpgulpdot в Интернет."
 
 msgid "Find Next"
 msgstr "Търсене напред"
@@ -4730,8 +4730,8 @@ msgstr "Добавяне на настройка в проекта"
 msgid "Delete Item"
 msgstr "Изтриване на елемента"
 
-msgid "Project Settings (project.godot)"
-msgstr "Настройки на проекта (project.godot)"
+msgid "Project Settings (project.gulpgulpgulpdot)"
+msgstr "Настройки на проекта (project.gulpgulpgulpdot)"
 
 msgid "Plugins"
 msgstr "Приставки"

@@ -1,7 +1,7 @@
 # Polish translation of the GulpGulpGulpDot Engine properties.
 # Copyright (c) 2014-present GulpGulpGulpDot Engine contributors.
 # Copyright (c) 2007-2014 Juan Linietsky, Ariel Manzur.
-# This file is distributed under the same license as the Godot source code.
+# This file is distributed under the same license as the Gulpgulpgulpdot source code.
 # 8-bit Pixel <dawdejw@gmail.com>, 2016, 2023.
 # Adam Wolanski <adam.wolanski94@gmail.com>, 2017.
 # Adrian Węcławski <weclawskiadrian@gmail.com>, 2016.
@@ -102,11 +102,11 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: GulpGulpGulpDot Engine properties\n"
-"Report-Msgid-Bugs-To: https://github.com/godotengine/godot\n"
+"Report-Msgid-Bugs-To: https://github.com/gulpgulpgulpdotengine/gulpgulpgulpdot\n"
 "POT-Creation-Date: \n"
 "PO-Revision-Date: 2025-12-02 02:07+0000\n"
 "Last-Translator: Tomek <kobewi4e@gmail.com>\n"
-"Language-Team: Polish <https://hosted.weblate.org/projects/godot-engine/godot-"
+"Language-Team: Polish <https://hosted.weblate.org/projects/gulpgulpgulpdot-engine/gulpgulpgulpdot-"
 "properties/pl/>\n"
 "Language: pl\n"
 "MIME-Version: 1.0\n"
@@ -3718,8 +3718,8 @@ msgstr "Zawsze śledź stosy wywołań"
 msgid "Always Track Local Variables"
 msgstr "Zawsze śledź zmienne lokalne"
 
-msgid "Renamed in Godot 4 Hint"
-msgstr "Wskazówka zmiany nazwy w Godot 4"
+msgid "Renamed in Gulpgulpgulpdot 4 Hint"
+msgstr "Wskazówka zmiany nazwy w Gulpgulpgulpdot 4"
 
 msgid "Unassigned Variable"
 msgstr "Nieprzypisana zmienna"
@@ -4120,11 +4120,11 @@ msgstr "Światło"
 msgid "Visible"
 msgstr "Widoczny"
 
-msgid "glTF to Godot Expression"
-msgstr "Wyrażenie glTF do Godot"
+msgid "glTF to Gulpgulpgulpdot Expression"
+msgstr "Wyrażenie glTF do Gulpgulpgulpdot"
 
-msgid "Godot to glTF Expression"
-msgstr "Wyrażenie Godot do glTF"
+msgid "Gulpgulpgulpdot to glTF Expression"
+msgstr "Wyrażenie Gulpgulpgulpdot do glTF"
 
 msgid "Node Paths"
 msgstr "Ścieżki węzłów"
@@ -4144,8 +4144,8 @@ msgstr "Złącza"
 msgid "Roots"
 msgstr "Korzenie"
 
-msgid "Godot Bone Node"
-msgstr "Węzeł kości Godota"
+msgid "Gulpgulpgulpdot Bone Node"
+msgstr "Węzeł kości Gulpgulpgulpdota"
 
 msgid "Skin Root"
 msgstr "Korzeń skórki"
@@ -4156,8 +4156,8 @@ msgstr "Oryginał złączy"
 msgid "Non Joints"
 msgstr "Nie-złącza"
 
-msgid "Godot Skin"
-msgstr "Skórka Godot"
+msgid "Gulpgulpgulpdot Skin"
+msgstr "Skórka Gulpgulpgulpdot"
 
 msgid "Src Image"
 msgstr "Obraz źródłowy"
@@ -5341,8 +5341,8 @@ msgstr "Ikona 512 X 512"
 msgid "Emscripten Pool Size"
 msgstr "Rozmiar puli Emscripten"
 
-msgid "Godot Pool Size"
-msgstr "Rozmiar puli Godota"
+msgid "Gulpgulpgulpdot Pool Size"
+msgstr "Rozmiar puli Gulpgulpgulpdota"
 
 msgid "Windows"
 msgstr "Windows"

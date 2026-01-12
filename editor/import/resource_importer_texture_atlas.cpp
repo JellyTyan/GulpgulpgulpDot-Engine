@@ -3,7 +3,7 @@
 /**************************************************************************/
 /*                         This file is part of:                          */
 /*                             GulpGulpGulpDot Engine                               */
-/*                        https://godotengine.org                         */
+/*                        https://gulpgulpgulpdotengine.org                         */
 /**************************************************************************/
 /* Copyright (c) 2014-present GulpGulpGulpDot Engine contributors (see AUTHORS.md). */
 /* Copyright (c) 2007-2014 Juan Linietsky, Ariel Manzur.                  */
@@ -102,7 +102,7 @@ Error ResourceImporterTextureAtlas::import(ResourceUID::ID p_source_id, const St
 	return OK;
 }
 
-// FIXME: Rasterization has issues, see https://github.com/godotengine/godot/issues/68350#issuecomment-1305610290
+// FIXME: Rasterization has issues, see https://github.com/gulpgulpgulpdotengine/gulpgulpgulpdot/issues/68350#issuecomment-1305610290
 static void _plot_triangle(Vector2i *p_vertices, const Vector2i &p_offset, bool p_transposed, Ref<Image> p_image, const Ref<Image> &p_src_image) {
 	int width = p_image->get_width();
 	int height = p_image->get_height();

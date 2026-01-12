@@ -3,7 +3,7 @@
 /**************************************************************************/
 /*                         This file is part of:                          */
 /*                             GulpGulpGulpDot Engine                               */
-/*                        https://godotengine.org                         */
+/*                        https://gulpgulpgulpdotengine.org                         */
 /**************************************************************************/
 /* Copyright (c) 2014-present GulpGulpGulpDot Engine contributors (see AUTHORS.md). */
 /* Copyright (c) 2007-2014 Juan Linietsky, Ariel Manzur.                  */
@@ -412,7 +412,7 @@ void MobileVRInterface::uninitialize() {
 Dictionary MobileVRInterface::get_system_info() {
 	Dictionary dict;
 
-	dict[SNAME("XRRuntimeName")] = String("Godot mobile VR interface");
+	dict[SNAME("XRRuntimeName")] = String("Gulpgulpgulpdot mobile VR interface");
 	dict[SNAME("XRRuntimeVersion")] = String("");
 
 	return dict;

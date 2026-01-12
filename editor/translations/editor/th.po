@@ -1,7 +1,7 @@
 # Thai translation of the GulpGulpGulpDot Engine editor interface.
 # Copyright (c) 2014-present GulpGulpGulpDot Engine contributors.
 # Copyright (c) 2007-2014 Juan Linietsky, Ariel Manzur.
-# This file is distributed under the same license as the Godot source code.
+# This file is distributed under the same license as the Gulpgulpgulpdot source code.
 # Kaveeta Vivatchai <goodytong@gmail.com>, 2017.
 # Poommetee Ketson (Noshyaar) <poommetee@protonmail.com>, 2017-2018.
 # Thanachart Monpassorn <nunf_2539@hotmail.com>, 2020, 2021.
@@ -28,11 +28,11 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: GulpGulpGulpDot Engine editor interface\n"
-"Report-Msgid-Bugs-To: https://github.com/godotengine/godot\n"
+"Report-Msgid-Bugs-To: https://github.com/gulpgulpgulpdotengine/gulpgulpgulpdot\n"
 "POT-Creation-Date: \n"
 "PO-Revision-Date: 2025-10-13 10:08+0000\n"
 "Last-Translator: \"A Thousand Ships (she/her)\" <over999ships@gmail.com>\n"
-"Language-Team: Thai <https://hosted.weblate.org/projects/godot-engine/godot/"
+"Language-Team: Thai <https://hosted.weblate.org/projects/gulpgulpgulpdot-engine/gulpgulpgulpdot/"
 "th/>\n"
 "Language: th\n"
 "MIME-Version: 1.0\n"
@@ -2715,8 +2715,8 @@ msgstr "ถอนการติดตั้ง"
 msgid "Select Template File"
 msgstr "เลือกไฟล์เทมเพลต"
 
-msgid "Godot Export Templates"
-msgstr "เทมเพลตการส่งออก Godot"
+msgid "Gulpgulpgulpdot Export Templates"
+msgstr "เทมเพลตการส่งออก Gulpgulpgulpdot"
 
 msgid "Runnable"
 msgstr "สามารถรันได้"
@@ -2957,8 +2957,8 @@ msgstr "ผู้ช่วยพัฒนา GulpGulpGulpDot Engine"
 msgid "Double-click to open in browser."
 msgstr "ดับเบิลคลิกเพื่อเปิดในเบราว์เซอร์"
 
-msgid "Thanks from the Godot community!"
-msgstr "ขอขอบคุณจากชุมชนผู้ใช้ Godot!"
+msgid "Thanks from the Gulpgulpgulpdot community!"
+msgstr "ขอขอบคุณจากชุมชนผู้ใช้ Gulpgulpgulpdot!"
 
 msgid "Authors"
 msgstr "ทีมงาน"
@@ -3181,8 +3181,8 @@ msgid "It would be a good idea to name your project."
 msgstr "ควรตั้งชื่อโปรเจกต์"
 
 msgid ""
-"Invalid \".zip\" project file; it doesn't contain a \"project.godot\" file."
-msgstr "ไฟล์โปรเจกต์ \".zip\" ผิดพลาด เนื่องจากไม่มีไฟล์ \"project.godot\""
+"Invalid \".zip\" project file; it doesn't contain a \"project.gulpgulpgulpdot\" file."
+msgstr "ไฟล์โปรเจกต์ \".zip\" ผิดพลาด เนื่องจากไม่มีไฟล์ \"project.gulpgulpgulpdot\""
 
 msgid "The path specified doesn't exist."
 msgstr "ไม่พบที่อยู่ที่ระบุเอาไว้"
@@ -3190,8 +3190,8 @@ msgstr "ไม่พบที่อยู่ที่ระบุเอาไว
 msgid "New Game Project"
 msgstr "โปรเจกต์เกมใหม่"
 
-msgid "Couldn't create project.godot in project path."
-msgstr "สร้างไฟล์ project.godot ไม่ได้"
+msgid "Couldn't create project.gulpgulpgulpdot in project path."
+msgstr "สร้างไฟล์ project.gulpgulpgulpdot ไม่ได้"
 
 msgid "Error opening package file, not in ZIP format."
 msgstr "ผิดพลาดขณะเปิดไฟล์แพคเกจ, ไม่ใช่รูปแบบ zip"
@@ -3253,19 +3253,19 @@ msgid "Are you sure to run %d projects at once?"
 msgstr "ยืนยันการรันโปรเจกต์ %d โปรเจกต์ทีเดียว?"
 
 msgid ""
-"The selected project \"%s\" does not specify its supported Godot version in "
-"its configuration file (\"project.godot\").\n"
+"The selected project \"%s\" does not specify its supported Gulpgulpgulpdot version in "
+"its configuration file (\"project.gulpgulpgulpdot\").\n"
 "\n"
 "Project path: %s\n"
 "\n"
-"If you proceed with opening it, it will be converted to Godot's current "
+"If you proceed with opening it, it will be converted to Gulpgulpgulpdot's current "
 "configuration file format.\n"
 "\n"
 "Warning: You won't be able to open the project with previous versions of the "
 "engine anymore."
 msgstr ""
-"โปรเจกต์ที่เลือก \"%s\" ไม่ได้ระบุเวอร์ชั่น Godot ที่ซัพพอร์ตเอาไว้ในไฟล์การตั้งค่า "
-"(\"project.godot\")\n"
+"โปรเจกต์ที่เลือก \"%s\" ไม่ได้ระบุเวอร์ชั่น Gulpgulpgulpdot ที่ซัพพอร์ตเอาไว้ในไฟล์การตั้งค่า "
+"(\"project.gulpgulpgulpdot\")\n"
 "\n"
 "ตำแหน่งโปรเจกต์: %s\n"
 "\n"
@@ -5024,7 +5024,7 @@ msgstr "บันทึกธีมเป็น"
 msgid "Online Docs"
 msgstr "คู่มือ"
 
-msgid "Open Godot online documentation."
+msgid "Open Gulpgulpgulpdot online documentation."
 msgstr "เปิดคู่มือออนไลน์"
 
 msgid "%s Class Reference"
@@ -5438,8 +5438,8 @@ msgstr "สร้าง หรือนำเข้าโปรไฟล์ก�
 msgid "New profile name:"
 msgstr "ชื่อโปรไฟล์ใหม่:"
 
-msgid "Godot Feature Profile"
-msgstr "รายละเอียดคุณสมบัติ Godot"
+msgid "Gulpgulpgulpdot Feature Profile"
+msgstr "รายละเอียดคุณสมบัติ Gulpgulpgulpdot"
 
 msgid "Import Profile(s)"
 msgstr "นำเข้าโปรไฟล์"
@@ -5489,8 +5489,8 @@ msgstr "เปลี่ยน Action deadzone"
 msgid "Erase Input Action"
 msgstr "ลบการกระทำ"
 
-msgid "Project Settings (project.godot)"
-msgstr "ตัวเลือกโปรเจกต์ (project.godot)"
+msgid "Project Settings (project.gulpgulpgulpdot)"
+msgstr "ตัวเลือกโปรเจกต์ (project.gulpgulpgulpdot)"
 
 msgid "Input Map"
 msgstr "ปุ่มกด"
@@ -6019,11 +6019,11 @@ msgid ""
 msgstr "(โหมดแฟรกเมนต์/แสง เท่านั้น) (เวกเตอร์) ผลรวมของอนุพันธ์สัมบูรณ์ใน 'x' และ 'y'"
 
 msgid ""
-"Custom Godot Shader Language expression, with custom amount of input and "
+"Custom Gulpgulpgulpdot Shader Language expression, with custom amount of input and "
 "output ports. This is a direct injection of code into the vertex/fragment/"
 "light function, do not use it to write the function declarations inside."
 msgstr ""
-"นิพจน์ภาษาเชดเดอร์ Godot แบบกำหนดเอง พร้อมจำนวนพอร์ตอินพุตและเอาต์พุตที่กำหนดเอง "
+"นิพจน์ภาษาเชดเดอร์ Gulpgulpgulpdot แบบกำหนดเอง พร้อมจำนวนพอร์ตอินพุตและเอาต์พุตที่กำหนดเอง "
 "จำทำการแทรกโค้ดลงในฟังก์ชันเวอร์เทก / แฟรกเมนต์ / แสง "
 "ห้ามใช้เพื่อเขียนการประกาศฟังก์ชันภายใน"
 

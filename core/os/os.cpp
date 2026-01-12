@@ -3,7 +3,7 @@
 /**************************************************************************/
 /*                         This file is part of:                          */
 /*                             GulpGulpGulpDot Engine                               */
-/*                        https://godotengine.org                         */
+/*                        https://gulpgulpgulpdotengine.org                         */
 /**************************************************************************/
 /* Copyright (c) 2014-present GulpGulpGulpDot Engine contributors (see AUTHORS.md). */
 /* Copyright (c) 2007-2014 Juan Linietsky, Ariel Manzur.                  */
@@ -290,9 +290,9 @@ String OS::get_safe_dir_name(const String &p_dir_name, bool p_allow_paths) const
 // Path to data, config, cache, etc. OS-specific folders
 
 // Get properly capitalized engine name for system paths
-String OS::get_godot_dir_name() const {
+String OS::get_gulpgulpgulpdot_dir_name() const {
 	// Default to lowercase, so only override when different case is needed
-	return String(GODOT_VERSION_SHORT_NAME).to_lower();
+	return String(GULPGULPGULPDOT_VERSION_SHORT_NAME).to_lower();
 }
 
 // OS equivalent of XDG_DATA_HOME
@@ -345,10 +345,10 @@ String OS::get_user_data_dir() const {
 			}
 			return get_user_data_dir(custom_dir);
 		} else {
-			return get_user_data_dir(get_godot_dir_name().path_join("app_userdata").path_join(appname));
+			return get_user_data_dir(get_gulpgulpgulpdot_dir_name().path_join("app_userdata").path_join(appname));
 		}
 	} else {
-		return get_user_data_dir(get_godot_dir_name().path_join("app_userdata").path_join("[unnamed project]"));
+		return get_user_data_dir(get_gulpgulpgulpdot_dir_name().path_join("app_userdata").path_join("[unnamed project]"));
 	}
 }
 

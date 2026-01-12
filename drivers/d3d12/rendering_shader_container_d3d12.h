@@ -3,7 +3,7 @@
 /**************************************************************************/
 /*                         This file is part of:                          */
 /*                             GulpGulpGulpDot Engine                               */
-/*                        https://godotengine.org                         */
+/*                        https://gulpgulpgulpdotengine.org                         */
 /**************************************************************************/
 /* Copyright (c) 2014-present GulpGulpGulpDot Engine contributors (see AUTHORS.md). */
 /* Copyright (c) 2007-2014 Juan Linietsky, Ariel Manzur.                  */
@@ -38,7 +38,7 @@
 #undef NIR_ENABLED
 #endif
 
-#include "d3d12_godot_nir_bridge.h"
+#include "d3d12_gulpgulpgulpdot_nir_bridge.h"
 
 #define D3D12_BITCODE_OFFSETS_NUM_STAGES 3
 
@@ -75,8 +75,8 @@ class RenderingShaderContainerD3D12 : public RenderingShaderContainer {
 
 public:
 	static constexpr uint32_t REQUIRED_SHADER_MODEL = 0x62; // D3D_SHADER_MODEL_6_2
-	static constexpr uint32_t ROOT_CONSTANT_REGISTER = GODOT_NIR_DESCRIPTOR_SET_MULTIPLIER * (RenderingDeviceCommons::MAX_UNIFORM_SETS + 1);
-	static constexpr uint32_t RUNTIME_DATA_REGISTER = GODOT_NIR_DESCRIPTOR_SET_MULTIPLIER * (RenderingDeviceCommons::MAX_UNIFORM_SETS + 2);
+	static constexpr uint32_t ROOT_CONSTANT_REGISTER = GULPGULPGULPDOT_NIR_DESCRIPTOR_SET_MULTIPLIER * (RenderingDeviceCommons::MAX_UNIFORM_SETS + 1);
+	static constexpr uint32_t RUNTIME_DATA_REGISTER = GULPGULPGULPDOT_NIR_DESCRIPTOR_SET_MULTIPLIER * (RenderingDeviceCommons::MAX_UNIFORM_SETS + 2);
 	static constexpr uint32_t FORMAT_VERSION = 1;
 	static constexpr uint32_t SHADER_STAGES_BIT_OFFSET_INDICES[RenderingDeviceCommons::SHADER_STAGE_MAX] = {
 		0, // SHADER_STAGE_VERTEX
@@ -132,7 +132,7 @@ protected:
 	bool _convert_spirv_to_dxil(Span<ReflectShaderStage> p_spirv, HashMap<RenderingDeviceCommons::ShaderStage, Vector<uint8_t>> &r_dxil_blobs, Vector<RenderingDeviceCommons::ShaderStage> &r_stages, BitField<RenderingDeviceCommons::ShaderStage> &r_stages_processed);
 	bool _generate_root_signature(BitField<RenderingDeviceCommons::ShaderStage> p_stages_processed);
 
-	// GodotNirCallbacks.
+	// GulpgulpgulpdotNirCallbacks.
 	static void _nir_report_resource(uint32_t p_register, uint32_t p_space, uint32_t p_dxil_type, void *p_data);
 	static void _nir_report_sc_bit_offset(uint32_t p_sc_id, uint64_t p_bit_offset, void *p_data);
 	static void _nir_report_bitcode_bit_offset(uint64_t p_bit_offset, void *p_data);

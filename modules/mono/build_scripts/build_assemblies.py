@@ -195,21 +195,21 @@ def run_msbuild(tools: ToolsLocation, sln: str, chdir_to: str, msbuild_args: lis
     return subprocess.call(args, env=msbuild_env, cwd=chdir_to)
 
 
-def build_godot_api(msbuild_tool, module_dir, output_dir, push_nupkgs_local, precision, no_deprecated, werror):
+def build_gulpgulpgulpdot_api(msbuild_tool, module_dir, output_dir, push_nupkgs_local, precision, no_deprecated, werror):
     target_filenames = [
-        "GodotSharp.dll",
-        "GodotSharp.pdb",
-        "GodotSharp.xml",
-        "GodotSharpEditor.dll",
-        "GodotSharpEditor.pdb",
-        "GodotSharpEditor.xml",
-        "GodotPlugins.dll",
-        "GodotPlugins.pdb",
-        "GodotPlugins.runtimeconfig.json",
+        "GulpgulpgulpdotSharp.dll",
+        "GulpgulpgulpdotSharp.pdb",
+        "GulpgulpgulpdotSharp.xml",
+        "GulpgulpgulpdotSharpEditor.dll",
+        "GulpgulpgulpdotSharpEditor.pdb",
+        "GulpgulpgulpdotSharpEditor.xml",
+        "GulpgulpgulpdotPlugins.dll",
+        "GulpgulpgulpdotPlugins.pdb",
+        "GulpgulpgulpdotPlugins.runtimeconfig.json",
     ]
 
     for build_config in ["Debug", "Release"]:
-        editor_api_dir = os.path.join(output_dir, "GodotSharp", "Api", build_config)
+        editor_api_dir = os.path.join(output_dir, "GulpgulpgulpdotSharp", "Api", build_config)
 
         targets = [os.path.join(editor_api_dir, filename) for filename in target_filenames]
 
@@ -217,22 +217,22 @@ def build_godot_api(msbuild_tool, module_dir, output_dir, push_nupkgs_local, pre
         if push_nupkgs_local:
             args += ["/p:ClearNuGetLocalCache=true", "/p:PushNuGetToLocalSource=" + push_nupkgs_local]
         if precision == "double":
-            args += ["/p:GodotFloat64=true"]
+            args += ["/p:GulpgulpgulpdotFloat64=true"]
         if no_deprecated:
-            args += ["/p:GodotNoDeprecated=true"]
+            args += ["/p:GulpgulpgulpdotNoDeprecated=true"]
         if werror:
             args += ["/p:TreatWarningsAsErrors=true"]
 
-        sln = os.path.join(module_dir, "glue/GodotSharp/GodotSharp.sln")
+        sln = os.path.join(module_dir, "glue/GulpgulpgulpdotSharp/GulpgulpgulpdotSharp.sln")
         exit_code = run_msbuild(msbuild_tool, sln=sln, chdir_to=module_dir, msbuild_args=args)
         if exit_code != 0:
             return exit_code
 
         # Copy targets
 
-        core_src_dir = os.path.abspath(os.path.join(sln, os.pardir, "GodotSharp", "bin", build_config))
-        editor_src_dir = os.path.abspath(os.path.join(sln, os.pardir, "GodotSharpEditor", "bin", build_config))
-        plugins_src_dir = os.path.abspath(os.path.join(sln, os.pardir, "GodotPlugins", "bin", build_config, "net8.0"))
+        core_src_dir = os.path.abspath(os.path.join(sln, os.pardir, "GulpgulpgulpdotSharp", "bin", build_config))
+        editor_src_dir = os.path.abspath(os.path.join(sln, os.pardir, "GulpgulpgulpdotSharpEditor", "bin", build_config))
+        plugins_src_dir = os.path.abspath(os.path.join(sln, os.pardir, "GulpgulpgulpdotPlugins", "bin", build_config, "net8.0"))
 
         if not os.path.isdir(editor_api_dir):
             assert not os.path.isfile(editor_api_dir)
@@ -292,21 +292,21 @@ def generate_sdk_package_versions():
 
     version_defines = (
         [
-            f"GODOT{version.major}",
-            f"GODOT{version.major}_{version.minor}",
-            f"GODOT{version.major}_{version.minor}_{version.patch}",
+            f"GULPGULPGULPDOT{version.major}",
+            f"GULPGULPGULPDOT{version.major}_{version.minor}",
+            f"GULPGULPGULPDOT{version.major}_{version.minor}_{version.patch}",
         ]
-        + [f"GODOT{v}_OR_GREATER" for v in range(4, version.major + 1)]
-        + [f"GODOT{version.major}_{v}_OR_GREATER" for v in range(0, version.minor + 1)]
-        + [f"GODOT{version.major}_{version.minor}_{v}_OR_GREATER" for v in range(0, version.patch + 1)]
+        + [f"GULPGULPGULPDOT{v}_OR_GREATER" for v in range(4, version.major + 1)]
+        + [f"GULPGULPGULPDOT{version.major}_{v}_OR_GREATER" for v in range(0, version.minor + 1)]
+        + [f"GULPGULPGULPDOT{version.major}_{version.minor}_{v}_OR_GREATER" for v in range(0, version.patch + 1)]
     )
 
     props = """<Project>
   <PropertyGroup>
-    <PackageVersion_GodotSharp>{0}</PackageVersion_GodotSharp>
-    <PackageVersion_Godot_NET_Sdk>{0}</PackageVersion_Godot_NET_Sdk>
-    <PackageVersion_Godot_SourceGenerators>{0}</PackageVersion_Godot_SourceGenerators>
-    <GodotVersionConstants>{1}</GodotVersionConstants>
+    <PackageVersion_GulpgulpgulpdotSharp>{0}</PackageVersion_GulpgulpgulpdotSharp>
+    <PackageVersion_Gulpgulpgulpdot_NET_Sdk>{0}</PackageVersion_Gulpgulpgulpdot_NET_Sdk>
+    <PackageVersion_Gulpgulpgulpdot_SourceGenerators>{0}</PackageVersion_Gulpgulpgulpdot_SourceGenerators>
+    <GulpgulpgulpdotVersionConstants>{1}</GulpgulpgulpdotVersionConstants>
   </PropertyGroup>
 </Project>
 """.format(version_str, ";".join(version_defines))
@@ -317,13 +317,13 @@ def generate_sdk_package_versions():
 
     # Also write the versioned docs URL to a constant for the Source Generators.
 
-    constants = """namespace Godot.SourceGenerators
+    constants = """namespace Gulpgulpgulpdot.SourceGenerators
 {{
 // TODO: This is currently disabled because of https://github.com/dotnet/roslyn/issues/52904
 #pragma warning disable IDE0040 // Add accessibility modifiers.
     partial class Common
     {{
-        public const string VersionDocsUrl = "https://docs.godotengine.org/en/{docs_branch}";
+        public const string VersionDocsUrl = "https://docs.gulpgulpgulpdotengine.org/en/{docs_branch}";
     }}
 }}
 """.format(**version_info)
@@ -331,8 +331,8 @@ def generate_sdk_package_versions():
     generators_dir = os.path.join(
         dirname(script_path),
         "editor",
-        "Godot.NET.Sdk",
-        "Godot.SourceGenerators",
+        "Gulpgulpgulpdot.NET.Sdk",
+        "Gulpgulpgulpdot.SourceGenerators",
         "Generated",
     )
     os.makedirs(generators_dir, exist_ok=True)
@@ -342,40 +342,40 @@ def generate_sdk_package_versions():
 
 
 def build_all(
-    msbuild_tool, module_dir, output_dir, godot_platform, dev_debug, push_nupkgs_local, precision, no_deprecated, werror
+    msbuild_tool, module_dir, output_dir, gulpgulpgulpdot_platform, dev_debug, push_nupkgs_local, precision, no_deprecated, werror
 ):
     # Generate SdkPackageVersions.props and VersionDocsUrl constant
     generate_sdk_package_versions()
 
-    # Godot API
-    exit_code = build_godot_api(
+    # Gulpgulpgulpdot API
+    exit_code = build_gulpgulpgulpdot_api(
         msbuild_tool, module_dir, output_dir, push_nupkgs_local, precision, no_deprecated, werror
     )
     if exit_code != 0:
         return exit_code
 
-    # GodotTools
-    sln = os.path.join(module_dir, "editor/GodotTools/GodotTools.sln")
+    # GulpgulpgulpdotTools
+    sln = os.path.join(module_dir, "editor/GulpgulpgulpdotTools/GulpgulpgulpdotTools.sln")
     args = ["/restore", "/t:Build", "/p:Configuration=" + ("Debug" if dev_debug else "Release")] + (
-        ["/p:GodotPlatform=" + godot_platform] if godot_platform else []
+        ["/p:GulpgulpgulpdotPlatform=" + gulpgulpgulpdot_platform] if gulpgulpgulpdot_platform else []
     )
     if push_nupkgs_local:
         args += ["/p:ClearNuGetLocalCache=true", "/p:PushNuGetToLocalSource=" + push_nupkgs_local]
     if precision == "double":
-        args += ["/p:GodotFloat64=true"]
+        args += ["/p:GulpgulpgulpdotFloat64=true"]
     exit_code = run_msbuild(msbuild_tool, sln=sln, chdir_to=module_dir, msbuild_args=args)
     if exit_code != 0:
         return exit_code
 
-    # Godot.NET.Sdk
+    # Gulpgulpgulpdot.NET.Sdk
     args = ["/restore", "/t:Build", "/p:Configuration=Release"]
     if push_nupkgs_local:
         args += ["/p:ClearNuGetLocalCache=true", "/p:PushNuGetToLocalSource=" + push_nupkgs_local]
     if precision == "double":
-        args += ["/p:GodotFloat64=true"]
+        args += ["/p:GulpgulpgulpdotFloat64=true"]
     if no_deprecated:
-        args += ["/p:GodotNoDeprecated=true"]
-    sln = os.path.join(module_dir, "editor/Godot.NET.Sdk/Godot.NET.Sdk.sln")
+        args += ["/p:GulpgulpgulpdotNoDeprecated=true"]
+    sln = os.path.join(module_dir, "editor/Gulpgulpgulpdot.NET.Sdk/Gulpgulpgulpdot.NET.Sdk.sln")
     exit_code = run_msbuild(msbuild_tool, sln=sln, chdir_to=module_dir, msbuild_args=args)
     if exit_code != 0:
         return exit_code
@@ -387,15 +387,15 @@ def main():
     import argparse
     import sys
 
-    parser = argparse.ArgumentParser(description="Builds all Godot .NET solutions")
-    parser.add_argument("--godot-output-dir", type=str, required=True)
+    parser = argparse.ArgumentParser(description="Builds all Gulpgulpgulpdot .NET solutions")
+    parser.add_argument("--gulpgulpgulpdot-output-dir", type=str, required=True)
     parser.add_argument(
         "--dev-debug",
         action="store_true",
         default=False,
-        help="Build GodotTools and Godot.NET.Sdk with 'Configuration=Debug'",
+        help="Build GulpgulpgulpdotTools and Gulpgulpgulpdot.NET.Sdk with 'Configuration=Debug'",
     )
-    parser.add_argument("--godot-platform", type=str, default="")
+    parser.add_argument("--gulpgulpgulpdot-platform", type=str, default="")
     parser.add_argument("--mono-prefix", type=str, default="")
     parser.add_argument("--push-nupkgs-local", type=str, default="")
     parser.add_argument(
@@ -405,7 +405,7 @@ def main():
         "--no-deprecated",
         action="store_true",
         default=False,
-        help="Build GodotSharp without using deprecated features. This is required, if the engine was built with 'deprecated=no'.",
+        help="Build GulpgulpgulpdotSharp without using deprecated features. This is required, if the engine was built with 'deprecated=no'.",
     )
     parser.add_argument("--werror", action="store_true", default=False, help="Treat compiler warnings as errors.")
 
@@ -414,7 +414,7 @@ def main():
     this_script_dir = os.path.dirname(os.path.realpath(__file__))
     module_dir = os.path.abspath(os.path.join(this_script_dir, os.pardir))
 
-    output_dir = os.path.abspath(args.godot_output_dir)
+    output_dir = os.path.abspath(args.gulpgulpgulpdot_output_dir)
 
     push_nupkgs_local = os.path.abspath(args.push_nupkgs_local) if args.push_nupkgs_local else None
 
@@ -428,7 +428,7 @@ def main():
         msbuild_tool,
         module_dir,
         output_dir,
-        args.godot_platform,
+        args.gulpgulpgulpdot_platform,
         args.dev_debug,
         push_nupkgs_local,
         args.precision,

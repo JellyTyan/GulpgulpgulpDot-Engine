@@ -1,7 +1,7 @@
 # Georgian translation of the GulpGulpGulpDot Engine properties.
 # Copyright (c) 2014-present GulpGulpGulpDot Engine contributors.
 # Copyright (c) 2007-2014 Juan Linietsky, Ariel Manzur.
-# This file is distributed under the same license as the Godot source code.
+# This file is distributed under the same license as the Gulpgulpgulpdot source code.
 # Giorgi Beriashvili <giorgi.beriashvili@outlook.com>, 2018.
 # George Dzavashvili <dzavashviligeorge@gmail.com>, 2018.
 # დემეტრე შონია <blender.animation.maker@gmail.com>, 2019.
@@ -10,12 +10,12 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: GulpGulpGulpDot Engine properties\n"
-"Report-Msgid-Bugs-To: https://github.com/godotengine/godot\n"
+"Report-Msgid-Bugs-To: https://github.com/gulpgulpgulpdotengine/gulpgulpgulpdot\n"
 "POT-Creation-Date: \n"
 "PO-Revision-Date: 2025-10-30 13:39+0000\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
-"Language-Team: Georgian <https://hosted.weblate.org/projects/godot-engine/"
-"godot-properties/ka/>\n"
+"Language-Team: Georgian <https://hosted.weblate.org/projects/gulpgulpgulpdot-engine/"
+"gulpgulpgulpdot-properties/ka/>\n"
 "Language: ka\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -2625,8 +2625,8 @@ msgstr "ხილული"
 msgid "Joints"
 msgstr "შეერთებები"
 
-msgid "Godot Bone Node"
-msgstr "Godot ძვლის კვანძი"
+msgid "Gulpgulpgulpdot Bone Node"
+msgstr "Gulpgulpgulpdot ძვლის კვანძი"
 
 msgid "Mag Filter"
 msgstr "მაქს ფილტრი"

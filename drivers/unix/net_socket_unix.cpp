@@ -3,7 +3,7 @@
 /**************************************************************************/
 /*                         This file is part of:                          */
 /*                             GulpGulpGulpDot Engine                               */
-/*                        https://godotengine.org                         */
+/*                        https://gulpgulpgulpdotengine.org                         */
 /**************************************************************************/
 /* Copyright (c) 2014-present GulpGulpGulpDot Engine contributors (see AUTHORS.md). */
 /* Copyright (c) 2007-2014 Juan Linietsky, Ariel Manzur.                  */
@@ -149,7 +149,7 @@ NetSocketUnix::~NetSocketUnix() {
 
 // Silence a warning reported in GH-27594.
 // EAGAIN and EWOULDBLOCK have the same value on most platforms, but it's not guaranteed.
-GODOT_GCC_WARNING_PUSH_AND_IGNORE("-Wlogical-op")
+GULPGULPGULPDOT_GCC_WARNING_PUSH_AND_IGNORE("-Wlogical-op")
 
 NetSocketUnix::NetError NetSocketUnix::_get_socket_error() const {
 	if (errno == EISCONN) {
@@ -174,7 +174,7 @@ NetSocketUnix::NetError NetSocketUnix::_get_socket_error() const {
 	return ERR_NET_OTHER;
 }
 
-GODOT_GCC_WARNING_POP
+GULPGULPGULPDOT_GCC_WARNING_POP
 
 bool NetSocketUnix::_can_use_ip(const IPAddress &p_ip, const bool p_for_bind) const {
 	if (p_for_bind && !(p_ip.is_valid() || p_ip.is_wildcard())) {
